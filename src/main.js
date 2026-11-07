@@ -196,6 +196,16 @@ function renderRegion(record) {
   regionLayer.clearLayers();
   const context = $('#map-context');
   context.replaceChildren(element('h3', record ? `Regional map · ${record.title}` : 'Regional map'));
+  const mapReferences = element('p');
+  const navigationDate = `${String(state.year).padStart(4, '0')}-01-01`;
+  mapReferences.append(
+    link(`OpenHistoricalMap · ${state.year} CE ↗`, `https://www.openhistoricalmap.org/#map=5/26.59/89.52&layers=O&date=${navigationDate}`),
+    document.createTextNode(' · '),
+    link('TimeMaps atlas ↗', 'https://timemaps.com/'),
+  );
+  context.append(mapReferences, element('p',
+    'External map references, not verified boundaries for this record. OpenHistoricalMap opens on 1 January of the selected year for navigation only; choose the relevant period on TimeMaps.'));
+
   if (!record) {
     context.append(element('p', 'Choose a record to inspect its regional evidence.'));
     return;
