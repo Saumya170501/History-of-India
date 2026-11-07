@@ -65,7 +65,7 @@ $("#app").innerHTML = `
         <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Search people, places, Mughal, Rajput…" autocomplete="off"></div>
         <p class="window-note">Date windows may be approximate. A match is not proof of an event in this exact year. Mughal and Rajput coverage is incomplete; some profiles contain chronology only.</p>
         <div id="record-list"></div>
-        <div class="browse"><div class="browse-controls"><div><label for="browse-category">Jump to a record</label><select id="browse-category"><option value="">Choose a category…</option><option value="Mughals">Mughals</option><option value="Rajputs">Rajputs</option><option value="Others">Others</option></select></div><div><label for="browse-records">Record</label><select id="browse-records" disabled><option value="">Choose a category first…</option></select></div></div></div>
+        <div class="browse"><details id="browse-menu"><summary>Jump to a record…</summary><div id="browse-groups" class="browse-groups"></div></details></div>
       </aside>
     </div>
     <section id="record-detail" class="detail-panel" aria-labelledby="detail-title" tabindex="-1"></section>
@@ -89,15 +89,29 @@ for (const record of data.records) {
       ? 'Rajputs' : 'Others';
   browseGroups.get(group).push(record);
 }
-for (const records of browseGroups.values())
-  records.sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title));
-$('#browse-category').addEventListener('change', (event) => {
-  const records = browseGroups.get(event.target.value);
-  const select = $('#browse-records');
-  select.replaceChildren(new Option(records ? 'Choose a record…' : 'Choose a category first…', ''));
-  select.disabled = !records;
-  for (const record of records || [])
-    select.add(new Option(`${record.title} · ${record.dateLabel}`, record.id));
+for (const [label, records] of browseGroups) {
+  const group = element('details', undefined, 'browse-group');
+  group.name = 'record-categories';
+  group.append(element('summary', label));
+  const entries = element('div', undefined, 'browse-entries');
+  for (const record of records.sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title))) {
+    const button = element('button', `${record.title} · ${record.dateLabel}`);
+    button.type = 'button';
+    button.value = record.id;
+    button.addEventListener('click', browseRecord);
+    entries.append(button);
+  }
+  group.append(entries);
+  $('#browse-groups').append(group);
+}
+$('#browse-menu').addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    $('#browse-menu').open = false;
+    $('#browse-menu > summary').focus();
+  }
+});
+document.addEventListener('click', (event) => {
+  if (!$('#browse-menu').contains(event.target)) $('#browse-menu').open = false;
 });
 for (const source of data.sources) {
   const item = element("li");
@@ -539,9 +553,9 @@ function browseRecord(event) {
   selectedId = record.id;
   update();
   selectRecord(record, true);
-  event.target.value = "";
+  $('#browse-menu').open = false;
+  for (const group of document.querySelectorAll('.browse-group')) group.open = false;
 }
-$('#browse-records').addEventListener('change', browseRecord);
 $("#reset-map").addEventListener("click", () => map.setView([22, 80], 4));
 $('#show-regions').addEventListener('change', () => renderRegion(data.records.find(record => record.id === selectedId)));
 $('#show-battles').addEventListener('change', renderBattles);

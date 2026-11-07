@@ -9,7 +9,7 @@ Research pass: 7 November 2026. Batch `mughal-rajput-01` adds 50 records and enr
 - Conflicts: separate Tarain battles (1191 and 1192), Panipat (1526 and 1556), Khanwa, Chittor and Ranthambore sieges, Haldighati, Dewair and the 1857 siege of Delhi. No verified battlefield coordinates are claimed in these additions.
 - Jaipur foundation/planning has its own sourced city point. It is not reused as a ruler's location or territorial boundary.
 
-In “Explore the evidence,” choose Mughals, Rajputs or Others in “Jump to a record,” then choose a profile from the adjacent Record dropdown. Changing the category resets the record choices without changing the year; choosing a record jumps to its starting year. Use the year controls to explore contemporary records. A profile may discuss events outside the selected year; the interface states that distinction. Battle context is year-filtered independently of catalogue search.
+In “Explore the evidence,” open “Jump to a record,” then expand Mughals, Rajputs or Others to choose a profile within the same dropdown. Expanding a category does not change the year; choosing a record jumps to its starting year and closes the dropdown. Use the year controls to explore contemporary records. A profile may discuss events outside the selected year; the interface states that distinction. Battle context is year-filtered independently of catalogue search.
 
 ## Evidence and limitations
 
