@@ -213,12 +213,10 @@ function renderRegion(record) {
   const mapReferences = element('p');
   const navigationDate = `${String(state.year).padStart(4, '0')}-01-01`;
   mapReferences.append(
-    link(`OpenHistoricalMap · ${state.year} CE ↗`, `https://www.openhistoricalmap.org/#map=5/26.59/89.52&layers=O&date=${navigationDate}`),
-    document.createTextNode(' · '),
-    link('TimeMaps atlas ↗', 'https://timemaps.com/'),
+    link(`OpenHistoricalMap · ${state.year} CE ↗`, `https://www.openhistoricalmap.org/#map=5/26.59/89.52&layers=O&date=${navigationDate}&daterange=0001-01-01,2026-12-31`),
   );
   context.append(mapReferences, element('p',
-    'External map references, not verified boundaries for this record. OpenHistoricalMap opens on 1 January of the selected year for navigation only; choose the relevant period on TimeMaps.'));
+    'Primary mapping reference: OpenHistoricalMap. Opens on 1 January of the selected year, with a 1–2026 CE browsing range. Coverage varies; its features are not independently verified boundaries for this record.'));
 
   if (!record) {
     context.append(element('p', 'Choose a record to inspect its regional evidence.'));
