@@ -54,7 +54,10 @@ test("type and case-insensitive search combine with the year filter", () => {
     1,
   );
   assert.equal(recordsForYear(data.records, 500, "site", "Nalanda").length, 0);
-  assert.equal(recordsForYear(data.records, 1632, "ruler", "shah").length, 2);
+  const shahMatches = recordsForYear(data.records, 1632, "ruler", "shah");
+  assert.ok(shahMatches.some(record => record.id === 'shah-jahan-reign'));
+  assert.ok(shahMatches.some(record => record.id === 'shah-jahan-patronage'));
+  assert.ok(shahMatches.every(record => record.type === 'ruler' && record.startYear <= 1632 && record.endYear >= 1632));
   assert.equal(recordsForYear(data.records, 2026, "all", "Sanchi").length, 0);
 });
 

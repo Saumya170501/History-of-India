@@ -50,6 +50,12 @@ $("#app").innerHTML = `
       <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="1" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026 CE</span></div><div class="jumps"><span>Explore a window</span><button data-year="1">1 CE</button><button data-year="150">150</button><button data-year="250">250</button><button data-year="500">500</button><button data-year="1500">1500</button><button data-year="1565">1565</button><button data-year="1632">1632</button><button data-year="2026">2026</button></div></div>
       <div class="year-entry"><label for="year-input">Go to year</label><div><button id="previous-year" aria-label="Previous year">−</button><input id="year-input" type="number" min="1" max="2026" step="1" value="1"><button id="next-year" aria-label="Next year">+</button></div></div>
     </section>
+    <section class="collection-browser" aria-labelledby="collection-title">
+      <h2 id="collection-title">Mughal & Rajput research</h2>
+      <p>Browse rulers across all years. Selected profiles and chronology entries are available; this is not yet a complete inventory of Rajput dynasties or a full biography of every Mughal ruler.</p>
+      <div><label for="research-collection">Collection<select id="research-collection"><option value="Mughal">Mughal rulers & claimants</option><option value="Rajput">Rajput rulers & court figures</option></select></label><label for="collection-record">Jump to a profile<select id="collection-record"></select></label></div>
+      <details><summary>Coverage and remaining research</summary><p>Mughal entries extend from Babur to Bahadur Shah Zafar, with separate reign phases and selected competing claims. Rajput entries currently cover selected Chauhan, Mewar, Marwar, Amber/Jaipur, Bikaner, Kota and Jaisalmer figures. Bundi, Kishangarh, Sirohi, Dungarpur, Banswara, Pratapgarh, Karauli, Alwar, hill states and many earlier dynasties and branches still need systematic coverage. No collection is marked complete.</p><p>Chronology-only entries are labelled in the profile notes. Battlefield points and territorial outlines remain absent where evidence is unverified.</p></details>
+    </section>
     <div class="workspace">
       <section class="map-panel" aria-label="Historical atlas map">
         <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>History, in place.</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
@@ -81,6 +87,16 @@ for (const record of data.records)
   $("#browse-records").add(
     new Option(`${record.title} · ${record.dateLabel}`, record.id),
   );
+function populateCollection() {
+  const select = $('#collection-record');
+  select.replaceChildren(new Option('Choose a record across all years…', ''));
+  const collection = $('#research-collection').value;
+  for (const record of data.records.filter(record => record.type === 'ruler' && record.tags?.includes(collection))
+    .sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title)))
+    select.add(new Option(`${record.title} · ${record.dateLabel}`, record.id));
+}
+populateCollection();
+$('#research-collection').addEventListener('change', populateCollection);
 for (const source of data.sources) {
   const item = element("li");
   item.append(
@@ -302,6 +318,22 @@ function renderDetail(record) {
   if (!regionalEvidence.length) evidence.append(element('p',
     'A dated, sourced regional map is not yet available for this selection. No boundary has been inferred from this record’s place or reign dates.'));
   for (const item of regionalEvidence) appendMapEvidence(evidence, item);
+  if (record.details?.length) {
+    const biography = element('section', undefined, 'biography');
+    biography.append(element('h3', 'Historical profile'), element('p',
+      'These notes cover the record’s broader historical context, not only the selected year. Research depth varies; citations do not imply independent review.', 'profile-note'));
+    for (const section of record.details) {
+      const block = element('section');
+      block.append(element('h4', section.heading), element('p', section.text));
+      for (const citation of section.citations) {
+        const source = sources.get(citation.sourceId);
+        block.append(link(source.title, source.url),
+          element('p', `${citation.locator}. ${citation.supports}`, 'citation-note'));
+      }
+      biography.append(block);
+    }
+    story.append(biography);
+  }
   panel.append(story, evidence);
 }
 
@@ -488,7 +520,7 @@ $("#search").addEventListener("input", (event) => {
   state.query = event.target.value;
   update();
 });
-$("#browse-records").addEventListener("change", (event) => {
+function browseRecord(event) {
   const record = data.records.find((item) => item.id === event.target.value);
   if (!record) return;
   state = { year: record.startYear, type: "all", query: "" };
@@ -496,7 +528,9 @@ $("#browse-records").addEventListener("change", (event) => {
   update();
   selectRecord(record, true);
   event.target.value = "";
-});
+}
+$('#browse-records').addEventListener('change', browseRecord);
+$('#collection-record').addEventListener('change', browseRecord);
 $("#reset-map").addEventListener("click", () => map.setView([22, 80], 4));
 $('#show-regions').addEventListener('change', () => renderRegion(data.records.find(record => record.id === selectedId)));
 $('#show-battles').addEventListener('change', renderBattles);

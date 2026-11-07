@@ -57,6 +57,95 @@
           "supports": "A published regional map offered as period context only; not verified year-specific boundary coordinates."
         }
       ]
+    },
+    {
+      "id": "harvard-mughal-maps",
+      "title": "Mughal-period regional maps",
+      "recordIds": [
+        "babur",
+        "humayun-first",
+        "humayun-second",
+        "akbar",
+        "jahangir",
+        "shah-jahan-reign",
+        "dawar-bakhsh",
+        "aurangzeb",
+        "azam-shah",
+        "kam-bakhsh",
+        "bahadur-shah-i",
+        "rajput-sanga",
+        "rajput-ratan-singh-ii",
+        "rajput-vikramaditya-mewar",
+        "rajput-udai-singh-ii",
+        "rajput-pratap",
+        "rajput-amar-singh-i",
+        "rajput-maldeo",
+        "rajput-ajit-singh",
+        "rajput-gaj-singh",
+        "rajput-man-singh-amber",
+        "rajput-madho-kota",
+        "rajput-anup-bikaner",
+        "rajput-jai-singh-ii",
+        "panipat-1526",
+        "khanwa-1527",
+        "panipat-1556",
+        "chittor-1567-1568",
+        "ranthambore-1569",
+        "haldighati-1576",
+        "dewair-1582"
+      ],
+      "startYear": 1526,
+      "endYear": 1707,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1526–1707 CE · period context",
+      "dateNote": "The page contains historical map references with their own dates. Read each map legend; the context window is not continuous territorial control.",
+      "uncertaintyNote": "Different reigns and political relationships appear within this broad period. No map was copied or digitized. The atlas publisher requires prior permission for reproduction.",
+      "url": "https://timelinesouthasianhistory.hsites.harvard.edu/mughal-period-and-transition-c-1526-ce-1707-ce",
+      "citations": [
+        {
+          "sourceId": "harvard-mughal",
+          "locator": "Map section and Schwartzberg attribution",
+          "supports": "Published regional map context; not verified year-specific boundaries."
+        }
+      ]
+    },
+    {
+      "id": "harvard-regional-maps",
+      "title": "Regional powers after 1707",
+      "recordIds": [
+        "aurangzeb",
+        "azam-shah",
+        "kam-bakhsh",
+        "bahadur-shah-i",
+        "jahandar-shah",
+        "farrukhsiyar",
+        "rafi-darajat",
+        "shah-jahan-ii",
+        "nikusiyar",
+        "ibrahim-claim",
+        "muhammad-shah",
+        "ahmad-shah-bahadur",
+        "alamgir-ii",
+        "shah-jahan-iii",
+        "shah-alam-ii-first",
+        "rajput-ajit-singh",
+        "rajput-jai-singh-ii",
+        "jaipur-foundation"
+      ],
+      "startYear": 1707,
+      "endYear": 1766,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1707–1766 CE · period context",
+      "dateNote": "The page contains historical map references with their own dates. Read each map legend; the context window is not continuous territorial control.",
+      "uncertaintyNote": "Different reigns and political relationships appear within this broad period. No map was copied or digitized. The atlas publisher requires prior permission for reproduction.",
+      "url": "https://timelinesouthasianhistory.hsites.harvard.edu/mughal-disintegration-and-rise-regional-powers-c-1707-ce-1766-ce",
+      "citations": [
+        {
+          "sourceId": "harvard-regional",
+          "locator": "Map section and Schwartzberg attribution",
+          "supports": "Published regional map context; not verified year-specific boundaries."
+        }
+      ]
     }
   ]
 }

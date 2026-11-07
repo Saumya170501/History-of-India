@@ -24,7 +24,7 @@ export function recordsForYear(records, year, type = "all", query = "") {
       year <= record.endYear &&
       (type === "all" || record.type === type) &&
       (!term ||
-        `${record.title} ${record.place} ${record.summary}`
+        `${record.title} ${record.place} ${record.summary} ${(record.tags || []).join(' ')} ${(record.details || []).map(section => section.text).join(' ')}`
           .toLocaleLowerCase("en")
           .includes(term)),
   );
@@ -92,6 +92,21 @@ export function validateAtlas(data) {
         errors.push(`${record.id}: missing ${key}`);
     if (!Object.hasOwn(TYPES, record.type))
       errors.push(`${record.id}: invalid record type`);
+    if (record.tags !== undefined && (!Array.isArray(record.tags) || record.tags.some(tag => typeof tag !== 'string' || !tag.trim())))
+      errors.push(`${record.id}: invalid research tags`);
+    if (record.details !== undefined) {
+      if (!Array.isArray(record.details) || record.details.length === 0)
+        errors.push(`${record.id}: details must be a nonempty array`);
+      else for (const section of record.details) {
+        if (!section || typeof section.heading !== 'string' || !section.heading.trim()
+          || typeof section.text !== 'string' || !section.text.trim()
+          || !Array.isArray(section.citations) || !section.citations.length
+          || section.citations.some(citation => !sources.has(citation?.sourceId)
+            || typeof citation?.locator !== 'string' || !citation.locator.trim()
+            || typeof citation?.supports !== 'string' || !citation.supports.trim()))
+          errors.push(`${record.id}: biography sections need text and complete citations`);
+      }
+    }
     if (record.type === 'battle' && !['battle', 'siege', 'aftermath'].includes(record.eventKind))
       errors.push(`${record.id}: battle records require an explicit eventKind`);
     if (

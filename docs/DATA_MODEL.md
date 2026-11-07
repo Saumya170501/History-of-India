@@ -19,6 +19,8 @@ Each source contains a stable `id`, `title`, `publisher`, HTTPS `url`, and `acce
 - `locationNote`: what the point identifies, including rounding, site-level precision and whether it is a capital, affected city or associated monument.
 - `locationSourceId`: source supporting that coordinate or location association.
 - `citations`: one or more `{ sourceId, locator, supports }` objects. `locator` identifies a section, page, inscription or catalogue entry; `supports` identifies the actual claim supported.
+- `tags`: optional nonempty search aliases and collection labels; these do not establish political allegiance.
+- `details`: optional nonempty profile sections, each with `heading`, `text` and claim-level `citations` using the same source/locator/supports contract. Profile text covers broader context, not necessarily the selected year. State chronology-only coverage and source limitations explicitly.
 - `eventKind`: required for battle records: `battle`, `siege`, or `aftermath`. A point for an affected city must use `aftermath`, never `battle`.
 - `reviewStatus`: `cited` for this prototype. This means a citation is attached, not that an independent historian has reviewed it. Add a separate reviewer/date workflow before enabling a stronger status.
 
