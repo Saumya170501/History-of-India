@@ -65,7 +65,7 @@ $("#app").innerHTML = `
         <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Search people, places, Mughal, Rajput…" autocomplete="off"></div>
         <p class="window-note">Date windows may be approximate. A match is not proof of an event in this exact year. Mughal and Rajput coverage is incomplete; some profiles contain chronology only.</p>
         <div id="record-list"></div>
-        <div class="browse"><label for="browse-records">Browse all ${data.records.length} starter records</label><select id="browse-records"><option value="">Jump to a record…</option></select></div>
+        <div class="browse"><div class="browse-controls"><div><label for="browse-category">Jump to a record</label><select id="browse-category"><option value="">Choose a category…</option><option value="Mughals">Mughals</option><option value="Rajputs">Rajputs</option><option value="Others">Others</option></select></div><div><label for="browse-records">Record</label><select id="browse-records" disabled><option value="">Choose a category first…</option></select></div></div></div>
       </aside>
     </div>
     <section id="record-detail" class="detail-panel" aria-labelledby="detail-title" tabindex="-1"></section>
@@ -78,24 +78,27 @@ $("#app").innerHTML = `
 for (const [value, label] of Object.entries(TYPES))
   $("#record-type").add(new Option(label, value));
 const browseGroups = new Map([
-  ['Mughal rulers & claimants', []],
-  ['Rajput rulers & court figures', []],
-  ['Other records', []],
+  ['Mughals', []],
+  ['Rajputs', []],
+  ['Others', []],
 ]);
 for (const record of data.records) {
   const group = record.type === 'ruler' && record.tags?.includes('Mughal')
-    ? 'Mughal rulers & claimants'
+    ? 'Mughals'
     : record.type === 'ruler' && record.tags?.includes('Rajput')
-      ? 'Rajput rulers & court figures' : 'Other records';
+      ? 'Rajputs' : 'Others';
   browseGroups.get(group).push(record);
 }
-for (const [label, records] of browseGroups) {
-  const group = element('optgroup');
-  group.label = label;
-  for (const record of records.sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title)))
-    group.append(new Option(`${record.title} · ${record.dateLabel}`, record.id));
-  $('#browse-records').append(group);
-}
+for (const records of browseGroups.values())
+  records.sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title));
+$('#browse-category').addEventListener('change', (event) => {
+  const records = browseGroups.get(event.target.value);
+  const select = $('#browse-records');
+  select.replaceChildren(new Option(records ? 'Choose a record…' : 'Choose a category first…', ''));
+  select.disabled = !records;
+  for (const record of records || [])
+    select.add(new Option(`${record.title} · ${record.dateLabel}`, record.id));
+});
 for (const source of data.sources) {
   const item = element("li");
   item.append(

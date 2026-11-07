@@ -462,9 +462,19 @@ input[type="search"] {
   display: block;
   margin-bottom: 8px;
 }
+.browse-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 10px;
+}
+.browse-controls > div { min-width: 0; }
 .browse select {
   font-size: 11px;
+  width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
 }
+.browse select:disabled { opacity: 0.65; cursor: not-allowed; }
 .empty {
   padding: 22px 8px;
   color: var(--muted);
