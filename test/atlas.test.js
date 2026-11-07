@@ -25,17 +25,18 @@ test("seed data meets the citation and point-only contract", () => {
 });
 
 test("century windows include their endpoints but do not leak to adjoining years", () => {
+  const originalRecords = data.records.filter(record => !record.researchBatch);
   assert.deepEqual(
-    recordsForYear(data.records, 1).map((r) => r.id),
+    recordsForYear(originalRecords, 1).map((r) => r.id),
     ["sanchi-gateways"],
   );
-  assert.equal(recordsForYear(data.records, 100).length, 1);
-  assert.equal(recordsForYear(data.records, 101).length, 0);
-  assert.equal(recordsForYear(data.records, 400).length, 0);
-  assert.equal(recordsForYear(data.records, 401).length, 2);
-  assert.equal(recordsForYear(data.records, 600).length, 2);
-  assert.equal(recordsForYear(data.records, 601).length, 1);
-  assert.equal(recordsForYear(data.records, 2026).length, 0);
+  assert.equal(recordsForYear(originalRecords, 100).length, 1);
+  assert.equal(recordsForYear(originalRecords, 101).length, 0);
+  assert.equal(recordsForYear(originalRecords, 400).length, 0);
+  assert.equal(recordsForYear(originalRecords, 401).length, 2);
+  assert.equal(recordsForYear(originalRecords, 600).length, 2);
+  assert.equal(recordsForYear(originalRecords, 601).length, 1);
+  assert.equal(recordsForYear(originalRecords, 2026).length, 0);
 });
 
 test("battle aftermath appears only in its cited year", () => {
@@ -148,4 +149,15 @@ test('unmapped research records remain searchable without fabricated points', ()
  assert.ok(entries.some(r => r.id === 'chola-dynasty'));
  assert.ok(entries.some(r => r.id === 'hoysala-dynasty'));
  assert.deepEqual(validateAtlas(data), []);
+});
+
+test('early CE research keeps uncertainty, source links and cross-period endpoints', () => {
+ const batch=data.records.filter(r=>r.researchBatch==='early-ce-1-300');
+ assert.equal(batch.length,36);
+ assert.ok(batch.every(r=>r.startYear<=300 && r.endYear>=1 && r.citations.length && r.datePrecision!=='year'));
+ assert.ok(recordsForYear(batch,150).some(r=>r.id==='early-kanishka-i'));
+ assert.ok(!recordsForYear(batch,151).some(r=>r.id==='early-kanishka-i'));
+ assert.equal(batch.find(r=>r.id==='early-rudrapurushadatta').endYear,315);
+ assert.ok(batch.find(r=>r.id==='early-gautamiputra').citations.length>=3);
+ assert.ok(batch.filter(r=>r.id.endsWith('-chiefdom')).every(r=>r.dateNote.includes('not a foundation')));
 });

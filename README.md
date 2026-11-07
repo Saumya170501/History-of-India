@@ -6,7 +6,7 @@ A source-led historical atlas of India, **1 CE–2026 CE**. Explore a year, sele
 
 - Interactive Leaflet map with locally bundled Natural Earth land geometry; no map API key or remote tiles.
 - Year slider, exact-year input, previous/next controls and sample date shortcuts.
-- 31 cited research records across sites, rulers, kingdoms, battle aftermath, and culture/learning; nine source entries from UNESCO, the Met and an IGNCA-hosted archive.
+- 67 cited research records across sites, rulers, kingdoms, battle aftermath, and culture/learning; 17 source entries, including museum, university and scholarly references.
 - Search, type filters, accessible record cards, source details and shareable year/filter URLs.
 - Explicit date uncertainty, location meaning and empty research windows.
 - Responsive layout, keyboard controls and source dialog.

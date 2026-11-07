@@ -8,6 +8,8 @@ This is an initial catalogue expansion, not completed biographies or comprehensi
 
 ## Immediate research tasks
 
+The 1–300 CE queue has now begun: see [the first-pass register](RESEARCH_001_300.md) for 36 additional records, chronology choices, retrieval limitations and specific remaining work. It is not marked complete.
+
 - Compare Rajadhiraja's 1052/1054 death dates against dated inscriptions and scholarly editions. Separate crown-prince, co-regency and sole-rule periods.
 - Reconcile Rajendra's 1012/1014 starts and Rajaraja II's chronology; do not merge source variants silently.
 - Independently corroborate each reign entry before adding detailed political narratives. Museum lists contain occasional problematic conversions and editorial errors; do not bulk-import the entire list as verified fact.

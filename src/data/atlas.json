@@ -63,6 +63,62 @@
       "publisher": "IGNCA digital archive",
       "url": "https://ignca.gov.in/Asi_data/57366.pdf",
       "accessed": "2026-11-07"
+    },
+    {
+      "id": "harvard-early",
+      "title": "Satavahana–Saka–Kushan Age, c. 1–300 CE",
+      "publisher": "A Timeline of South Asian History (Harvard-hosted)",
+      "url": "https://timelinesouthasianhistory.hsites.harvard.edu/south-asia-satavahana-saka-kushan-age-c-1-%E2%80%93-300-ce",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "skinner-kanishka",
+      "title": "Kanishka Era — Michael C. Skinner",
+      "publisher": "Wiley, Encyclopedia of Ancient History",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119399919.eahaa00562",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "inflib-satavahana",
+      "title": "Sunga, Kanva and Satavahana dynasties — P. Bhaskar Reddy",
+      "publisher": "INFLIBNET, Outlines of Indian History",
+      "url": "https://ebooks.inflibnet.ac.in/icp01/chapter/sunga-kanva-and-satavahana-dynasties/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "bm-overstrike",
+      "title": "Silver coin of Gautamiputra Satakarni, 1907,0102.12",
+      "publisher": "British Museum via Google Arts & Culture",
+      "url": "https://artsandculture.google.com/asset/silver-coin-of-gautamiputra-satakarni/tQEoF2ik43FHRg?hl=en",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-early",
+      "title": "South Asia, 1–500 CE",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/ht/05/ssa",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "ignou-tamilakam",
+      "title": "Polities from 3rd Century: Early State Formation, section 1.8",
+      "publisher": "IGNOU eGyanKosh",
+      "url": "https://www.egyankosh.ac.in/bitstream/123456789/67193/1/Block-1.pdf",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "rbi-ancient",
+      "title": "Ancient India Coinage",
+      "publisher": "Reserve Bank of India Monetary Museum",
+      "url": "https://m.rbi.org.in/scripts/mc_ancient.aspx",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "iranica-kushan",
+      "title": "Kushan Dynasty I: Dynastic History — A. D. H. Bivar",
+      "publisher": "Encyclopaedia Iranica",
+      "url": "https://www.iranicaonline.org/articles/kushan-dynasty-i-history/",
+      "accessed": "2026-11-07"
     }
   ],
   "records": [
@@ -825,6 +881,900 @@
         }
       ],
       "reviewStatus": "cited"
+    },
+    {
+      "id": "early-kujula",
+      "title": "Kujula Kadphises",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 40,
+      "endYear": 90,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 40–90 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-wima-takto",
+      "title": "Wima Takto",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 90,
+      "endYear": 113,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 90–113 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-wima-kadphises",
+      "title": "Wima Kadphises",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 113,
+      "endYear": 127,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 113–127 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-huvishka",
+      "title": "Huvishka",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 150,
+      "endYear": 190,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 150–190 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-vasudeva-i",
+      "title": "Vasudeva I",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 190,
+      "endYear": 224,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 190–224 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kanishka-ii",
+      "title": "Kanishka II",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 230,
+      "endYear": 244,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 230–244 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-vasishka",
+      "title": "Vasishka",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 248,
+      "endYear": 256,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 248–256 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kanishka-iii",
+      "title": "Kanishka III",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 256,
+      "endYear": 256,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 256 CE",
+      "dateNote": "Approximate attestation around 256, not a one-year reign.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kanishka-i",
+      "title": "Kanishka I",
+      "type": "ruler",
+      "place": "Kushan",
+      "startYear": 127,
+      "endYear": 150,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 127–150 CE",
+      "dateNote": "Skinner dates the era to 127 and the reign approximately 127–150. Era years and individual regnal years must not be treated as interchangeable without checking the inscription.",
+      "summary": "The Kanishka era anchors a major reconstruction of Kushan chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "skinner-kanishka",
+          "locator": "Abstract",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "harvard-early",
+          "locator": "Kushana ruler list, Kanishka",
+          "supports": "Corroborating approximate reign range."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-sodasa",
+      "title": "Sodasa",
+      "type": "ruler",
+      "place": "Northern Kshatrapa",
+      "startYear": 15,
+      "endYear": 15,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 15 CE",
+      "dateNote": "Approximate attestation, not a complete reign.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-chastana",
+      "title": "Chastana",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 78,
+      "endYear": 130,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 78–130 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-rudradaman",
+      "title": "Rudradaman: attestation",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 150,
+      "endYear": 150,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 150 CE",
+      "dateNote": "An attestation around 150, linked by the chronology to the Junagadh inscription; not a complete reign.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-rudrasimha",
+      "title": "Rudrasimha I: attestation",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 177,
+      "endYear": 178,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 177–178 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-nahapana",
+      "title": "Nahapana",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 54,
+      "endYear": 65,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 54–65 CE",
+      "dateNote": "This chronology uses c. 54–65. Other conversions place Nahapana later; do not treat these as universally agreed reign dates.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-gautamiputra",
+      "title": "Gautamiputra Sri Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 60,
+      "endYear": 84,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 60–84 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors. INFLIBNET instead gives 75–106; the British Museum object text uses approximately 60–90. The displayed range follows the Harvard-hosted table, not a merged or averaged reign.",
+      "summary": "A Nasik eulogy commissioned by his mother Gautami Balasri celebrates his victories; its royal claims require critical reading.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "inflib-satavahana",
+          "locator": "4.6.3 Later Satavahanas",
+          "supports": "Mother, inscription and alternative chronology."
+        },
+        {
+          "sourceId": "bm-overstrike",
+          "locator": "Object description",
+          "supports": "Alternative approximate chronology and overstrike evidence."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-pulumavi",
+      "title": "Vasishthiputra Sri Pulumavi",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 84,
+      "endYear": 119,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 84–119 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors. INFLIBNET uses 106–130, showing that this sequence is disputed.",
+      "summary": "Son and successor of Gautamiputra in the INFLIBNET account.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "inflib-satavahana",
+          "locator": "4.6.3 Successors of Gautamiputra",
+          "supports": "Succession relationship and alternative dates."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-satakarni",
+      "title": "Vasishthiputra Sri Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 119,
+      "endYear": 148,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 119–148 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-yajna",
+      "title": "Gautamiputra Sri Yajna Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 171,
+      "endYear": 199,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 171–199 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors. INFLIBNET instead gives 174–203.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "inflib-satavahana",
+          "locator": "4.6.3 Yajnasri",
+          "supports": "Alternative chronology."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-vijaya",
+      "title": "Gautamiputra Sri Vijaya Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 200,
+      "endYear": 205,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 200–205 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-canda",
+      "title": "Vasishthiputra Sri Canda Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 206,
+      "endYear": 220,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 206–220 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-mathariputra",
+      "title": "Mathariputra Sri Pulumavi",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 220,
+      "endYear": 230,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 220–230 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-camtamula",
+      "title": "Sri Camtamula",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 225,
+      "endYear": 240,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 225–240 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Ikshvaku ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Ikshvaku ruler list (Ollett 2017, p. 191)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-virapurushadatta",
+      "title": "Virapurushadatta",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 240,
+      "endYear": 265,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 240–265 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Ikshvaku ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Ikshvaku ruler list (Ollett 2017, p. 191)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-ehuvala",
+      "title": "Ehuvala Camtamula",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 265,
+      "endYear": 290,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 265–290 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Ikshvaku ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Ikshvaku ruler list (Ollett 2017, p. 191)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-rudrapurushadatta",
+      "title": "Rudrapurushadatta",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 290,
+      "endYear": 315,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 290–315 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Ikshvaku ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Ikshvaku ruler list (Ollett 2017, p. 191)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kushan",
+      "title": "Kushan political world",
+      "type": "kingdom",
+      "place": "Central Asia and northern South Asia",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "First–third-century contextual window, not a foundation in 1 CE or a uniform empire throughout all 300 years.",
+      "summary": "A major transregional power known through coins and inscriptions.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "iranica-kushan",
+          "locator": "Opening paragraphs",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-satavahana",
+      "title": "Later Satavahana chronology",
+      "type": "kingdom",
+      "place": "Deccan",
+      "startYear": 50,
+      "endYear": 230,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 50–230 CE",
+      "dateNote": "Approximate phase from the timeline. This is not the foundation date of the entire Satavahana dynasty.",
+      "summary": "A later dynastic phase; individual reign dates remain contested.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Dynasties → Later Satavahana",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-ikshvaku",
+      "title": "Ikshvaku dynasty of Andhra",
+      "type": "kingdom",
+      "place": "Andhra",
+      "startYear": 225,
+      "endYear": 315,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 225–315 CE",
+      "dateNote": "The source ends this interval in 315; it has not been truncated to 300.",
+      "summary": "Dynastic chronology extending beyond this research batch.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Dynasties → Ikshvaku",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-western-kshatrapas",
+      "title": "Western Kshatrapa coinage and rule",
+      "type": "kingdom",
+      "place": "Western India",
+      "startYear": 1,
+      "endYear": 400,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–400 CE",
+      "dateNote": "First–fourth-century source window. It combines changing rulers and branches, not one unchanging state.",
+      "summary": "Coins provide important evidence for western satrapal rulers.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "rbi-ancient",
+          "locator": "Western Kshatrapa section",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-chera-chiefdom",
+      "title": "Early Chera chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
+      "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "ignou-tamilakam",
+          "locator": "Section 1.8 Chiefdoms of Tamilakam (indexed passage)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-chola-chiefdom",
+      "title": "Early Chola chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
+      "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "ignou-tamilakam",
+          "locator": "Section 1.8 Chiefdoms of Tamilakam (indexed passage)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-pandya-chiefdom",
+      "title": "Early Pandya chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
+      "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "ignou-tamilakam",
+          "locator": "Section 1.8 Chiefdoms of Tamilakam (indexed passage)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-overstrike",
+      "title": "Reusing Nahapana’s silver coins",
+      "type": "culture",
+      "place": "Western Deccan; Nasik-associated finds",
+      "startYear": 60,
+      "endYear": 90,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 60–90 CE",
+      "dateNote": "Shown in the museum text’s approximate Gautamiputra window, not an exact minting date. Alternative ruler chronologies move this evidence later. The proposed war-booty explanation is a hypothesis, not a proven provenance.",
+      "summary": "A surviving coin retains traces of Nahapana’s designs beneath Satavahana overstrikes, providing evidence for a political transition.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "bm-overstrike",
+          "locator": "Object 1907,0102.12, description",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-sangam",
+      "title": "Early Tamil literary traditions",
+      "type": "culture",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 400,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–400 CE",
+      "dateNote": "Broad compilation window used by the Met. Individual poems, their subjects and later compilation can belong to different dates.",
+      "summary": "The Sangam corpus includes anthologies and works on grammar and rhetoric.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "met-early",
+          "locator": "Key Events → ca. 1st–4th century",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-nagarjuna",
+      "title": "Nagarjuna and Madhyamika",
+      "type": "culture",
+      "place": "South India (broad association)",
+      "startYear": 101,
+      "endYear": 200,
+      "datePrecision": "century",
+      "dateLabel": "c. 101–200 CE",
+      "dateNote": "Second-century activity window from this overview, not a verified lifespan or a precise location.",
+      "summary": "Nagarjuna is associated with the Madhyamika school of Buddhist thought.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "met-early",
+          "locator": "Key Events → 2nd–5th century, Nagarjuna sentence",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kushan-icons",
+      "title": "Deities on Kushan coins",
+      "type": "culture",
+      "place": "Kushan numismatic tradition",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "Contextual first–third-century window from Iranica; individual coin issues need separate catalogue dates.",
+      "summary": "Kushan coins depict deities from several religious traditions.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "rbi-ancient",
+          "locator": "Kushan coinage section",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "iranica-kushan",
+          "locator": "Opening dynastic period",
+          "supports": "Broad historical context only."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
     }
   ]
 }
