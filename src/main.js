@@ -50,12 +50,6 @@ $("#app").innerHTML = `
       <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="1" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026 CE</span></div><div class="jumps"><span>Explore a window</span><button data-year="1">1 CE</button><button data-year="150">150</button><button data-year="250">250</button><button data-year="500">500</button><button data-year="1500">1500</button><button data-year="1565">1565</button><button data-year="1632">1632</button><button data-year="2026">2026</button></div></div>
       <div class="year-entry"><label for="year-input">Go to year</label><div><button id="previous-year" aria-label="Previous year">−</button><input id="year-input" type="number" min="1" max="2026" step="1" value="1"><button id="next-year" aria-label="Next year">+</button></div></div>
     </section>
-    <section class="collection-browser" aria-labelledby="collection-title">
-      <h2 id="collection-title">Mughal & Rajput research</h2>
-      <p>Browse rulers across all years. Selected profiles and chronology entries are available; this is not yet a complete inventory of Rajput dynasties or a full biography of every Mughal ruler.</p>
-      <div><label for="research-collection">Collection<select id="research-collection"><option value="Mughal">Mughal rulers & claimants</option><option value="Rajput">Rajput rulers & court figures</option></select></label><label for="collection-record">Jump to a profile<select id="collection-record"></select></label></div>
-      <details><summary>Coverage and remaining research</summary><p>Mughal entries extend from Babur to Bahadur Shah Zafar, with separate reign phases and selected competing claims. Rajput entries currently cover selected Chauhan, Mewar, Marwar, Amber/Jaipur, Bikaner, Kota and Jaisalmer figures. Bundi, Kishangarh, Sirohi, Dungarpur, Banswara, Pratapgarh, Karauli, Alwar, hill states and many earlier dynasties and branches still need systematic coverage. No collection is marked complete.</p><p>Chronology-only entries are labelled in the profile notes. Battlefield points and territorial outlines remain absent where evidence is unverified.</p></details>
-    </section>
     <div class="workspace">
       <section class="map-panel" aria-label="Historical atlas map">
         <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>History, in place.</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
@@ -68,8 +62,8 @@ $("#app").innerHTML = `
       </section>
       <aside class="record-panel" aria-labelledby="records-heading">
         <div class="record-heading"><span class="eyebrow">IN THE RECORD</span><h2 id="records-heading" tabindex="-1">Explore the evidence</h2><p id="record-count" role="status" aria-live="polite"></p></div>
-        <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Search places, people, ideas…" autocomplete="off"></div>
-        <p class="window-note">Date windows may be approximate. A match is not proof of an event in this exact year.</p>
+        <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Search people, places, Mughal, Rajput…" autocomplete="off"></div>
+        <p class="window-note">Date windows may be approximate. A match is not proof of an event in this exact year. Mughal and Rajput coverage is incomplete; some profiles contain chronology only.</p>
         <div id="record-list"></div>
         <div class="browse"><label for="browse-records">Browse all ${data.records.length} starter records</label><select id="browse-records"><option value="">Jump to a record…</option></select></div>
       </aside>
@@ -83,20 +77,25 @@ $("#app").innerHTML = `
 
 for (const [value, label] of Object.entries(TYPES))
   $("#record-type").add(new Option(label, value));
-for (const record of data.records)
-  $("#browse-records").add(
-    new Option(`${record.title} · ${record.dateLabel}`, record.id),
-  );
-function populateCollection() {
-  const select = $('#collection-record');
-  select.replaceChildren(new Option('Choose a record across all years…', ''));
-  const collection = $('#research-collection').value;
-  for (const record of data.records.filter(record => record.type === 'ruler' && record.tags?.includes(collection))
-    .sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title)))
-    select.add(new Option(`${record.title} · ${record.dateLabel}`, record.id));
+const browseGroups = new Map([
+  ['Mughal rulers & claimants', []],
+  ['Rajput rulers & court figures', []],
+  ['Other records', []],
+]);
+for (const record of data.records) {
+  const group = record.type === 'ruler' && record.tags?.includes('Mughal')
+    ? 'Mughal rulers & claimants'
+    : record.type === 'ruler' && record.tags?.includes('Rajput')
+      ? 'Rajput rulers & court figures' : 'Other records';
+  browseGroups.get(group).push(record);
 }
-populateCollection();
-$('#research-collection').addEventListener('change', populateCollection);
+for (const [label, records] of browseGroups) {
+  const group = element('optgroup');
+  group.label = label;
+  for (const record of records.sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title)))
+    group.append(new Option(`${record.title} · ${record.dateLabel}`, record.id));
+  $('#browse-records').append(group);
+}
 for (const source of data.sources) {
   const item = element("li");
   item.append(
@@ -530,7 +529,6 @@ function browseRecord(event) {
   event.target.value = "";
 }
 $('#browse-records').addEventListener('change', browseRecord);
-$('#collection-record').addEventListener('change', browseRecord);
 $("#reset-map").addEventListener("click", () => map.setView([22, 80], 4));
 $('#show-regions').addEventListener('change', () => renderRegion(data.records.find(record => record.id === selectedId)));
 $('#show-battles').addEventListener('change', renderBattles);

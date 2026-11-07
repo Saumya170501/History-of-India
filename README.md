@@ -7,7 +7,7 @@ A source-led historical atlas of India, **1 CE–2026 CE**. Explore a year, sele
 - Interactive Leaflet map with locally bundled Natural Earth land geometry; no map API key or remote tiles.
 - Year slider, exact-year input, previous/next controls and sample date shortcuts.
 - 117 cited research records across sites, rulers, kingdoms, battle aftermath, and culture/learning; 41 source entries, including museum, university and scholarly references.
-- Mughal and Rajput profile browsers, searchable biography notes and section-level citations. Coverage is explicitly incomplete; see [research coverage](docs/RESEARCH_MUGHAL_RAJPUT.md).
+- Mughal and Rajput choices in the existing evidence browser, searchable biography notes and section-level citations. Coverage is explicitly incomplete; see [research coverage](docs/RESEARCH_MUGHAL_RAJPUT.md).
 - Search, type filters, accessible record cards, source details and shareable year/filter URLs.
 - Explicit date uncertainty, location meaning and empty research windows.
 - Responsive layout, keyboard controls and source dialog.
