@@ -940,3 +940,9 @@ dialog .small {
     transition: none !important;
   }
 }
+
+.record-map-preview { grid-column: 1 / -1; min-width: 0; }
+.record-map-preview h3 { margin: 0 0 10px; font-size: 20px; }
+.record-map-preview p, .record-map-preview a { font-size: 12px; }
+.record-map-preview iframe { display: block; width: 100%; height: 420px; border: 1px solid var(--border); border-radius: 4px; background: #efeee3; margin: 16px 0 10px; }
+@media (max-width: 600px) { .record-map-preview iframe { height: 320px; } }

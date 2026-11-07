@@ -11,6 +11,7 @@ A source-led historical atlas of India, **1 CE–2026 CE**. Explore a year, sele
 - Search, type filters, accessible record cards, source details and shareable year/filter URLs.
 - Explicit date uncertainty, location meaning and empty research windows.
 - Responsive layout, keyboard controls and source dialog.
+- Selecting a dropdown entry or record opens a dated OpenHistoricalMap research preview alongside its evidence. Sourced points center the view; unlocated records show an explicitly labelled subcontinent overview. The preview requires internet.
 - Regional map evidence beside record descriptions, with a linked published 1–300 CE period map.
 - Independent year-filtered battle layer with explicit battlefield, siege and aftermath symbols; Hampi remains an aftermath location.
 - Reviewed regional overlay support with separate map provenance and date windows; no reviewed shapes are bundled yet.
@@ -36,7 +37,7 @@ npm.cmd run build
 npm.cmd run preview
 ```
 
-Build output is in `dist/`. Serve it over HTTP; do not double-click `index.html`. After installation, the app and geographic map run locally without internet. Opening external source links still requires internet.
+Build output is in `dist/`. Serve it over HTTP; do not double-click `index.html`. After installation, the app and geographic map run locally without internet. Opening external source links and loading OpenHistoricalMap research previews require internet; the local map and record evidence remain available offline.
 
 See [Windows & Codex setup](docs/WINDOWS_SETUP.md) for existing-clone and new-clone instructions.
 

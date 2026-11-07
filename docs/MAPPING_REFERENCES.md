@@ -27,4 +27,10 @@ These are research leads and external navigation links, separate from the review
 
 ## Official embedding option
 
-OpenHistoricalMap documents its supported embed at https://github.com/OpenHistoricalMap/openhistoricalmap-embed (checked 7 November 2026). The embed accepts a date and the Historical style via `layer=O`; interactive pan/zoom is supported. Its own date can be updated through the URL. Embedding this provider as the main map is a separate integration from using it as a research reference. No embed or provider boundary import was added in this update.
+OpenHistoricalMap documents its supported embed at https://github.com/OpenHistoricalMap/openhistoricalmap-embed (checked 7 November 2026). The embed accepts a date and the Historical style via `layer=O`; interactive pan/zoom is supported. Its own date can be updated through the URL. Embedding this provider as the main map is a separate integration from using it as a research reference. Selecting a record now shows an official embedded research preview alongside its evidence, while the existing Leaflet map remains the main atlas. The preview and external link share the selected year and sourced point when available. Otherwise both use a labelled subcontinent overview; it is not a ruler-specific extent. The preview is external contextual material, not an imported or independently reviewed boundary. No provider geometry is copied into regional layers.
+
+## Record selection
+
+Dropdown choices and record cards open the map preview and evidence together. The local map also resets to the selected sourced point, reviewed overlay if present, or broad default view, so an unlocated ruler cannot inherit the previous record's zoomed location. Battle records keep their separate battlefield/siege/aftermath meanings. The date follows the selected year, with 1 January used only for navigation. Internet failure leaves the local map, citations and a direct source link available.
+
+A web-index search for Mughal/Mewar features did not yield a verified OHM element suitable for import. No complete feature inventory, source-tag verification or historical boundary review is claimed. Research previews may show features unrelated to the selected record; users must inspect the source and dates on OHM. Full ruler-specific territory coverage remains pending.

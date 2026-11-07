@@ -2,6 +2,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import data from "./data/atlas.json";
+import { mapReference } from './map-reference.js';
 import mapLayers from './data/map-layers.json';
 import { BATTLE_KINDS, battlesForYear, regionsForRecord, referencesForRecord, validateMapLayers } from './map-layers.js';
 import {
@@ -54,7 +55,7 @@ $("#app").innerHTML = `
       <section class="map-panel" aria-label="Historical atlas map">
         <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>History, in place.</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
         <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Selected record’s region</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
-        <div id="map" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
+        <div id="map" tabindex="-1" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
         <div id="map-error" role="alert" hidden></div>
         <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Circle: associated place · B: battle · S: siege · A: aftermath<br>Dashed marker: approximate dates · Dashed area: uncertain extent</span><span>Modern coastline · Areas require separate evidence</span></div>
         <div id="map-context" class="map-context" aria-live="polite"></div>
@@ -211,10 +212,8 @@ function renderRegion(record) {
   const context = $('#map-context');
   context.replaceChildren(element('h3', record ? `Regional map · ${record.title}` : 'Regional map'));
   const mapReferences = element('p');
-  const navigationDate = `${String(state.year).padStart(4, '0')}-01-01`;
-  mapReferences.append(
-    link(`OpenHistoricalMap · ${state.year} CE ↗`, `https://www.openhistoricalmap.org/#map=5/26.59/89.52&layers=O&date=${navigationDate}&daterange=0001-01-01,2026-12-31`),
-  );
+  const reference = mapReference(record, state.year);
+  mapReferences.append(link(`OpenHistoricalMap · ${state.year} CE ↗`, reference.sourceUrl));
   context.append(mapReferences, element('p',
     'Primary mapping reference: OpenHistoricalMap. Opens on 1 January of the selected year, with a 1–2026 CE browsing range. Coverage varies; its features are not independently verified boundaries for this record.'));
 
@@ -284,6 +283,9 @@ function renderBattles() {
 function renderDetail(record) {
   renderRegion(record);
   const panel = $("#record-detail");
+  const viewKey = `${record?.id || "empty"}:${state.year}`;
+  if (panel.dataset.viewKey === viewKey) return;
+  panel.dataset.viewKey = viewKey;
   panel.replaceChildren();
   if (!record) {
     const title = element("h2", "History leaves gaps.");
@@ -310,11 +312,9 @@ function renderDetail(record) {
   );
   const showMap = element('button', 'View regional map & contemporary battles', 'view-map');
   showMap.addEventListener('click', () => {
-    if (regionLayer.getLayers().length) map.fitBounds(regionLayer.getBounds(), { maxZoom: 6, animate: false });
-    else if (record.geometry) map.setView([record.geometry.coordinates[1], record.geometry.coordinates[0]], 5, { animate: false });
-    else map.setView([22, 80], 4, { animate: false });
-    $('#map-context').tabIndex = -1;
-    $('#map-context').focus();
+    focusRecordMap(record);
+    $('#map').scrollIntoView({ block: 'center' });
+    $('#map').focus({ preventScroll: true });
   });
   story.append(showMap);
   const evidence = element("div", undefined, "detail-evidence");
@@ -358,7 +358,27 @@ function renderDetail(record) {
     }
     story.append(biography);
   }
-  panel.append(story, evidence);
+  const reference = mapReference(record, state.year);
+  const preview = element('section', undefined, 'record-map-preview');
+  preview.setAttribute('aria-label', `Research map for ${record.title}`);
+  preview.append(element('h3', `Map context · ${record.title} · ${state.year} CE`),
+    element('p', reference.scope),
+    element('p', 'OpenHistoricalMap research reference. The view uses 1 January for year navigation, not an exact event date. Coverage varies and the displayed features have not been independently verified for this record.'));
+  const frame = element('iframe');
+  frame.title = `OpenHistoricalMap research view for ${record.title}, ${state.year} CE`;
+  frame.src = reference.embedUrl;
+  frame.loading = 'lazy';
+  frame.referrerPolicy = 'no-referrer';
+  preview.append(frame, element('p', 'Requires internet. If the map is blank or unavailable, open the reference directly.'),
+    link('Explore this date on OpenHistoricalMap ↗', reference.sourceUrl),
+    document.createTextNode(' · '), link('OpenHistoricalMap contributors & licences ↗', 'https://www.openhistoricalmap.org/copyright'));
+  panel.append(preview, story, evidence);
+}
+
+function focusRecordMap(record) {
+  const reference = mapReference(record, state.year);
+  if (regionLayer.getLayers().length) map.fitBounds(regionLayer.getBounds(), { maxZoom: 6, animate: false });
+  else map.setView(reference.center, reference.zoom, { animate: false });
 }
 
 function selectRecord(record, focus = false) {
@@ -369,12 +389,7 @@ function selectRecord(record, focus = false) {
       String(button.dataset.id === record.id),
     );
   renderDetail(record);
-  if (record.geometry) {
-  const [lon, lat] = record.geometry.coordinates;
-  map.panTo([lat, lon], {
-    animate: !matchMedia("(prefers-reduced-motion: reduce)").matches,
-  });
-  }
+  focusRecordMap(record);
   if (focus) $("#record-detail").focus({ preventScroll: false });
 }
 
@@ -419,7 +434,7 @@ function render() {
       element("span", TYPES[record.type], "card-type"),
       element("strong", record.title),
       element("span", record.dateLabel, "card-date"),
-      element("span", "Read evidence ↘", "card-action"),
+      element("span", "View map & evidence ↘", "card-action"),
     );
     button.addEventListener("click", () => selectRecord(record, true));
     list.append(button);
