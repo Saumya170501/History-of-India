@@ -4,21 +4,21 @@ A source-led historical atlas of India, **1 CE–2026 CE**. Explore a year, sele
 
 ## Current prototype
 
-- Interactive Leaflet map with locally bundled Natural Earth land geometry; no map API key or remote tiles.
+- OpenHistoricalMap historical map with date filtering, neighbouring kingdoms, and gold highlighting of dated kingdom-name matches. Requires internet and WebGL; no API key.
 - Year slider, exact-year input, previous/next controls and sample date shortcuts.
 - 117 cited research records across sites, rulers, kingdoms, battle aftermath, and culture/learning; 41 source entries, including museum, university and scholarly references.
 - Mughal and Rajput choices in the existing evidence browser, searchable biography notes and section-level citations. Coverage is explicitly incomplete; see [research coverage](docs/RESEARCH_MUGHAL_RAJPUT.md).
 - Search, type filters, accessible record cards, source details and shareable year/filter URLs.
 - Explicit date uncertainty, location meaning and empty research windows.
 - Responsive layout, keyboard controls and source dialog.
-- Selecting a dropdown entry or record opens a dated OpenHistoricalMap research preview alongside its evidence. Sourced points center the view; unlocated records show an explicitly labelled subcontinent overview. The preview requires internet.
+- Selecting a dropdown entry or record brings the main OHM map into view. Sourced points receive a ring; mapped ruler/kingdom associations highlight matching provider boundaries. Missing matches are reported explicitly.
 - Regional map evidence beside record descriptions, with a linked published 1–300 CE period map.
 - Independent year-filtered battle layer with explicit battlefield, siege and aftermath symbols; Hampi remains an aftermath location.
 - Reviewed regional overlay support with separate map provenance and date windows; no reviewed shapes are bundled yet.
 
 **This is a working research prototype, not a complete atlas or independently reviewed historical dataset.** At 1 CE, the Sanchi record matches a first-century date window; it does not claim that gateway ornamentation occurred in that exact year. Most years remain unresearched.
 
-No historical boundaries are drawn. A present-day, low-resolution land outline provides geographic context only. Points identify places associated with claims, not territories. The Talikota aftermath marker is at Hampi, the affected city, not at the battlefield.
+Historical boundaries on the main map come from OpenHistoricalMap. They are external provider features, not independently reviewed project reconstructions. Gold areas identify exact kingdom-name matches at the selected January 1 snapshot; a match does not prove a ruler controlled all of that area. Points identify places associated with claims, not territories. The Talikota aftermath marker is at Hampi, the affected city, not at the battlefield.
 
 ## Run on Windows
 
@@ -37,7 +37,7 @@ npm.cmd run build
 npm.cmd run preview
 ```
 
-Build output is in `dist/`. Serve it over HTTP; do not double-click `index.html`. After installation, the app and geographic map run locally without internet. Opening external source links and loading OpenHistoricalMap research previews require internet; the local map and record evidence remain available offline.
+Build output is in `dist/`. Serve it over HTTP; do not double-click `index.html`. After installation, the app and record evidence can run locally without internet. The OHM map, historical tiles and external source links require internet. The old bundled land asset is retained for provenance tests but is no longer displayed.
 
 See [Windows & Codex setup](docs/WINDOWS_SETUP.md) for existing-clone and new-clone instructions.
 

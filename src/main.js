@@ -3,6 +3,7 @@ import "leaflet/dist/leaflet.css";
 import "./style.css";
 import data from "./data/atlas.json";
 import { mapReference } from './map-reference.js';
+import { attachHistoricalMap } from './ohm-map.js';
 import mapLayers from './data/map-layers.json';
 import { BATTLE_KINDS, battlesForYear, regionsForRecord, referencesForRecord, validateMapLayers } from './map-layers.js';
 import {
@@ -53,11 +54,11 @@ $("#app").innerHTML = `
     </section>
     <div class="workspace">
       <section class="map-panel" aria-label="Historical atlas map">
-        <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>History, in place.</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
-        <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Selected record’s region</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
+        <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>OpenHistoricalMap</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
+        <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Highlight selected kingdom</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
         <div id="map" tabindex="-1" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
-        <div id="map-error" role="alert" hidden></div>
-        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Circle: associated place · B: battle · S: siege · A: aftermath<br>Dashed marker: approximate dates · Dashed area: uncertain extent</span><span>Modern coastline · Areas require separate evidence</span></div>
+        <div id="map-error" role="alert" hidden></div><p id="map-selection-status" class="map-selection-status" role="status" aria-live="polite"></p>
+        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Gold / dashed outline: selected OHM kingdom match · Ring: selected place<br>B: battle · S: siege · A: aftermath</span><span>OHM context · 1 January of selected year · Internet required</span></div>
         <div id="map-context" class="map-context" aria-live="polite"></div>
         <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
@@ -73,7 +74,7 @@ $("#app").innerHTML = `
     <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>${data.records.length} cited records are a starting point, not a complete history. Empty years mean research is still needed. Regional overlays require dated map evidence and independent review. Published period maps are linked as context, not exact annual borders.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
   </main>
   <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><button id="footer-sources" class="quiet">${data.sources.length} sources · ${data.records.length} records</button></footer>
-  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. Natural Earth's present-day land outline is geographic context, not a reconstruction of ancient coastlines.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer">Natural Earth, public domain</a>. No remote map tiles or API key required.</p></dialog>
+  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated map context. Highlighted matches are provider features, not independently verified territorial reconstructions. A ruler’s name may not have a matching boundary in the provider.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Internet and WebGL are required; no API key is needed.</p></dialog>
 `;
 
 for (const [value, label] of Object.entries(TYPES))
@@ -136,52 +137,14 @@ const map = L.map("map", {
 }).setView([22, 80], 4);
 L.control.zoom({ position: "topright" }).addTo(map);
 map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
-map.attributionControl.addAttribution(
-  '<a href="https://www.naturalearthdata.com">Natural Earth</a> · modern land',
-);
 const markerLayer = L.layerGroup().addTo(map);
 const regionLayer = L.featureGroup().addTo(map);
 const battleLayer = L.featureGroup().addTo(map);
-const geographicLabels = [
-  ["ARABIAN SEA", [15, 64]],
-  ["BAY OF BENGAL", [14, 89]],
-  ["INDIAN OCEAN", [2, 77]],
-];
-for (const [name, position] of geographicLabels)
-  L.marker(position, {
-    interactive: false,
-    keyboard: false,
-    icon: L.divIcon({
-      className: "geographic-label",
-      html: name,
-      iconSize: [150, 20],
-      iconAnchor: [75, 10],
-    }),
-  }).addTo(map);
-
-fetch(`${import.meta.env.BASE_URL}data/land.geojson`)
-  .then((response) => {
-    if (!response.ok) throw new Error(`Map HTTP ${response.status}`);
-    return response.json();
-  })
-  .then((land) =>
-    L.geoJSON(land, {
-      interactive: false,
-      style: {
-        color: "#a9b6a6",
-        weight: 1,
-        fillColor: "#ebe9da",
-        fillOpacity: 1,
-      },
-    })
-      .addTo(map)
-      .bringToBack(),
-  )
-  .catch(() => {
-    $("#map-error").hidden = false;
-    $("#map-error").textContent =
-      "The geographic background could not load. Historical records and source links remain available. Refresh to try again.";
-  });
+const selectedPlaceLayer = L.layerGroup().addTo(map);
+const historicalMap = attachHistoricalMap(map, {
+  onStatus: message => { $('#map-selection-status').textContent = message; },
+  onError: message => { $('#map-error').hidden = false; $('#map-error').textContent = message; },
+});
 
 function appendMapEvidence(container, item) {
   container.append(element('h4', item.title), element('p', item.dateLabel),
@@ -209,13 +172,20 @@ function appendMapEvidence(container, item) {
 
 function renderRegion(record) {
   regionLayer.clearLayers();
+  selectedPlaceLayer.clearLayers();
+  historicalMap.select(record, state.year, $('#show-regions').checked);
+  if (record?.geometry) {
+    const [lon, lat] = record.geometry.coordinates;
+    const selected = L.circleMarker([lat, lon], { radius: 18, color: '#a94b16', weight: 3, fillColor: '#df9c28', fillOpacity: 0.25 }).addTo(selectedPlaceLayer);
+    selected.bindTooltip(`${record.title} — associated place, not territory`);
+  }
   const context = $('#map-context');
   context.replaceChildren(element('h3', record ? `Regional map · ${record.title}` : 'Regional map'));
   const mapReferences = element('p');
   const reference = mapReference(record, state.year);
   mapReferences.append(link(`OpenHistoricalMap · ${state.year} CE ↗`, reference.sourceUrl));
   context.append(mapReferences, element('p',
-    'Primary mapping reference: OpenHistoricalMap. Opens on 1 January of the selected year, with a 1–2026 CE browsing range. Coverage varies; its features are not independently verified boundaries for this record.'));
+    'OpenHistoricalMap is the main map. Neighbouring kingdoms remain visible. Highlighting uses dated provider name matches, not independently reviewed territorial claims. Read the source before interpreting any extent.'));
 
   if (!record) {
     context.append(element('p', 'Choose a record to inspect its regional evidence.'));
@@ -358,21 +328,7 @@ function renderDetail(record) {
     }
     story.append(biography);
   }
-  const reference = mapReference(record, state.year);
-  const preview = element('section', undefined, 'record-map-preview');
-  preview.setAttribute('aria-label', `Research map for ${record.title}`);
-  preview.append(element('h3', `Map context · ${record.title} · ${state.year} CE`),
-    element('p', reference.scope),
-    element('p', 'OpenHistoricalMap research reference. The view uses 1 January for year navigation, not an exact event date. Coverage varies and the displayed features have not been independently verified for this record.'));
-  const frame = element('iframe');
-  frame.title = `OpenHistoricalMap research view for ${record.title}, ${state.year} CE`;
-  frame.src = reference.embedUrl;
-  frame.loading = 'lazy';
-  frame.referrerPolicy = 'no-referrer';
-  preview.append(frame, element('p', 'Requires internet. If the map is blank or unavailable, open the reference directly.'),
-    link('Explore this date on OpenHistoricalMap ↗', reference.sourceUrl),
-    document.createTextNode(' · '), link('OpenHistoricalMap contributors & licences ↗', 'https://www.openhistoricalmap.org/copyright'));
-  panel.append(preview, story, evidence);
+  panel.append(story, evidence);
 }
 
 function focusRecordMap(record) {
@@ -390,7 +346,10 @@ function selectRecord(record, focus = false) {
     );
   renderDetail(record);
   focusRecordMap(record);
-  if (focus) $("#record-detail").focus({ preventScroll: false });
+  if (focus) {
+    $('#map').scrollIntoView({ block: 'center' });
+    $('#map').focus({ preventScroll: true });
+  }
 }
 
 function render() {

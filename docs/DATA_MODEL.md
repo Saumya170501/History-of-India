@@ -36,7 +36,7 @@ For mixed precision, preserve both ends in the note: Hampi's 1301 is the start o
 
 ## Spatial semantics
 
-The map background is **modern land**, not a historical reconstruction. A site's point is not a city boundary. A capital does not define a kingdom. A monument does not locate its patron throughout a reign. A battle's aftermath may be located at an affected city only if clearly labelled; it must not be passed off as the battlefield.
+The main map is now OpenHistoricalMap with dated provider features. Its underlying land/terrain may be modern; it is not a complete reconstruction for every year. A site's point is not a city boundary. A capital does not define a kingdom. A monument does not locate its patron throughout a reign. A battle's aftermath may be located at an affected city only if clearly labelled; it must not be passed off as the battlefield.
 
 Historical polygons are rejected by the catalogue record validator. Only the separate reviewed regional layer may contain historical polygons. The background polygons are land, separately sourced from Natural Earth; they are never passed through the historical-record renderer.
 
@@ -78,3 +78,11 @@ All region outlines are dashed and labelled reconstructed/uncertain; political a
 ## Battle context
 
 The map's battle layer uses the selected year but ignores catalogue search/type filters, so selecting rulers does not hide contemporary conflict records. Its list is available without using map markers; unlocated events remain timeline-only. A shared year does not establish involvement by the selected ruler, geographic proximity or continuous fighting. The current model does not claim day-level “ongoing” status. `B` means battlefield, `S` siege location, `A` aftermath/affected place. Hampi's 1565 marker remains `A` and is not moved to an invented Talikota battlefield.
+
+## Live provider map
+
+The owner requested replacing the local basemap with OHM and highlighting selections. OHM styles/tiles are displayed live via MapLibre within the existing Leaflet interaction shell; the separate iframe preview is removed. These external features do not populate `regions`, acquire a fabricated reviewer, or become project-verified claims. The zero-reviewed-regions statement still applies to our own dataset.
+
+The whole provider map is filtered to 1 January of the selected year. Selection uses exact, case-insensitive administrative-boundary name matches (provider `name`, `name_en`, `official_name`, `short_name`), admin levels 1–4, a required source start date, and a compatible end date if present. Associations are research candidates from record identities/places, not proof of sovereignty. A matching name can still be ambiguous; the UI identifies it as an OHM name match. Competing Mughal claimants are not automatically assigned the whole empire, and Rajput states are not combined into one territory. Missing matches keep the surrounding map visible with a no-match notice.
+
+Provider data may change. Attribution links to OHM’s feature-specific licensing guidance. Do not export the displayed highlight as a reviewed boundary without the existing provenance and review process.
