@@ -40,3 +40,8 @@ Rudrapurushadatta's interval continues to 315 and has not been truncated to fit 
 Added regression checks for the early-CE batch, approximate date treatment, Kanishka's interval boundaries, competing Satavahana citations, early chiefdom caveats and retention of the 315 endpoint. Existing fixed-count tests for the initial seed were scoped to their original records so new research does not invalidate those boundary checks.
 
 The 1–300 CE queue remains **in progress**. Populating a year with entries is not evidence that every ruler or event in that year has been covered.
+
+
+## Regional map context
+
+The application now links early-CE records to the published map section of the Harvard-hosted chronology, within its 1–300 CE context window. The page attributes the map to Schwartzberg and links to the Digital South Asia Library (`object=058`). That original-map endpoint could not be retrieved during this pass, so no plate-level inspection, georeferencing, reuse permission or independent boundary review is claimed. The reference is a broad period overview, not evidence of a specific ruler's borders in the selected year. No historical boundary geometry has been added.

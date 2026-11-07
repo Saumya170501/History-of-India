@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "regions": [],
+  "references": [
+    {
+      "id": "early-ce-period-map",
+      "title": "Regional context: Satavahana–Saka–Kushan age",
+      "recordIds": [
+        "early-kujula",
+        "early-wima-takto",
+        "early-wima-kadphises",
+        "early-huvishka",
+        "early-vasudeva-i",
+        "early-kanishka-ii",
+        "early-vasishka",
+        "early-kanishka-iii",
+        "early-kanishka-i",
+        "early-sodasa",
+        "early-chastana",
+        "early-rudradaman",
+        "early-rudrasimha",
+        "early-nahapana",
+        "early-gautamiputra",
+        "early-pulumavi",
+        "early-satakarni",
+        "early-yajna",
+        "early-vijaya",
+        "early-canda",
+        "early-mathariputra",
+        "early-camtamula",
+        "early-virapurushadatta",
+        "early-ehuvala",
+        "early-rudrapurushadatta",
+        "early-kushan",
+        "early-satavahana",
+        "early-ikshvaku",
+        "early-western-kshatrapas",
+        "early-chera-chiefdom",
+        "early-chola-chiefdom",
+        "early-pandya-chiefdom",
+        "early-overstrike",
+        "early-sangam",
+        "early-nagarjuna",
+        "early-kushan-icons"
+      ],
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1–300 CE · period overview",
+      "dateNote": "The chronology page groups this map with a broad period. It is not an annual reconstruction or a map of each individual reign.",
+      "uncertaintyNote": "View the original legend and dates on the linked page. Political control, cultural distribution and campaigns must not be treated as equivalent boundaries. No boundary geometry has been extracted or independently reviewed here.",
+      "url": "https://timelinesouthasianhistory.hsites.harvard.edu/south-asia-satavahana-saka-kushan-age-c-1-%E2%80%93-300-ce",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Map section, “Click map to enlarge” and original-map link to Schwartzberg, object 058",
+          "supports": "A published regional map offered as period context only; not verified year-specific boundary coordinates."
+        }
+      ]
+    }
+  ]
+}

@@ -92,6 +92,8 @@ export function validateAtlas(data) {
         errors.push(`${record.id}: missing ${key}`);
     if (!Object.hasOwn(TYPES, record.type))
       errors.push(`${record.id}: invalid record type`);
+    if (record.type === 'battle' && !['battle', 'siege', 'aftermath'].includes(record.eventKind))
+      errors.push(`${record.id}: battle records require an explicit eventKind`);
     if (
       !Number.isInteger(record.startYear) ||
       !Number.isInteger(record.endYear) ||

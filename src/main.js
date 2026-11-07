@@ -2,6 +2,8 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import data from "./data/atlas.json";
+import mapLayers from './data/map-layers.json';
+import { BATTLE_KINDS, battlesForYear, regionsForRecord, referencesForRecord, validateMapLayers } from './map-layers.js';
 import {
   MIN_YEAR,
   MAX_YEAR,
@@ -12,7 +14,7 @@ import {
   validateAtlas,
 } from "./atlas.js";
 
-const errors = validateAtlas(data);
+const errors = [...validateAtlas(data), ...validateMapLayers(mapLayers, data)];
 if (errors.length) throw new Error(errors.join("\n"));
 const sources = new Map(data.sources.map((source) => [source.id, source]));
 let state = stateFromSearch(location.search);
@@ -51,9 +53,12 @@ $("#app").innerHTML = `
     <div class="workspace">
       <section class="map-panel" aria-label="Historical atlas map">
         <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>History, in place.</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
+        <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Selected record’s region</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
         <div id="map" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
         <div id="map-error" role="alert" hidden></div>
-        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Point = sourced location · Dashed = approximate dates</span><span>Modern coastline · No historical borders</span></div>
+        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Circle: associated place · B: battle · S: siege · A: aftermath<br>Dashed marker: approximate dates · Dashed area: uncertain extent</span><span>Modern coastline · Areas require separate evidence</span></div>
+        <div id="map-context" class="map-context" aria-live="polite"></div>
+        <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
       <aside class="record-panel" aria-labelledby="records-heading">
         <div class="record-heading"><span class="eyebrow">IN THE RECORD</span><h2 id="records-heading" tabindex="-1">Explore the evidence</h2><p id="record-count" role="status" aria-live="polite"></p></div>
@@ -64,7 +69,7 @@ $("#app").innerHTML = `
       </aside>
     </div>
     <section id="record-detail" class="detail-panel" aria-labelledby="detail-title" tabindex="-1"></section>
-    <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>${data.records.length} cited records are a starting point, not a complete history. Empty years mean research is still needed. Historical boundaries require separate evidence and are not drawn.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
+    <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>${data.records.length} cited records are a starting point, not a complete history. Empty years mean research is still needed. Regional overlays require dated map evidence and independent review. Published period maps are linked as context, not exact annual borders.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
   </main>
   <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><button id="footer-sources" class="quiet">${data.sources.length} sources · ${data.records.length} records</button></footer>
   <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. Natural Earth's present-day land outline is geographic context, not a reconstruction of ancient coastlines.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer">Natural Earth, public domain</a>. No remote map tiles or API key required.</p></dialog>
@@ -102,6 +107,8 @@ map.attributionControl.addAttribution(
   '<a href="https://www.naturalearthdata.com">Natural Earth</a> · modern land',
 );
 const markerLayer = L.layerGroup().addTo(map);
+const regionLayer = L.featureGroup().addTo(map);
+const battleLayer = L.featureGroup().addTo(map);
 const geographicLabels = [
   ["ARABIAN SEA", [15, 64]],
   ["BAY OF BENGAL", [14, 89]],
@@ -143,7 +150,99 @@ fetch(`${import.meta.env.BASE_URL}data/land.geojson`)
       "The geographic background could not load. Historical records and source links remain available. Refresh to try again.";
   });
 
+function appendMapEvidence(container, item) {
+  container.append(element('h4', item.title), element('p', item.dateLabel),
+    element('p', item.dateNote), element('p', item.uncertaintyNote));
+  if (item.url) container.append(link('Open published regional map ↗', item.url));
+  if (item.kind) {
+    container.append(element('p', item.kind === 'cultural'
+      ? 'Cultural distribution — not a political border.'
+      : 'Reconstructed political extent — not a surveyed border.'));
+    const details = element('details');
+    details.append(element('summary', 'Boundary provenance and review'));
+    for (const key of ['author', 'edition', 'page', 'scale', 'rights', 'digitizationMethod', 'competingInterpretations'])
+      details.append(element('p', `${key}: ${item.provenance[key]}`));
+    const mapSource = sources.get(item.provenance.sourceId);
+    details.append(link(mapSource.title, mapSource.url));
+    details.append(element('p', `Reviewed by ${item.review.reviewer}, ${item.review.date}.`));
+    container.append(details);
+  }
+  for (const citation of item.citations) {
+    const source = sources.get(citation.sourceId);
+    container.append(link(source.title, source.url),
+      element('p', `${citation.locator}. ${citation.supports}`, 'citation-note'));
+  }
+}
+
+function renderRegion(record) {
+  regionLayer.clearLayers();
+  const context = $('#map-context');
+  context.replaceChildren(element('h3', record ? `Regional map · ${record.title}` : 'Regional map'));
+  if (!record) {
+    context.append(element('p', 'Choose a record to inspect its regional evidence.'));
+    return;
+  }
+  const regions = regionsForRecord(mapLayers, record.id, state.year);
+  if (!regions.length) context.append(element('p',
+    `No reviewed boundary is available for this record in ${state.year} CE. A place marker does not show its territory or cultural extent.`));
+  else if (!$('#show-regions').checked) context.append(element('p', 'Regional overlays are hidden. Their evidence is listed below.'));
+  for (const region of regions) {
+    if ($('#show-regions').checked) {
+      const shape = L.geoJSON(region.geometry, { style: {
+        color: region.kind === 'cultural' ? '#76568e' : '#315f82',
+        weight: 2, dashArray: '6 5', fillOpacity: 0.16,
+      }}).addTo(regionLayer);
+      const popup = element('div', undefined, 'map-popup');
+      appendMapEvidence(popup, region);
+      shape.bindPopup(popup);
+    }
+    const evidence = element('details');
+    evidence.append(element('summary', `${region.title} · ${region.dateLabel}`));
+    appendMapEvidence(evidence, region);
+    context.append(evidence);
+  }
+  for (const reference of referencesForRecord(mapLayers, record.id, state.year)) {
+    context.append(link('Open published regional map ↗', reference.url),
+      element('p', `${reference.dateLabel}. Period context only; not the selected ruler’s exact boundary.`));
+  }
+}
+
+function renderBattles() {
+  battleLayer.clearLayers();
+  const list = $('#battle-list');
+  const battles = battlesForYear(data.records, state.year);
+  list.replaceChildren();
+  if (!battles.length) list.append(element('p',
+    `No battle or aftermath records are documented here for ${state.year} CE. This does not mean there was no conflict.`));
+  if (!$('#show-battles').checked) list.append(element('p', 'Battle markers are hidden. Records remain listed below.'));
+  for (const battle of battles) {
+    const openBattle = () => {
+      state.type = 'all'; state.query = ''; selectedId = battle.id;
+      update(); selectRecord(battle, true);
+    };
+    const label = `${battle.title} · ${BATTLE_KINDS[battle.eventKind]} · ${battle.dateLabel}`;
+    const button = element('button', label, 'battle-entry');
+    button.addEventListener('click', openBattle);
+    list.append(button, element('p', battle.geometry ? battle.locationNote : 'Location unverified · timeline only.'));
+    if (!battle.geometry || !$('#show-battles').checked) continue;
+    const [lon, lat] = battle.geometry.coordinates;
+    const marker = L.marker([lat, lon], {
+      title: label, keyboard: true,
+      icon: L.divIcon({ className: 'history-marker',
+        html: `<span class="pin battle-pin ${battle.datePrecision !== 'year' ? 'approximate' : ''}">${{battle:'B',siege:'S',aftermath:'A'}[battle.eventKind]}</span>`,
+        iconSize: [30, 30], iconAnchor: [15, 15] }),
+    }).addTo(battleLayer);
+    const popup = element('div', undefined, 'map-popup');
+    popup.append(element('strong', label), element('p', battle.dateNote), element('p', battle.locationNote));
+    const read = element('button', 'Read event evidence');
+    read.addEventListener('click', () => { openBattle(); map.closePopup(); });
+    popup.append(read);
+    marker.bindPopup(popup);
+  }
+}
+
 function renderDetail(record) {
+  renderRegion(record);
   const panel = $("#record-detail");
   panel.replaceChildren();
   if (!record) {
@@ -169,6 +268,15 @@ function renderDetail(record) {
     element("p", record.summary, "detail-summary"),
     element("span", "Cited · awaiting independent review", "review-badge"),
   );
+  const showMap = element('button', 'View regional map & contemporary battles', 'view-map');
+  showMap.addEventListener('click', () => {
+    if (regionLayer.getLayers().length) map.fitBounds(regionLayer.getBounds(), { maxZoom: 6, animate: false });
+    else if (record.geometry) map.setView([record.geometry.coordinates[1], record.geometry.coordinates[0]], 5, { animate: false });
+    else map.setView([22, 80], 4, { animate: false });
+    $('#map-context').tabIndex = -1;
+    $('#map-context').focus();
+  });
+  story.append(showMap);
   const evidence = element("div", undefined, "detail-evidence");
   evidence.append(
     element("h3", record.dateLabel),
@@ -188,6 +296,12 @@ function renderDetail(record) {
       ),
     );
   }
+  evidence.append(element('h3', 'Regional map evidence'));
+  const regionalEvidence = [...regionsForRecord(mapLayers, record.id, state.year),
+    ...referencesForRecord(mapLayers, record.id, state.year)];
+  if (!regionalEvidence.length) evidence.append(element('p',
+    'A dated, sourced regional map is not yet available for this selection. No boundary has been inferred from this record’s place or reign dates.'));
+  for (const item of regionalEvidence) appendMapEvidence(evidence, item);
   panel.append(story, evidence);
 }
 
@@ -257,6 +371,8 @@ function render() {
       button.append(element('span', 'Location pending · timeline only', 'card-date'));
       continue;
     }
+    // Battle symbols belong to their own layer, including when catalogue filters hide them.
+    if (record.type === 'battle') continue;
     const key = record.geometry.coordinates.join(",");
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(record);
@@ -323,6 +439,7 @@ function render() {
     );
     marker.bindPopup(popup);
   }
+  renderBattles();
   renderDetail(matches.find((record) => record.id === selectedId));
 }
 
@@ -381,6 +498,8 @@ $("#browse-records").addEventListener("change", (event) => {
   event.target.value = "";
 });
 $("#reset-map").addEventListener("click", () => map.setView([22, 80], 4));
+$('#show-regions').addEventListener('change', () => renderRegion(data.records.find(record => record.id === selectedId)));
+$('#show-battles').addEventListener('change', renderBattles);
 for (const id of ["#about-button", "#footer-sources"])
   $(id).addEventListener("click", () => $("#about-dialog").showModal());
 $("#close-about").addEventListener("click", () => $("#about-dialog").close());

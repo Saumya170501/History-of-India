@@ -294,6 +294,20 @@ input[type="range"] {
   display: flex;
   flex-direction: column;
 }
+.map-controls { margin: 0; padding: 12px 20px; border: 0; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+.map-controls legend { padding-top: 12px; font-weight: 600; }
+.map-controls label { display: flex; align-items: center; gap: 6px; }
+.map-controls input { accent-color: var(--green); }
+.map-context, .battle-context { padding: 18px 20px; border-top: 1px solid var(--border); font-size: 12px; }
+.map-context h3, .battle-context h3 { font-size: 15px; margin-bottom: 10px; }
+.map-context p, .battle-context p { margin: 8px 0; color: var(--muted); }
+.map-context summary { cursor: pointer; margin: 10px 0; }
+.map-context h4, .detail-evidence h4 { margin: 16px 0 8px; }
+.battle-entry, .view-map { display: block; text-align: left; background: #efeee3; border: 1px solid var(--border); border-radius: 4px; padding: 10px 12px; font-size: 12px; }
+.battle-entry { width: 100%; }
+.view-map { margin-top: 18px; }
+.pin.battle-pin { border-radius: 5px; background: #8c3c31; }
+.pin.battle-pin.approximate { background: #fffaf0; color: #8c3c31; border-color: #8c3c31; }
 .map-heading {
   padding: 20px 24px;
   display: flex;

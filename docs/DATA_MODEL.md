@@ -1,6 +1,6 @@
 # Historical data and research rules
 
-`src/data/atlas.json` is the source of truth. The same validator runs before production builds and during tests. `schemaVersion` is `1`.
+`src/data/atlas.json` is the source of truth. Record and map-layer validators run before production builds and during tests. Regional map evidence lives separately in `src/data/map-layers.json`. `schemaVersion` is `1`.
 
 ## Sources
 
@@ -19,6 +19,7 @@ Each source contains a stable `id`, `title`, `publisher`, HTTPS `url`, and `acce
 - `locationNote`: what the point identifies, including rounding, site-level precision and whether it is a capital, affected city or associated monument.
 - `locationSourceId`: source supporting that coordinate or location association.
 - `citations`: one or more `{ sourceId, locator, supports }` objects. `locator` identifies a section, page, inscription or catalogue entry; `supports` identifies the actual claim supported.
+- `eventKind`: required for battle records: `battle`, `siege`, or `aftermath`. A point for an affected city must use `aftermath`, never `battle`.
 - `reviewStatus`: `cited` for this prototype. This means a citation is attached, not that an independent historian has reviewed it. Add a separate reviewer/date workflow before enabling a stronger status.
 
 ## Timeline-only records
@@ -35,7 +36,7 @@ For mixed precision, preserve both ends in the note: Hampi's 1301 is the start o
 
 The map background is **modern land**, not a historical reconstruction. A site's point is not a city boundary. A capital does not define a kingdom. A monument does not locate its patron throughout a reign. A battle's aftermath may be located at an affected city only if clearly labelled; it must not be passed off as the battlefield.
 
-Historical polygons are rejected by the current record validator. The background polygons are land, separately sourced from Natural Earth; they are never passed through the historical-record renderer.
+Historical polygons are rejected by the catalogue record validator. Only the separate reviewed regional layer may contain historical polygons. The background polygons are land, separately sourced from Natural Earth; they are never passed through the historical-record renderer.
 
 Before enabling historical territories, require dated source maps, scale, author, edition/page, reuse rights, digitization method, geographic uncertainty, competing interpretations and an independent reviewer. Never generate shapes from memory, fill a modern state/country outline, or interpolate borders between years without explicit evidence and an appropriate uncertainty model.
 
@@ -51,3 +52,27 @@ Before enabling historical territories, require dated source maps, scale, author
 8. Request independent review before presenting the claim as reviewed.
 
 Validation enforces structure and source references, not historical accuracy, geographic precision, copyright permission or the reliability of a source.
+
+
+## Regional map layers
+
+`src/data/map-layers.json` has `schemaVersion: 1`, `regions` and `references` arrays. Neither a ruler's reign window nor a civilization's period is sufficient evidence of territorial extent. Select layers only when both their explicit record association and inclusive date window match. Never interpolate across gaps. A cultural distribution must not be labelled as political sovereignty.
+
+Every layer requires a unique `id`, `title`, explicit `recordIds`, `startYear`, `endYear`, `datePrecision`, `dateLabel`, `dateNote`, `uncertaintyNote` and `citations` with the same source/locator/supports structure as records. Sources resolve against the atlas source registry. Associated records must exist and have overlapping date windows.
+
+`references` also require an HTTPS `url`. They link to published maps as context, not digitized or independently reviewed boundaries. The first reference links to the map section of the Harvard-hosted early-CE chronology. It is a period overview, not a verified reconstruction for each ruler and year. Original-map retrieval failed during this pass; no original plate inspection or reuse permission is claimed. No map image was copied.
+
+`regions` require:
+
+- `kind`: `political` or `cultural`.
+- `geometry`: GeoJSON `Polygon` or `MultiPolygon`, with closed, nondegenerate rings and valid longitude/latitude coordinates.
+- `provenance`: `sourceId`, `author`, `edition`, `page`, `scale`, `rights`, `digitizationMethod` and `competingInterpretations`. Record actual map evidence and reuse terms, not placeholders.
+- `review`: `status: reviewed`, a real independent `reviewer` and `date`. Never fill these fields merely to make validation pass.
+
+The validator checks structure, not whether a reviewer exists, whether a license permits reuse or whether a polygon faithfully represents scholarship. Human review must also check topology, georeferencing, holes, scale, uncertainty and historical interpretation. Keep unreviewed candidates outside the published layer file. There are currently **zero reviewed regional shapes**. Synthetic coordinates appear only in tests.
+
+All region outlines are dashed and labelled reconstructed/uncertain; political and cultural extents have different colors. The source, dates, uncertainty, digitization and review details remain accessible in map context and record details. Toggle-off hides geometry, not evidence.
+
+## Battle context
+
+The map's battle layer uses the selected year but ignores catalogue search/type filters, so selecting rulers does not hide contemporary conflict records. Its list is available without using map markers; unlocated events remain timeline-only. A shared year does not establish involvement by the selected ruler, geographic proximity or continuous fighting. The current model does not claim day-level “ongoing” status. `B` means battlefield, `S` siege location, `A` aftermath/affected place. Hampi's 1565 marker remains `A` and is not moved to an invented Talikota battlefield.

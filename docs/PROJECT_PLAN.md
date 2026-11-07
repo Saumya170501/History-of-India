@@ -32,7 +32,7 @@ Acceptance: users can follow a person, polity or cultural tradition across its s
 
 ## 4. Historical boundary research — gated on evidence
 
-Select licensed scholarly maps or datasets and record provenance, edition/page, date validity and precision. Compare competing reconstructions. Design a boundary-specific data model and review process before adding polygon rendering. Show uncertain or disputed areas using an explicitly explained visual language. Do not infer a border merely because two neighbouring dates have geometry.
+Select licensed scholarly maps or datasets and record provenance, edition/page, date validity and precision. Compare competing reconstructions. The boundary-specific data model and gated rendering now exist in `src/map-layers.js`; published overlays still require independent review. The initial collection has no reviewed shapes. Published period-map references and a separate contemporary battle layer are available. Show uncertain or disputed areas using an explicitly explained visual language. Do not infer a border merely because two neighbouring dates have geometry.
 
 Acceptance: every published historical shape has traceable evidence and review, and no present-day political boundary is silently reused as ancient territory.
 

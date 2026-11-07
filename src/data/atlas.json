@@ -265,7 +265,8 @@
           "supports": "Battle year and consequences for Hampi; the affected city's location only."
         }
       ],
-      "reviewStatus": "cited"
+      "reviewStatus": "cited",
+      "eventKind": "aftermath"
     },
     {
       "id": "taj-construction",
