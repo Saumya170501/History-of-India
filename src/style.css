@@ -409,7 +409,8 @@ input[type="search"] {
 }
 #record-list {
   padding: 0 15px;
-  max-height: 270px;
+  min-height: 270px;
+  max-height: 900px;
   overflow: auto;
   flex: 1;
 }
@@ -454,7 +455,7 @@ input[type="search"] {
 }
 .browse {
   padding: 17px 23px 20px;
-  margin-top: auto;
+  margin-top: 0;
 }
 #browse-menu {
   border: 1px solid var(--border);
@@ -882,7 +883,7 @@ dialog .small {
     margin-right: 20px;
   }
   #record-list {
-    max-height: 360px;
+    max-height: 60vh;
   }
   .detail-panel {
     grid-template-columns: 1fr;
@@ -942,3 +943,5 @@ dialog .small {
 }
 
 .map-selection-status { margin: 0; padding: 14px 24px; background: #fff6dc; font-size: 13px; border-top: 1px solid var(--border); }
+
+#map-error button { margin-left: 12px; text-decoration: underline; }

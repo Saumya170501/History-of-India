@@ -65,9 +65,10 @@ $("#app").innerHTML = `
       <aside class="record-panel" aria-labelledby="records-heading">
         <div class="record-heading"><span class="eyebrow">IN THE RECORD</span><h2 id="records-heading" tabindex="-1">Explore the evidence</h2><p id="record-count" role="status" aria-live="polite"></p></div>
         <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Search people, places, Mughal, Rajput…" autocomplete="off"></div>
+        <div class="browse"><details id="browse-menu"><summary>Jump to a record…</summary><div id="browse-groups" class="browse-groups"></div></details></div>
         <p class="window-note">Date windows may be approximate. A match is not proof of an event in this exact year. Mughal and Rajput coverage is incomplete; some profiles contain chronology only.</p>
         <div id="record-list"></div>
-        <div class="browse"><details id="browse-menu"><summary>Jump to a record…</summary><div id="browse-groups" class="browse-groups"></div></details></div>
+
       </aside>
     </div>
     <section id="record-detail" class="detail-panel" aria-labelledby="detail-title" tabindex="-1"></section>
@@ -143,7 +144,17 @@ const battleLayer = L.featureGroup().addTo(map);
 const selectedPlaceLayer = L.layerGroup().addTo(map);
 const historicalMap = attachHistoricalMap(map, {
   onStatus: message => { $('#map-selection-status').textContent = message; },
-  onError: message => { $('#map-error').hidden = false; $('#map-error').textContent = message; },
+  onError: message => {
+    const notice = $('#map-error');
+    notice.hidden = !message;
+    notice.replaceChildren();
+    if (message) {
+      notice.append(element('span', message));
+      const retry = element('button', 'Retry map', 'quiet');
+      retry.addEventListener('click', () => historicalMap.retry());
+      notice.append(retry);
+    }
+  },
 });
 
 function appendMapEvidence(container, item) {

@@ -1,11 +1,13 @@
 import { maplibreGL } from '@maplibre/maplibre-gl-leaflet';
-import { filterByDate } from '@openhistoricalmap/maplibre-gl-dates';
+import { filterByDate, constrainStyleToDateRange } from '@openhistoricalmap/maplibre-gl-dates';
 import style from '@openhistoricalmap/map-styles/dist/historical/historical.json';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import { createResourceStatus } from './map-resource-status.js';
 import { kingdomNames, selectionFilter } from './ohm-selection.js';
 
 export function attachHistoricalMap(map, { onStatus, onError }) {
-  let gl, ready = false, selection = null, year = 1, enabled = true, resourceError = false;
+  let gl, ready = false, selection = null, year = 1, enabled = true;
+  const resources = createResourceStatus();
   const layerIds = ['selected-ohm-fill', 'selected-ohm-outline'];
   function updateStatus() {
     if (!ready) return;
@@ -17,7 +19,7 @@ export function attachHistoricalMap(map, { onStatus, onError }) {
       : `No kingdom mapping is established for ${selection.title}. The surrounding historical map remains visible.`);
     if (!gl.isSourceLoaded('ohm-selected-boundaries')) return onStatus(`Loading OHM boundary matches for ${names[0]}…`);
     const matches = gl.querySourceFeatures('ohm-selected-boundaries', { sourceLayer: 'boundaries', filter: selectionFilter(selection, year) });
-    if (!matches.length && resourceError) return onStatus(`Boundary matching for ${names[0]} could not be confirmed because OHM resources failed to load. Try the direct OHM link below.`);
+    if (!matches.length && resources.boundaryFailed()) return onStatus(`Boundary matching for ${names[0]} could not be confirmed because OHM resources failed to load. Try the direct OHM link below.`);
     onStatus(matches.length
       ? `Highlighted OHM name match: ${names[0]} · 1 January ${year} CE. This is provider data, not an independently verified extent of ${selection.title}.`
       : `No dated OHM boundary matching ${names[0]} is available in this view for ${year} CE. No territory has been invented; neighbouring features remain visible.`);
@@ -34,8 +36,15 @@ export function attachHistoricalMap(map, { onStatus, onError }) {
   try {
     const layer = maplibreGL({ style: structuredClone(style), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a>' }, interactive: false }).addTo(map);
     gl = layer.getMaplibreMap();
-    gl.on('error', () => { resourceError = true; onError('OpenHistoricalMap could not load some map resources. Check your internet connection, or open the OHM link below. Record evidence remains available.'); updateStatus(); });
-    gl.once('style.load', () => {
+    gl.on('error', event => {
+      resources.fail(event); onError(resources.message()); updateStatus();
+    });
+    gl.on('sourcedata', event => {
+      resources.recover(event); onError(resources.message());
+    });
+    gl.on('style.load', () => {
+      // A replacement style needs new date constraints even when global date state survives.
+      if (Object.hasOwn(gl.getGlobalState(), 'maplibre_gl_dates__startISODate')) constrainStyleToDateRange(gl);
       // Constrain the provider's neighbouring features before showing its canvas.
       filterByDate(gl, `${String(year).padStart(4, '0')}-01-01`);
       gl.addSource('ohm-selected-boundaries', {
@@ -56,6 +65,13 @@ export function attachHistoricalMap(map, { onStatus, onError }) {
     onError('OpenHistoricalMap needs WebGL and internet access. Open the OHM link below if this browser cannot display the map.');
   }
   return {
+    retry() {
+      if (!gl) { onError('This browser could not initialize WebGL. Try another browser or open the direct OHM link.'); return; }
+      ready = false;
+      resources.reset(); onError(''); onStatus('Retrying OpenHistoricalMap…');
+      gl.getCanvas().style.visibility = 'hidden';
+      gl.setStyle(structuredClone(style), { diff: false });
+    },
     select(record, selectedYear, show = true) {
       selection = record; year = selectedYear; enabled = show;
       if (!ready) onStatus('Loading OpenHistoricalMap…');

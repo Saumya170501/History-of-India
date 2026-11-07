@@ -44,3 +44,9 @@ Boundary highlighting uses OHM's published TileJSON https://vtiles.openhistorica
 Live OHM tile hosts were blocked by the development environment's outbound policy during this pass. Official documentation/schema and npm style code were inspected, and the filters are tested with MapLibre's expression evaluator. This does not verify actual Mughal or Rajput coverage on the live service. The interface reports unavailable resources and retains a direct OHM link. Full live visual verification remains pending in an environment that permits these hosts.
 
 Validation: 26 automated tests passed. A browser check with synthetic, test-only vector tiles exercised a visible matching highlight, the highlight toggle, clearing the old selection, date changes and the absence of duplicate iframes, with no page errors. A separate blocked-network browser check verified that record selection and the error message still work. Synthetic shapes were never added to project data or production resources.
+
+## Selection and loading repair
+
+Huvishka and the other ruler records explicitly identified as Kushan in their cited `place` field now search for Kushan/Kushana Empire names. This is an association lookup, not new geometry. Cultural records mentioning Kushan are not treated as kingdoms.
+
+Failures are tracked by source and tile, so a terrain or label failure does not invalidate successfully loaded kingdom boundaries. A matching successful tile/metadata event clears its own failure; Retry map rebuilds the provider style while preserving the selected record and date. Incomplete live provider coverage remains explicit. Validation: 29 tests plus browser checks of retry, selection, and the expanded sidebar. Live provider availability is still subject to the external service/network.

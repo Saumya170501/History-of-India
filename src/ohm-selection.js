@@ -11,6 +11,7 @@ const regionalNames = [
 ];
 export function kingdomNames(record) {
   if (!record || !['ruler', 'kingdom'].includes(record.type)) return [];
+  if (record.type === 'ruler' && /^Kushan(?:;|$)/.test(record.place || '')) return ['Kushan Empire', 'Kushana Empire', 'Kushan', 'Kushana'];
   if (mughalReigns.has(record.id)) return ['Mughal Empire', 'Mogul Empire', 'Mughal'];
   if (record.tags?.includes('Rajput')) {
     // More specific names first where a description mentions Amber/Jaipur together.

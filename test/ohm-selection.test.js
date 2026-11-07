@@ -37,3 +37,11 @@ test('switching to an unmapped selection cannot retain a previous boundary highl
   assert.equal(accepts('rajput-jodha', 1576, feature), false);
   assert.equal(accepts('haldighati-1576', 1576, feature), false);
 });
+
+test('Huvishka and cited Kushan rulers resolve to Kushan boundaries without mapping cultural records as kingdoms', () => {
+  const feature = { type: 'administrative', admin_level: 2, name_en: 'Kushan Empire', start_decdate: 100, end_decdate: 200 };
+  assert.equal(accepts('early-huvishka', 150, feature), true);
+  assert.equal(accepts('early-huvishka', 250, feature), false);
+  assert.ok(kingdomNames(record('early-kanishka-i')).includes('Kushan Empire'));
+  assert.deepEqual(kingdomNames(record('early-kushan-icons')), []);
+});
