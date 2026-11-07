@@ -1,11 +1,69 @@
 {
   "schemaVersion": 1,
   "sources": [
-    { "id": "unesco-sanchi", "title": "Buddhist Monuments at Sanchi", "publisher": "UNESCO World Heritage Centre", "url": "https://whc.unesco.org/en/list/524/", "accessed": "2026-11-07" },
-    { "id": "unesco-ajanta", "title": "Ajanta Caves", "publisher": "UNESCO World Heritage Centre", "url": "https://whc.unesco.org/en/list/242/", "accessed": "2026-11-07" },
-    { "id": "unesco-nalanda", "title": "Archaeological Site of Nalanda Mahavihara", "publisher": "UNESCO World Heritage Centre", "url": "https://whc.unesco.org/en/list/1502/", "accessed": "2026-11-07" },
-    { "id": "unesco-hampi", "title": "Group of Monuments at Hampi", "publisher": "UNESCO World Heritage Centre", "url": "https://whc.unesco.org/en/list/241/", "accessed": "2026-11-07" },
-    { "id": "unesco-taj", "title": "Taj Mahal", "publisher": "UNESCO World Heritage Centre", "url": "https://whc.unesco.org/en/list/252/", "accessed": "2026-11-07" }
+    {
+      "id": "unesco-sanchi",
+      "title": "Buddhist Monuments at Sanchi",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/524/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-ajanta",
+      "title": "Ajanta Caves",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/242/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-nalanda",
+      "title": "Archaeological Site of Nalanda Mahavihara",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/1502/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-hampi",
+      "title": "Group of Monuments at Hampi",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/241/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-taj",
+      "title": "Taj Mahal",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/252/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-south",
+      "title": "South Asia: South, 1000–1400 CE",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/ht/07/sss",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-rulers",
+      "title": "Sultanate and Mughal dynastic rulers",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/hd/ssar/hd_ssar.htm",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-chola",
+      "title": "Great Living Chola Temples",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/250/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "ignca-chola",
+      "title": "Gangaikondacholapuram: Later history",
+      "publisher": "IGNCA digital archive",
+      "url": "https://ignca.gov.in/Asi_data/57366.pdf",
+      "accessed": "2026-11-07"
+    }
   ],
   "records": [
     {
@@ -19,10 +77,22 @@
       "dateLabel": "1st century CE",
       "dateNote": "The source assigns ornamentation to the first century, without an exact year. The 1–100 window means the work may fall within this period; it does not establish that it occurred in 1 CE or in every year shown.",
       "summary": "Sanchi's four gateways received sculptural ornamentation during the Satavahana period.",
-      "geometry": { "type": "Point", "coordinates": [77.73972, 23.47944] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.73972,
+          23.47944
+        ]
+      },
       "locationNote": "UNESCO's reference point for the Sanchi monument group, not a surveyed location for an individual gateway.",
       "locationSourceId": "unesco-sanchi",
-      "citations": [{ "sourceId": "unesco-sanchi", "locator": "Outstanding Universal Value → Brief synthesis, paragraph on Stupa 1", "supports": "Gateway ornamentation and first-century dating. Property coordinates supply the site reference point." }],
+      "citations": [
+        {
+          "sourceId": "unesco-sanchi",
+          "locator": "Outstanding Universal Value → Brief synthesis, paragraph on Stupa 1",
+          "supports": "Gateway ornamentation and first-century dating. Property coordinates supply the site reference point."
+        }
+      ],
       "reviewStatus": "cited"
     },
     {
@@ -36,10 +106,22 @@
       "dateLabel": "5th–6th centuries CE",
       "dateNote": "This broad window follows UNESCO's introductory description. It is not a continuous building schedule or a statement of political control.",
       "summary": "A later phase added decorated Buddhist caves to Ajanta's earlier cave group.",
-      "geometry": { "type": "Point", "coordinates": [75.70025, 20.553111] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70025,
+          20.553111
+        ]
+      },
       "locationNote": "UNESCO's reference point for the Ajanta cave group.",
       "locationSourceId": "unesco-ajanta",
-      "citations": [{ "sourceId": "unesco-ajanta", "locator": "Introductory description; property coordinates", "supports": "The later cave phase and its fifth- to sixth-century date window; site location." }],
+      "citations": [
+        {
+          "sourceId": "unesco-ajanta",
+          "locator": "Introductory description; property coordinates",
+          "supports": "The later cave phase and its fifth- to sixth-century date window; site location."
+        }
+      ],
       "reviewStatus": "cited"
     },
     {
@@ -53,10 +135,22 @@
       "dateLabel": "5th–13th centuries CE",
       "dateNote": "The monastic and scholastic institution is dated by century in the synthesis. These filtering endpoints are not exact foundation or abandonment years. Earlier archaeological remains are a separate claim.",
       "summary": "Nalanda developed as a monastic institution and a centre of scholarship, with an enduring influence on Buddhist education.",
-      "geometry": { "type": "Point", "coordinates": [85.443889, 25.136667] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.443889,
+          25.136667
+        ]
+      },
       "locationNote": "UNESCO's reference point for the archaeological property; no cultural or political extent is implied.",
       "locationSourceId": "unesco-nalanda",
-      "citations": [{ "sourceId": "unesco-nalanda", "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; property coordinates", "supports": "Institutional chronology, educational role and site reference point." }],
+      "citations": [
+        {
+          "sourceId": "unesco-nalanda",
+          "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; property coordinates",
+          "supports": "Institutional chronology, educational role and site reference point."
+        }
+      ],
       "reviewStatus": "cited"
     },
     {
@@ -70,10 +164,22 @@
       "dateLabel": "14th century–1565 CE",
       "dateNote": "1301 is the start of the source's century-wide window, not a claimed foundation year. 1565 marks the cited destruction of the city, not the end of the dynasty or all successor rule.",
       "summary": "Hampi preserves the capital city of Vijayanagara, with royal, sacred and urban complexes.",
-      "geometry": { "type": "Point", "coordinates": [76.47167, 15.31444] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.47167,
+          15.31444
+        ]
+      },
       "locationNote": "A capital-site reference point from UNESCO. This marker is not the extent of the Vijayanagara kingdom.",
       "locationSourceId": "unesco-hampi",
-      "citations": [{ "sourceId": "unesco-hampi", "locator": "Description; Outstanding Universal Value → Brief synthesis; property coordinates", "supports": "Capital identity, broad period, destruction year and site location." }],
+      "citations": [
+        {
+          "sourceId": "unesco-hampi",
+          "locator": "Description; Outstanding Universal Value → Brief synthesis; property coordinates",
+          "supports": "Capital identity, broad period, destruction year and site location."
+        }
+      ],
       "reviewStatus": "cited"
     },
     {
@@ -87,10 +193,22 @@
       "dateLabel": "1565 CE",
       "dateNote": "The source gives the year. The record concerns the battle's consequences for Hampi, not its exact day or battlefield location.",
       "summary": "The Battle of Talikota led to extensive destruction at Hampi.",
-      "geometry": { "type": "Point", "coordinates": [76.47167, 15.31444] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.47167,
+          15.31444
+        ]
+      },
       "locationNote": "Marker placed at the affected city of Hampi, not at the battlefield of Talikota. UNESCO supplies the Hampi reference point.",
       "locationSourceId": "unesco-hampi",
-      "citations": [{ "sourceId": "unesco-hampi", "locator": "Outstanding Universal Value → Brief synthesis, paragraph on the city's destruction; property coordinates", "supports": "Battle year and consequences for Hampi; the affected city's location only." }],
+      "citations": [
+        {
+          "sourceId": "unesco-hampi",
+          "locator": "Outstanding Universal Value → Brief synthesis, paragraph on the city's destruction; property coordinates",
+          "supports": "Battle year and consequences for Hampi; the affected city's location only."
+        }
+      ],
       "reviewStatus": "cited"
     },
     {
@@ -104,10 +222,22 @@
       "dateLabel": "1632–1648 CE (source variation)",
       "dateNote": "The detailed UNESCO synthesis gives 1632–1648 for the mausoleum and 1653 for later additions. Its introduction instead starts in 1631. This record follows the synthesis and preserves that discrepancy for review.",
       "summary": "Shah Jahan commissioned the Taj Mahal in memory of Mumtaz Mahal.",
-      "geometry": { "type": "Point", "coordinates": [78.04222, 27.17417] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.04222,
+          27.17417
+        ]
+      },
       "locationNote": "UNESCO's property reference point, rounded to five decimal places.",
       "locationSourceId": "unesco-taj",
-      "citations": [{ "sourceId": "unesco-taj", "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; compare introductory description", "supports": "Patron, purpose and construction chronology, with an internal start-year discrepancy; property coordinates provide location." }],
+      "citations": [
+        {
+          "sourceId": "unesco-taj",
+          "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; compare introductory description",
+          "supports": "Patron, purpose and construction chronology, with an internal start-year discrepancy; property coordinates provide location."
+        }
+      ],
       "reviewStatus": "cited"
     },
     {
@@ -121,10 +251,579 @@
       "dateLabel": "1632–1648 CE (construction window)",
       "dateNote": "This is a patronage record tied to construction, not Shah Jahan's lifespan or reign. The same source differs between 1631 and 1632 for the start; the detailed synthesis is used here.",
       "summary": "The Mughal emperor's architectural patronage is represented here by the Taj Mahal project.",
-      "geometry": { "type": "Point", "coordinates": [78.04222, 27.17417] },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.04222,
+          27.17417
+        ]
+      },
       "locationNote": "The commissioned monument's reference point, not the ruler's location, capital boundary or imperial territory.",
       "locationSourceId": "unesco-taj",
-      "citations": [{ "sourceId": "unesco-taj", "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; property coordinates", "supports": "Shah Jahan's patronage and its association with the Taj Mahal construction window and site." }],
+      "citations": [
+        {
+          "sourceId": "unesco-taj",
+          "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; property coordinates",
+          "supports": "Shah Jahan's patronage and its association with the Taj Mahal construction window and site."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "aybak",
+      "title": "Qutb al-Din Aybak",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1206,
+      "endYear": 1210,
+      "datePrecision": "year",
+      "dateLabel": "1206–1210 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "aram",
+      "title": "Aram Shah",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1210,
+      "endYear": 1211,
+      "datePrecision": "year",
+      "dateLabel": "1210–1211 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "iltutmish",
+      "title": "Iltutmish",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1211,
+      "endYear": 1236,
+      "datePrecision": "year",
+      "dateLabel": "1211–1236 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "raziya",
+      "title": "Radiyya Begum (Raziya)",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1236,
+      "endYear": 1240,
+      "datePrecision": "year",
+      "dateLabel": "1236–1240 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "bahram",
+      "title": "Bahram Shah",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1240,
+      "endYear": 1242,
+      "datePrecision": "year",
+      "dateLabel": "1240–1242 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "bahlul",
+      "title": "Bahlul Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1451,
+      "endYear": 1489,
+      "datePrecision": "year",
+      "dateLabel": "1451–1489 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Lodi → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "sikandar",
+      "title": "Sikandar Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1489,
+      "endYear": 1517,
+      "datePrecision": "year",
+      "dateLabel": "1489–1517 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Lodi → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "ibrahim",
+      "title": "Ibrahim Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1517,
+      "endYear": 1526,
+      "datePrecision": "year",
+      "dateLabel": "1517–1526 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Lodi → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "babur",
+      "title": "Babur",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1526,
+      "endYear": 1530,
+      "datePrecision": "year",
+      "dateLabel": "1526–1530 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "humayun-first",
+      "title": "Humayun: first reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1530,
+      "endYear": 1540,
+      "datePrecision": "year",
+      "dateLabel": "1530–1540 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "humayun-second",
+      "title": "Humayun: restored reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1555,
+      "endYear": 1556,
+      "datePrecision": "year",
+      "dateLabel": "1555–1556 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "akbar",
+      "title": "Akbar",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1556,
+      "endYear": 1605,
+      "datePrecision": "year",
+      "dateLabel": "1556–1605 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "jahangir",
+      "title": "Jahangir",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1605,
+      "endYear": 1627,
+      "datePrecision": "year",
+      "dateLabel": "1605–1627 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "shah-jahan-reign",
+      "title": "Shah Jahan: reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1628,
+      "endYear": 1658,
+      "datePrecision": "year",
+      "dateLabel": "1628–1658 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "chola-dynasty",
+      "title": "Imperial Chola chronology",
+      "type": "kingdom",
+      "place": "Tamil region",
+      "startYear": 880,
+      "endYear": 1279,
+      "datePrecision": "approximate",
+      "dateLabel": "880–1279 CE",
+      "dateNote": "This source’s overview dates are used for discovery, not as a claim of unchanged rule or borders.",
+      "summary": "Regional dynastic chronology. Territorial changes require separate research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Timeline → regional dynasties",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "hoysala-dynasty",
+      "title": "Hoysala dynasty",
+      "type": "kingdom",
+      "place": "Southern Deccan",
+      "startYear": 1022,
+      "endYear": 1346,
+      "datePrecision": "approximate",
+      "dateLabel": "1022–1346 CE",
+      "dateNote": "This source’s overview dates are used for discovery, not as a claim of unchanged rule or borders.",
+      "summary": "Regional dynastic chronology. Territorial changes require separate research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Timeline → regional dynasties",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "bahmanid-dynasty",
+      "title": "Bahmanid dynasty",
+      "type": "kingdom",
+      "place": "Northern Deccan",
+      "startYear": 1347,
+      "endYear": 1528,
+      "datePrecision": "approximate",
+      "dateLabel": "1347–1528 CE",
+      "dateNote": "This source’s overview dates are used for discovery, not as a claim of unchanged rule or borders.",
+      "summary": "Regional dynastic chronology. Territorial changes require separate research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Timeline → regional dynasties",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "rajendra-reign",
+      "title": "Rajendra I: rule",
+      "type": "ruler",
+      "place": "Chola",
+      "startYear": 1014,
+      "endYear": 1044,
+      "datePrecision": "approximate",
+      "dateLabel": "1014–1044 CE",
+      "dateNote": "The Met dates this reign approximately 1014–1044; UNESCO gives 1012–1044. Accession and co-regency chronology needs specialist review.",
+      "summary": "Chola ruler associated with major military expeditions.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Key Events → ca. 1014–1044",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        },
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Brief synthesis → Gangaikondacholapuram temple",
+          "supports": "Alternative 1012 start for Rajendra I."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "chola-bronzes",
+      "title": "Chola bronze sculpture",
+      "type": "culture",
+      "place": "Chola cultural context",
+      "startYear": 1000,
+      "endYear": 1300,
+      "datePrecision": "approximate",
+      "dateLabel": "1000–1300 CE",
+      "dateNote": "Approximate art-historical period; not the date of every surviving bronze.",
+      "summary": "Metal images of Hindu deities, including Shiva as Nataraja, form a major artistic tradition.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Key Events → ca. 1000–1300",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "rajaraja-temple",
+      "title": "Rajaraja I: temple patronage",
+      "type": "ruler",
+      "place": "Thanjavur",
+      "startYear": 1003,
+      "endYear": 1010,
+      "datePrecision": "approximate",
+      "dateLabel": "1003–1010 CE",
+      "dateNote": "Construction is tentatively placed in 1003–1004, with consecration in 1009–1010; this is patronage, not a full reign.",
+      "summary": "Rajaraja sponsored the Brihadisvara temple.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Brief synthesis → Thanjavur",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "thanjavur-consecration",
+      "title": "Brihadisvara consecration",
+      "type": "site",
+      "place": "Thanjavur",
+      "startYear": 1009,
+      "endYear": 1010,
+      "datePrecision": "approximate",
+      "dateLabel": "1009–1010 CE",
+      "dateNote": "The source supplies a two-year conversion of the twenty-fifth regnal year.",
+      "summary": "The temple was consecrated by its royal patron.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Brief synthesis → Thanjavur",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "gangaikonda-temple",
+      "title": "Rajendra’s Shiva temple",
+      "type": "site",
+      "place": "Gangaikondacholapuram",
+      "startYear": 1035,
+      "endYear": 1035,
+      "datePrecision": "year",
+      "dateLabel": "1035–1035 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Temple completion is dated to 1035.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Introductory description",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "rajaraja-ii",
+      "title": "Rajaraja II: temple patron",
+      "type": "ruler",
+      "place": "Darasuram",
+      "startYear": 1143,
+      "endYear": 1173,
+      "datePrecision": "approximate",
+      "dateLabel": "1143–1173 CE",
+      "dateNote": "Source-provided ruler window, not an exact construction schedule; requires comparison with epigraphic chronologies.",
+      "summary": "Rajaraja II commissioned Airavatesvara.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Brief synthesis → Airavatesvara",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "rajadhiraja-career",
+      "title": "Rajadhiraja I: prince and king",
+      "type": "ruler",
+      "place": "Chola",
+      "startYear": 1018,
+      "endYear": 1054,
+      "datePrecision": "approximate",
+      "dateLabel": "1018–1054 CE",
+      "dateNote": "The archived account begins crown-prince status in 1018 and places death at Koppam in 1054. This is not a 1018 accession to sole rule. Other chronologies give 1052 for the death; the endpoint remains disputed. Full PDF retrieval timed out; entry relies on the indexed chapter passage and awaits page-level review.",
+      "summary": "A royal career spanning crown-prince status and kingship.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "ignca-chola",
+          "locator": "III → Later history, opening paragraph",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
       "reviewStatus": "cited"
     }
   ]

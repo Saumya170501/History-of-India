@@ -53,7 +53,7 @@ test("type and case-insensitive search combine with the year filter", () => {
     1,
   );
   assert.equal(recordsForYear(data.records, 500, "site", "Nalanda").length, 0);
-  assert.equal(recordsForYear(data.records, 1632, "ruler", "shah").length, 1);
+  assert.equal(recordsForYear(data.records, 1632, "ruler", "shah").length, 2);
   assert.equal(recordsForYear(data.records, 2026, "all", "Sanchi").length, 0);
 });
 
@@ -140,4 +140,12 @@ test("bundled Natural Earth background matches its documented upstream download"
       ["Polygon", "MultiPolygon"].includes(feature.geometry.type),
     ),
   );
+});
+
+test('unmapped research records remain searchable without fabricated points', () => {
+ const entries = recordsForYear(data.records, 1050);
+ assert.ok(entries.some(r => r.id === 'rajadhiraja-career' && r.geometry === null));
+ assert.ok(entries.some(r => r.id === 'chola-dynasty'));
+ assert.ok(entries.some(r => r.id === 'hoysala-dynasty'));
+ assert.deepEqual(validateAtlas(data), []);
 });

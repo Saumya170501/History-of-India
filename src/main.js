@@ -64,7 +64,7 @@ $("#app").innerHTML = `
       </aside>
     </div>
     <section id="record-detail" class="detail-panel" aria-labelledby="detail-title" tabindex="-1"></section>
-    <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>Seven cited records are a starting point, not a complete history. Empty years mean research is still needed. Historical boundaries require separate evidence and are not drawn.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
+    <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>${data.records.length} cited records are a starting point, not a complete history. Empty years mean research is still needed. Historical boundaries require separate evidence and are not drawn.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
   </main>
   <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><button id="footer-sources" class="quiet">${data.sources.length} sources · ${data.records.length} records</button></footer>
   <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. Natural Earth's present-day land outline is geographic context, not a reconstruction of ancient coastlines.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer">Natural Earth, public domain</a>. No remote map tiles or API key required.</p></dialog>
@@ -173,7 +173,7 @@ function renderDetail(record) {
   evidence.append(
     element("h3", record.dateLabel),
     element("p", record.dateNote),
-    element("h3", "What this point means"),
+    element("h3", "Location and mapping status"),
     element("p", record.locationNote),
     element("h3", "Follow the evidence"),
   );
@@ -199,10 +199,12 @@ function selectRecord(record, focus = false) {
       String(button.dataset.id === record.id),
     );
   renderDetail(record);
+  if (record.geometry) {
   const [lon, lat] = record.geometry.coordinates;
   map.panTo([lat, lon], {
     animate: !matchMedia("(prefers-reduced-motion: reduce)").matches,
   });
+  }
   if (focus) $("#record-detail").focus({ preventScroll: false });
 }
 
@@ -251,6 +253,10 @@ function render() {
     );
     button.addEventListener("click", () => selectRecord(record, true));
     list.append(button);
+    if (!record.geometry) {
+      button.append(element('span', 'Location pending · timeline only', 'card-date'));
+      continue;
+    }
     const key = record.geometry.coordinates.join(",");
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(record);

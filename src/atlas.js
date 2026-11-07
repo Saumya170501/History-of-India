@@ -119,6 +119,7 @@ export function validateAtlas(data) {
         )
           errors.push(`${record.id}: unresolved or incomplete citation`);
       }
+    if (record.geometry === null && record.locationSourceId === null) continue;
     if (!sources.has(record.locationSourceId))
       errors.push(`${record.id}: location source required`);
     const point = record.geometry?.coordinates;

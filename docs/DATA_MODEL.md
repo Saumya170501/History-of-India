@@ -21,6 +21,10 @@ Each source contains a stable `id`, `title`, `publisher`, HTTPS `url`, and `acce
 - `citations`: one or more `{ sourceId, locator, supports }` objects. `locator` identifies a section, page, inscription or catalogue entry; `supports` identifies the actual claim supported.
 - `reviewStatus`: `cited` for this prototype. This means a citation is attached, not that an independent historian has reviewed it. Add a separate reviewer/date workflow before enabling a stronger status.
 
+## Timeline-only records
+
+Records without verified coordinates may set both `geometry` and `locationSourceId` to `null`. Their mandatory `locationNote` explains the missing location evidence. They appear in searches and details with a timeline-only label, but do not create map markers. Undefined geometry or a polygon still fails validation. This extends the initial point-only contract without allowing invented locations.
+
 ## Temporal semantics
 
 The first century is 1–100 CE, the fifth is 401–500 CE, and so forth. A century-wide date is represented by that whole search window. A record matching a year means the year lies in the source-derived window; it does not prove activity in that exact year, or continuous activity throughout the window. The UI explicitly states this and uses dashed point symbols for imprecise dates.
