@@ -5,8 +5,8 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import { createResourceStatus } from './map-resource-status.js';
 import { kingdomNames, selectionFilter } from './ohm-selection.js';
 
-export function attachHistoricalMap(map, { onStatus, onError }) {
-  let gl, ready = false, selection = null, year = 1, enabled = true;
+export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange = () => {} }) {
+  let gl, ready = false, selection = null, year = 1, enabled = true, hasBoundary = false;
   const resources = createResourceStatus();
   const layerIds = ['selected-ohm-fill', 'selected-ohm-outline'];
   function updateStatus() {
@@ -19,6 +19,11 @@ export function attachHistoricalMap(map, { onStatus, onError }) {
       : `Showing approximate related geography for ${selection.title}; no OHM kingdom association is established.`);
     if (!gl.isSourceLoaded('ohm-selected-boundaries')) return onStatus(`Loading OHM boundary matches for ${names[0]}…`);
     const matches = gl.querySourceFeatures('ohm-selected-boundaries', { sourceLayer: 'boundaries', filter: selectionFilter(selection, year) });
+    if (matches.length && !hasBoundary) {
+      hasBoundary = true;
+      onBoundaryChange(true);
+    }
+    if (!matches.length && hasBoundary) return onStatus(`A dated boundary was found for ${names[0]}. Pan back to its area to see the highlight; the approximate circle stays hidden.`);
     if (!matches.length && resources.boundaryFailed()) return onStatus(`Boundary matching for ${names[0]} could not be confirmed because OHM resources failed to load. Try the direct OHM link below.`);
     onStatus(matches.length
       ? `Highlighted OHM name match: ${names[0]} · 1 January ${year} CE. This is provider data, not an independently verified extent of ${selection.title}.`
@@ -73,7 +78,9 @@ export function attachHistoricalMap(map, { onStatus, onError }) {
       gl.setStyle(structuredClone(style), { diff: false });
     },
     select(record, selectedYear, show = true) {
+      if (selection?.id !== record?.id || year !== selectedYear) hasBoundary = false;
       selection = record; year = selectedYear; enabled = show;
+      onBoundaryChange(hasBoundary);
       if (!ready) onStatus('Loading OpenHistoricalMap…');
       sync();
     },

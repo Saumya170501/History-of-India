@@ -11,7 +11,7 @@ A source-led historical atlas of India, **1 CE–2026 CE**. Explore a year, sele
 - Search, type filters, accessible record cards, source details and shareable year/filter URLs.
 - Explicit date uncertainty, location meaning and empty research windows.
 - Responsive layout, keyboard controls and source dialog.
-- All 117 current records have a labelled purple related-area circle for geographic orientation. These approximate display buffers are not historical borders.
+- All 117 current records have a labelled purple related-area fallback for geographic orientation. The circle is hidden when a matching OHM boundary or reviewed regional overlay is available. These approximate display buffers are not historical borders.
 - Selecting a dropdown entry or record brings the main OHM map into view. Sourced points receive a ring; mapped ruler/kingdom associations highlight matching provider boundaries. Missing matches are reported explicitly.
 - Regional map evidence beside record descriptions, with a linked published 1–300 CE period map.
 - Independent year-filtered battle layer with explicit battlefield, siege and aftermath symbols; Hampi remains an aftermath location.

@@ -59,7 +59,7 @@ $("#app").innerHTML = `
         <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Highlight selected area</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
         <div id="map" tabindex="-1" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
         <div id="map-error" role="alert" hidden></div><p id="map-selection-status" class="map-selection-status" role="status" aria-live="polite"></p>
-        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Purple circle: approximate related area · Gold: OHM kingdom match · Ring: selected place<br>B: battle · S: siege · A: aftermath</span><span>OHM context · 1 January of selected year · Internet required</span></div>
+        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Purple circle: fallback related area · Gold: OHM kingdom match · Ring: selected place<br>B: battle · S: siege · A: aftermath</span><span>OHM context · 1 January of selected year · Internet required</span></div>
         <div id="map-context" class="map-context" aria-live="polite"></div>
         <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
@@ -144,7 +144,16 @@ const regionLayer = L.featureGroup().addTo(map);
 const battleLayer = L.featureGroup().addTo(map);
 const selectedPlaceLayer = L.layerGroup().addTo(map);
 const relatedAreaLayer = L.featureGroup().addTo(map);
+let hasProviderBoundary = false;
+function syncRelatedAreaVisibility() {
+  const visible = $('#show-regions').checked && !hasProviderBoundary && !regionLayer.getLayers().length;
+  if (visible && !map.hasLayer(relatedAreaLayer)) map.addLayer(relatedAreaLayer);
+  else if (!visible && map.hasLayer(relatedAreaLayer)) map.removeLayer(relatedAreaLayer);
+  const evidence = $('#related-area-evidence');
+  if (evidence) evidence.hidden = !visible;
+}
 const historicalMap = attachHistoricalMap(map, {
+  onBoundaryChange: available => { hasProviderBoundary = available; syncRelatedAreaVisibility(); },
   onStatus: message => { $('#map-selection-status').textContent = message; },
   onError: message => {
     const notice = $('#map-error');
@@ -217,11 +226,14 @@ function renderRegion(record) {
     return;
   }
   if (area) {
-    context.append(element('h4', `Approximate related area · ${area.label}`),
+    const areaEvidence = element('div');
+    areaEvidence.id = 'related-area-evidence';
+    areaEvidence.append(element('h4', `Approximate related area · ${area.label}`),
       element('p', 'Purple circle: geographic context only, not a historical border, exact battlefield, or claim of control.'),
       element('p', area.basis));
     const source = sources.get(record.locationSourceId || record.citations[0].sourceId);
-    context.append(link(`Association evidence: ${source.title} ↗`, source.url));
+    areaEvidence.append(link(`Association evidence: ${source.title} ↗`, source.url));
+    context.append(areaEvidence);
   }
   const regions = regionsForRecord(mapLayers, record.id, state.year);
   if (!regions.length) context.append(element('p',
@@ -246,6 +258,7 @@ function renderRegion(record) {
     context.append(link('Open published regional map ↗', reference.url),
       element('p', `${reference.dateLabel}. Period context only; not the selected ruler’s exact boundary.`));
   }
+  syncRelatedAreaVisibility();
 }
 
 function renderBattles() {
