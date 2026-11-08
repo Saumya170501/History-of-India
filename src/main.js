@@ -3,6 +3,7 @@ import "leaflet/dist/leaflet.css";
 import "./style.css";
 import data from "./data/atlas.json";
 import { mapReference } from './map-reference.js';
+import { relatedArea } from './related-area.js';
 import { attachHistoricalMap } from './ohm-map.js';
 import mapLayers from './data/map-layers.json';
 import { BATTLE_KINDS, battlesForYear, regionsForRecord, referencesForRecord, validateMapLayers } from './map-layers.js';
@@ -55,10 +56,10 @@ $("#app").innerHTML = `
     <div class="workspace">
       <section class="map-panel" aria-label="Historical atlas map">
         <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>OpenHistoricalMap</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
-        <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Highlight selected kingdom</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
+        <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Highlight selected area</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
         <div id="map" tabindex="-1" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
         <div id="map-error" role="alert" hidden></div><p id="map-selection-status" class="map-selection-status" role="status" aria-live="polite"></p>
-        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Gold / dashed outline: selected OHM kingdom match · Ring: selected place<br>B: battle · S: siege · A: aftermath</span><span>OHM context · 1 January of selected year · Internet required</span></div>
+        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Purple circle: approximate related area · Gold: OHM kingdom match · Ring: selected place<br>B: battle · S: siege · A: aftermath</span><span>OHM context · 1 January of selected year · Internet required</span></div>
         <div id="map-context" class="map-context" aria-live="polite"></div>
         <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
@@ -142,6 +143,7 @@ const markerLayer = L.layerGroup().addTo(map);
 const regionLayer = L.featureGroup().addTo(map);
 const battleLayer = L.featureGroup().addTo(map);
 const selectedPlaceLayer = L.layerGroup().addTo(map);
+const relatedAreaLayer = L.featureGroup().addTo(map);
 const historicalMap = attachHistoricalMap(map, {
   onStatus: message => { $('#map-selection-status').textContent = message; },
   onError: message => {
@@ -184,6 +186,18 @@ function appendMapEvidence(container, item) {
 function renderRegion(record) {
   regionLayer.clearLayers();
   selectedPlaceLayer.clearLayers();
+  relatedAreaLayer.clearLayers();
+  const area = relatedArea(record);
+  if (area && $('#show-regions').checked) {
+    const circle = L.circle(area.center, {
+      radius: area.radiusKm * 1000, color: '#77569b', weight: 2,
+      dashArray: '5 7', fillColor: '#9978b8', fillOpacity: 0.14,
+    }).addTo(relatedAreaLayer);
+    const note = element('div');
+    note.append(element('strong', `Approximate related area · ${area.label}`),
+      element('p', 'Geographic context only — not a kingdom boundary or a claim of control.'), element('p', area.basis));
+    circle.bindPopup(note);
+  }
   historicalMap.select(record, state.year, $('#show-regions').checked);
   if (record?.geometry) {
     const [lon, lat] = record.geometry.coordinates;
@@ -201,6 +215,13 @@ function renderRegion(record) {
   if (!record) {
     context.append(element('p', 'Choose a record to inspect its regional evidence.'));
     return;
+  }
+  if (area) {
+    context.append(element('h4', `Approximate related area · ${area.label}`),
+      element('p', 'Purple circle: geographic context only, not a historical border, exact battlefield, or claim of control.'),
+      element('p', area.basis));
+    const source = sources.get(record.locationSourceId || record.citations[0].sourceId);
+    context.append(link(`Association evidence: ${source.title} ↗`, source.url));
   }
   const regions = regionsForRecord(mapLayers, record.id, state.year);
   if (!regions.length) context.append(element('p',
@@ -345,6 +366,7 @@ function renderDetail(record) {
 function focusRecordMap(record) {
   const reference = mapReference(record, state.year);
   if (regionLayer.getLayers().length) map.fitBounds(regionLayer.getBounds(), { maxZoom: 6, animate: false });
+  else if (relatedAreaLayer.getLayers().length) map.fitBounds(relatedAreaLayer.getBounds(), { maxZoom: 6, padding: [24, 24], animate: false });
   else map.setView(reference.center, reference.zoom, { animate: false });
 }
 

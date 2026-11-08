@@ -16,13 +16,13 @@ export function attachHistoricalMap(map, { onStatus, onError }) {
     if (!enabled) return onStatus('Kingdom highlighting is hidden. Neighbouring kingdoms remain visible.');
     if (!names.length) return onStatus(selection.geometry
       ? `Selected place: ${selection.title}. Its marker is an associated location, not a territory.`
-      : `No kingdom mapping is established for ${selection.title}. The surrounding historical map remains visible.`);
+      : `Showing approximate related geography for ${selection.title}; no OHM kingdom association is established.`);
     if (!gl.isSourceLoaded('ohm-selected-boundaries')) return onStatus(`Loading OHM boundary matches for ${names[0]}…`);
     const matches = gl.querySourceFeatures('ohm-selected-boundaries', { sourceLayer: 'boundaries', filter: selectionFilter(selection, year) });
     if (!matches.length && resources.boundaryFailed()) return onStatus(`Boundary matching for ${names[0]} could not be confirmed because OHM resources failed to load. Try the direct OHM link below.`);
     onStatus(matches.length
       ? `Highlighted OHM name match: ${names[0]} · 1 January ${year} CE. This is provider data, not an independently verified extent of ${selection.title}.`
-      : `No dated OHM boundary matching ${names[0]} is available in this view for ${year} CE. No territory has been invented; neighbouring features remain visible.`);
+      : `No dated OHM boundary matching ${names[0]} is available in this view for ${year} CE. Use the labelled related-area circle for geographic context; neighbouring features remain visible.`);
   }
   function sync() {
     if (!ready) return;

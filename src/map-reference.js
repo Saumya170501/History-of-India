@@ -1,10 +1,12 @@
+import { relatedArea } from './related-area.js';
 import { normalizeYear } from './atlas.js';
 
 // Viewports are navigation only. Never turn them into historical geometry.
 export function mapReference(record, year) {
   const coordinates = record?.geometry?.type === 'Point' ? record.geometry.coordinates : null;
-  const center = coordinates ? [coordinates[1], coordinates[0]] : [22, 80];
-  const zoom = coordinates ? 6 : 4;
+  const area = relatedArea(record);
+  const center = area?.center || [22, 80];
+  const zoom = coordinates ? 6 : area ? (area.radiusKm > 800 ? 4 : area.radiusKm > 300 ? 5 : 6) : 4;
   const date = `${String(normalizeYear(year)).padStart(4, '0')}-01-01`;
   const viewport = `${zoom}/${center[0]}/${center[1]}`;
   return {

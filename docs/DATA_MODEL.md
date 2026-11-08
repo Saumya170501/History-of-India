@@ -86,3 +86,11 @@ The owner requested replacing the local basemap with OHM and highlighting select
 The whole provider map is filtered to 1 January of the selected year. Selection uses exact, case-insensitive administrative-boundary name matches (provider `name`, `name_en`, `official_name`, `short_name`), admin levels 1–4, a required source start date, and a compatible end date if present. Associations are research candidates from record identities/places, not proof of sovereignty. A matching name can still be ambiguous; the UI identifies it as an OHM name match. Competing Mughal claimants are not automatically assigned the whole empire, and Rajput states are not combined into one territory. Missing matches keep the surrounding map visible with a no-match notice.
 
 Provider data may change. Attribution links to OHM’s feature-specific licensing guidance. Do not export the displayed highlight as a reviewed boundary without the existing provenance and review process.
+
+## Approximate related-area display
+
+At the owner's request, every current record has a purple geographic-context circle, defined in `src/related-area.js`. This is a display buffer, not a historical polygon, kingdom extent, campaign area, or statistical location-error estimate. It must never enter the reviewed `regions` dataset.
+
+For sourced points the circle is centered on that point with a 50 km display radius. Other records use a deliberately rounded geographic center and broad radius based on their cited place/profile; neither the radius nor the center is claimed as source-derived historical geometry. The UI labels these editorial choices and links association evidence. The map zooms to the circle on selection. Actual OHM name-matched boundaries, when available, remain gold; context circles are dashed purple. A battle context circle is not a battlefield boundary, and Hampi remains an affected-city association.
+
+Coverage tests require a context definition for every current record and verify that original record geometry is unchanged. Unknown future geography must be researched and added explicitly, not silently mapped to an arbitrary area. The context is intentionally broader than some records and incomplete for expansive empires; it is an orientation aid, not a depiction of all related places.
