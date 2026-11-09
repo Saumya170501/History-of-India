@@ -60,7 +60,7 @@ $("#app").innerHTML = `
         <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Highlight selected area</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
         <div id="map" tabindex="-1" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
         <div id="map-error" role="alert" hidden></div><p id="map-selection-status" class="map-selection-status" role="status" aria-live="polite"></p>
-        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Purple circle: fallback related area · Gold: OHM kingdom match · Ring: selected place<br>B: battle · S: siege · A: aftermath</span><span>OHM context · 1 January of selected year · Internet required</span></div>
+        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Solid dots: associated places · Purple: dated boundary match or reviewed region<br>B: battle · S: siege · A: aftermath</span><span>OHM context · 1 January of selected year · Internet required</span></div>
         <div id="map-context" class="map-context" aria-live="polite"></div>
         <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
@@ -170,18 +170,7 @@ map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
 const markerLayer = L.layerGroup().addTo(map);
 const regionLayer = L.featureGroup().addTo(map);
 const battleLayer = L.featureGroup().addTo(map);
-const selectedPlaceLayer = L.layerGroup().addTo(map);
-const relatedAreaLayer = L.featureGroup().addTo(map);
-let hasProviderBoundary = false;
-function syncRelatedAreaVisibility() {
-  const visible = $('#show-regions').checked && !hasProviderBoundary && !regionLayer.getLayers().length;
-  if (visible && !map.hasLayer(relatedAreaLayer)) map.addLayer(relatedAreaLayer);
-  else if (!visible && map.hasLayer(relatedAreaLayer)) map.removeLayer(relatedAreaLayer);
-  const evidence = $('#related-area-evidence');
-  if (evidence) evidence.hidden = !visible;
-}
 const historicalMap = attachHistoricalMap(map, {
-  onBoundaryChange: available => { hasProviderBoundary = available; syncRelatedAreaVisibility(); },
   onStatus: message => { $('#map-selection-status').textContent = message; },
   onError: message => {
     const notice = $('#map-error');
@@ -222,56 +211,40 @@ function appendMapEvidence(container, item) {
 
 function renderRegion(record) {
   regionLayer.clearLayers();
-  selectedPlaceLayer.clearLayers();
-  relatedAreaLayer.clearLayers();
   const area = relatedArea(record);
-  if (area && $('#show-regions').checked) {
-    const circle = L.circle(area.center, {
-      radius: area.radiusKm * 1000, color: '#77569b', weight: 2,
-      dashArray: '5 7', fillColor: '#9978b8', fillOpacity: 0.14,
-    }).addTo(relatedAreaLayer);
-    const note = element('div');
-    note.append(element('strong', `Approximate related area · ${area.label}`),
-      element('p', 'Geographic context only — not a kingdom boundary or a claim of control.'), element('p', area.basis));
-    circle.bindPopup(note);
-  }
   historicalMap.select(record, state.year, $('#show-regions').checked);
-  if (record?.geometry) {
-    const [lon, lat] = record.geometry.coordinates;
-    const selected = L.circleMarker([lat, lon], { radius: 18, color: '#a94b16', weight: 3, fillColor: '#df9c28', fillOpacity: 0.25 }).addTo(selectedPlaceLayer);
-    selected.bindTooltip(`${record.title} — associated place, not territory`);
-  }
   const context = $('#map-context');
   context.replaceChildren(element('h3', record ? `Regional map · ${record.title}` : 'Regional map'));
   const mapReferences = element('p');
   const reference = mapReference(record, state.year);
   mapReferences.append(link(`OpenHistoricalMap · ${state.year} CE ↗`, reference.sourceUrl));
   context.append(mapReferences, element('p',
-    'OpenHistoricalMap is the main map. Neighbouring kingdoms remain visible. Highlighting uses dated provider name matches, not independently reviewed territorial claims. Read the source before interpreting any extent.'));
+    'OpenHistoricalMap supplies physical geography; provider labels and political context are hidden. Highlighting uses dated provider name matches, not independently reviewed territorial claims. Read the source before interpreting any extent.'));
 
   if (!record) {
+    historicalMap.setRegions({ type: 'FeatureCollection', features: [] });
     context.append(element('p', 'Choose a record to inspect its regional evidence.'));
     return;
   }
   if (area) {
     const areaEvidence = element('div');
     areaEvidence.id = 'related-area-evidence';
-    areaEvidence.append(element('h4', `Approximate related area · ${area.label}`),
-      element('p', 'Purple circle: geographic context only, not a historical border, exact battlefield, or claim of control.'),
+    areaEvidence.append(element('h4', `Map orientation · ${area.label}`),
+      element('p', 'This regional association sets the viewport only. No territory is inferred from its center or radius.'),
       element('p', area.basis));
     const source = sources.get(record.locationSourceId || record.citations[0].sourceId);
     areaEvidence.append(link(`Association evidence: ${source.title} ↗`, source.url));
     context.append(areaEvidence);
   }
   const regions = regionsForRecord(mapLayers, record.id, state.year);
+  historicalMap.setRegions({ type: 'FeatureCollection', features: $('#show-regions').checked ? regions.map(region => ({ type: 'Feature', properties: { id: region.id }, geometry: region.geometry })) : [] });
   if (!regions.length) context.append(element('p',
     `No reviewed boundary is available for this record in ${state.year} CE. A place marker does not show its territory or cultural extent.`));
   else if (!$('#show-regions').checked) context.append(element('p', 'Regional overlays are hidden. Their evidence is listed below.'));
   for (const region of regions) {
     if ($('#show-regions').checked) {
       const shape = L.geoJSON(region.geometry, { style: {
-        color: region.kind === 'cultural' ? '#76568e' : '#315f82',
-        weight: 2, dashArray: '6 5', fillOpacity: 0.16,
+        opacity: 0, fillOpacity: 0, // Leaflet hit target; MapLibre renders the polygon.
       }}).addTo(regionLayer);
       const popup = element('div', undefined, 'map-popup');
       appendMapEvidence(popup, region);
@@ -286,7 +259,6 @@ function renderRegion(record) {
     context.append(link('Open published regional map ↗', reference.url),
       element('p', `${reference.dateLabel}. Period context only; not the selected ruler’s exact boundary.`));
   }
-  syncRelatedAreaVisibility();
 }
 
 function renderBattles() {
@@ -407,7 +379,6 @@ function renderDetail(record) {
 function focusRecordMap(record) {
   const reference = mapReference(record, state.year);
   if (regionLayer.getLayers().length) map.fitBounds(regionLayer.getBounds(), { maxZoom: 6, animate: false });
-  else if (relatedAreaLayer.getLayers().length) map.fitBounds(relatedAreaLayer.getBounds(), { maxZoom: 6, padding: [24, 24], animate: false });
   else map.setView(reference.center, reference.zoom, { animate: false });
 }
 
@@ -508,6 +479,7 @@ function render() {
     }
     list.append(empty);
   }
+  historicalMap.setFeatures({ type: 'FeatureCollection', features: [...groups.values()].map(records => ({ type: 'Feature', properties: { entity_name: records[0].title }, geometry: records[0].geometry })) });
   for (const records of groups.values()) {
     const [lon, lat] = records[0].geometry.coordinates;
     const approximate = records.some(
@@ -518,7 +490,7 @@ function render() {
       keyboard: true,
       icon: L.divIcon({
         className: "history-marker",
-        html: `<span class="pin ${approximate ? "approximate" : ""}">${records.length > 1 ? records.length : "•"}</span>`,
+        html: `<span class="point-hit-target"></span>`,
         iconSize: [30, 30],
         iconAnchor: [15, 15],
       }),

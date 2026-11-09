@@ -50,3 +50,14 @@ Validation: 26 automated tests passed. A browser check with synthetic, test-only
 Huvishka and the other ruler records explicitly identified as Kushan in their cited `place` field now search for Kushan/Kushana Empire names. This is an association lookup, not new geometry. Cultural records mentioning Kushan are not treated as kingdoms.
 
 Failures are tracked by source and tile, so a terrain or label failure does not invalidate successfully loaded kingdom boundaries. A matching successful tile/metadata event clears its own failure; Retry map rebuilds the provider style while preserving the selected record and date. Incomplete live provider coverage remains explicit. Validation: 29 tests plus browser checks of retry, selection, and the expanded sidebar. Live provider availability is still subject to the external service/network.
+
+
+## Current rendering: physical geography and geometry-specific overlays
+
+This supersedes earlier circle, dashed-outline, gold-highlight, and neighbouring-kingdom display descriptions. The pinned OHM basemap now retains an explicit physical-geography allowlist; every symbol/text/label layer and all other context layers are hidden on each `style.load`, before application layers are added. Attribution remains visible. Underlying physical geography is not asserted to be a historical reconstruction.
+
+`src/historical-style.js` defines zoom-scaled, solid MapLibre circle markers for Point records, and separate Polygon/MultiPolygon fill/blurred-halo layers. Leaflet retains transparent keyboard/click targets and source popups. Battles retain separate B/S/A markers. Original date notes and citations remain unchanged.
+
+No geographic context circles or substitute territories are drawn. Related-area definitions orient the viewport only. Dated OHM name matches use a purple translucent fill and a solid blurred halo. Reviewed GeoJSON polygons use the same styling; the reviewed collection remains empty. No empire polygons have been fabricated or added to the point-only catalogue.
+
+MapLibre has no polygon fill-blur or continuous spatial fill-opacity gradient. The two-layer halo is a bounded-cost visual approximation with a residual fill edge, not a true seamless distance-field fade or quantified historical confidence. A continuous fade requires a separately prepared raster alpha mask/custom shader; non-overlapping inward opacity bands can approximate one. Blur widths are pixels, not geographic uncertainty distances.

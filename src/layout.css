@@ -112,3 +112,6 @@ footer { padding: 16px 0; gap: 12px; flex-wrap: wrap; }
   .jumps, .timeline .eyebrow, .ruler { display: none; }
   .map-controls { top: 114px; }
 }
+/* Keyboard/click target over MapLibre's zoom-scaled solid point marker. */
+.point-hit-target { display: block; width: 30px; height: 30px; border-radius: 50%; }
+.history-marker:focus-visible .point-hit-target { outline: 2px solid #a35b3c; }

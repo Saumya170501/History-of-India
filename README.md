@@ -82,3 +82,14 @@ The map fills the viewport (`100vh`, with `100dvh` for mobile browser chrome). A
 ## Deploy to Vercel
 
 Import `Saumya170501/History-of-India` in Vercel and select `codex/historical-atlas-prototype` as the production branch to deploy this version. Use the repository root and Node.js 24.x. `vercel.json` configures Vite, `npm ci`, `npm run build`, and the `dist` output directory. No application environment variables are required. OpenHistoricalMap tiles still require internet access from each visitor. Once Git integration is connected, pushes to the configured production branch trigger deployments.
+
+
+## Current rendering: physical geography and geometry-specific overlays
+
+This supersedes earlier circle, dashed-outline, gold-highlight, and neighbouring-kingdom display descriptions. The pinned OHM basemap now retains an explicit physical-geography allowlist; every symbol/text/label layer and all other context layers are hidden on each `style.load`, before application layers are added. Attribution remains visible. Underlying physical geography is not asserted to be a historical reconstruction.
+
+`src/historical-style.js` defines zoom-scaled, solid MapLibre circle markers for Point records, and separate Polygon/MultiPolygon fill/blurred-halo layers. Leaflet retains transparent keyboard/click targets and source popups. Battles retain separate B/S/A markers. Original date notes and citations remain unchanged.
+
+No geographic context circles or substitute territories are drawn. Related-area definitions orient the viewport only. Dated OHM name matches use a purple translucent fill and a solid blurred halo. Reviewed GeoJSON polygons use the same styling; the reviewed collection remains empty. No empire polygons have been fabricated or added to the point-only catalogue.
+
+MapLibre has no polygon fill-blur or continuous spatial fill-opacity gradient. The two-layer halo is a bounded-cost visual approximation with a residual fill edge, not a true seamless distance-field fade or quantified historical confidence. A continuous fade requires a separately prepared raster alpha mask/custom shader; non-overlapping inward opacity bands can approximate one. Blur widths are pixels, not geographic uncertainty distances.

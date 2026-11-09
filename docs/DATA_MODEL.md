@@ -96,3 +96,14 @@ For sourced points the circle is centered on that point with a 50 km display rad
 Coverage tests require a context definition for every current record and verify that original record geometry is unchanged. Unknown future geography must be researched and added explicitly, not silently mapped to an arbitrary area. The context is intentionally broader than some records and incomplete for expansive empires; it is an orientation aid, not a depiction of all related places.
 
 The related-area circle is a fallback only: a dated OHM boundary match or displayed reviewed regional overlay takes precedence. Once an OHM match is found, the circle stays hidden while panning/loading for that record and year. Switching record or year clears that match state so an unknown boundary can show its context circle again. The circle’s explanatory block follows the same visibility rule.
+
+
+## Current rendering: physical geography and geometry-specific overlays
+
+This supersedes earlier circle, dashed-outline, gold-highlight, and neighbouring-kingdom display descriptions. The pinned OHM basemap now retains an explicit physical-geography allowlist; every symbol/text/label layer and all other context layers are hidden on each `style.load`, before application layers are added. Attribution remains visible. Underlying physical geography is not asserted to be a historical reconstruction.
+
+`src/historical-style.js` defines zoom-scaled, solid MapLibre circle markers for Point records, and separate Polygon/MultiPolygon fill/blurred-halo layers. Leaflet retains transparent keyboard/click targets and source popups. Battles retain separate B/S/A markers. Original date notes and citations remain unchanged.
+
+No geographic context circles or substitute territories are drawn. Related-area definitions orient the viewport only. Dated OHM name matches use a purple translucent fill and a solid blurred halo. Reviewed GeoJSON polygons use the same styling; the reviewed collection remains empty. No empire polygons have been fabricated or added to the point-only catalogue.
+
+MapLibre has no polygon fill-blur or continuous spatial fill-opacity gradient. The two-layer halo is a bounded-cost visual approximation with a residual fill edge, not a true seamless distance-field fade or quantified historical confidence. A continuous fade requires a separately prepared raster alpha mask/custom shader; non-overlapping inward opacity bands can approximate one. Blur widths are pixels, not geographic uncertainty distances.
