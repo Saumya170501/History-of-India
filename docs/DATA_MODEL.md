@@ -107,3 +107,11 @@ This supersedes earlier circle, dashed-outline, gold-highlight, and neighbouring
 No geographic context circles or substitute territories are drawn. Related-area definitions orient the viewport only. Dated OHM name matches use a purple translucent fill and a solid blurred halo. Reviewed GeoJSON polygons use the same styling; the reviewed collection remains empty. No empire polygons have been fabricated or added to the point-only catalogue.
 
 MapLibre has no polygon fill-blur or continuous spatial fill-opacity gradient. The two-layer halo is a bounded-cost visual approximation with a residual fill edge, not a true seamless distance-field fade or quantified historical confidence. A continuous fade requires a separately prepared raster alpha mask/custom shader; non-overlapping inward opacity bands can approximate one. Blur widths are pixels, not geographic uncertainty distances.
+
+## User-supplied Akbar sketch (unverified exception)
+
+At the owner's explicit request, `public/data/1500s.geojson` preserves their exact Polygon, properties and coordinates. This is a UI demonstration sketch without map provenance or review. It is not added to catalogue geometry or reviewed `regions`. The UI labels it unverified, and treats 1556–1605 as a display window rather than a supported territorial chronology. This supersedes the earlier no-local-empire-polygons description only for this clearly labelled sketch.
+
+Only record ID `akbar` can request this file. Matching also requires exact `entity_name: Mughal Empire`, `ruler: Akbar`, and an inclusive date match. The same file covers 1600–1605; no second copy or inferred geometry is needed. Empty, malformed, or mismatching data produces an error rather than a substitute territory. Responses are cached, stale requests aborted, and switching records clears the source. The local sketch takes display precedence over live OHM matches, and never inherits OHM provenance.
+
+Bounds are calculated from the supplied coordinates. Leaflet owns the existing app's camera, so its fitBounds method synchronizes the MapLibre bridge with overlay padding and reduced-motion support. The coordinate validator checks shape, closure and ranges, not historical accuracy or full topology.

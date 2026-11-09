@@ -1,3 +1,4 @@
+import { sketchAvailable, SKETCH_NOTICE } from './local-boundary.js';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
@@ -215,6 +216,7 @@ function renderRegion(record) {
   historicalMap.select(record, state.year, $('#show-regions').checked);
   const context = $('#map-context');
   context.replaceChildren(element('h3', record ? `Regional map · ${record.title}` : 'Regional map'));
+  if (sketchAvailable(record, state.year)) context.append(element('p', SKETCH_NOTICE));
   const mapReferences = element('p');
   const reference = mapReference(record, state.year);
   mapReferences.append(link(`OpenHistoricalMap · ${state.year} CE ↗`, reference.sourceUrl));
@@ -443,7 +445,7 @@ function render() {
     button.addEventListener("click", () => selectRecord(record, true));
     list.append(button);
     if (!record.geometry) {
-      button.append(element('span', 'Location pending · timeline only', 'card-date'));
+      button.append(element('span', sketchAvailable(record, state.year) ? 'Unverified user sketch available' : 'Location pending · timeline only', 'card-date'));
       continue;
     }
     // Battle symbols belong to their own layer, including when catalogue filters hide them.

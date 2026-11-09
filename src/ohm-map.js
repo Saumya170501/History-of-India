@@ -1,3 +1,4 @@
+import { EMPTY_BOUNDARY, SKETCH_NOTICE, sketchAvailable, fetchAkbarSketch, boundaryBounds } from './local-boundary.js';
 import { maplibreGL } from '@maplibre/maplibre-gl-leaflet';
 import { filterByDate, constrainStyleToDateRange } from '@openhistoricalmap/maplibre-gl-dates';
 import style from '@openhistoricalmap/map-styles/dist/historical/historical.json';
@@ -8,6 +9,7 @@ import { kingdomNames, selectionFilter } from './ohm-selection.js';
 
 export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange = () => {} }) {
   let gl, ready = false, selection = null, year = 1, enabled = true, hasBoundary = false;
+  let sketch = EMPTY_BOUNDARY, sketchMessage = '', request = null, sketchKey = '';
   const resources = createResourceStatus();
   const layerIds = ['selected-ohm-halo', 'selected-ohm-fill'];
   let features = { type: 'FeatureCollection', features: [] };
@@ -17,6 +19,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     const names = kingdomNames(selection);
     if (!selection) return onStatus('Select a record to highlight its associated place or kingdom.');
     if (!enabled) return onStatus('Kingdom highlighting is hidden.');
+    if (sketchMessage) return onStatus(sketchMessage);
     if (!names.length) return onStatus(selection.geometry
       ? `Selected place: ${selection.title}. Its marker is an associated location, not a territory.`
       : `No mapped location or kingdom boundary is established for ${selection.title}.`);
@@ -37,9 +40,40 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     filterByDate(gl, `${String(year).padStart(4, '0')}-01-01`);
     for (const id of layerIds) {
       gl.setFilter(id, ['all', ['==', ['geometry-type'], 'Polygon'], selectionFilter(selection, year)]);
-      gl.setLayoutProperty(id, 'visibility', enabled && kingdomNames(selection).length ? 'visible' : 'none');
+      gl.setLayoutProperty(id, 'visibility', enabled && !sketch.features.length && kingdomNames(selection).length ? 'visible' : 'none');
     }
+    for (const id of ['local-sketch-halo', 'local-sketch-fill']) gl.setLayoutProperty(id, 'visibility', enabled ? 'visible' : 'none');
     updateStatus();
+  }
+  async function loadSketch() {
+    const key = `${selection?.id}:${year}:${enabled}`;
+    if (key === sketchKey) return;
+    sketchKey = key;
+    request?.abort();
+    sketch = EMPTY_BOUNDARY; sketchMessage = '';
+    if (ready) gl.getSource('historical-boundaries').setData(sketch);
+    if (!enabled || !sketchAvailable(selection, year)) return;
+    const controller = new AbortController(); request = controller;
+    sketchMessage = 'Loading user-supplied, unverified Akbar sketch…';
+    try {
+      const matched = await fetchAkbarSketch(year, controller.signal);
+      if (controller.signal.aborted) return;
+      sketch = matched; sketchMessage = SKETCH_NOTICE;
+      if (ready) gl.getSource('historical-boundaries').setData(sketch);
+      const [[west, south], [east, north]] = boundaryBounds(sketch);
+      // Leaflet owns the camera in this app; its bridge synchronizes MapLibre.
+      const drawer = document.querySelector('#evidence-drawer');
+      const right = drawer && !drawer.hidden && innerWidth > 760 ? drawer.getBoundingClientRect().width + 50 : 40;
+      map.fitBounds([[south, west], [north, east]], {
+        paddingTopLeft: [40, 190], paddingBottomRight: [right, 170], maxZoom: 6,
+        animate: !matchMedia('(prefers-reduced-motion: reduce)').matches, duration: 1.2,
+      });
+      sync();
+    } catch (error) {
+      if (controller.signal.aborted) return;
+      sketchMessage = `Local sketch unavailable: ${error.message}`;
+      updateStatus();
+    }
   }
   try {
     const layer = maplibreGL({ style: structuredClone(style), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a>' }, interactive: false }).addTo(map);
@@ -65,6 +99,11 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       }
       gl.addSource('historical-regions', { type: 'geojson', data: regions });
       for (const spec of influenceLayers('historical-regions', 'reviewed-region')) gl.addLayer(spec);
+      gl.addSource('historical-boundaries', { type: 'geojson', data: sketch });
+      for (const spec of influenceLayers('historical-boundaries', 'local-sketch')) {
+        spec.paint[spec.type === 'fill' ? 'fill-color' : 'line-color'] = '#8b5cf6';
+        gl.addLayer(spec);
+      }
       gl.addSource('historical-records', { type: 'geojson', data: features });
       gl.addLayer(pointLayer('historical-records'));
       ready = true;
@@ -95,6 +134,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     select(record, selectedYear, show = true) {
       if (selection?.id !== record?.id || year !== selectedYear) hasBoundary = false;
       selection = record; year = selectedYear; enabled = show;
+      loadSketch();
       onBoundaryChange(hasBoundary);
       if (!ready) onStatus('Loading OpenHistoricalMap…');
       sync();

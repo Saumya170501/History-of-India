@@ -93,3 +93,7 @@ This supersedes earlier circle, dashed-outline, gold-highlight, and neighbouring
 No geographic context circles or substitute territories are drawn. Related-area definitions orient the viewport only. Dated OHM name matches use a purple translucent fill and a solid blurred halo. Reviewed GeoJSON polygons use the same styling; the reviewed collection remains empty. No empire polygons have been fabricated or added to the point-only catalogue.
 
 MapLibre has no polygon fill-blur or continuous spatial fill-opacity gradient. The two-layer halo is a bounded-cost visual approximation with a residual fill edge, not a true seamless distance-field fade or quantified historical confidence. A continuous fade requires a separately prepared raster alpha mask/custom shader; non-overlapping inward opacity bands can approximate one. Blur widths are pixels, not geographic uncertainty distances.
+
+### Local Akbar demonstration polygon
+
+Selecting Akbar during 1556–1605 loads `public/data/1500s.geojson` and fits the map to the supplied polygon. This owner-provided sketch is explicitly unverified, not a reviewed empire boundary. See `src/local-boundary.js` for matching, bounds validation and lazy fetching. Other records continue using dated OHM matches where available; this sketch is not assigned to other rulers.
