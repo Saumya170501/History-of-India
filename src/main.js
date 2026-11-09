@@ -1,6 +1,7 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
+import "./layout.css";
 import data from "./data/atlas.json";
 import { mapReference } from './map-reference.js';
 import { relatedArea } from './related-area.js';
@@ -41,7 +42,7 @@ $("#app").innerHTML = `
   <a class="skip" href="#records-heading">Skip to historical records</a>
   <header class="masthead">
     <div class="brand"><span class="brand-mark" aria-hidden="true">✳</span><div><strong>HISTORY OF INDIA</strong><span>A source-led historical atlas</span></div></div>
-    <div class="header-actions"><span class="edition">RESEARCH EDITION · 01</span><button id="about-button" class="quiet">Sources & approach ↗</button></div>
+    <div class="header-actions"><button id="toggle-evidence" class="quiet" aria-controls="evidence-drawer" aria-expanded="true">Evidence</button><button id="about-button" class="quiet">Sources & approach ↗</button></div>
   </header>
   <main>
     <section class="introduction" aria-labelledby="page-title">
@@ -63,7 +64,7 @@ $("#app").innerHTML = `
         <div id="map-context" class="map-context" aria-live="polite"></div>
         <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
-      <aside class="record-panel" aria-labelledby="records-heading">
+      <aside id="evidence-drawer" class="record-panel" aria-labelledby="records-heading">
         <div class="record-heading"><span class="eyebrow">IN THE RECORD</span><h2 id="records-heading" tabindex="-1">Explore the evidence</h2><p id="record-count" role="status" aria-live="polite"></p></div>
         <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Search people, places, Mughal, Rajput…" autocomplete="off"></div>
         <div class="browse"><details id="browse-menu"><summary>Jump to a record…</summary><div id="browse-groups" class="browse-groups"></div></details></div>
@@ -78,6 +79,32 @@ $("#app").innerHTML = `
   <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><button id="footer-sources" class="quiet">${data.sources.length} sources · ${data.records.length} records</button></footer>
   <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated map context. Highlighted matches are provider features, not independently verified territorial reconstructions. A ruler’s name may not have a matching boundary in the provider.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Internet and WebGL are required; no API key is needed.</p></dialog>
 `;
+
+// Keep evidence in the scrollable drawer instead of below the full-screen map.
+const drawer = $('#evidence-drawer');
+for (const selector of ['#map-error', '#map-selection-status', '#record-detail'])
+  drawer.append($(selector));
+const contextDetails = element('details', undefined, 'drawer-context');
+contextDetails.append(element('summary', 'Map context, legend & battles'));
+for (const selector of ['.map-caption', '#map-context', '.battle-context'])
+  contextDetails.append($(selector));
+drawer.append(contextDetails);
+$('#about-dialog').append($('.research-note'), $('footer'));
+
+function setEvidenceOpen(open) {
+  drawer.hidden = !open;
+  document.body.classList.toggle('evidence-closed', !open);
+  $('#toggle-evidence').setAttribute('aria-expanded', String(open));
+}
+setEvidenceOpen(!window.matchMedia('(max-width: 760px)').matches);
+$('#toggle-evidence').addEventListener('click', () => setEvidenceOpen(drawer.hidden));
+drawer.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !event.defaultPrevented) {
+    setEvidenceOpen(false);
+    $('#toggle-evidence').focus();
+  }
+});
+$('.skip').addEventListener('click', () => setEvidenceOpen(true));
 
 for (const [value, label] of Object.entries(TYPES))
   $("#record-type").add(new Option(label, value));
@@ -110,6 +137,7 @@ for (const [label, records] of browseGroups) {
 }
 $('#browse-menu').addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
+    event.stopPropagation();
     $('#browse-menu').open = false;
     $('#browse-menu > summary').focus();
   }

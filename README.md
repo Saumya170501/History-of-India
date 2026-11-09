@@ -74,3 +74,7 @@ The [project plan](docs/PROJECT_PLAN.md) starts with a reviewed 1 CE pilot befor
 ## Licensing
 
 No project-wide code license has been selected by the owner. Public repository access alone is not a license grant. Natural Earth data is public domain; third-party packages retain their own licenses. Historical source material is linked and paraphrased, not relicensed as project code. See [provenance](docs/PROVENANCE.md).
+
+## Map workspace layout
+
+The map fills the viewport (`100vh`, with `100dvh` for mobile browser chrome). A compact header floats at the top and the glass timeline floats at the bottom. The Evidence button toggles a fixed-height, scrollable right drawer; it starts closed on phones. Selected-record citations, provider status, and expandable map context/battle notes remain in that drawer. Sources and project notes are available through Sources & approach. Layout overrides live in `src/layout.css`; no React migration is required.
