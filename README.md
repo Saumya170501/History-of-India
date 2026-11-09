@@ -97,3 +97,7 @@ MapLibre has no polygon fill-blur or continuous spatial fill-opacity gradient. T
 ### Local Akbar demonstration polygon
 
 Selecting Akbar during 1556–1605 loads `public/data/1500s.geojson` and fits the map to the supplied polygon. This owner-provided sketch is explicitly unverified, not a reviewed empire boundary. See `src/local-boundary.js` for matching, bounds validation and lazy fetching. Other records continue using dated OHM matches where available; this sketch is not assigned to other rulers.
+
+## Automated empire ingestion
+
+See [OHM ingestion](docs/OHM_INGESTION.md) for the import command, current network limitation, date semantics, categorical colors and reusable React hook.

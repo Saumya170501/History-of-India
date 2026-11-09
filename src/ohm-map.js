@@ -1,3 +1,4 @@
+import { EMPTY_EMPIRES, fetchEmpires, filterEmpires, empireColor } from './empire-data.js';
 import { EMPTY_BOUNDARY, SKETCH_NOTICE, sketchAvailable, fetchAkbarSketch, boundaryBounds } from './local-boundary.js';
 import { maplibreGL } from '@maplibre/maplibre-gl-leaflet';
 import { filterByDate, constrainStyleToDateRange } from '@openhistoricalmap/maplibre-gl-dates';
@@ -10,6 +11,7 @@ import { kingdomNames, selectionFilter } from './ohm-selection.js';
 export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange = () => {} }) {
   let gl, ready = false, selection = null, year = 1, enabled = true, hasBoundary = false;
   let sketch = EMPTY_BOUNDARY, sketchMessage = '', request = null, sketchKey = '';
+  let empireData = EMPTY_EMPIRES;
   const resources = createResourceStatus();
   const layerIds = ['selected-ohm-halo', 'selected-ohm-fill'];
   let features = { type: 'FeatureCollection', features: [] };
@@ -37,6 +39,8 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
   }
   function sync() {
     if (!ready) return;
+    gl.getSource('imported-empires').setData(filterEmpires(empireData, year));
+    for (const id of ['imported-empires-halo', 'imported-empires-fill']) gl.setLayoutProperty(id, 'visibility', enabled ? 'visible' : 'none');
     filterByDate(gl, `${String(year).padStart(4, '0')}-01-01`);
     for (const id of layerIds) {
       gl.setFilter(id, ['all', ['==', ['geometry-type'], 'Polygon'], selectionFilter(selection, year)]);
@@ -97,6 +101,11 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
         spec.filter = ['all', spec.filter, selectionFilter(selection, year)];
         gl.addLayer(spec);
       }
+      gl.addSource('imported-empires', { type: 'geojson', data: filterEmpires(empireData, year) });
+      for (const spec of influenceLayers('imported-empires', 'imported-empires')) {
+        spec.paint[spec.type === 'fill' ? 'fill-color' : 'line-color'] = empireColor;
+        gl.addLayer(spec);
+      }
       gl.addSource('historical-regions', { type: 'geojson', data: regions });
       for (const spec of influenceLayers('historical-regions', 'reviewed-region')) gl.addLayer(spec);
       gl.addSource('historical-boundaries', { type: 'geojson', data: sketch });
@@ -112,6 +121,9 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     });
     gl.getCanvas().style.visibility = 'hidden';
     gl.on('idle', updateStatus);
+    fetchEmpires(`${import.meta.env.BASE_URL}data/historical_empires.geojson`, AbortSignal.timeout(15000))
+      .then(data => { empireData = data; sync(); })
+      .catch(error => onError(`Imported empire polygons unavailable: ${error.message}. Existing record layers remain available.`));
   } catch {
     onError('OpenHistoricalMap needs WebGL and internet access. Open the OHM link below if this browser cannot display the map.');
   }
