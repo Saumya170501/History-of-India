@@ -1,0 +1,24 @@
+{
+  "year": 1,
+  "status": "researching",
+  "scope": "Historical Indian subcontinent, including modern neighbouring states",
+  "regions": [
+    {"name": "Northwest and Indus region", "status": "not-started"},
+    {"name": "Gangetic plain and eastern India", "status": "not-started"},
+    {"name": "Deccan and central India", "status": "not-started"},
+    {"name": "Tamilakam and southern India", "status": "not-started"},
+    {"name": "Himalayan and northeastern regions", "status": "not-started"},
+    {"name": "Sri Lanka", "status": "not-started"}
+  ],
+  "claims": [],
+  "researchQuestions": [
+    "Which rulers can be dated securely to 1 CE, rather than a broad century?",
+    "Which archaeological centres and their dates are independently supported?",
+    "Which political spheres have publishable, dated boundary evidence?",
+    "Are geographic source maps political, cultural, archaeological or speculative?",
+    "Where are the gaps in local and minor-polity coverage?"
+  ],
+  "note": "Empty claims means not yet verified in this specific research file; it does not indicate that no kingdoms or events existed.",
+  "review": null,
+  "nextBatch": "2–5 CE after 1 CE evidence baseline review"
+}
