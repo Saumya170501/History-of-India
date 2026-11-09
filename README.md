@@ -78,3 +78,7 @@ No project-wide code license has been selected by the owner. Public repository a
 ## Map workspace layout
 
 The map fills the viewport (`100vh`, with `100dvh` for mobile browser chrome). A compact header floats at the top and the glass timeline floats at the bottom. The Evidence button toggles a fixed-height, scrollable right drawer; it starts closed on phones. Selected-record citations, provider status, and expandable map context/battle notes remain in that drawer. Sources and project notes are available through Sources & approach. Layout overrides live in `src/layout.css`; no React migration is required.
+
+## Deploy to Vercel
+
+Import `Saumya170501/History-of-India` in Vercel and select `codex/historical-atlas-prototype` as the production branch to deploy this version. Use the repository root and Node.js 24.x. `vercel.json` configures Vite, `npm ci`, `npm run build`, and the `dist` output directory. No application environment variables are required. OpenHistoricalMap tiles still require internet access from each visitor. Once Git integration is connected, pushes to the configured production branch trigger deployments.
