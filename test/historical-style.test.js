@@ -19,3 +19,13 @@ test('point and polygon styles separate geometry without dashed territory lines'
   assert.equal(layers[0].paint['line-dasharray'], undefined);
   assert.equal(layers[1].paint['fill-blur'], undefined);
 });
+
+test('physical style removes glyph and sprite downloads before initialization without mutating input', async () => {
+  const { physicalBasemapStyle } = await import('../src/historical-style.js');
+  const original = { version: 8, sprite: 'https://example.com/sprite', glyphs: 'https://example.com/{fontstack}/{range}.pbf', sources: { land: {type:'vector'}, labels: {type:'vector'} }, layers: [{id:'land',type:'fill',source:'land'}, {id:'city-label',type:'symbol',source:'labels'}] };
+  const cleaned = physicalBasemapStyle(original);
+  assert.equal(cleaned.sprite, undefined);
+  assert.equal(cleaned.glyphs, undefined);
+  assert.deepEqual(Object.keys(cleaned.sources), ['land']);
+  assert.equal(original.layers.length, 2);
+});

@@ -5,6 +5,16 @@ const physicalIds = new Set([
   'water_lines_stream_no_name', 'water_lines_stream_name',
   'landuse_areas_z12_glacier-outline',
 ]);
+// Remove unused dependencies BEFORE MapLibre starts fetching them.
+export function physicalBasemapStyle(original) {
+  const style = structuredClone(original);
+  style.layers = style.layers.filter(layer => physicalIds.has(layer.id) && layer.type !== 'symbol');
+  const sources = new Set(style.layers.map(layer => layer.source).filter(Boolean));
+  style.sources = Object.fromEntries(Object.entries(style.sources).filter(([id]) => sources.has(id)));
+  delete style.sprite;
+  delete style.glyphs;
+  return style;
+}
 export function hideBasemapContext(map) {
   // Call before installing application layers on each style.load.
   for (const layer of map.getStyle().layers || []) {

@@ -5,7 +5,7 @@ import { filterByDate, constrainStyleToDateRange } from '@openhistoricalmap/mapl
 import style from '@openhistoricalmap/map-styles/dist/historical/historical.json';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { createResourceStatus } from './map-resource-status.js';
-import { hideBasemapContext, influenceLayers, pointLayer } from './historical-style.js';
+import { physicalBasemapStyle, hideBasemapContext, influenceLayers, pointLayer } from './historical-style.js';
 import { kingdomNames, selectionFilter } from './ohm-selection.js';
 
 export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange = () => {} }) {
@@ -80,7 +80,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     }
   }
   try {
-    const layer = maplibreGL({ style: structuredClone(style), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a>' }, interactive: false }).addTo(map);
+    const layer = maplibreGL({ style: physicalBasemapStyle(style), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a>' }, interactive: false }).addTo(map);
     gl = layer.getMaplibreMap();
     gl.on('error', event => {
       resources.fail(event); onError(resources.message()); updateStatus();
@@ -141,7 +141,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       ready = false;
       resources.reset(); onError(''); onStatus('Retrying OpenHistoricalMap…');
       gl.getCanvas().style.visibility = 'hidden';
-      gl.setStyle(structuredClone(style), { diff: false });
+      gl.setStyle(physicalBasemapStyle(style), { diff: false });
     },
     select(record, selectedYear, show = true) {
       if (selection?.id !== record?.id || year !== selectedYear) hasBoundary = false;
