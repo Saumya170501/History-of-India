@@ -55,14 +55,15 @@ export function periodLayers(source) {
       'fill-color': ['get', 'color'],
       'fill-opacity': ['case',
         ['boolean', ['feature-state', 'hover'], false], 0.62,
-        ['==', ['get', 'kind'], 'residual'], 0.1,
-        0.4],
+        ['==', ['get', 'kind'], 'residual'], 0.08,
+        0.33],
       'fill-antialias': true,
     } },
-    { id: 'period-line', type: 'line', source, filter: polygonFilter, paint: {
+    { id: 'period-line', type: 'line', source, filter: polygonFilter, layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: {
       'line-color': ['case', ['==', ['get', 'kind'], 'residual'], '#8d887c', ['get', 'color']],
-      'line-width': ['case', ['==', ['get', 'kind'], 'residual'], 0.7, 1.15],
-      'line-opacity': 0.9,
+      'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.6, 6, 1.4],
+      'line-blur': ['interpolate', ['linear'], ['zoom'], 3, 1.1, 6, 2.2],
+      'line-opacity': 0.45,
     } },
     { id: 'period-label', type: 'symbol', source, filter: ['==', ['get', 'kind'], 'named'], layout: {
       'text-field': ['get', 'name'],

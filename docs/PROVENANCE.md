@@ -36,7 +36,7 @@ Historical summaries are short original paraphrases. UNESCO descriptions display
 - Dataset: [historical-basemaps](https://github.com/aourednik/historical-basemaps), André Ourednik and contributors.
 - Retrieved from the jsDelivr mirror of the `master` branch on 11 November 2026.
 - Licence: GNU General Public License v3.0 only, as published in that repository. The full text is `public/data/basemaps/LICENSE-GPL-3.0.txt`. An open upstream issue still asks whether GPL was intended for the GeoJSON; this project follows the licence file the maintainer added and does not relicense the data.
-- Local change: world sheets were clipped to longitude 56–101 and latitude 3–40, coordinates rounded to two decimal degrees, unnamed features dropped, and properties reduced. No border was drawn by hand and none was interpolated between sheets. The modification is described in `src/data/basemap-index.json`.
+- Local change: world sheets were clipped to longitude 56–101 and latitude 3–40, then cut to Natural Earth 1:50 million land, release `v5.1.2` (public domain), so the fill follows the modern coast instead of crossing the sea. Long straight inland segments were given a small display wobble. That wobble is not a historical border and was not drawn to follow a mountain range or a river. Coordinates are rounded to 4 decimal degrees. No border was interpolated between sheets. The modification is described in `src/data/basemap-index.json`.
 - These shapes are coarse world-scale digitizations. They overlap, they contain anachronisms, and they are not a reviewed reconstruction. The application code is not placed under GPL by this data.
 
 ## Software

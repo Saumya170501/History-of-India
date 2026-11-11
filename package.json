@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "A source-led historical atlas of India, 1\u20132026 CE",
+  "description": "A source-led historical atlas of India, 1–2026 CE",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "osmtogeojson": "^3.0.0-beta.5",
+    "polygon-clipping": "^0.15.7",
     "vite": "8.3.6"
   }
 }

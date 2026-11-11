@@ -81,7 +81,7 @@ export function fillYearSources(container, { year, records, sources }) {
   repo.target = '_blank';
   repo.rel = 'noopener noreferrer';
   licence.append(repo);
-  container.append(licence, el('p', null, 'A straight edge at the map frame is a display cut, not a frontier. Borders are not interpolated between sheets.'));
+  container.append(licence, el('p', null, 'The coast is a modern Natural Earth land mask, public domain, so the colour is not painted on the sea. It is not a historical shoreline. Long inland edges of the coarse sheet are lightly irregular, and that wobble is not a frontier. Borders are not interpolated between sheets.'));
   const seen = new Set();
   const active = (records || []).filter(record => year >= record.startYear && year <= record.endYear);
   for (const record of active) {

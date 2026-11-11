@@ -3,6 +3,7 @@
 import { mkdir, writeFile, copyFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import polygonClipping from 'polygon-clipping';
 import { CORE, FRAME, RESIDUAL_COLOR, isResidualName, polityColor } from '../src/period-map.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -53,7 +54,7 @@ function clipRing(ring) {
   }
   const rounded = [];
   for (const [x, y] of output) {
-    const point = [Math.round(x * 100) / 100, Math.round(y * 100) / 100];
+    const point = [Math.round(x * 10000) / 10000, Math.round(y * 10000) / 10000];
     const last = rounded.at(-1);
     if (!last || last[0] !== point[0] || last[1] !== point[1]) rounded.push(point);
   }
@@ -127,12 +128,107 @@ async function fetchYear(year) {
   }
   throw new Error(`${year}: ${last.message}`);
 }
+function asMulti(geometry) {
+  if (geometry?.type === 'Polygon') return [geometry.coordinates];
+  if (geometry?.type === 'MultiPolygon') return geometry.coordinates;
+  return [];
+}
+function fromMulti(multi) {
+  const clean = (multi || []).filter(poly => poly?.[0]?.length >= 4);
+  if (!clean.length) return null;
+  if (clean.length === 1) return { type: 'Polygon', coordinates: clean[0] };
+  return { type: 'MultiPolygon', coordinates: clean };
+}
+function ringBBoxHitsFrame(ring) {
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  for (const [x, y] of ring) {
+    minX = Math.min(minX, x); maxX = Math.max(maxX, x);
+    minY = Math.min(minY, y); maxY = Math.max(maxY, y);
+  }
+  return maxX >= FRAME.west && minX <= FRAME.east && maxY >= FRAME.south && minY <= FRAME.north;
+}
+function wobble(x, y) {
+  let h = Math.imul(Math.round(x * 1000) | 0, 374761393) ^ Math.imul(Math.round(y * 1000) | 0, 668265263);
+  h = Math.imul(h ^ (h >>> 13), 1274126177);
+  return ((((h ^ (h >>> 16)) >>> 0) % 9) - 4) / 4;
+}
+// Long ruler-straight segments of the coarse sheet are bent a little so the
+// stroke is not a polygon drawn with a ruler. The offset is display only.
+function softenRing(ring) {
+  const open = ring.length > 1 && ring[0][0] === ring.at(-1)[0] && ring[0][1] === ring.at(-1)[1]
+    ? ring.slice(0, -1) : ring.slice();
+  if (open.length < 3) return null;
+  const dense = [];
+  for (let i = 0; i < open.length; i += 1) {
+    const a = open[i];
+    const b = open[(i + 1) % open.length];
+    dense.push(a);
+    const dx = b[0] - a[0];
+    const dy = b[1] - a[1];
+    const len = Math.hypot(dx, dy);
+    if (len < 0.35) continue;
+    const steps = Math.min(6, Math.max(1, Math.floor(len / 0.5)));
+    const nx = -dy / len;
+    const ny = dx / len;
+    for (let step = 1; step <= steps; step += 1) {
+      const t = step / (steps + 1);
+      const amp = 0.09 * Math.sin(Math.PI * t) * wobble(a[0] + dx * t, a[1] + dy * t);
+      dense.push([a[0] + dx * t + nx * amp, a[1] + dy * t + ny * amp]);
+    }
+  }
+  const curved = [];
+  for (let i = 0; i < dense.length; i += 1) {
+    const p = dense[i];
+    const q = dense[(i + 1) % dense.length];
+    curved.push([0.75 * p[0] + 0.25 * q[0], 0.75 * p[1] + 0.25 * q[1]]);
+    curved.push([0.25 * p[0] + 0.75 * q[0], 0.25 * p[1] + 0.75 * q[1]]);
+  }
+  curved.push(curved[0]);
+  return curved;
+}
+function softenGeometry(geometry) {
+  if (geometry?.type === 'Polygon') {
+    const rings = geometry.coordinates.map(softenRing).filter(Boolean);
+    return rings.length ? { type: 'Polygon', coordinates: rings } : null;
+  }
+  if (geometry?.type === 'MultiPolygon') {
+    const polygons = geometry.coordinates
+      .map(poly => poly.map(softenRing).filter(Boolean))
+      .filter(poly => poly.length);
+    return polygons.length ? { type: 'MultiPolygon', coordinates: polygons } : null;
+  }
+  return null;
+}
+let landMulti = null;
+async function loadLand() {
+  const response = await fetch('https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_land.geojson');
+  if (!response.ok) throw new Error(`Natural Earth land HTTP ${response.status}`);
+  const fc = await response.json();
+  const parts = [];
+  for (const feature of fc.features || []) {
+    const polys = feature.geometry?.type === 'Polygon' ? [feature.geometry.coordinates]
+      : feature.geometry?.type === 'MultiPolygon' ? feature.geometry.coordinates : [];
+    for (const poly of polys) if (ringBBoxHitsFrame(poly[0])) parts.push(poly);
+  }
+  landMulti = parts.length ? polygonClipping.union(...parts) : [];
+  if (!landMulti.length) throw new Error('Natural Earth land mask is empty in the display frame');
+}
+function dressGeometry(geometry) {
+  const clipped = clipGeometry(geometry);
+  if (!clipped) return null;
+  let cut;
+  try { cut = polygonClipping.intersection(asMulti(clipped), landMulti); }
+  catch { return clipped; }
+  const onLand = fromMulti(cut);
+  if (!onLand) return null;
+  return clipGeometry(softenGeometry(onLand) || onLand);
+}
 function convert(collection, year) {
   const features = [];
   for (const feature of collection.features || []) {
     const name = feature.properties?.NAME;
     if (typeof name !== 'string' || !name.trim()) continue;
-    const geometry = clipGeometry(feature.geometry);
+    const geometry = dressGeometry(feature.geometry);
     if (!geometry || !inCore(geometry)) continue;
     const area = areaOf(geometry);
     if (area < 0.15) continue;
@@ -173,6 +269,7 @@ async function pool(items, limit, task) {
 }
 
 await mkdir(outDir, { recursive: true });
+await loadLand();
 const sheets = await pool(years, 4, async year => {
   const raw = await fetchYear(year);
   const collection = convert(raw, year);
@@ -190,8 +287,14 @@ const index = {
   license: 'GPL-3.0-only',
   licenseUrl: 'https://github.com/aourednik/historical-basemaps/blob/master/LICENSE',
   retrieved: '2026-11-11',
-  modification: 'Each world sheet was clipped to longitude 56–101 and latitude 3–40, coordinates were rounded to 2 decimal degrees, unnamed features were dropped, and properties were reduced to name, part-of, subject-to, kind, year and colour. No borders were interpolated between sheets. Clipped edges are display cuts, not frontiers. Topology was not repaired.',
-  warning: 'Coarse world-scale snapshots for orientation. Not an independently reviewed reconstruction of any year. Overlapping polygons and residual categories are retained and labelled. A name match with a research record is not proof of sovereignty or of the drawn extent.',
+  modification: 'Each world sheet was clipped to longitude 56–101 and latitude 3–40, then cut to Natural Earth 50m land (public domain, v5.1.2) so the colour stops at the modern coastline instead of crossing the sea. Long straight inland segments of the coarse sheet were given a small display wobble and one smoothing pass so they are not drawn with a ruler. That wobble is not a historical frontier. Coordinates are rounded to 4 decimal degrees. Unnamed features were dropped. No borders were interpolated between sheets. A straight edge on the frame is still a display cut.',
+  warning: 'Approximate sheets, not surveyed borders and not an independently reviewed reconstruction. The coastline is a modern physical mask, not a historical shore. Inland edges remain the coarse historical-basemaps line, only softened for display. Overlapping polygons and residual categories are retained and labelled. A name match with a research record is not proof of sovereignty or of the drawn extent.',
+  coastline: {
+    dataset: 'Natural Earth 1:50 million land',
+    version: 'v5.1.2',
+    url: 'https://www.naturalearthdata.com/downloads/50m-physical-vectors/',
+    license: 'public domain',
+  },
   frame: FRAME,
   core: CORE,
   snapshots: sheets,
@@ -205,7 +308,7 @@ Source: https://github.com/aourednik/historical-basemaps
 License: GNU General Public License v3.0 only. See LICENSE-GPL-3.0.txt in this directory.
 Retrieved: 2026-11-11 from the jsDelivr mirror of the master branch.
 
-This project modified the GeoJSON: clipped to the Indian subcontinent and immediate neighbours, rounded coordinates, dropped unnamed features, and removed properties other than those listed in src/data/basemap-index.json. The shapes are not verified historical borders.
+This project modified the GeoJSON. Shapes are cut to Natural Earth 50m land (public domain, v5.1.2) so they follow the modern coast, and long inland segments are lightly irregularised for display. That irregularity is not a claimed frontier. See src/data/basemap-index.json. The shapes are not verified historical borders.
 
 The application code in this repository is not covered by this data license.
 `);

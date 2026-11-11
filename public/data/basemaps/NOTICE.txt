@@ -5,6 +5,6 @@ Source: https://github.com/aourednik/historical-basemaps
 License: GNU General Public License v3.0 only. See LICENSE-GPL-3.0.txt in this directory.
 Retrieved: 2026-11-11 from the jsDelivr mirror of the master branch.
 
-This project modified the GeoJSON: clipped to the Indian subcontinent and immediate neighbours, rounded coordinates, dropped unnamed features, and removed properties other than those listed in src/data/basemap-index.json. The shapes are not verified historical borders.
+This project modified the GeoJSON. Shapes are cut to Natural Earth 50m land (public domain, v5.1.2) so they follow the modern coast, and long inland segments are lightly irregularised for display. That irregularity is not a claimed frontier. See src/data/basemap-index.json. The shapes are not verified historical borders.
 
 The application code in this repository is not covered by this data license.

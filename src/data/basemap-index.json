@@ -6,8 +6,14 @@
   "license": "GPL-3.0-only",
   "licenseUrl": "https://github.com/aourednik/historical-basemaps/blob/master/LICENSE",
   "retrieved": "2026-11-11",
-  "modification": "Each world sheet was clipped to longitude 56–101 and latitude 3–40, coordinates were rounded to 2 decimal degrees, unnamed features were dropped, and properties were reduced to name, part-of, subject-to, kind, year and colour. No borders were interpolated between sheets. Clipped edges are display cuts, not frontiers. Topology was not repaired.",
-  "warning": "Coarse world-scale snapshots for orientation. Not an independently reviewed reconstruction of any year. Overlapping polygons and residual categories are retained and labelled. A name match with a research record is not proof of sovereignty or of the drawn extent.",
+  "modification": "Each world sheet was clipped to longitude 56–101 and latitude 3–40, then cut to Natural Earth 50m land (public domain, v5.1.2) so the colour stops at the modern coastline instead of crossing the sea. Long straight inland segments of the coarse sheet were given a small display wobble and one smoothing pass so they are not drawn with a ruler. That wobble is not a historical frontier. Coordinates are rounded to 4 decimal degrees. Unnamed features were dropped. No borders were interpolated between sheets. A straight edge on the frame is still a display cut.",
+  "warning": "Approximate sheets, not surveyed borders and not an independently reviewed reconstruction. The coastline is a modern physical mask, not a historical shore. Inland edges remain the coarse historical-basemaps line, only softened for display. Overlapping polygons and residual categories are retained and labelled. A name match with a research record is not proof of sovereignty or of the drawn extent.",
+  "coastline": {
+    "dataset": "Natural Earth 1:50 million land",
+    "version": "v5.1.2",
+    "url": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/",
+    "license": "public domain"
+  },
   "frame": {
     "west": 56,
     "south": 3,
@@ -59,7 +65,7 @@
     {
       "year": 800,
       "file": "year-800.geojson",
-      "featureCount": 17
+      "featureCount": 16
     },
     {
       "year": 900,
@@ -74,12 +80,12 @@
     {
       "year": 1100,
       "file": "year-1100.geojson",
-      "featureCount": 20
+      "featureCount": 19
     },
     {
       "year": 1200,
       "file": "year-1200.geojson",
-      "featureCount": 17
+      "featureCount": 16
     },
     {
       "year": 1279,

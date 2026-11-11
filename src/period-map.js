@@ -102,7 +102,7 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records 
     gap,
     `Named areas on this approximate sheet: ${namedList.length ? namedList.join(', ') : 'none'}.`,
     residualList.length ? `Residual source categories, not single kingdoms: ${residualList.join(', ')}.` : '',
-    'These shapes are a coarse external digitization, clipped to the map frame. A straight edge at the frame is a display cut, not a frontier. They are not a verified political map.',
+    'The coast follows a modern land mask so the colour stops at the sea. Inland edges are the coarse sheet, lightly softened for display, not a surveyed frontier. A straight edge on the frame is a display cut. They are not a verified political map.',
   ].filter(Boolean).join(' ');
   return {
     year,
