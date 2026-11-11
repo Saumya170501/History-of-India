@@ -1,0 +1,4208 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "unesco-sanchi",
+      "title": "Buddhist Monuments at Sanchi",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/524/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-ajanta",
+      "title": "Ajanta Caves",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/242/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-nalanda",
+      "title": "Archaeological Site of Nalanda Mahavihara",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/1502/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-hampi",
+      "title": "Group of Monuments at Hampi",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/241/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-taj",
+      "title": "Taj Mahal",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/252/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-south",
+      "title": "South Asia: South, 1000–1400 CE",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/ht/07/sss",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-rulers",
+      "title": "Sultanate and Mughal dynastic rulers",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/hd/ssar/hd_ssar.htm",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-chola",
+      "title": "Great Living Chola Temples",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/250/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "ignca-chola",
+      "title": "Gangaikondacholapuram: Later history",
+      "publisher": "IGNCA digital archive",
+      "url": "https://ignca.gov.in/Asi_data/57366.pdf",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "harvard-early",
+      "title": "Satavahana–Saka–Kushan Age, c. 1–300 CE",
+      "publisher": "A Timeline of South Asian History (Harvard-hosted)",
+      "url": "https://timelinesouthasianhistory.hsites.harvard.edu/south-asia-satavahana-saka-kushan-age-c-1-%E2%80%93-300-ce",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "skinner-kanishka",
+      "title": "Kanishka Era — Michael C. Skinner",
+      "publisher": "Wiley, Encyclopedia of Ancient History",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119399919.eahaa00562",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "inflib-satavahana",
+      "title": "Sunga, Kanva and Satavahana dynasties — P. Bhaskar Reddy",
+      "publisher": "INFLIBNET, Outlines of Indian History",
+      "url": "https://ebooks.inflibnet.ac.in/icp01/chapter/sunga-kanva-and-satavahana-dynasties/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "bm-overstrike",
+      "title": "Silver coin of Gautamiputra Satakarni, 1907,0102.12",
+      "publisher": "British Museum via Google Arts & Culture",
+      "url": "https://artsandculture.google.com/asset/silver-coin-of-gautamiputra-satakarni/tQEoF2ik43FHRg?hl=en",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-early",
+      "title": "South Asia, 1–500 CE",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/ht/05/ssa",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "ignou-tamilakam",
+      "title": "Polities from 3rd Century: Early State Formation, section 1.8",
+      "publisher": "IGNOU eGyanKosh",
+      "url": "https://www.egyankosh.ac.in/bitstream/123456789/67193/1/Block-1.pdf",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "rbi-ancient",
+      "title": "Ancient India Coinage",
+      "publisher": "Reserve Bank of India Monetary Museum",
+      "url": "https://m.rbi.org.in/scripts/mc_ancient.aspx",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "iranica-kushan",
+      "title": "Kushan Dynasty I: Dynastic History — A. D. H. Bivar",
+      "publisher": "Encyclopaedia Iranica",
+      "url": "https://www.iranicaonline.org/articles/kushan-dynasty-i-history/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "harvard-mughal",
+      "title": "The Mughal Period and Transition",
+      "publisher": "A Timeline of South Asian History, Harvard-hosted",
+      "url": "https://timelinesouthasianhistory.hsites.harvard.edu/mughal-period-and-transition-c-1526-ce-1707-ce",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "harvard-regional",
+      "title": "Mughal Disintegration and the Rise of Regional Powers",
+      "publisher": "A Timeline of South Asian History, Harvard-hosted",
+      "url": "https://timelinesouthasianhistory.hsites.harvard.edu/mughal-disintegration-and-rise-regional-powers-c-1707-ce-1766-ce",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "vam-mughal",
+      "title": "The arts of the Mughal Empire",
+      "publisher": "Victoria and Albert Museum",
+      "url": "https://www.vam.ac.uk/articles/the-arts-of-the-mughal-empire",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "iranica-babur",
+      "title": "Bābor, Ẓahīr-al-Dīn Moḥammad — Fritz Lehmann",
+      "publisher": "Encyclopaedia Iranica",
+      "url": "https://www.iranicaonline.org/articles/babor-zahir-al-din/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "iranica-akbar",
+      "title": "Akbar I — Fritz Lehmann",
+      "publisher": "Encyclopaedia Iranica",
+      "url": "https://www.iranicaonline.org/articles/akbar-i-mughal-india/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-mughal-art",
+      "title": "The Art of the Mughals after 1600 — Marika Sardar",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-art-of-the-mughals-after-1600",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "mewar-lineage",
+      "title": "Mewar Encyclopedia: Lineage of Mewar",
+      "publisher": "Eternal Mewar / Maharana of Mewar Charitable Foundation",
+      "url": "https://www.eternalmewar.in/research",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "mewar-pratap",
+      "title": "Maharana Pratap Timeline (updated 27 July 2021)",
+      "publisher": "Eternal Mewar",
+      "url": "https://www.eternalmewar.in/documents/MaharanaPratapTimeline.pdf",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "mehrangarh-history",
+      "title": "History of Mehrangarh",
+      "publisher": "Mehrangarh Museum Trust",
+      "url": "https://www.mehrangarh.org/mehrangarh-2/history/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "mehrangarh-architecture",
+      "title": "Architecture of Mehrangarh",
+      "publisher": "Mehrangarh Museum Trust",
+      "url": "https://www.mehrangarh.org/mehrangarh-2/architecture/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "mehrangarh-paintings",
+      "title": "Paintings collection",
+      "publisher": "Mehrangarh Museum Trust",
+      "url": "https://www.mehrangarh.org/collection/paintings/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-man-singh",
+      "title": "Portrait of Raja Man Singh of Amber, 1982.174",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/453180",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "met-madho-kota",
+      "title": "Maharao Madho Singh Hunting Wild Boar, 2022.216",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/76032",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "cma-anup",
+      "title": "Maharaja Anup Singh of Bikaner Receives a Courtier, 2018.191",
+      "publisher": "Cleveland Museum of Art",
+      "url": "https://www.clevelandart.org/art/2018.191",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "aam-anup",
+      "title": "Maharaja Anup Singh of Bikaner, B86D13",
+      "publisher": "Asian Art Museum via Google Arts & Culture",
+      "url": "https://artsandculture.google.com/asset/maharaja-anup-singh-of-bikaner/iQEAeGab5hw0YA?hl=en",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-jaipur",
+      "title": "Jaipur City, Rajasthan",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/1605/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-jaipur-decision",
+      "title": "Decision 43 COM 8B.16: Jaipur City",
+      "publisher": "UNESCO World Heritage Committee",
+      "url": "https://whc.unesco.org/en/decisions/?id_decision=7374",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-jantar",
+      "title": "The Jantar Mantar, Jaipur",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/1338/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "unesco-rajput-forts",
+      "title": "Hill Forts of Rajasthan",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/247/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "nam-rebellion",
+      "title": "Decisive events of the Indian Rebellion",
+      "publisher": "National Army Museum",
+      "url": "https://www.nam.ac.uk/explore/decisive-events-indian-mutiny",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "sarmaya-shah-ii",
+      "title": "Shah Jahan II: Gold Mohur of Shahjahanabad, 2015.N.61.8",
+      "publisher": "Sarmaya Arts Foundation",
+      "url": "https://sarmaya.in/objects/numismatics/shah-jahan-ii-gold-mohur-of-shahjahanabad-mint/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "express-prithviraj",
+      "title": "Who was Prithviraj Chauhan? — Raghu Malhotra, 24 May 2022",
+      "publisher": "The Indian Express, Explained",
+      "url": "https://indianexpress.com/article/explained/everyday-explainers/prithviraj-chauhan-akshay-kumar-gujjar-rajput-communities-rajasthan-7934307/",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "rajasthan-bika",
+      "title": "Bikaner tourism and history",
+      "publisher": "Department of Tourism, Government of Rajasthan",
+      "url": "https://www.tourism.rajasthan.gov.in/bikaner.html",
+      "accessed": "2026-11-07"
+    },
+    {
+      "id": "rajasthan-jaisal",
+      "title": "Jaisalmer tourism and history",
+      "publisher": "Department of Tourism, Government of Rajasthan",
+      "url": "https://www.tourism.rajasthan.gov.in/jaisalmer.html",
+      "accessed": "2026-11-07"
+    }
+  ],
+  "records": [
+    {
+      "id": "sanchi-gateways",
+      "title": "Sanchi's sculpted gateways",
+      "type": "site",
+      "place": "Sanchi",
+      "startYear": 1,
+      "endYear": 100,
+      "datePrecision": "century",
+      "dateLabel": "1st century CE",
+      "dateNote": "The source assigns ornamentation to the first century, without an exact year. The 1–100 window means the work may fall within this period; it does not establish that it occurred in 1 CE or in every year shown.",
+      "summary": "Sanchi's four gateways received sculptural ornamentation during the Satavahana period.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.73972,
+          23.47944
+        ]
+      },
+      "locationNote": "UNESCO's reference point for the Sanchi monument group, not a surveyed location for an individual gateway.",
+      "locationSourceId": "unesco-sanchi",
+      "citations": [
+        {
+          "sourceId": "unesco-sanchi",
+          "locator": "Outstanding Universal Value → Brief synthesis, paragraph on Stupa 1",
+          "supports": "Gateway ornamentation and first-century dating. Property coordinates supply the site reference point."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "ajanta-later-caves",
+      "title": "A new chapter at Ajanta",
+      "type": "site",
+      "place": "Ajanta",
+      "startYear": 401,
+      "endYear": 600,
+      "datePrecision": "century",
+      "dateLabel": "5th–6th centuries CE",
+      "dateNote": "This broad window follows UNESCO's introductory description. It is not a continuous building schedule or a statement of political control.",
+      "summary": "A later phase added decorated Buddhist caves to Ajanta's earlier cave group.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70025,
+          20.553111
+        ]
+      },
+      "locationNote": "UNESCO's reference point for the Ajanta cave group.",
+      "locationSourceId": "unesco-ajanta",
+      "citations": [
+        {
+          "sourceId": "unesco-ajanta",
+          "locator": "Introductory description; property coordinates",
+          "supports": "The later cave phase and its fifth- to sixth-century date window; site location."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "nalanda-learning",
+      "title": "Learning at Nalanda",
+      "type": "culture",
+      "place": "Nalanda",
+      "startYear": 401,
+      "endYear": 1300,
+      "datePrecision": "century",
+      "dateLabel": "5th–13th centuries CE",
+      "dateNote": "The monastic and scholastic institution is dated by century in the synthesis. These filtering endpoints are not exact foundation or abandonment years. Earlier archaeological remains are a separate claim.",
+      "summary": "Nalanda developed as a monastic institution and a centre of scholarship, with an enduring influence on Buddhist education.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.443889,
+          25.136667
+        ]
+      },
+      "locationNote": "UNESCO's reference point for the archaeological property; no cultural or political extent is implied.",
+      "locationSourceId": "unesco-nalanda",
+      "citations": [
+        {
+          "sourceId": "unesco-nalanda",
+          "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; property coordinates",
+          "supports": "Institutional chronology, educational role and site reference point."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "hampi-capital",
+      "title": "Vijayanagara at Hampi",
+      "type": "kingdom",
+      "place": "Hampi",
+      "startYear": 1301,
+      "endYear": 1565,
+      "datePrecision": "approximate",
+      "dateLabel": "14th century–1565 CE",
+      "dateNote": "1301 is the start of the source's century-wide window, not a claimed foundation year. 1565 marks the cited destruction of the city, not the end of the dynasty or all successor rule.",
+      "summary": "Hampi preserves the capital city of Vijayanagara, with royal, sacred and urban complexes.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.47167,
+          15.31444
+        ]
+      },
+      "locationNote": "A capital-site reference point from UNESCO. This marker is not the extent of the Vijayanagara kingdom.",
+      "locationSourceId": "unesco-hampi",
+      "citations": [
+        {
+          "sourceId": "unesco-hampi",
+          "locator": "Description; Outstanding Universal Value → Brief synthesis; property coordinates",
+          "supports": "Capital identity, broad period, destruction year and site location."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "hampi-1565",
+      "title": "Talikota: the aftermath at Hampi",
+      "type": "battle",
+      "place": "Hampi (affected city)",
+      "startYear": 1565,
+      "endYear": 1565,
+      "datePrecision": "year",
+      "dateLabel": "1565 CE",
+      "dateNote": "The source gives the year. The record concerns the battle's consequences for Hampi, not its exact day or battlefield location.",
+      "summary": "The Battle of Talikota led to extensive destruction at Hampi.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.47167,
+          15.31444
+        ]
+      },
+      "locationNote": "Marker placed at the affected city of Hampi, not at the battlefield of Talikota. UNESCO supplies the Hampi reference point.",
+      "locationSourceId": "unesco-hampi",
+      "citations": [
+        {
+          "sourceId": "unesco-hampi",
+          "locator": "Outstanding Universal Value → Brief synthesis, paragraph on the city's destruction; property coordinates",
+          "supports": "Battle year and consequences for Hampi; the affected city's location only."
+        }
+      ],
+      "reviewStatus": "cited",
+      "eventKind": "aftermath"
+    },
+    {
+      "id": "taj-construction",
+      "title": "Building the Taj Mahal",
+      "type": "site",
+      "place": "Agra",
+      "startYear": 1632,
+      "endYear": 1648,
+      "datePrecision": "approximate",
+      "dateLabel": "1632–1648 CE (source variation)",
+      "dateNote": "The detailed UNESCO synthesis gives 1632–1648 for the mausoleum and 1653 for later additions. Its introduction instead starts in 1631. This record follows the synthesis and preserves that discrepancy for review.",
+      "summary": "Shah Jahan commissioned the Taj Mahal in memory of Mumtaz Mahal.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.04222,
+          27.17417
+        ]
+      },
+      "locationNote": "UNESCO's property reference point, rounded to five decimal places.",
+      "locationSourceId": "unesco-taj",
+      "citations": [
+        {
+          "sourceId": "unesco-taj",
+          "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; compare introductory description",
+          "supports": "Patron, purpose and construction chronology, with an internal start-year discrepancy; property coordinates provide location."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "shah-jahan-patronage",
+      "title": "Shah Jahan's patronage at Agra",
+      "type": "ruler",
+      "place": "Agra",
+      "startYear": 1632,
+      "endYear": 1648,
+      "datePrecision": "approximate",
+      "dateLabel": "1632–1648 CE (construction window)",
+      "dateNote": "This is a patronage record tied to construction, not Shah Jahan's lifespan or reign. The same source differs between 1631 and 1632 for the start; the detailed synthesis is used here.",
+      "summary": "The Mughal emperor's architectural patronage is represented here by the Taj Mahal project.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.04222,
+          27.17417
+        ]
+      },
+      "locationNote": "The commissioned monument's reference point, not the ruler's location, capital boundary or imperial territory.",
+      "locationSourceId": "unesco-taj",
+      "citations": [
+        {
+          "sourceId": "unesco-taj",
+          "locator": "Outstanding Universal Value → Brief synthesis, first paragraph; property coordinates",
+          "supports": "Shah Jahan's patronage and its association with the Taj Mahal construction window and site."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "aybak",
+      "title": "Qutb al-Din Aybak",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1206,
+      "endYear": 1210,
+      "datePrecision": "year",
+      "dateLabel": "1206–1210 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "aram",
+      "title": "Aram Shah",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1210,
+      "endYear": 1211,
+      "datePrecision": "year",
+      "dateLabel": "1210–1211 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "iltutmish",
+      "title": "Iltutmish",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1211,
+      "endYear": 1236,
+      "datePrecision": "year",
+      "dateLabel": "1211–1236 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "raziya",
+      "title": "Radiyya Begum (Raziya)",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1236,
+      "endYear": 1240,
+      "datePrecision": "year",
+      "dateLabel": "1236–1240 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "bahram",
+      "title": "Bahram Shah",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1240,
+      "endYear": 1242,
+      "datePrecision": "year",
+      "dateLabel": "1240–1242 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Delhi Sultanate → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "bahlul",
+      "title": "Bahlul Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1451,
+      "endYear": 1489,
+      "datePrecision": "year",
+      "dateLabel": "1451–1489 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Lodi → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "sikandar",
+      "title": "Sikandar Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1489,
+      "endYear": 1517,
+      "datePrecision": "year",
+      "dateLabel": "1489–1517 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Lodi → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "ibrahim",
+      "title": "Ibrahim Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1517,
+      "endYear": 1526,
+      "datePrecision": "year",
+      "dateLabel": "1517–1526 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Reign chronology; biography and individual events remain to be researched.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Lodi → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "babur",
+      "title": "Babur",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1526,
+      "endYear": 1530,
+      "datePrecision": "year",
+      "dateLabel": "1526–1530 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Timurid founder of Mughal rule in northern India; his career also extended across Central Asia and Kabul.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        },
+        {
+          "sourceId": "iranica-babur",
+          "locator": "Opening biography and Indian campaigns",
+          "supports": "Timurid background and establishment of Mughal rule."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Origins and succession",
+          "text": "Babur inherited Ferghana after his father’s death in 1494 and took Kabul in 1504. His Indian reign is only one phase of that longer career.",
+          "citations": [
+            {
+              "sourceId": "iranica-babur",
+              "locator": "Opening biography; paragraphs on Ferghana and Kabul",
+              "supports": "Origins and succession and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Conquest and consolidation",
+          "text": "Victories over Ibrahim Lodi at Panipat in 1526 and Rana Sanga’s confederacy at Khanwa in 1527 established his position. These events do not provide a digitizable border.",
+          "citations": [
+            {
+              "sourceId": "iranica-babur",
+              "locator": "Indian campaigns: Panipat and Khanwah paragraphs",
+              "supports": "Conquest and consolidation and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Writing and evidence",
+          "text": "His Chagatai Turkish memoir, the Baburnama, records campaigns, landscapes and personal judgments. It is a ruler’s own account and requires comparison with other evidence.",
+          "citations": [
+            {
+              "sourceId": "iranica-babur",
+              "locator": "Literary works and Baburnama discussion",
+              "supports": "Writing and evidence and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "humayun-first",
+      "title": "Humayun: first reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1530,
+      "endYear": 1540,
+      "datePrecision": "year",
+      "dateLabel": "1530–1540 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Babur’s successor, whose loss of power and later restoration are represented as separate reigns.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        },
+        {
+          "sourceId": "vam-mughal",
+          "locator": "Introduction: Humayun",
+          "supports": "Succession, displacement and restoration context."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Displacement and return",
+          "text": "Sher Shah Suri displaced Humayun. Exile at the Safavid court preceded his return through Kabul and eventual recovery of Delhi.",
+          "citations": [
+            {
+              "sourceId": "vam-mughal",
+              "locator": "Introduction: Humayun and Shah Tahmasp",
+              "supports": "Displacement and return and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Why two records?",
+          "text": "This entry covers only the labelled reign phase. The years 1541–1554 are not represented as Humayun ruling Delhi; his activities in exile require separate dated records.",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal: Humayun first reign; Suri interval; Humayun second reign",
+              "supports": "Why two records? and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "humayun-second",
+      "title": "Humayun: restored reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1555,
+      "endYear": 1556,
+      "datePrecision": "year",
+      "dateLabel": "1555–1556 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Babur’s successor, whose loss of power and later restoration are represented as separate reigns.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        },
+        {
+          "sourceId": "vam-mughal",
+          "locator": "Introduction: Humayun",
+          "supports": "Succession, displacement and restoration context."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Displacement and return",
+          "text": "Sher Shah Suri displaced Humayun. Exile at the Safavid court preceded his return through Kabul and eventual recovery of Delhi.",
+          "citations": [
+            {
+              "sourceId": "vam-mughal",
+              "locator": "Introduction: Humayun and Shah Tahmasp",
+              "supports": "Displacement and return and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Why two records?",
+          "text": "This entry covers only the labelled reign phase. The years 1541–1554 are not represented as Humayun ruling Delhi; his activities in exile require separate dated records.",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal: Humayun first reign; Suri interval; Humayun second reign",
+              "supports": "Why two records? and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "akbar",
+      "title": "Akbar",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1556,
+      "endYear": 1605,
+      "datePrecision": "year",
+      "dateLabel": "1556–1605 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Mughal emperor who expanded imperial power through warfare, alliances and administrative consolidation.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        },
+        {
+          "sourceId": "iranica-akbar",
+          "locator": "Political career",
+          "supports": "Expansion, alliances and administrative consolidation."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Accession and alliances",
+          "text": "Akbar succeeded as a minor in 1556 under Bayram Khan’s regency. The 1562 alliance with Bharmal of Amber helped integrate Rajput elites into imperial service; it did not mean every Rajput court submitted.",
+          "citations": [
+            {
+              "sourceId": "iranica-akbar",
+              "locator": "Accession; Political career, Amber alliance",
+              "supports": "Accession and alliances and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Government",
+          "text": "His administration developed revenue assessment and control of the nobility over years of experimentation. Abu’l-Fazl’s Ain-i Akbari describes the imperial system but also expresses its political ideals.",
+          "citations": [
+            {
+              "sourceId": "iranica-akbar",
+              "locator": "Political career: administrative reforms and Ain-e Akbari",
+              "supports": "Government and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Arts and translation",
+          "text": "Court workshops brought together artists from different traditions. A translation bureau supported Persian versions of Sanskrit works and other texts.",
+          "citations": [
+            {
+              "sourceId": "vam-mughal",
+              "locator": "Akbar: royal workshops and Translation Bureau",
+              "supports": "Arts and translation and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jahangir",
+      "title": "Jahangir",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1605,
+      "endYear": 1627,
+      "datePrecision": "year",
+      "dateLabel": "1605–1627 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Akbar’s successor, whose court supported portraiture, natural-history studies and richly assembled albums.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        },
+        {
+          "sourceId": "met-mughal-art",
+          "locator": "Jahangir opening paragraphs",
+          "supports": "Artistic patronage and successor identity."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Court and patronage",
+          "text": "Jahangir encouraged individual painters, detailed studies of plants and animals, and portraiture. His illustrated memoirs and albums are evidence of court tastes, not neutral inventories of the empire.",
+          "citations": [
+            {
+              "sourceId": "met-mughal-art",
+              "locator": "Opening paragraphs on Jahangir",
+              "supports": "Court and patronage and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Nur Jahan",
+          "text": "He married Mehr un-Nissa, titled Nur Jahan, in 1611. She exercised substantial court influence and appeared by name on coinage.",
+          "citations": [
+            {
+              "sourceId": "vam-mughal",
+              "locator": "Jahangir: Nur Jahan paragraph",
+              "supports": "Nur Jahan and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shah-jahan-reign",
+      "title": "Shah Jahan: reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1628,
+      "endYear": 1658,
+      "datePrecision": "year",
+      "dateLabel": "1628–1658 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Mughal emperor associated with major architectural commissions and formal imperial portraiture; deposed in 1658.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → named ruler",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        },
+        {
+          "sourceId": "met-mughal-art",
+          "locator": "Shah Jahan and Aurangzeb succession paragraphs",
+          "supports": "Patronage and deposition."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Architecture and the court",
+          "text": "His patronage included the Taj Mahal and Shahjahanabad. Court painting favoured formal portraits and imperial ceremony, including the illustrated Padshahnama.",
+          "citations": [
+            {
+              "sourceId": "met-mughal-art",
+              "locator": "Shah Jahan paragraphs",
+              "supports": "Architecture and the court and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Separate dates for separate claims",
+          "text": "His reign ends in 1658 here. The Taj Mahal construction record retains its own dates and the source’s 1631/1632 variation; construction is not a reign interval.",
+          "citations": [
+            {
+              "sourceId": "unesco-taj",
+              "locator": "Brief synthesis; construction chronology",
+              "supports": "Separate dates for separate claims and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chola-dynasty",
+      "title": "Imperial Chola chronology",
+      "type": "kingdom",
+      "place": "Tamil region",
+      "startYear": 880,
+      "endYear": 1279,
+      "datePrecision": "approximate",
+      "dateLabel": "880–1279 CE",
+      "dateNote": "This source’s overview dates are used for discovery, not as a claim of unchanged rule or borders.",
+      "summary": "Regional dynastic chronology. Territorial changes require separate research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Timeline → regional dynasties",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "hoysala-dynasty",
+      "title": "Hoysala dynasty",
+      "type": "kingdom",
+      "place": "Southern Deccan",
+      "startYear": 1022,
+      "endYear": 1346,
+      "datePrecision": "approximate",
+      "dateLabel": "1022–1346 CE",
+      "dateNote": "This source’s overview dates are used for discovery, not as a claim of unchanged rule or borders.",
+      "summary": "Regional dynastic chronology. Territorial changes require separate research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Timeline → regional dynasties",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "bahmanid-dynasty",
+      "title": "Bahmanid dynasty",
+      "type": "kingdom",
+      "place": "Northern Deccan",
+      "startYear": 1347,
+      "endYear": 1528,
+      "datePrecision": "approximate",
+      "dateLabel": "1347–1528 CE",
+      "dateNote": "This source’s overview dates are used for discovery, not as a claim of unchanged rule or borders.",
+      "summary": "Regional dynastic chronology. Territorial changes require separate research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Timeline → regional dynasties",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "rajendra-reign",
+      "title": "Rajendra I: rule",
+      "type": "ruler",
+      "place": "Chola",
+      "startYear": 1014,
+      "endYear": 1044,
+      "datePrecision": "approximate",
+      "dateLabel": "1014–1044 CE",
+      "dateNote": "The Met dates this reign approximately 1014–1044; UNESCO gives 1012–1044. Accession and co-regency chronology needs specialist review.",
+      "summary": "Chola ruler associated with major military expeditions.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Key Events → ca. 1014–1044",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        },
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Brief synthesis → Gangaikondacholapuram temple",
+          "supports": "Alternative 1012 start for Rajendra I."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "chola-bronzes",
+      "title": "Chola bronze sculpture",
+      "type": "culture",
+      "place": "Chola cultural context",
+      "startYear": 1000,
+      "endYear": 1300,
+      "datePrecision": "approximate",
+      "dateLabel": "1000–1300 CE",
+      "dateNote": "Approximate art-historical period; not the date of every surviving bronze.",
+      "summary": "Metal images of Hindu deities, including Shiva as Nataraja, form a major artistic tradition.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "met-south",
+          "locator": "Key Events → ca. 1000–1300",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "rajaraja-temple",
+      "title": "Rajaraja I: temple patronage",
+      "type": "ruler",
+      "place": "Thanjavur",
+      "startYear": 1003,
+      "endYear": 1010,
+      "datePrecision": "approximate",
+      "dateLabel": "1003–1010 CE",
+      "dateNote": "Construction is tentatively placed in 1003–1004, with consecration in 1009–1010; this is patronage, not a full reign.",
+      "summary": "Rajaraja sponsored the Brihadisvara temple.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Brief synthesis → Thanjavur",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "thanjavur-consecration",
+      "title": "Brihadisvara consecration",
+      "type": "site",
+      "place": "Thanjavur",
+      "startYear": 1009,
+      "endYear": 1010,
+      "datePrecision": "approximate",
+      "dateLabel": "1009–1010 CE",
+      "dateNote": "The source supplies a two-year conversion of the twenty-fifth regnal year.",
+      "summary": "The temple was consecrated by its royal patron.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Brief synthesis → Thanjavur",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "gangaikonda-temple",
+      "title": "Rajendra’s Shiva temple",
+      "type": "site",
+      "place": "Gangaikondacholapuram",
+      "startYear": 1035,
+      "endYear": 1035,
+      "datePrecision": "year",
+      "dateLabel": "1035–1035 CE",
+      "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
+      "summary": "Temple completion is dated to 1035.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Introductory description",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "rajaraja-ii",
+      "title": "Rajaraja II: temple patron",
+      "type": "ruler",
+      "place": "Darasuram",
+      "startYear": 1143,
+      "endYear": 1173,
+      "datePrecision": "approximate",
+      "dateLabel": "1143–1173 CE",
+      "dateNote": "Source-provided ruler window, not an exact construction schedule; requires comparison with epigraphic chronologies.",
+      "summary": "Rajaraja II commissioned Airavatesvara.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "unesco-chola",
+          "locator": "Brief synthesis → Airavatesvara",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "rajadhiraja-career",
+      "title": "Rajadhiraja I: prince and king",
+      "type": "ruler",
+      "place": "Chola",
+      "startYear": 1018,
+      "endYear": 1054,
+      "datePrecision": "approximate",
+      "dateLabel": "1018–1054 CE",
+      "dateNote": "The archived account begins crown-prince status in 1018 and places death at Koppam in 1054. This is not a 1018 accession to sole rule. Other chronologies give 1052 for the death; the endpoint remains disputed. Full PDF retrieval timed out; entry relies on the indexed chapter passage and awaits page-level review.",
+      "summary": "A royal career spanning crown-prince status and kingship.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "citations": [
+        {
+          "sourceId": "ignca-chola",
+          "locator": "III → Later history, opening paragraph",
+          "supports": "Identity and chronology of this entry; not geographic boundaries."
+        }
+      ],
+      "reviewStatus": "cited"
+    },
+    {
+      "id": "early-kujula",
+      "title": "Kujula Kadphises",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 40,
+      "endYear": 90,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 40–90 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-wima-takto",
+      "title": "Wima Takto",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 90,
+      "endYear": 113,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 90–113 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-wima-kadphises",
+      "title": "Wima Kadphises",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 113,
+      "endYear": 127,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 113–127 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-huvishka",
+      "title": "Huvishka",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 150,
+      "endYear": 190,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 150–190 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-vasudeva-i",
+      "title": "Vasudeva I",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 190,
+      "endYear": 224,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 190–224 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kanishka-ii",
+      "title": "Kanishka II",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 230,
+      "endYear": 244,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 230–244 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-vasishka",
+      "title": "Vasishka",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 248,
+      "endYear": 256,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 248–256 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kanishka-iii",
+      "title": "Kanishka III",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 256,
+      "endYear": 256,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 256 CE",
+      "dateNote": "Approximate attestation around 256, not a one-year reign.",
+      "summary": "Kushan ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Rulers → Kushana (citing Cribb 2018)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kanishka-i",
+      "title": "Kanishka I",
+      "type": "ruler",
+      "place": "Kushan",
+      "startYear": 127,
+      "endYear": 150,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 127–150 CE",
+      "dateNote": "Skinner dates the era to 127 and the reign approximately 127–150. Era years and individual regnal years must not be treated as interchangeable without checking the inscription.",
+      "summary": "The Kanishka era anchors a major reconstruction of Kushan chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "skinner-kanishka",
+          "locator": "Abstract",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "harvard-early",
+          "locator": "Kushana ruler list, Kanishka",
+          "supports": "Corroborating approximate reign range."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-sodasa",
+      "title": "Sodasa",
+      "type": "ruler",
+      "place": "Northern Kshatrapa",
+      "startYear": 15,
+      "endYear": 15,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 15 CE",
+      "dateNote": "Approximate attestation, not a complete reign.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-chastana",
+      "title": "Chastana",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 78,
+      "endYear": 130,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 78–130 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-rudradaman",
+      "title": "Rudradaman: attestation",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 150,
+      "endYear": 150,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 150 CE",
+      "dateNote": "An attestation around 150, linked by the chronology to the Junagadh inscription; not a complete reign.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-rudrasimha",
+      "title": "Rudrasimha I: attestation",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 177,
+      "endYear": 178,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 177–178 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-nahapana",
+      "title": "Nahapana",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 54,
+      "endYear": 65,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 54–65 CE",
+      "dateNote": "This chronology uses c. 54–65. Other conversions place Nahapana later; do not treat these as universally agreed reign dates.",
+      "summary": "Source-dated ruler entry.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Northern Kshatrapa / Kardamaka / Kshaharata ruler tables",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-gautamiputra",
+      "title": "Gautamiputra Sri Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 60,
+      "endYear": 84,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 60–84 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors. INFLIBNET instead gives 75–106; the British Museum object text uses approximately 60–90. The displayed range follows the Harvard-hosted table, not a merged or averaged reign.",
+      "summary": "A Nasik eulogy commissioned by his mother Gautami Balasri celebrates his victories; its royal claims require critical reading.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "inflib-satavahana",
+          "locator": "4.6.3 Later Satavahanas",
+          "supports": "Mother, inscription and alternative chronology."
+        },
+        {
+          "sourceId": "bm-overstrike",
+          "locator": "Object description",
+          "supports": "Alternative approximate chronology and overstrike evidence."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-pulumavi",
+      "title": "Vasishthiputra Sri Pulumavi",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 84,
+      "endYear": 119,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 84–119 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors. INFLIBNET uses 106–130, showing that this sequence is disputed.",
+      "summary": "Son and successor of Gautamiputra in the INFLIBNET account.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "inflib-satavahana",
+          "locator": "4.6.3 Successors of Gautamiputra",
+          "supports": "Succession relationship and alternative dates."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-satakarni",
+      "title": "Vasishthiputra Sri Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 119,
+      "endYear": 148,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 119–148 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-yajna",
+      "title": "Gautamiputra Sri Yajna Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 171,
+      "endYear": 199,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 171–199 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors. INFLIBNET instead gives 174–203.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "inflib-satavahana",
+          "locator": "4.6.3 Yajnasri",
+          "supports": "Alternative chronology."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-vijaya",
+      "title": "Gautamiputra Sri Vijaya Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 200,
+      "endYear": 205,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 200–205 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-canda",
+      "title": "Vasishthiputra Sri Canda Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 206,
+      "endYear": 220,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 206–220 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-mathariputra",
+      "title": "Mathariputra Sri Pulumavi",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 220,
+      "endYear": 230,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 220–230 CE",
+      "dateNote": "One published chronology, not consensus. Regnal-year conversions and identifications differ between authors.",
+      "summary": "Chronological catalogue entry; biography remains under research.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Later Satavahana ruler list (Ollett 2017, pp. 189–190)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-camtamula",
+      "title": "Sri Camtamula",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 225,
+      "endYear": 240,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 225–240 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Ikshvaku ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Ikshvaku ruler list (Ollett 2017, p. 191)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-virapurushadatta",
+      "title": "Virapurushadatta",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 240,
+      "endYear": 265,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 240–265 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Ikshvaku ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Ikshvaku ruler list (Ollett 2017, p. 191)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-ehuvala",
+      "title": "Ehuvala Camtamula",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 265,
+      "endYear": 290,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 265–290 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Ikshvaku ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Ikshvaku ruler list (Ollett 2017, p. 191)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-rudrapurushadatta",
+      "title": "Rudrapurushadatta",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 290,
+      "endYear": 315,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 290–315 CE",
+      "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
+      "summary": "Ikshvaku ruler in the cited chronology.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Ikshvaku ruler list (Ollett 2017, p. 191)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kushan",
+      "title": "Kushan political world",
+      "type": "kingdom",
+      "place": "Central Asia and northern South Asia",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "First–third-century contextual window, not a foundation in 1 CE or a uniform empire throughout all 300 years.",
+      "summary": "A major transregional power known through coins and inscriptions.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "iranica-kushan",
+          "locator": "Opening paragraphs",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-satavahana",
+      "title": "Later Satavahana chronology",
+      "type": "kingdom",
+      "place": "Deccan",
+      "startYear": 50,
+      "endYear": 230,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 50–230 CE",
+      "dateNote": "Approximate phase from the timeline. This is not the foundation date of the entire Satavahana dynasty.",
+      "summary": "A later dynastic phase; individual reign dates remain contested.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Dynasties → Later Satavahana",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-ikshvaku",
+      "title": "Ikshvaku dynasty of Andhra",
+      "type": "kingdom",
+      "place": "Andhra",
+      "startYear": 225,
+      "endYear": 315,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 225–315 CE",
+      "dateNote": "The source ends this interval in 315; it has not been truncated to 300.",
+      "summary": "Dynastic chronology extending beyond this research batch.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-early",
+          "locator": "Dynasties → Ikshvaku",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-western-kshatrapas",
+      "title": "Western Kshatrapa coinage and rule",
+      "type": "kingdom",
+      "place": "Western India",
+      "startYear": 1,
+      "endYear": 400,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–400 CE",
+      "dateNote": "First–fourth-century source window. It combines changing rulers and branches, not one unchanging state.",
+      "summary": "Coins provide important evidence for western satrapal rulers.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "rbi-ancient",
+          "locator": "Western Kshatrapa section",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-chera-chiefdom",
+      "title": "Early Chera chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
+      "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "ignou-tamilakam",
+          "locator": "Section 1.8 Chiefdoms of Tamilakam (indexed passage)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-chola-chiefdom",
+      "title": "Early Chola chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
+      "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "ignou-tamilakam",
+          "locator": "Section 1.8 Chiefdoms of Tamilakam (indexed passage)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-pandya-chiefdom",
+      "title": "Early Pandya chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
+      "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "ignou-tamilakam",
+          "locator": "Section 1.8 Chiefdoms of Tamilakam (indexed passage)",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-overstrike",
+      "title": "Reusing Nahapana’s silver coins",
+      "type": "culture",
+      "place": "Western Deccan; Nasik-associated finds",
+      "startYear": 60,
+      "endYear": 90,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 60–90 CE",
+      "dateNote": "Shown in the museum text’s approximate Gautamiputra window, not an exact minting date. Alternative ruler chronologies move this evidence later. The proposed war-booty explanation is a hypothesis, not a proven provenance.",
+      "summary": "A surviving coin retains traces of Nahapana’s designs beneath Satavahana overstrikes, providing evidence for a political transition.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "bm-overstrike",
+          "locator": "Object 1907,0102.12, description",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-sangam",
+      "title": "Early Tamil literary traditions",
+      "type": "culture",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 400,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–400 CE",
+      "dateNote": "Broad compilation window used by the Met. Individual poems, their subjects and later compilation can belong to different dates.",
+      "summary": "The Sangam corpus includes anthologies and works on grammar and rhetoric.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "met-early",
+          "locator": "Key Events → ca. 1st–4th century",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-nagarjuna",
+      "title": "Nagarjuna and Madhyamika",
+      "type": "culture",
+      "place": "South India (broad association)",
+      "startYear": 101,
+      "endYear": 200,
+      "datePrecision": "century",
+      "dateLabel": "c. 101–200 CE",
+      "dateNote": "Second-century activity window from this overview, not a verified lifespan or a precise location.",
+      "summary": "Nagarjuna is associated with the Madhyamika school of Buddhist thought.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "met-early",
+          "locator": "Key Events → 2nd–5th century, Nagarjuna sentence",
+          "supports": "Identity and dated association; no territorial geometry."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "early-kushan-icons",
+      "title": "Deities on Kushan coins",
+      "type": "culture",
+      "place": "Kushan numismatic tradition",
+      "startYear": 1,
+      "endYear": 300,
+      "datePrecision": "century",
+      "dateLabel": "c. 1–300 CE",
+      "dateNote": "Contextual first–third-century window from Iranica; individual coin issues need separate catalogue dates.",
+      "summary": "Kushan coins depict deities from several religious traditions.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "citations": [
+        {
+          "sourceId": "rbi-ancient",
+          "locator": "Kushan coinage section",
+          "supports": "Identity and dated association; no territorial geometry."
+        },
+        {
+          "sourceId": "iranica-kushan",
+          "locator": "Opening dynastic period",
+          "supports": "Broad historical context only."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "early-ce-1-300"
+    },
+    {
+      "id": "dawar-bakhsh",
+      "title": "Dawar Bakhsh: succession interlude",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1627,
+      "endYear": 1628,
+      "datePrecision": "year",
+      "dateLabel": "1627–1628 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. This window records a short or contested installation, not sole rule.",
+      "summary": "A short succession entry between Jahangir and Shah Jahan in the cited ruler lists.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Dawar Bakhsh",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aurangzeb",
+      "title": "Aurangzeb (Alamgir I)",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1658,
+      "endYear": 1707,
+      "datePrecision": "year",
+      "dateLabel": "1658–1707 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Mughal emperor whose accession ended Shah Jahan’s rule.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Aurangzeb (Alamgir I)",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Patronage and its limits",
+          "text": "The Met describes reduced imperial artistic patronage but also architectural commissions such as Delhi’s Pearl Mosque. Court policy, artists’ livelihoods and regional production should be studied separately.",
+          "citations": [
+            {
+              "sourceId": "met-mughal-art",
+              "locator": "Aurangzeb paragraph and regional workshops",
+              "supports": "Patronage and its limits and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "azam-shah",
+      "title": "Azam Shah: competing claim",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1707,
+      "endYear": 1707,
+      "datePrecision": "year",
+      "dateLabel": "1707 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. This window records a short or contested installation, not sole rule.",
+      "summary": "A competing imperial claim listed for northern India; not an uncontested empire-wide reign.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Azam Shah",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kam-bakhsh",
+      "title": "Kam Bakhsh: Deccan claim",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1707,
+      "endYear": 1709,
+      "datePrecision": "year",
+      "dateLabel": "1707–1709 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. This window records a short or contested installation, not sole rule.",
+      "summary": "A regional claim in the Deccan; not sole sovereignty over the Mughal Empire.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Kam Bakhsh",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bahadur-shah-i",
+      "title": "Bahadur Shah I (Shah Alam I)",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1707,
+      "endYear": 1712,
+      "datePrecision": "year",
+      "dateLabel": "1707–1712 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "A later Mughal emperor; distinct from Shah Alam II and Bahadur Shah Zafar.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Bahadur Shah I (Shah Alam I)",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jahandar-shah",
+      "title": "Jahandar Shah",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1712,
+      "endYear": 1713,
+      "datePrecision": "year",
+      "dateLabel": "1712–1713 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "A short imperial reign in the early eighteenth-century succession sequence.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Jahandar Shah",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "farrukhsiyar",
+      "title": "Farrukhsiyar",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1713,
+      "endYear": 1719,
+      "datePrecision": "year",
+      "dateLabel": "1713–1719 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "An imperial reign between Jahandar Shah and the rapid succession changes of 1719.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Farrukhsiyar",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rafi-darajat",
+      "title": "Rafi al-Darajat",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1719,
+      "endYear": 1719,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1719 CE (source conflict)",
+      "dateNote": "The Harvard-hosted table gives c. 1719; the Met table prints 1713–1719 beside AH 1131. Use 1719 provisionally, preserve the discrepancy and seek an independent scholarly chronology.",
+      "summary": "A short reign in 1719; the conflicting six-year range in one source is not adopted.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "harvard-mughal",
+          "locator": "Mughal → Rafi al-Darajat",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        },
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Rafi al-Darajat",
+          "supports": "Documents the discrepant 1713–1719 printed interval, not the selected date."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "harvard-mughal",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shah-jahan-ii",
+      "title": "Shah Jahan II (Rafi al-Daulah)",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1719,
+      "endYear": 1719,
+      "datePrecision": "year",
+      "dateLabel": "1719 CE",
+      "dateNote": "A short reign within 1719. Sarmaya identifies Rafi ud-Daulah as Shah Jahan II, so the two names are not counted as separate rulers. The dated mohur is evidence of an issue, not a map of all areas recognizing him.",
+      "summary": "A short-lived emperor of 1719, distinct from Shah Jahan I.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Shah Jahan II (Rafi al-Daulah)",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        },
+        {
+          "sourceId": "sarmaya-shah-ii",
+          "locator": "About and object details",
+          "supports": "Identifies Rafi ud-Daulah as Shah Jahan II; dates the coin to AH 1131 / 1719."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Coinage and succession",
+          "text": "Sarmaya’s mohur from Shahjahanabad bears AH 1131 and regnal year 1. Its catalogue identifies his accession after Rafi al-Darajat and the influence of the Sayyid brothers.",
+          "citations": [
+            {
+              "sourceId": "sarmaya-shah-ii",
+              "locator": "About; accession 2015.N.61.8",
+              "supports": "Coin date, identity and succession context."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nikusiyar",
+      "title": "Nikusiyar: competing claim",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1719,
+      "endYear": 1719,
+      "datePrecision": "year",
+      "dateLabel": "1719 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. This window records a short or contested installation, not sole rule.",
+      "summary": "A separate claimant entry in the succession tables; not evidence of universal recognition.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Nikusiyar",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ibrahim-claim",
+      "title": "Ibrahim: competing claim",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1720,
+      "endYear": 1720,
+      "datePrecision": "year",
+      "dateLabel": "1720 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. This window records a short or contested installation, not sole rule.",
+      "summary": "A bracketed competing claim in the museum’s sequence, not a replacement for Muhammad Shah’s entire reign.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Ibrahim",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "muhammad-shah",
+      "title": "Muhammad Shah",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1719,
+      "endYear": 1748,
+      "datePrecision": "year",
+      "dateLabel": "1719–1748 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Mughal emperor whose court saw renewed artistic activity amid weakening imperial power.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Muhammad Shah",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Art and disruption",
+          "text": "The Met identifies a revival in patronage and the dispersal of artists after Nadir Shah’s sack of Delhi in 1739. Cultural vitality and military power did not move in lockstep.",
+          "citations": [
+            {
+              "sourceId": "met-mughal-art",
+              "locator": "Later emperors and the 1739 raid",
+              "supports": "Art and disruption and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ahmad-shah-bahadur",
+      "title": "Ahmad Shah Bahadur",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1748,
+      "endYear": 1754,
+      "datePrecision": "year",
+      "dateLabel": "1748–1754 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Mughal emperor in the mid-eighteenth-century succession sequence.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Ahmad Shah Bahadur",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alamgir-ii",
+      "title": "Alamgir II",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1754,
+      "endYear": 1759,
+      "datePrecision": "year",
+      "dateLabel": "1754–1759 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Later Mughal emperor; distinct from Aurangzeb, whose title was Alamgir I.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Alamgir II",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shah-jahan-iii",
+      "title": "Shah Jahan III: disputed installation",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1759,
+      "endYear": 1759,
+      "datePrecision": "year",
+      "dateLabel": "1759 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. This window records a short or contested installation, not sole rule. The selected source lists 1759 only; this is not a claim that the installation lasted a full year or that all chronologies use the same endpoint.",
+      "summary": "A bracketed installation in the selected museum chronology; its duration requires further comparison.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Shah Jahan III",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shah-alam-ii-first",
+      "title": "Shah Alam II: first reign",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1759,
+      "endYear": 1788,
+      "datePrecision": "year",
+      "dateLabel": "1759–1788 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "First phase of the reign, kept separate from the 1788 interruption.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Shah Alam II",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bidar-bakht",
+      "title": "Bidar Bakht: 1788 interlude",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1788,
+      "endYear": 1788,
+      "datePrecision": "year",
+      "dateLabel": "1788 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. This window records a short or contested installation, not sole rule.",
+      "summary": "An interlude between the two phases of Shah Alam II’s reign in the cited table.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Bidar Bakht",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shah-alam-ii-second",
+      "title": "Shah Alam II: restored reign",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1788,
+      "endYear": 1806,
+      "datePrecision": "year",
+      "dateLabel": "1788–1806 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Restored phase of Shah Alam II’s reign; a title does not establish control over all earlier Mughal territories.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Shah Alam II",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "akbar-ii",
+      "title": "Akbar II",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1806,
+      "endYear": 1837,
+      "datePrecision": "year",
+      "dateLabel": "1806–1837 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Later Mughal emperor; distinct from the sixteenth-century Akbar I.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Akbar II",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bahadur-shah-ii",
+      "title": "Bahadur Shah II (Zafar)",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1837,
+      "endYear": 1858,
+      "datePrecision": "year",
+      "dateLabel": "1837–1858 CE",
+      "dateNote": "The Met and Harvard tables end the dynastic listing in 1858. The National Army Museum describes the British capture of Delhi in September 1857. The 1858 endpoint must not imply continued effective government of Delhi after that capture.",
+      "summary": "Last emperor in the cited dynastic table; his authority and the dynasty’s termination need separate chronological treatment.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-rulers",
+          "locator": "Mughal → Bahadur Shah II (Zafar)",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        },
+        {
+          "sourceId": "nam-rebellion",
+          "locator": "Delhi: May–September 1857",
+          "supports": "Rebel appeal to Zafar and British capture of Delhi in 1857."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Mughals",
+        "Mugal"
+      ],
+      "details": [
+        {
+          "heading": "Reading this entry",
+          "text": "This is a source-linked chronology entry, not a complete biography. Family, administrative policy, campaigns and regional authority still need claim-by-claim research. Overlapping succession years are intentional. ",
+          "citations": [
+            {
+              "sourceId": "met-rulers",
+              "locator": "Mughal → named ruler entry",
+              "supports": "Reading this entry and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "1857 and effective authority",
+          "text": "Rebels arriving from Meerut sought Zafar’s leadership in May 1857. British forces captured Delhi in September, followed by looting and killings. The emperor’s symbolic role was different from the territorial power of earlier Mughals.",
+          "citations": [
+            {
+              "sourceId": "nam-rebellion",
+              "locator": "Delhi section",
+              "supports": "1857 and effective authority and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-kumbha",
+      "title": "Rana Kumbha",
+      "type": "ruler",
+      "place": "Rajput · Sisodia Mewar",
+      "startYear": 1433,
+      "endYear": 1468,
+      "datePrecision": "year",
+      "dateLabel": "1433–1468 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. Dates follow the Mewar foundation’s lineage; this institutional dynastic narrative is not independent review.",
+      "summary": "Mewar ruler associated with Kumbhalgarh and architectural patronage.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-lineage",
+          "locator": "Ancestry of the house of Mewar → Rana Kumbha",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Mewar",
+        "Sisodia"
+      ],
+      "details": [
+        {
+          "heading": "Evidence and remaining work",
+          "text": "The lineage is maintained by an institution associated with the dynasty. Its celebratory judgments and traditional stories are not adopted as neutral fact. Full biography, succession disputes and inscriptional corroboration remain in progress.",
+          "citations": [
+            {
+              "sourceId": "mewar-lineage",
+              "locator": "Named ruler section",
+              "supports": "Evidence and remaining work and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Architecture",
+          "text": "UNESCO associates Kumbhalgarh’s design with Mandan, an architect and theorist at Kumbha’s court. A fort association does not establish the extent of Mewar.",
+          "citations": [
+            {
+              "sourceId": "unesco-rajput-forts",
+              "locator": "Brief synthesis: Kumbhalgarh and Mandan",
+              "supports": "Architecture and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-sanga",
+      "title": "Rana Sanga (Sangram Singh I)",
+      "type": "ruler",
+      "place": "Rajput · Sisodia Mewar",
+      "startYear": 1509,
+      "endYear": 1528,
+      "datePrecision": "year",
+      "dateLabel": "1509–1528 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. Dates follow the Mewar foundation’s lineage; this institutional dynastic narrative is not independent review.",
+      "summary": "Mewar ruler who led a confederacy against Babur.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-lineage",
+          "locator": "Ancestry of the house of Mewar → Rana Sanga (Sangram Singh I)",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Mewar",
+        "Sisodia"
+      ],
+      "details": [
+        {
+          "heading": "Evidence and remaining work",
+          "text": "The lineage is maintained by an institution associated with the dynasty. Its celebratory judgments and traditional stories are not adopted as neutral fact. Full biography, succession disputes and inscriptional corroboration remain in progress.",
+          "citations": [
+            {
+              "sourceId": "mewar-lineage",
+              "locator": "Named ruler section",
+              "supports": "Evidence and remaining work and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Khanwa",
+          "text": "His coalition fought Babur at Khanwa in 1527 and was defeated. The ruler’s narrative and later commemorative traditions should be compared with accounts from the opposing court.",
+          "citations": [
+            {
+              "sourceId": "iranica-babur",
+              "locator": "Khanwah campaign paragraph",
+              "supports": "Khanwa and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-ratan-singh-ii",
+      "title": "Ratan Singh II",
+      "type": "ruler",
+      "place": "Rajput · Sisodia Mewar",
+      "startYear": 1528,
+      "endYear": 1531,
+      "datePrecision": "year",
+      "dateLabel": "1528–1531 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. Dates follow the Mewar foundation’s lineage; this institutional dynastic narrative is not independent review.",
+      "summary": "Mewar successor of Rana Sanga.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-lineage",
+          "locator": "Ancestry of the house of Mewar → Ratan Singh II",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Mewar",
+        "Sisodia"
+      ],
+      "details": [
+        {
+          "heading": "Evidence and remaining work",
+          "text": "The lineage is maintained by an institution associated with the dynasty. Its celebratory judgments and traditional stories are not adopted as neutral fact. Full biography, succession disputes and inscriptional corroboration remain in progress.",
+          "citations": [
+            {
+              "sourceId": "mewar-lineage",
+              "locator": "Named ruler section",
+              "supports": "Evidence and remaining work and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-vikramaditya-mewar",
+      "title": "Vikramaditya of Mewar",
+      "type": "ruler",
+      "place": "Rajput · Sisodia Mewar",
+      "startYear": 1531,
+      "endYear": 1536,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1531–1536 CE (endpoint disputed)",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. Dates follow the Mewar foundation’s lineage; this institutional dynastic narrative is not independent review. The source heading ends at 1536 but its narrative says he was killed in 1535; the heading supplies this filter window, and the contradiction remains unresolved.",
+      "summary": "Mewar ruler during Bahadur Shah of Gujarat’s attacks.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-lineage",
+          "locator": "Ancestry of the house of Mewar → Vikramaditya of Mewar",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Mewar",
+        "Sisodia"
+      ],
+      "details": [
+        {
+          "heading": "Evidence and remaining work",
+          "text": "The lineage is maintained by an institution associated with the dynasty. Its celebratory judgments and traditional stories are not adopted as neutral fact. Full biography, succession disputes and inscriptional corroboration remain in progress.",
+          "citations": [
+            {
+              "sourceId": "mewar-lineage",
+              "locator": "Named ruler section",
+              "supports": "Evidence and remaining work and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-udai-singh-ii",
+      "title": "Udai Singh II",
+      "type": "ruler",
+      "place": "Rajput · Sisodia Mewar",
+      "startYear": 1537,
+      "endYear": 1572,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1537–1572 CE (start disputed)",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. Dates follow the Mewar foundation’s lineage; this institutional dynastic narrative is not independent review. The foundation’s Pratap timeline gives his father’s reign as 1536–1572, while the lineage heading uses 1537–1572. This entry retains the latter, rather than merging the alternatives.",
+      "summary": "Mewar ruler associated with the development of Udaipur.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-lineage",
+          "locator": "Ancestry of the house of Mewar → Udai Singh II",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        },
+        {
+          "sourceId": "mewar-pratap",
+          "locator": "PDF page 1, Father’s Name",
+          "supports": "Alternative 1536 start for Udai Singh II."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Mewar",
+        "Sisodia"
+      ],
+      "details": [
+        {
+          "heading": "Evidence and remaining work",
+          "text": "The lineage is maintained by an institution associated with the dynasty. Its celebratory judgments and traditional stories are not adopted as neutral fact. Full biography, succession disputes and inscriptional corroboration remain in progress.",
+          "citations": [
+            {
+              "sourceId": "mewar-lineage",
+              "locator": "Named ruler section",
+              "supports": "Evidence and remaining work and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-pratap",
+      "title": "Maharana Pratap",
+      "type": "ruler",
+      "place": "Rajput · Sisodia Mewar",
+      "startYear": 1572,
+      "endYear": 1597,
+      "datePrecision": "year",
+      "dateLabel": "1572–1597 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. Dates follow the Mewar foundation’s lineage; this institutional dynastic narrative is not independent review.",
+      "summary": "Mewar ruler remembered for resistance to Mughal expansion.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-lineage",
+          "locator": "Ancestry of the house of Mewar → Maharana Pratap",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        },
+        {
+          "sourceId": "mewar-pratap",
+          "locator": "PDF pages 1–4",
+          "supports": "Selected accession, diplomacy, military and patronage claims."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Mewar",
+        "Sisodia"
+      ],
+      "details": [
+        {
+          "heading": "Evidence and remaining work",
+          "text": "The lineage is maintained by an institution associated with the dynasty. Its celebratory judgments and traditional stories are not adopted as neutral fact. Full biography, succession disputes and inscriptional corroboration remain in progress.",
+          "citations": [
+            {
+              "sourceId": "mewar-lineage",
+              "locator": "Named ruler section",
+              "supports": "Evidence and remaining work and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Accession and diplomacy",
+          "text": "The foundation’s timeline dates his coronation at Gogunda to 1572 and records Mughal diplomatic approaches before Haldighati.",
+          "citations": [
+            {
+              "sourceId": "mewar-pratap",
+              "locator": "PDF page 1: coronation and ambassadors",
+              "supports": "Accession and diplomacy and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "War and recovery",
+          "text": "The timeline records Haldighati in 1576 and a Mewar victory at Dewair in 1582. It dates the new capital at Chawand to 1585. These are discrete events, not proof of fighting every year. The lineage page instead gives 1584 for Chawand; that discrepancy remains unresolved.",
+          "citations": [
+            {
+              "sourceId": "mewar-pratap",
+              "locator": "PDF pages 1–3: Haldighati, Dewair and Chawand",
+              "supports": "War and recovery and the specific statements in this section."
+            },
+            {
+              "sourceId": "mewar-lineage",
+              "locator": "Maharana Pratap section, Chawand",
+              "supports": "Alternative 1584 date, retained as a source discrepancy."
+            }
+          ]
+        },
+        {
+          "heading": "Learning and agriculture",
+          "text": "The timeline links Chakrapani Mishra’s writing and agricultural initiatives to Pratap’s patronage. Its cited books have not all been independently inspected here.",
+          "citations": [
+            {
+              "sourceId": "mewar-pratap",
+              "locator": "PDF pages 3–4: achievements and agriculture",
+              "supports": "Learning and agriculture and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-amar-singh-i",
+      "title": "Amar Singh I",
+      "type": "ruler",
+      "place": "Rajput · Sisodia Mewar",
+      "startYear": 1597,
+      "endYear": 1620,
+      "datePrecision": "year",
+      "dateLabel": "1597–1620 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory. Dates follow the Mewar foundation’s lineage; this institutional dynastic narrative is not independent review.",
+      "summary": "Pratap’s successor in Mewar.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-lineage",
+          "locator": "Ancestry of the house of Mewar → Amar Singh I",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Mewar",
+        "Sisodia"
+      ],
+      "details": [
+        {
+          "heading": "Evidence and remaining work",
+          "text": "The lineage is maintained by an institution associated with the dynasty. Its celebratory judgments and traditional stories are not adopted as neutral fact. Full biography, succession disputes and inscriptional corroboration remain in progress.",
+          "citations": [
+            {
+              "sourceId": "mewar-lineage",
+              "locator": "Named ruler section",
+              "supports": "Evidence and remaining work and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-chunda",
+      "title": "Rao Chunda",
+      "type": "ruler",
+      "place": "Rajput · Rathore Marwar",
+      "startYear": 1384,
+      "endYear": 1428,
+      "datePrecision": "year",
+      "dateLabel": "1384–1428 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Established his capital at Mandore according to the fort museum’s history.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mehrangarh-history",
+          "locator": "Paragraph on Chunda and Jodha",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Rathore Marwar"
+      ]
+    },
+    {
+      "id": "rajput-jodha",
+      "title": "Rao Jodha",
+      "type": "ruler",
+      "place": "Rajput · Rathore Marwar",
+      "startYear": 1438,
+      "endYear": 1489,
+      "datePrecision": "year",
+      "dateLabel": "1438–1489 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Founded Mehrangarh in 1459; the associated town took the name Jodhpur.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mehrangarh-history",
+          "locator": "Paragraph on Chunda and Jodha",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        },
+        {
+          "sourceId": "mehrangarh-architecture",
+          "locator": "Opening construction chronology",
+          "supports": "Foundation year 1459."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Rathore Marwar"
+      ]
+    },
+    {
+      "id": "rajput-maldeo",
+      "title": "Rao Maldeo",
+      "type": "ruler",
+      "place": "Rajput · Rathore Marwar",
+      "startYear": 1531,
+      "endYear": 1562,
+      "datePrecision": "year",
+      "dateLabel": "1531–1562 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Strengthened Mehrangarh after its capture by Sher Shah’s forces.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mehrangarh-architecture",
+          "locator": "Maldeo construction phase",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Rathore Marwar"
+      ],
+      "details": [
+        {
+          "heading": "Fortification",
+          "text": "After Sher Shah’s forces took the fort in 1544, Maldeo recovered it and reinforced gates, walls and outworks. This concerns a specific fort, not a surveyed border.",
+          "citations": [
+            {
+              "sourceId": "mehrangarh-architecture",
+              "locator": "Maldeo paragraphs",
+              "supports": "Fortification and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-ajit-singh",
+      "title": "Ajit Singh: recovered-rule phase",
+      "type": "ruler",
+      "place": "Rajput · Rathore Marwar",
+      "startYear": 1707,
+      "endYear": 1724,
+      "datePrecision": "year",
+      "dateLabel": "1707–1724 CE",
+      "dateNote": "The museum gives 1707–1724 for this building-era reign phase. It is not a claim that earlier accession claims, exile or resistance did not exist.",
+      "summary": "Associated with a major early-eighteenth-century building phase at Mehrangarh.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mehrangarh-architecture",
+          "locator": "Ajit Singh construction phase",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Rathore Marwar"
+      ]
+    },
+    {
+      "id": "rajput-gaj-singh",
+      "title": "Gaj Singh I",
+      "type": "ruler",
+      "place": "Rajput · Rathore Marwar",
+      "startYear": 1619,
+      "endYear": 1638,
+      "datePrecision": "year",
+      "dateLabel": "1619–1638 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Served the Mughals in the Deccan and helped connect Jodhpur with Deccani art.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mehrangarh-paintings",
+          "locator": "Maharaja Gaj Singh I, c. 1725–40",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Rathore Marwar"
+      ],
+      "details": [
+        {
+          "heading": "Court connections",
+          "text": "The museum identifies service under Jahangir and Shah Jahan. Its portrait is dated c. 1725–1740, later than his lifetime; the image’s date must not be used as his reign.",
+          "citations": [
+            {
+              "sourceId": "mehrangarh-paintings",
+              "locator": "Maharaja Gaj Singh I, c. 1725–40",
+              "supports": "Court connections and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-man-singh-amber",
+      "title": "Man Singh I: imperial service",
+      "type": "ruler",
+      "place": "Rajput · Amber / Mughal service",
+      "startYear": 1562,
+      "endYear": 1614,
+      "datePrecision": "year",
+      "dateLabel": "1562–1614 CE (service window)",
+      "dateNote": "A career window from entry into Akbar’s court in 1562 to death in 1614. These are not accession dates for rule over Amber.",
+      "summary": "An Amber noble who served at Akbar’s court and later under Jahangir.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-man-singh",
+          "locator": "Object 1982.174, introductory biography",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Amber / Mughal service"
+      ],
+      "details": [
+        {
+          "heading": "Service and identity",
+          "text": "The museum records appointments in Bihar and Bengal and later service in the Deccan. This Man Singh is not the nineteenth-century ruler of Jodhpur with the same name.",
+          "citations": [
+            {
+              "sourceId": "met-man-singh",
+              "locator": "Introductory biography",
+              "supports": "Service and identity and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-madho-kota",
+      "title": "Madho Singh of Kota",
+      "type": "ruler",
+      "place": "Rajput · Kota",
+      "startYear": 1631,
+      "endYear": 1648,
+      "datePrecision": "year",
+      "dateLabel": "1631–1648 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Founding Kota ruler later commemorated in a hunting portrait.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "met-madho-kota",
+          "locator": "Object 2022.216, curatorial description",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Kota"
+      ],
+      "details": [
+        {
+          "heading": "Later representation",
+          "text": "The hunting picture dates to about 1720, decades after his 1631–1648 reign. Its heroic imagery is evidence of later commemoration, not an eyewitness image of the ruler.",
+          "citations": [
+            {
+              "sourceId": "met-madho-kota",
+              "locator": "Date and curatorial description",
+              "supports": "Later representation and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rajput-anup-bikaner",
+      "title": "Anup Singh of Bikaner",
+      "type": "ruler",
+      "place": "Rajput · Bikaner",
+      "startYear": 1669,
+      "endYear": 1698,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1669–1698 CE (start disputed)",
+      "dateNote": "Cleveland gives 1669–1698; the Asian Art Museum’s Google Arts & Culture record gives 1674–1698. The Cleveland interval is selected provisionally; both assertions remain visible.",
+      "summary": "Bikaner ruler represented in Ruknuddin’s court portrait.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "cma-anup",
+          "locator": "Object 2018.191, title and description",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        },
+        {
+          "sourceId": "aam-anup",
+          "locator": "Object B86D13, description",
+          "supports": "Alternative 1674 start and Mughal military service."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Bikaner"
+      ]
+    },
+    {
+      "id": "rajput-jai-singh-ii",
+      "title": "Sawai Jai Singh II",
+      "type": "ruler",
+      "place": "Rajput · Amber / Jaipur",
+      "startYear": 1700,
+      "endYear": 1743,
+      "datePrecision": "year",
+      "dateLabel": "1700–1743 CE",
+      "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
+      "summary": "Patron of the planned city of Jaipur and of astronomical observation.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "unesco-jaipur-decision",
+          "locator": "Brief synthesis: reign, planning and construction",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Amber / Jaipur"
+      ],
+      "details": [
+        {
+          "heading": "Urban planning",
+          "text": "Jaipur’s main construction phase is dated 1727–1731 in the UNESCO decision. Markets and invitations to traders formed part of the new city’s commercial purpose.",
+          "citations": [
+            {
+              "sourceId": "unesco-jaipur-decision",
+              "locator": "Brief synthesis",
+              "supports": "Urban planning and the specific statements in this section."
+            }
+          ]
+        },
+        {
+          "heading": "Astronomy",
+          "text": "UNESCO identifies Jai Singh II as the creator of Jaipur’s Jantar Mantar, where monumental instruments served positional astronomy and embodied royal authority.",
+          "citations": [
+            {
+              "sourceId": "unesco-jantar",
+              "locator": "Brief synthesis",
+              "supports": "Astronomy and the specific statements in this section."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "panipat-1526",
+      "title": "First Battle of Panipat",
+      "type": "battle",
+      "place": "Panipat",
+      "startYear": 1526,
+      "endYear": 1526,
+      "datePrecision": "year",
+      "dateLabel": "1526 CE",
+      "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
+      "summary": "Babur defeated Ibrahim Lodi; the victory preceded occupation of Delhi and Agra.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "iranica-babur",
+          "locator": "Indian campaigns: Panipat paragraph",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal"
+      ],
+      "eventKind": "battle"
+    },
+    {
+      "id": "khanwa-1527",
+      "title": "Battle of Khanwa",
+      "type": "battle",
+      "place": "Khanwa",
+      "startYear": 1527,
+      "endYear": 1527,
+      "datePrecision": "year",
+      "dateLabel": "1527 CE",
+      "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
+      "summary": "Babur defeated the confederacy led by Rana Sanga of Mewar.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "iranica-babur",
+          "locator": "Indian campaigns: Khanwah paragraph",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Rajput"
+      ],
+      "eventKind": "battle"
+    },
+    {
+      "id": "panipat-1556",
+      "title": "Second Battle of Panipat",
+      "type": "battle",
+      "place": "Panipat",
+      "startYear": 1556,
+      "endYear": 1556,
+      "datePrecision": "year",
+      "dateLabel": "1556 CE",
+      "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
+      "summary": "Mughal forces under Bayram Khan defeated Hemu during Akbar’s early reign.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "iranica-akbar",
+          "locator": "Accession and second battle of Panipat",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal"
+      ],
+      "eventKind": "battle"
+    },
+    {
+      "id": "chittor-1567-1568",
+      "title": "Siege of Chittorgarh",
+      "type": "battle",
+      "place": "Chittorgarh, Mewar",
+      "startYear": 1567,
+      "endYear": 1568,
+      "datePrecision": "year",
+      "dateLabel": "1567–1568 CE",
+      "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
+      "summary": "Akbar’s forces besieged and captured Chittorgarh.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-lineage",
+          "locator": "Udai Singh II: October 1567–February 1568 siege",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Rajput"
+      ],
+      "eventKind": "siege"
+    },
+    {
+      "id": "ranthambore-1569",
+      "title": "Siege of Ranthambore",
+      "type": "battle",
+      "place": "Ranthambore",
+      "startYear": 1569,
+      "endYear": 1569,
+      "datePrecision": "year",
+      "dateLabel": "1569 CE",
+      "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
+      "summary": "Akbar’s campaign brought the fort under Mughal control.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "iranica-akbar",
+          "locator": "Political career: Chitor and Ranthambor",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Rajput"
+      ],
+      "eventKind": "siege"
+    },
+    {
+      "id": "haldighati-1576",
+      "title": "Battle of Haldighati",
+      "type": "battle",
+      "place": "Haldighati / Khamnor, Mewar",
+      "startYear": 1576,
+      "endYear": 1576,
+      "datePrecision": "year",
+      "dateLabel": "1576 CE",
+      "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled. The foundation’s timeline specifies 18 June; this entry does not settle disputed casualty totals or wider claims about the war’s outcome.",
+      "summary": "Pratap’s army fought Mughal forces commanded by Man Singh of Amber.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-pratap",
+          "locator": "PDF page 1: 18 June 1576; page 2: Rakt Talai",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Rajput"
+      ],
+      "eventKind": "battle"
+    },
+    {
+      "id": "dewair-1582",
+      "title": "Battle of Dewair",
+      "type": "battle",
+      "place": "Dewair, Mewar",
+      "startYear": 1582,
+      "endYear": 1582,
+      "datePrecision": "year",
+      "dateLabel": "1582 CE",
+      "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
+      "summary": "The Mewar timeline records a victory involving Amar Singh against Sultan Khan’s Mughal force.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "mewar-pratap",
+          "locator": "PDF page 3: 1582 entry",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal",
+        "Rajput"
+      ],
+      "eventKind": "battle"
+    },
+    {
+      "id": "delhi-1857",
+      "title": "Siege and capture of Delhi",
+      "type": "battle",
+      "place": "Delhi",
+      "startYear": 1857,
+      "endYear": 1857,
+      "datePrecision": "year",
+      "dateLabel": "1857 CE",
+      "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
+      "summary": "British forces captured Delhi in September 1857 after a siege; looting and killings followed.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "citations": [
+        {
+          "sourceId": "nam-rebellion",
+          "locator": "Delhi: June–September 1857",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Mughal"
+      ],
+      "eventKind": "siege"
+    },
+    {
+      "id": "jaipur-foundation",
+      "title": "Jai Singh II: Jaipur’s planned city",
+      "type": "site",
+      "place": "Jaipur",
+      "startYear": 1727,
+      "endYear": 1731,
+      "datePrecision": "year",
+      "dateLabel": "1727–1731 CE",
+      "dateNote": "This is the main construction phase stated in the UNESCO decision, not the lifetime of Jaipur or Jai Singh II’s full reign.",
+      "summary": "A planned commercial city developed under Jai Singh II’s patronage.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.821861,
+          26.924278
+        ]
+      },
+      "locationSourceId": "unesco-jaipur",
+      "locationNote": "UNESCO Jaipur City property reference point, converted from N26 55 27.4 E75 49 18.7 and rounded to six decimals. It is not a historical city boundary or a point locating the ruler throughout his reign.",
+      "citations": [
+        {
+          "sourceId": "unesco-jaipur-decision",
+          "locator": "Brief synthesis: 1727–1731 construction",
+          "supports": "Identity, regional association, chronology and the specific summary; not territorial boundaries."
+        },
+        {
+          "sourceId": "unesco-jaipur",
+          "locator": "Description and property coordinates",
+          "supports": "Foundation in 1727 and modern heritage property reference point."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Jaipur"
+      ]
+    },
+    {
+      "type": "ruler",
+      "place": "Chahamana / Chauhan · Ajmer",
+      "startYear": 1178,
+      "endYear": 1192,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1178–1192 CE (accession varies)",
+      "dateNote": "The consulted explainer gives accession as 1177 or 1178. This filter uses 1178 provisionally; it is not an assertion against the 1177 alternative. This is a secondary journalistic synthesis of scholarship; the cited critical editions have not been read in full here.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: Ajmer is the regional association; no battlefield or territorial geometry has been verified.",
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Chauhan",
+        "Chahamana"
+      ],
+      "id": "rajput-prithviraj-iii",
+      "title": "Prithviraj III (Prithviraj Chauhan)",
+      "summary": "Chahamana ruler of Ajmer whose historical career must be distinguished from later heroic literature.",
+      "citations": [
+        {
+          "sourceId": "express-prithviraj",
+          "locator": "Prithviraj of history",
+          "supports": "Dynasty, accession alternatives and Tarain chronology."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Campaigns",
+          "text": "He defeated the Ghurid army at Tarain in 1191, then lost to Muhammad of Ghor in 1192.",
+          "citations": [
+            {
+              "sourceId": "express-prithviraj",
+              "locator": "Prithviraj of history",
+              "supports": "The two distinct Tarain battles."
+            }
+          ]
+        },
+        {
+          "heading": "History and later memory",
+          "text": "The Prithviraj Raso is a later literary tradition, not an eyewitness biography. The story of the blind king killing Muhammad of Ghor must not be presented as established history.",
+          "citations": [
+            {
+              "sourceId": "express-prithviraj",
+              "locator": "Prithviraj of legend; Prithviraj of history; discussion of Cynthia Talbot",
+              "supports": "Distinction between literary tradition and historical reconstruction."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "battle",
+      "place": "Tarain, present-day Haryana",
+      "startYear": 1191,
+      "endYear": 1191,
+      "datePrecision": "year",
+      "dateLabel": "1191 CE",
+      "dateNote": "A distinct battle in the stated year; the two battles are not represented as continuous fighting across 1191–1192.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: Ajmer is the regional association; no battlefield or territorial geometry has been verified.",
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Chauhan",
+        "Chahamana"
+      ],
+      "id": "tarain-1191",
+      "title": "Battle of Tarain (1191)",
+      "summary": "Prithviraj’s force defeated the Ghurid army.",
+      "eventKind": "battle",
+      "citations": [
+        {
+          "sourceId": "express-prithviraj",
+          "locator": "Prithviraj of history",
+          "supports": "Year and outcome; no coordinate precision established."
+        }
+      ]
+    },
+    {
+      "type": "battle",
+      "place": "Tarain, present-day Haryana",
+      "startYear": 1192,
+      "endYear": 1192,
+      "datePrecision": "year",
+      "dateLabel": "1192 CE",
+      "dateNote": "A distinct battle in the stated year; the two battles are not represented as continuous fighting across 1191–1192.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: Ajmer is the regional association; no battlefield or territorial geometry has been verified.",
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Chauhan",
+        "Chahamana"
+      ],
+      "id": "tarain-1192",
+      "title": "Battle of Tarain (1192)",
+      "summary": "Muhammad of Ghor defeated Prithviraj’s force.",
+      "eventKind": "battle",
+      "citations": [
+        {
+          "sourceId": "express-prithviraj",
+          "locator": "Prithviraj of history",
+          "supports": "Year and outcome; no coordinate precision established."
+        }
+      ]
+    },
+    {
+      "type": "ruler",
+      "place": "Rajput · Bikaner",
+      "startYear": 1488,
+      "endYear": 1488,
+      "datePrecision": "year",
+      "dateLabel": "1488 CE (foundation event)",
+      "dateNote": "A foundation year in the official tourism page’s indexed passage, not the ruler’s full reign. Full-page retrieval timed out during this pass; primary documentary corroboration remains pending.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: no verified site coordinate has been attached.",
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Bikaner"
+      ],
+      "id": "rajput-bika-foundation",
+      "title": "Rao Bika: foundation of Bikaner",
+      "summary": "The official tourism account associates Rao Bika with the foundation of Bikaner in 1488.",
+      "citations": [
+        {
+          "sourceId": "rajasthan-bika",
+          "locator": "Indexed introductory history passage; full-page retrieval timed out",
+          "supports": "Foundation association and year only; preliminary tourism synthesis."
+        }
+      ]
+    },
+    {
+      "type": "ruler",
+      "place": "Rajput · Jaisalmer",
+      "startYear": 1156,
+      "endYear": 1156,
+      "datePrecision": "year",
+      "dateLabel": "1156 CE (foundation event)",
+      "dateNote": "A foundation year in the official tourism page’s indexed passage, not the ruler’s full reign. Full-page retrieval timed out during this pass; primary documentary corroboration remains pending.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline only: no verified site coordinate has been attached.",
+      "reviewStatus": "cited",
+      "researchBatch": "mughal-rajput-01",
+      "tags": [
+        "Rajput",
+        "Jaisalmer"
+      ],
+      "id": "rajput-jaisal-foundation",
+      "title": "Rawal Jaisal: foundation of Jaisalmer",
+      "summary": "The official tourism account associates Rawal Jaisal with the foundation of Jaisalmer in 1156.",
+      "citations": [
+        {
+          "sourceId": "rajasthan-jaisal",
+          "locator": "Indexed introductory history passage; full-page retrieval timed out",
+          "supports": "Foundation association and year only; preliminary tourism synthesis."
+        }
+      ]
+    }
+  ]
+}

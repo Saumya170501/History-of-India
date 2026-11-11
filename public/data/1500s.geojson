@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "entity_name": "Mughal Empire",
+        "ruler": "Akbar",
+        "start_year": 1556,
+        "end_year": 1605,
+        "fill_color": "#8b5cf6"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [69.5, 23.0],
+            [75.0, 20.5],
+            [85.0, 24.0],
+            [89.0, 26.0],
+            [80.0, 31.0],
+            [74.0, 34.0],
+            [68.0, 28.0],
+            [69.5, 23.0]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+/* Full-viewport map; all controls float above the canvas. */
+:root { --drawer-width: 350px; --edge: 16px; }
+html, body, #app { width: 100%; height: 100%; overflow: hidden; }
+main { max-width: none; margin: 0; padding: 0; }
+.workspace, .map-panel, #map {
+  position: absolute; inset: 0; width: 100%; height: 100vh; height: 100dvh;
+  min-height: 0; border: 0; border-radius: 0;
+}
+.workspace { display: block; }
+.map-panel { display: block; }
+.introduction { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; }
+.masthead, .timeline, .record-panel, .map-heading, .map-controls {
+  border: 1px solid #ffffff90;
+  box-shadow: 0 6px 28px #163c3324;
+  border-radius: 12px;
+  background: #fbfaf5f2;
+}
+@supports (backdrop-filter: blur(16px)) {
+  .masthead, .record-panel, .map-heading, .map-controls { background: #fbfaf5df; backdrop-filter: blur(16px); }
+  .timeline { background: #244c42db; backdrop-filter: blur(20px); }
+}
+.masthead {
+  position: fixed; z-index: 20; top: max(var(--edge), env(safe-area-inset-top));
+  left: var(--edge); right: var(--edge); height: 52px; padding: 0 16px;
+}
+.brand { gap: 8px; }
+.brand-mark { font-size: 28px; }
+.brand strong { font-size: 13px; letter-spacing: 1.2px; }
+.brand div > span { display: none; }
+.header-actions { gap: 16px; }
+.header-actions .quiet { min-height: 44px; max-width: none; }
+.map-heading { position: absolute; z-index: 5; left: var(--edge); top: 80px; padding: 6px 12px; gap: 16px; }
+.map-heading .eyebrow { display: none; }
+.map-heading h2 { font-size: 18px; }
+.map-controls { position: absolute; z-index: 5; left: var(--edge); top: 130px; padding: 8px 12px; gap: 8px; max-width: calc(100% - var(--drawer-width) - 64px); }
+.map-controls legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; }
+.map-controls label { min-height: 28px; }
+.timeline {
+  position: fixed; z-index: 15; left: var(--edge); right: calc(var(--drawer-width) + 32px);
+  bottom: max(26px, env(safe-area-inset-bottom)); margin: 0 auto; max-width: 1050px;
+  padding: 14px 18px; grid-template-columns: 100px minmax(0, 1fr) 140px; gap: 16px;
+  background-color: #244c42ed;
+}
+@supports (backdrop-filter: blur(16px)) { .timeline { background-color: #244c42db; } }
+.year-block output { font-size: 32px; }
+.year-block .eyebrow { font-size: 8px; }
+.slider-block { padding-left: 16px; }
+.jumps { margin-top: 8px; gap: 6px; flex-wrap: nowrap; overflow-x: auto; }
+.jumps > span { display: none; }
+.jumps button { flex-shrink: 0; min-height: 30px; }
+.year-entry { display: block; grid-column: auto; padding: 0; }
+.year-entry label { margin-bottom: 6px; }
+.year-entry input { width: 100%; }
+.record-panel {
+  position: fixed; z-index: 10; top: 80px; right: var(--edge); bottom: 26px;
+  width: var(--drawer-width); overflow-y: auto; overscroll-behavior: contain;
+  display: block; scrollbar-gutter: stable;
+}
+.record-panel[hidden] { display: none; }
+.record-heading { padding: 20px 18px 0; }
+.record-heading h2 { font-size: 24px; }
+.filters { padding: 0 18px; }
+.browse { padding: 12px 18px; }
+.window-note { margin: 0 18px 14px; }
+#record-list { min-height: 0; max-height: 280px; flex: none; overflow-y: auto; padding: 0 12px; }
+.detail-panel { display: block; margin: 0; border: 0; border-top: 1px solid var(--border); padding: 20px 18px; background: transparent; overflow-wrap: anywhere; }
+.detail-story h2 { font-size: 25px; }
+.detail-evidence { margin-top: 20px; }
+.drawer-context > summary { padding: 16px 18px; cursor: pointer; border-top: 1px solid var(--border); font-size: 12px; }
+.map-caption { display: block; padding: 16px 18px; }
+.map-caption > span { display: block; }
+.map-caption > span:first-child { margin-bottom: 8px; }
+#map-selection-status { margin: 0; }
+#map-selection-status:empty { display: none; }
+.evidence-closed .timeline { right: var(--edge); }
+.evidence-closed .map-controls { max-width: calc(100% - 100px); }
+.leaflet-top.leaflet-right { top: 80px; right: calc(var(--drawer-width) + 24px); }
+.evidence-closed .leaflet-top.leaflet-right { right: 8px; }
+.leaflet-bottom { bottom: env(safe-area-inset-bottom); }
+.leaflet-control-attribution { max-width: 100vw; }
+.research-note { display: block; padding: 20px 0; }
+.research-symbol { display: none; }
+footer { padding: 16px 0; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 1100px) {
+  :root { --drawer-width: 310px; }
+  .timeline { grid-template-columns: 85px minmax(0, 1fr); }
+  .year-entry { grid-column: 1 / -1; display: flex; gap: 12px; align-items: center; }
+  .year-entry label { margin: 0; }
+  .year-entry > div { width: 150px; }
+}
+@media (max-width: 760px) {
+  :root { --edge: 8px; --drawer-width: min(350px, calc(100vw - 16px)); }
+  .masthead { height: 48px; padding: 0 10px; }
+  .brand strong { font-size: 11px; }
+  .brand-mark { display: none; }
+  .header-actions { gap: 12px; }
+  .header-actions .quiet { font-size: 11px; }
+  .map-heading { top: 68px; }
+  .map-controls { top: 116px; max-width: calc(100% - 70px); font-size: 11px; }
+  .timeline { left: 8px; right: 8px; padding: 10px 12px; gap: 8px; grid-template-columns: 70px minmax(0, 1fr); }
+  .slider-block { padding-left: 8px; border: 0; }
+  .year-block .eyebrow { display: block; margin: 0 0 4px; }
+  .year-block output { font-size: 26px; }
+  .ce { font-size: 10px; margin-left: 4px; }
+  .ruler { font-size: 9px; }
+  .record-panel { top: 68px; bottom: 196px; }
+  .leaflet-top.leaflet-right { top: 64px; right: 0; }
+}
+@media (max-height: 500px) {
+  .record-panel { bottom: 26px; z-index: 18; }
+  .timeline { padding: 8px 12px; }
+  .jumps, .timeline .eyebrow, .ruler { display: none; }
+  .map-controls { top: 114px; }
+}
+/* Keyboard/click target over MapLibre's zoom-scaled solid point marker. */
+.point-hit-target { display: block; width: 30px; height: 30px; border-radius: 50%; }
+.history-marker:focus-visible .point-hit-target { outline: 2px solid #a35b3c; }

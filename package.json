@@ -1,0 +1,29 @@
+{
+  "name": "history-of-india",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A source-led historical atlas of India, 1\u20132026 CE",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run validate:data && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test",
+    "validate:data": "node scripts/validate-data.mjs",
+    "ingest:ohm": "node scripts/ingest-ohm.mjs"
+  },
+  "dependencies": {
+    "@maplibre/maplibre-gl-leaflet": "^0.1.4",
+    "@openhistoricalmap/map-styles": "0.9.22",
+    "@openhistoricalmap/maplibre-gl-dates": "^2.0.0",
+    "leaflet": "1.9.4",
+    "maplibre-gl": "^5.24.0"
+  },
+  "devDependencies": {
+    "osmtogeojson": "^3.0.0-beta.5",
+    "vite": "8.3.6"
+  }
+}
