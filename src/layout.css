@@ -45,12 +45,12 @@ main { max-width: none; margin: 0; padding: 0; }
 .year-line, .year-cited { margin: 0; font-size: 12px; line-height: 1.35; color: #f6f1e4; }
 .year-cited { margin-top: 4px; color: #e7dcc4; }
 .year-open {
-  display: inline; margin: 4px 0 0; padding: 0; border: 0; background: none; color: #f3e2bc;
+  display: inline; margin: 4px 0 0; padding: 0; border: 0; background: none; color: var(--gold);
   font: inherit; font-size: 12px; text-align: left; cursor: pointer; text-decoration: underline;
   text-underline-offset: 2px;
 }
 .polity-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.polity-title { font-family: Georgia, serif; font-size: 26px; line-height: 1.1; margin: 0 0 8px; }
+.polity-title { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 27px; letter-spacing: -0.6px; line-height: 1.1; margin: 0 0 8px; color: var(--green); }
 .polity-card p, .polity-card h4 { margin: 6px 0; }
 .polity-warning { font-size: 13px; }
 .polity-record { border-top: 1px solid #e4dcc8; margin-top: 12px; padding-top: 8px; }

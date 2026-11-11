@@ -9,6 +9,12 @@
   --border: #d9ddd0;
   --cream: #f6f4ee;
   --rust: #a35b3c;
+  --ink: #fffcef;
+  --gold: #e6bd7b;
+  --gold-strong: #e4bf85;
+  --glass: #fbfaf5f2;
+  --glass-dark: #244c42ed;
+  --line-on-dark: #6f8779;
 }
 * {
   box-sizing: border-box;
@@ -204,7 +210,7 @@ main {
 }
 input[type="range"] {
   width: 100%;
-  accent-color: #e6bd7b;
+  accent-color: var(--gold);
   cursor: pointer;
   margin: 0;
   height: 22px;
@@ -229,7 +235,7 @@ input[type="range"] {
   margin-right: 3px;
 }
 .jumps button {
-  border: 1px solid #6f8779;
+  border: 1px solid var(--line-on-dark);
   background: none;
   color: #eeeedd;
   font-size: 10px;
@@ -238,9 +244,9 @@ input[type="range"] {
 }
 .jumps button[aria-pressed="true"],
 .jumps button:hover {
-  background: #e4bf85;
+  background: var(--gold-strong);
   color: #213f35;
-  border-color: #e4bf85;
+  border-color: var(--gold-strong);
 }
 .year-entry {
   padding-left: 12px;
