@@ -5,53 +5,39 @@ export function recordFactionColor(record) {
   return EMPIRE_COLORS[category];
 }
 const roles = { ruler: 'Ruler', kingdom: 'Kingdom', site: 'Monument', battle: 'Battle', culture: 'Culture', state: 'State' };
+const motifs = {
+  ruler: '<path d="M3 13h10M4 13V8l3 2 1-4 1 4 3-2v5"/>',
+  kingdom: '<path d="M2 13V6h2v2h2V4h2v4h2V6h2v7"/>',
+  site: '<path d="M2 13h12M4 13V8h8v5M6 8a2 2 0 0 1 4 0"/>',
+  battle: '<path d="m3 3 10 10M13 3 3 13"/>',
+  culture: '<path d="M2 4h5v8H2zM9 4h5v8H9z"/>',
+  state: '<path d="M3 13V6h10v7M5 13V9h2v4M9 13V8h2v5"/>',
+};
 
-// The current app uses DOM components; CSS is also shared by the React example.
-export function createRecordCard({ record, factionColor, selected = false, avatarUrl,
-  featureBbox = null, handleCardClick, locationNote = '' }) {
+// Compact catalogue row. Icons are category marks, not portraits or emblems.
+export function createRecordCard({ record, factionColor, selected = false, handleCardClick, locationNote = '' }) {
   const node = (tag, className, text) => {
-    const el = document.createElement(tag); el.className = className;
+    const el = document.createElement(tag);
+    if (className) el.className = className;
     if (text !== undefined) el.textContent = text;
     return el;
   };
-  const button = node('button', 'record-card');
+  const button = node('button', 'catalogue-row');
   button.type = 'button';
   button.dataset.id = record.id;
   button.style.setProperty('--faction-color', factionColor || EMPIRE_COLORS.Other);
   button.setAttribute('aria-pressed', String(selected));
-  const artwork = node('span', 'record-artwork');
-  artwork.setAttribute('aria-hidden', 'true');
-  const role = roles[record.type] || 'Record';
-  const label = node('span', 'record-art-label', role);
-  const selectedLabel = node('span', 'record-selected-label', '✓ Selected');
-  // Decorative museum pictograms, not portraits or historical reconstructions.
-  const motifs = {
-    ruler: '<path d="M20 62h80M30 62V38l20 12 10-25 10 25 20-12v24M30 72h60"/>',
-    kingdom: '<path d="M25 77V36h15v12h12V25h16v23h12V36h15v41M49 77V62a11 11 0 0 1 22 0v15"/>',
-    site: '<path d="M20 78h80M30 78V48h60v30M36 48a24 24 0 0 1 48 0M60 24V16M50 78V64a10 10 0 0 1 20 0v14"/>',
-    battle: '<path d="m30 22 58 58m-6-58L24 80M20 62l18 18m44-18L64 80M30 22l4 20 12-12m36-8-4 20-12-12"/>',
-    culture: '<path d="M60 34c-12-10-26-12-40-9v48c14-3 28-1 40 9 12-10 26-12 40-9V25c-14-3-28-1-40 9v48M30 38l18 5m-18 8 18 5m24-13 18-5m-18 18 18-5"/>',
-    state: '<path d="M28 78V42h64v36M40 78V54h16v24M64 78V50h16v28M36 42 60 24l24 18"/>',
-  };
-  const icon = node('span', 'record-art-icon');
-  icon.innerHTML = `<svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${motifs[record.type] || motifs.culture}</svg>`;
-  artwork.append(label, selectedLabel, icon);
-  if (avatarUrl) {
-    const img = document.createElement('img'); img.src = avatarUrl; img.alt = ''; img.loading = 'lazy';
-    img.addEventListener('error', () => img.remove(), { once: true });
-    artwork.prepend(img);
-  }
-  const body = node('span', 'record-card-body');
-  const badges = node('span', 'record-badges');
-  badges.append(node('span', 'record-badge record-date-badge', record.dateLabel),
-    node('span', 'record-badge record-role-badge', roles[record.type] || 'Record'));
-  body.append(node('span', 'record-place', record.place), node('strong', 'record-title', record.title), badges);
-  if (record.summary) body.append(node('span', 'record-excerpt', record.summary));
-  const arrow = node('span', 'record-open-arrow');
-  arrow.setAttribute('aria-hidden', 'true');
-  body.append(arrow);
-  if (locationNote) body.append(node('span', 'record-location-note', locationNote));
-  button.append(artwork, body);
-  button.addEventListener('click', () => handleCardClick(featureBbox));
+  button.setAttribute('aria-label', `${record.title}, ${record.place}, ${record.dateLabel}`);
+  const icon = node('span', 'catalogue-icon');
+  icon.setAttribute('aria-hidden', 'true');
+  icon.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${motifs[record.type] || motifs.culture}</svg>`;
+  const copy = node('span', 'catalogue-copy');
+  copy.append(
+    node('strong', 'catalogue-title', record.title),
+    node('span', 'catalogue-meta', `${record.place} · ${record.dateLabel}`),
+    node('span', 'catalogue-note', record.summary || locationNote || roles[record.type] || 'Record'),
+  );
+  button.append(icon, copy);
+  button.addEventListener('click', () => handleCardClick?.(null));
   return button;
 }

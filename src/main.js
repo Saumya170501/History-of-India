@@ -1,4 +1,5 @@
 import { createRecordCard, recordFactionColor } from './record-card.js';
+import { groupRecords, storyOrder } from './catalogue.js';
 import { sketchAvailable, SKETCH_NOTICE } from './local-boundary.js';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -23,7 +24,7 @@ import {
 } from "./atlas.js";
 import basemapIndex from "./data/basemap-index.json";
 import polityLinks from "./data/polity-links.json";
-import { FRAME, boundsOfFeatures, nearestSnapshot, summarizeYear } from "./period-map.js";
+import { FRAME, boundsOfFeatures, nearestSnapshot, polityColor, summarizeYear } from "./period-map.js";
 import { fillPolityCard, fillYearList, fillYearSources, fillYearSummary } from "./year-panel.js";
 
 const errors = [...validateAtlas(data), ...validateMapLayers(mapLayers, data)];
@@ -119,7 +120,7 @@ const polityView = element('div'); polityView.id = 'drawer-polity';
 const recordsView = element('div'); recordsView.id = 'drawer-records';
 const recordSwitcher = element('div', undefined, 'record-switcher');
 const browseViewButton = element('button', 'Discover', 'drawer-view-button');
-const detailViewButton = element('button', 'Selected record', 'drawer-view-button');
+const detailViewButton = element('button', 'Story', 'drawer-view-button');
 recordSwitcher.append(browseViewButton, detailViewButton);
 const browseView = element('div'); browseView.id = 'drawer-discover';
 const detailView = element('div'); detailView.id = 'drawer-selected';
@@ -128,7 +129,8 @@ const readingNote = element('details', undefined, 'reading-note');
 readingNote.append(element('summary', 'How to read these dates'), $('.window-note'));
 browseView.append(readingNote);
 const backButton = element('button', '← Back to the collection', 'collection-back');
-detailView.append(backButton, $('#map-selection-status'), $('#record-detail'));
+const storyNav = element('div', undefined, 'story-nav');
+detailView.append(backButton, storyNav, $('#map-selection-status'), $('#record-detail'));
 const contextDetails = element('details', undefined, 'drawer-context');
 contextDetails.append(element('summary', 'Map context, legend & battles'));
 for (const selector of ['.map-caption', '#map-context', '.battle-context']) contextDetails.append($(selector));
@@ -270,6 +272,7 @@ const markerLayer = L.layerGroup().addTo(map);
 const regionLayer = L.featureGroup().addTo(map);
 const battleLayer = L.featureGroup().addTo(map);
 const periodLayer = L.featureGroup().addTo(map);
+const markersById = new Map();
 const snapshotCache = new Map();
 let periodFeatures = [];
 let periodSummary = null;
@@ -396,6 +399,9 @@ function renderBattles() {
         html: `<span class="pin battle-pin ${battle.datePrecision !== 'year' ? 'approximate' : ''}">${{battle:'B',siege:'S',aftermath:'A'}[battle.eventKind]}</span>`,
         iconSize: [30, 30], iconAnchor: [15, 15] }),
     }).addTo(battleLayer);
+    const marks = markersById.get(battle.id) || [];
+    marks.push(marker);
+    markersById.set(battle.id, marks);
     const popup = element('div', undefined, 'map-popup');
     popup.append(element('strong', label), element('p', battle.dateNote), element('p', battle.locationNote));
     const read = element('button', 'Read event evidence');
@@ -492,19 +498,58 @@ function focusRecordMap(record) {
   else map.setView(reference.center, reference.zoom, { animate: false });
 }
 
-function selectRecord(record, focus = false) {
+function selectRecord(record, focus = false, camera = 'record') {
   selectedId = record.id;
-  for (const button of document.querySelectorAll(".record-card"))
-    button.setAttribute(
-      "aria-pressed",
-      String(button.dataset.id === record.id),
-    );
+  for (const button of document.querySelectorAll('.catalogue-row'))
+    button.setAttribute('aria-pressed', String(button.dataset.id === record.id));
   renderDetail(record);
-  focusRecordMap(record);
+  renderStoryNav();
+  if (camera === 'story') focusStory(record);
+  else focusRecordMap(record);
+  pulseRecord(record);
   if (focus) {
     $('#map').scrollIntoView({ block: 'center' });
     $('#map').focus({ preventScroll: true });
   }
+}
+function focusStory(record) {
+  const group = groupRecords([record], polityLinks.links)[0];
+  const areas = (group?.highlight || []).flatMap(name => featuresByName(name));
+  if (record.geometry?.type === 'Point') {
+    const [lon, lat] = record.geometry.coordinates;
+    map.setView([lat, lon], 6, { animate: !window.matchMedia('(prefers-reduced-motion: reduce)').matches });
+  } else if (areas.length) fitFeatures(areas, 6);
+  else focusRecordMap(record);
+}
+function pulseRecord(record) {
+  document.querySelectorAll('.point-hit-target.pulse').forEach(node => node.classList.remove('pulse'));
+  if (!record) { historicalMap.hoverPeriod(null); return; }
+  for (const marker of markersById.get(record.id) || []) {
+    marker.getElement()?.querySelector('.point-hit-target, .battle-pin')?.classList.add('pulse');
+  }
+  const group = groupRecords([record], polityLinks.links)[0];
+  const feature = (group?.highlight || []).map(name => featureByName(name)).find(Boolean);
+  historicalMap.hoverPeriod(feature ? feature.id : null);
+}
+function renderStoryNav() {
+  const ordered = storyOrder(recordsForYear(data.records, state.year, state.type, state.query));
+  const index = ordered.findIndex(item => item.id === selectedId);
+  storyNav.replaceChildren();
+  const go = (record) => {
+    selectedId = record.id;
+    update();
+    setDrawerView('selected');
+    focusStory(record);
+  };
+  const previous = element('button', 'Previous', 'story-step');
+  previous.type = 'button';
+  previous.disabled = index <= 0;
+  previous.addEventListener('click', () => go(ordered[index - 1]));
+  const next = element('button', 'Next', 'story-step');
+  next.type = 'button';
+  next.disabled = index < 0 || index >= ordered.length - 1;
+  next.addEventListener('click', () => go(ordered[index + 1]));
+  storyNav.append(previous, element('p', index >= 0 ? `${index + 1} of ${ordered.length} this year` : '', 'story-count'), next);
 }
 
 function featureByName(name) {
@@ -695,26 +740,52 @@ function render() {
   const list = $("#record-list");
   list.replaceChildren();
   markerLayer.clearLayers();
+  markersById.clear();
   if (!matches.some((record) => record.id === selectedId))
-    selectedId = matches[0]?.id || null;
-  const groups = new Map();
-  for (const record of matches) {
-    const button = createRecordCard({
-      record,
-      factionColor: sketchAvailable(record, state.year) ? '#8b5cf6' : recordFactionColor(record),
-      selected: record.id === selectedId,
-      handleCardClick: () => { selectRecord(record, true); setDrawerView('selected'); $('#record-detail').focus({ preventScroll: true }); },
-      locationNote: !record.geometry ? (sketchAvailable(record, state.year)
-        ? 'Unverified user sketch available' : 'Location pending · timeline only') : '',
-    });
-    list.append(button);
-    if (!record.geometry) continue;
-    // Battle symbols belong to their own layer, including when catalogue filters hide them.
-    if (record.type === 'battle') continue;
-    const key = record.geometry.coordinates.join(",");
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(record);
+    selectedId = storyOrder(matches)[0]?.id || null;
+  const pointGroups = new Map();
+  const catalogue = groupRecords(matches, polityLinks.links);
+  let openBudget = 8;
+  for (const group of catalogue) {
+    const section = element('details', undefined, 'catalogue-group');
+    const selectedHere = group.records.some(record => record.id === selectedId);
+    if (selectedHere || openBudget > 0) {
+      section.open = true;
+      if (!selectedHere) openBudget -= group.records.length;
+    }
+    const summary = document.createElement('summary');
+    const swatch = element('i', undefined, 'catalogue-swatch');
+    swatch.style.background = group.kind === 'polity' ? polityColor(group.title) : '#8a7355';
+    summary.append(swatch, element('span', group.title), element('span', String(group.records.length), 'catalogue-count'));
+    section.append(summary);
+    for (const record of group.records) {
+      const button = createRecordCard({
+        record,
+        factionColor: sketchAvailable(record, state.year) ? '#8b5cf6' : recordFactionColor(record),
+        selected: record.id === selectedId,
+        handleCardClick: () => {
+          selectRecord(record, false, 'story');
+          setDrawerView('selected');
+          $('#record-detail').focus({ preventScroll: true });
+        },
+        locationNote: !record.geometry ? (sketchAvailable(record, state.year)
+          ? 'Unverified user sketch available' : 'Location pending · timeline only') : '',
+      });
+      const show = () => pulseRecord(record);
+      const restore = () => pulseRecord(data.records.find(item => item.id === selectedId) || null);
+      button.addEventListener('mouseenter', show);
+      button.addEventListener('focus', show);
+      button.addEventListener('mouseleave', restore);
+      button.addEventListener('blur', restore);
+      section.append(button);
+      if (!record.geometry || record.type === 'battle') continue;
+      const key = record.geometry.coordinates.join(',');
+      if (!pointGroups.has(key)) pointGroups.set(key, []);
+      pointGroups.get(key).push(record);
+    }
+    list.append(section);
   }
+  const groups = pointGroups;
   if (!matches.length) {
     const empty = element("div", undefined, "empty");
     empty.append(
@@ -758,6 +829,11 @@ function render() {
         iconAnchor: [15, 15],
       }),
     }).addTo(markerLayer);
+    for (const record of records) {
+      const marks = markersById.get(record.id) || [];
+      marks.push(marker);
+      markersById.set(record.id, marks);
+    }
     const popup = element("div", undefined, "map-popup");
     popup.append(element("strong", records[0].place));
     for (const record of records) {
@@ -780,6 +856,8 @@ function render() {
   }
   renderBattles();
   renderDetail(matches.find((record) => record.id === selectedId));
+  renderStoryNav();
+  pulseRecord(matches.find((record) => record.id === selectedId) || null);
   syncPeriod();
 }
 
@@ -837,6 +915,28 @@ document
   .forEach((button) =>
     button.addEventListener("click", () => setYear(button.dataset.year, true)),
   );
+$('#record-list').addEventListener('keydown', (event) => {
+  if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+  const rows = [...$('#record-list').querySelectorAll('.catalogue-row')].filter(row => row.offsetParent);
+  const index = rows.indexOf(document.activeElement);
+  const next = rows[index + (event.key === 'ArrowDown' ? 1 : -1)];
+  if (!next) return;
+  event.preventDefault();
+  next.focus();
+});
+detailView.addEventListener('keydown', (event) => {
+  if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+  if (event.target.closest('a, input, textarea, select, button')) return;
+  const ordered = storyOrder(recordsForYear(data.records, state.year, state.type, state.query));
+  const index = ordered.findIndex(item => item.id === selectedId);
+  const record = ordered[index + (event.key === 'ArrowRight' ? 1 : -1)];
+  if (!record) return;
+  event.preventDefault();
+  selectedId = record.id;
+  update();
+  setDrawerView('selected');
+  focusStory(record);
+});
 $("#record-type").addEventListener("change", (event) => {
   state.type = event.target.value;
   update();

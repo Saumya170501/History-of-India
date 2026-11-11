@@ -135,4 +135,9 @@ footer { padding: 16px 0; gap: 12px; flex-wrap: wrap; }
 }
 /* Keyboard/click target over MapLibre's zoom-scaled solid point marker. */
 .point-hit-target { display: block; width: 30px; height: 30px; border-radius: 50%; }
+.point-hit-target.pulse, .battle-pin.pulse { box-shadow: 0 0 0 3px #fffaf0, 0 0 0 6px #a35b3c; animation: record-pulse 1.2s ease-out infinite; }
+@keyframes record-pulse { 70% { box-shadow: 0 0 0 3px #fffaf0, 0 0 0 16px transparent; } }
+@media (prefers-reduced-motion: reduce) {
+  .point-hit-target.pulse { animation: none; }
+}
 .history-marker:focus-visible .point-hit-target { outline: 2px solid #a35b3c; }
