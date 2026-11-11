@@ -392,6 +392,48 @@
       "publisher": "The National Archives (legislation.gov.uk)",
       "url": "https://www.legislation.gov.uk/ukpga/Geo6/10-11/30/section/1",
       "accessed": "2026-11-11"
+    },
+    {
+      "id": "unesco-ellora",
+      "title": "Ellora Caves",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/243/",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "unesco-mahabalipuram",
+      "title": "Group of Monuments at Mahabalipuram",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/249/",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-harsha",
+      "title": "Harsha",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/biography/Harsha",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-ahom",
+      "title": "Ahom",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Ahom",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-quit-india",
+      "title": "Quit India Movement",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/Quit-India-Movement",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-constitution",
+      "title": "Constitution of India",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Constitution-of-India",
+      "accessed": "2026-11-11"
     }
   ],
   "records": [
@@ -6029,6 +6071,380 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ellora-caves",
+      "title": "Ellora caves",
+      "type": "site",
+      "place": "Ellora",
+      "startYear": 600,
+      "endYear": 1000,
+      "datePrecision": "approximate",
+      "dateLabel": "600–1000 CE",
+      "dateNote": "The page’s opening and criterion (iii) describe an uninterrupted sequence of monuments from 600 to 1000. The brief synthesis also says rock-cut work ran in three phases from the 6th century to the 12th century. Those statements are not reconciled here. The 600–1000 window follows the opening sequence. It is not a claim that carving continued in every year, or that one dynasty ruled the site throughout.",
+      "summary": "Rock-cut monasteries and temples at Ellora, with sanctuaries of Buddhism, Brahmanism and Jainism.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.17917,
+          20.02639
+        ]
+      },
+      "locationNote": "Converted from the UNESCO property reference N20 1 35.004 E75 10 45.012. The point locates the cave group near Aurangabad, not a kingdom and not a single cave.",
+      "locationSourceId": "unesco-ellora",
+      "citations": [
+        {
+          "sourceId": "unesco-ellora",
+          "locator": "Opening description; property coordinates N20 1 35.004 E75 10 45.012",
+          "supports": "The 600–1000 sequence, the three religious sanctuaries, the place near Aurangabad, and the property reference point."
+        }
+      ],
+      "reviewStatus": "cited",
+      "details": [
+        {
+          "heading": "What was made",
+          "text": "Thirty-four monasteries and temples were cut side by side into a basalt cliff. The brief synthesis separates an early Buddhist group, a Brahmanical group including the Kailasa temple (cave 16), and a later Jaina group.",
+          "citations": [
+            {
+              "sourceId": "unesco-ellora",
+              "locator": "Opening; Outstanding Universal Value, brief synthesis",
+              "supports": "The number of monuments, the cliff, and the three religious phases including cave 16."
+            }
+          ]
+        }
+      ],
+      "researchBatch": "coverage-2026"
+    },
+    {
+      "id": "mahabalipuram-monuments",
+      "title": "Monuments at Mahabalipuram",
+      "type": "site",
+      "place": "Mahabalipuram",
+      "startYear": 601,
+      "endYear": 800,
+      "datePrecision": "century",
+      "dateLabel": "7th–8th centuries CE",
+      "dateNote": "The opening dates the sanctuaries to the 7th and 8th centuries. The brief synthesis says the Pallavas ruled this area between the 6th and 9th centuries and names Narasimhavarman Rajasimha’s reign as 638–660 for one excavated well. The search window follows the opening’s two centuries, not a foundation year and not continuous building. No property coordinate was copied from the page in this pass, so nothing is placed on the map.",
+      "summary": "Rock-cut and structural temples on the Coromandel coast, founded by the Pallava kings.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The page locates the group on the Coromandel coast and names Mahabalipuram, but this pass did not copy a property coordinate, so no point is shown.",
+      "citations": [
+        {
+          "sourceId": "unesco-mahabalipuram",
+          "locator": "Opening description",
+          "supports": "Pallava foundation, the Coromandel coast, and the 7th–8th century dating of the sanctuaries."
+        }
+      ],
+      "reviewStatus": "cited",
+      "details": [
+        {
+          "heading": "What stands there",
+          "text": "The opening names rathas, mandapas, open-air reliefs including the Descent of the Ganges, and the Shore temple. The brief synthesis calls Mahabalipuram a Pallava port and divides the monuments into caves, monolithic rathas, reliefs, structural temples and excavated remains.",
+          "citations": [
+            {
+              "sourceId": "unesco-mahabalipuram",
+              "locator": "Opening; Outstanding Universal Value, brief synthesis",
+              "supports": "The monument types and the port-city description."
+            }
+          ]
+        }
+      ],
+      "researchBatch": "coverage-2026"
+    },
+    {
+      "id": "harsha",
+      "title": "Harsha",
+      "type": "ruler",
+      "place": "Kannauj",
+      "startYear": 606,
+      "endYear": 647,
+      "datePrecision": "approximate",
+      "dateLabel": "606–c. 647 CE",
+      "dateNote": "Britannica gives the reign as 606 to 647 and the death as about 647. The end year is that approximate death, not a recorded day. Born about 590 is not the start of the reign. The directly ruled area is described as smaller than the list of kingdoms he warred against.",
+      "summary": "Ruler of a large north Indian realm from 606, with his capital moved to Kannauj.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The article names Kannauj as the capital he transferred there, and Thanesar as his father’s kingdom. It does not give a coordinate, so no point is shown. The capital is not the extent of his rule.",
+      "tags": [
+        "Harsha",
+        "Harshavardhana",
+        "Kannauj"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-harsha",
+          "locator": "Opening and second paragraph",
+          "supports": "The reign years, the move of the capital to Kannauj, and the caution that direct control was smaller than the claimed hegemony."
+        }
+      ],
+      "reviewStatus": "cited",
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "He was the second son of Prabhakaravardhana, king of Sthanvishvara (Thanesar). He was crowned after the assassination of his elder brother Rajyavardhana. The article does not set out a successor.",
+          "citations": [
+            {
+              "sourceId": "britannica-harsha",
+              "locator": "Second paragraph",
+              "supports": "Parentage, Thanesar, and the succession after Rajyavardhana."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "After securing his position he declared himself sovereign of Kannauj, in present-day Uttar Pradesh, and formally transferred his capital there. No coordinate is given.",
+          "citations": [
+            {
+              "sourceId": "britannica-harsha",
+              "locator": "Second paragraph",
+              "supports": "The transfer of the capital to Kannauj."
+            }
+          ]
+        },
+        {
+          "heading": "Reign",
+          "text": "He ruled from 606 to 647. He allied with Bhaskaravarman of Kamarupa and fought Shashanka of Gauda. An attempt on the Deccan, about 620, was stopped at the Narmada by the Chalukya ruler Pulakeshin II. The article says the area directly under his control was probably no more than modern Uttar Pradesh with parts of Punjab and Rajasthan, even where influence reached further.",
+          "citations": [
+            {
+              "sourceId": "britannica-harsha",
+              "locator": "Opening and second paragraph",
+              "supports": "The dates, the Narmada check, and the limit on direct control."
+            }
+          ]
+        },
+        {
+          "heading": "Culture and religion",
+          "text": "He is described as a Buddhist convert in a Hindu era. Xuanzang depicts him as a Mahayana Buddhist, while the earlier part of the reign is said to have supported orthodox Hinduism. He patronised Bana and Mayura and is credited with three Sanskrit plays. These are literary and religious notes, not a map of belief.",
+          "citations": [
+            {
+              "sourceId": "britannica-harsha",
+              "locator": "Opening and third paragraph",
+              "supports": "The religious description, Xuanzang, and the named literary patronage."
+            }
+          ]
+        }
+      ],
+      "researchBatch": "coverage-2026"
+    },
+    {
+      "id": "ahom-kingdom",
+      "title": "Ahom rule in Assam",
+      "type": "kingdom",
+      "place": "Assam",
+      "startYear": 1201,
+      "endYear": 1838,
+      "datePrecision": "approximate",
+      "dateLabel": "13th century–1838",
+      "dateNote": "The article says the Ahom ruled much of Assam from the 13th century until British rule in 1838. The year 1201 is only the start of a 13th-century search window, not a foundation date. The year 1838 is the cited end of their rule. The window does not mean they held the same territory in every year.",
+      "summary": "A dynasty that ruled much of Assam from the 13th century until British rule in 1838.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The article names Assam and does not give a coordinate or a capital point, so nothing is placed on the map. Assam is not drawn as their border.",
+      "tags": [
+        "Ahom",
+        "Assam"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-ahom",
+          "locator": "Opening",
+          "supports": "Rule over much of Assam from the 13th century until British rule in 1838."
+        }
+      ],
+      "reviewStatus": "cited",
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "The article calls the Ahom a tribe that originated in Yunnan and later spoke Assamese, their earlier language being extinct. It does not list a full genealogy.",
+          "citations": [
+            {
+              "sourceId": "britannica-ahom",
+              "locator": "Opening",
+              "supports": "The Yunnan origin and the later use of Assamese."
+            }
+          ]
+        },
+        {
+          "heading": "Reign",
+          "text": "Their power in Assam is said to have reached its peak under King Rudra Singh, 1696–1714. That reign is a separate record. This entry is the longer span only.",
+          "citations": [
+            {
+              "sourceId": "britannica-ahom",
+              "locator": "Opening",
+              "supports": "The peak under Rudra Singh and the 1696–1714 dates."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "The cited end is the establishment of British rule in 1838. No battle or border is described on this page.",
+          "citations": [
+            {
+              "sourceId": "britannica-ahom",
+              "locator": "Opening",
+              "supports": "1838 as the end of Ahom rule in the article."
+            }
+          ]
+        }
+      ],
+      "researchBatch": "coverage-2026"
+    },
+    {
+      "id": "rudra-singh",
+      "title": "Rudra Singh",
+      "type": "ruler",
+      "place": "Assam",
+      "startYear": 1696,
+      "endYear": 1714,
+      "datePrecision": "year",
+      "dateLabel": "1696–1714",
+      "dateNote": "The article gives these years as the reign in which Ahom power in Assam reached its peak. It does not describe the start or end as a particular day, or name a capital.",
+      "summary": "Ahom king during the years the article calls the peak of their power in Assam.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate is given for Rudra Singh or for a capital, so no point is shown.",
+      "tags": [
+        "Ahom",
+        "Rudra Singh"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-ahom",
+          "locator": "Opening",
+          "supports": "The reign 1696–1714 as the peak of Ahom power in Assam."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026"
+    },
+    {
+      "id": "quit-india",
+      "title": "Quit India movement",
+      "type": "culture",
+      "place": "Bombay (Mumbai)",
+      "startYear": 1942,
+      "endYear": 1943,
+      "datePrecision": "year",
+      "dateLabel": "1942–1943",
+      "dateNote": "The movement was launched on 8 August 1942 at a Congress meeting in Bombay. Protests had largely died down by the end of 1942 and the article says the movement was definitively over by March 1943. The window is that campaign, not a claim that protest filled every day, and not independence itself.",
+      "summary": "A mass campaign launched by Gandhi in August 1942 demanding an immediate end to British rule. It did not achieve that end.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The launch meeting was in Bombay, present-day Mumbai, and protests spread widely. The page does not give a coordinate, so no point is shown. Bombay is not the extent of the campaign.",
+      "tags": [
+        "Quit India",
+        "Gandhi",
+        "independence"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-quit-india",
+          "locator": "Opening and historical narrative",
+          "supports": "The 8 August 1942 launch in Bombay, the demand to end British rule, and the statement that the campaign did not force immediate decolonisation."
+        }
+      ],
+      "reviewStatus": "cited",
+      "details": [
+        {
+          "heading": "Events",
+          "text": "On 8 August 1942 the Congress meeting in Bombay adopted the campaign and Gandhi gave the “Do or Die” appeal. Congress leaders were then arrested. The article describes both nonviolent protest and attacks on railways, post offices and police stations, and a harsh British response. It says at least 1,000 Indians were killed and about 60,000 arrested by the end of 1943.",
+          "citations": [
+            {
+              "sourceId": "britannica-quit-india",
+              "locator": "Opening; Preparations for protest; Protests and reprisals",
+              "supports": "The Bombay meeting, the arrests, the scale of protest, and the casualty and arrest figures as stated."
+            }
+          ]
+        },
+        {
+          "heading": "What this was not",
+          "text": "The movement did not end British rule. Independence and partition came in 1947 and are separate records. Gandhi, Nehru and other leaders named here were not kings, and this entry does not give them a reign.",
+          "citations": [
+            {
+              "sourceId": "britannica-quit-india",
+              "locator": "Opening and conclusion",
+              "supports": "The campaign’s failure to force immediate decolonisation, and its place in the longer independence struggle."
+            }
+          ]
+        }
+      ],
+      "researchBatch": "coverage-2026"
+    },
+    {
+      "id": "republic-of-india",
+      "title": "Republic of India",
+      "type": "state",
+      "place": "Republic of India",
+      "startYear": 1950,
+      "endYear": 2026,
+      "datePrecision": "year",
+      "dateLabel": "from 26 January 1950",
+      "dateNote": "The Constitution was adopted on 26 November 1949 and went into effect on 26 January 1950. The search window starts at 1950, the year it took effect, and runs to 2026 so the republic remains findable. The end year is the atlas limit, not a constitutional end. This is not a list of presidents or prime ministers, and it is not a map of state borders.",
+      "summary": "The Constitution took effect on 26 January 1950 and established India as a democratic republic and a union of states.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. A constitution is not a coordinate and not a border. No point is shown.",
+      "tags": [
+        "Republic",
+        "Constitution",
+        "India"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-constitution",
+          "locator": "Opening",
+          "supports": "The 26 January 1950 commencement, and the description of India as a democratic republic and a union of states."
+        }
+      ],
+      "reviewStatus": "cited",
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "None. The Constitution creates a republic. B.R. Ambedkar chaired the drafting committee and is not a monarch. Rajendra Prasad presided over the Constituent Assembly and later became the first president; that office is not a reign in this atlas.",
+          "citations": [
+            {
+              "sourceId": "britannica-constitution",
+              "locator": "Constituent Assembly",
+              "supports": "Ambedkar’s role as drafting-committee chair and Prasad’s role as assembly president."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Adoption was on 26 November 1949. Commencement was on 26 January 1950, now marked as Republic Day. When it took effect, the Constitution repealed nearly all existing legislation, including the Indian Independence Act 1947. The Dominion record covers the 1947 Act and is not replaced by this one.",
+          "citations": [
+            {
+              "sourceId": "britannica-constitution",
+              "locator": "Opening and Background",
+              "supports": "The adoption and commencement dates, Republic Day, and the repeal of the 1947 Act."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "No ruler is attached. Elected and appointed office-holders need their own sources and are not listed as kings.",
+          "citations": [
+            {
+              "sourceId": "britannica-constitution",
+              "locator": "Opening",
+              "supports": "The text defines a republic and the structure of government, not a royal house."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The preamble is described as emphasising a secular and democratic state and the aims of justice, liberty, equality and fraternity. Fundamental rights are grouped in six categories. None of that is a map of culture or of the economy.",
+          "citations": [
+            {
+              "sourceId": "britannica-constitution",
+              "locator": "Top questions on fundamental rights and the preamble",
+              "supports": "The secular democratic description and the six groups of fundamental rights."
+            }
+          ]
+        }
+      ],
+      "researchBatch": "coverage-2026"
     }
   ]
 }

@@ -9,3 +9,5 @@ Thumbs.db
 .vercel/
 
 artifacts/
+public/data/catalogue.json
+public/data/profiles/

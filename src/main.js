@@ -7,7 +7,6 @@ import "./style.css";
 import "./layout.css";
 import "./record-card.css";
 import "./evidence-drawer.css";
-import data from "./data/atlas.json";
 import { mapReference } from './map-reference.js';
 import { relatedArea } from './related-area.js';
 import { attachHistoricalMap } from './ohm-map.js';
@@ -24,10 +23,13 @@ import {
 } from "./atlas.js";
 import basemapIndex from "./data/basemap-index.json";
 import polityLinks from "./data/polity-links.json";
-import { FRAME, boundsOfFeatures, nearestSnapshot, polityColor, summarizeYear } from "./period-map.js";
+import { FRAME, boundsOfFeatures, nearestSnapshot, polityColor, recordsForPolity, summarizeYear } from "./period-map.js";
 import { applySheetReading, sheetIsSuppressed } from "./sheet-policy.js";
 import { fillPolityCard, fillYearList, fillYearSources, fillYearSummary } from "./year-panel.js";
 
+const catalogueResponse = await fetch(`${import.meta.env.BASE_URL}data/catalogue.json`);
+if (!catalogueResponse.ok) throw new Error(`Catalogue failed to load (HTTP ${catalogueResponse.status}).`);
+const data = await catalogueResponse.json();
 const errors = [...validateAtlas(data), ...validateMapLayers(mapLayers, data)];
 if (errors.length) throw new Error(errors.join("\n"));
 const sources = new Map(data.sources.map((source) => [source.id, source]));
@@ -473,6 +475,14 @@ function renderDetail(record) {
   if (!regionalEvidence.length) evidence.append(element('p',
     'A dated, sourced regional map is not yet available for this selection. No boundary has been inferred from this record’s place or reign dates.'));
   for (const item of regionalEvidence) appendMapEvidence(evidence, item);
+  if (record.hasProfile && !record.details) {
+    story.append(element('p', 'The longer profile is loading.', 'profile-note'));
+    scheduleProfile(record, () => {
+      if (selectedId !== record.id) return;
+      delete panel.dataset.viewKey;
+      renderDetail(record);
+    });
+  }
   if (record.details?.length) {
     const biography = element('section', undefined, 'biography');
     biography.append(element('h3', 'Historical profile'), element('p',
@@ -498,6 +508,18 @@ function focusRecordMap(record) {
   else map.setView(reference.center, reference.zoom, { animate: false });
 }
 
+function scheduleProfile(record, after) {
+  if (!record?.hasProfile || record.details || record.profileState === 'loading') return;
+  record.profileState = 'loading';
+  fetch(`${import.meta.env.BASE_URL}data/profiles/${record.id}.json`)
+    .then(response => response.ok ? response.json() : null)
+    .then(details => {
+      record.profileState = 'ready';
+      if (Array.isArray(details) && details.length) record.details = details;
+      after?.();
+    })
+    .catch(() => { record.profileState = 'ready'; });
+}
 function selectRecord(record, focus = false, camera = 'record') {
   selectedId = record.id;
   for (const button of document.querySelectorAll('.catalogue-row'))
@@ -627,6 +649,10 @@ function closePolity() {
 function showPolity(feature, { zoom = true, focus = false } = {}) {
   if (!feature || !periodSummary) return closePolity();
   openPolityName = feature.properties.name;
+  const linked = recordsForPolity(feature.properties.name, polityLinks.links, data.records, state.year);
+  for (const record of linked) scheduleProfile(record, () => {
+    if (openPolityName === feature.properties.name) showPolity(feature, { zoom: false, focus: false });
+  });
   fillPolityCard(polityView, {
     feature, year: state.year, summary: periodSummary, links: polityLinks.links,
     records: data.records, sources, onClose: closePolity,

@@ -1,6 +1,11 @@
 // Editorial navigation buffers around associated geography, NOT historical extents.
 // Centers/radii below are deliberately coarse and carry no sovereignty claim.
 const areas = [
+  [/Mahabalipuram|Mamallapuram/, 'Coromandel coast at Mahabalipuram', [12.6, 80.2], 80],
+  [/Kannauj|Thanesar/, 'Kannauj and the upper Ganga plain', [27.1, 79.9], 280],
+  [/Assam|Ahom/, 'Assam and the Brahmaputra valley', [26.5, 93], 400],
+  [/Bombay|Mumbai/, 'Bombay, the cited launch city', [19, 72.8], 80],
+  [/Republic of India/, 'India after 1950 — a republic, not a kingdom extent', [22.5, 79], 1200],
   [/Gupta|Magadha|Ganga-Yamuna/, 'Ganga-Yamuna and Magadha context', [26, 82], 700],
   [/Vakataka/, 'Vakataka Deccan context', [20, 78], 550],
   [/Chalukya|Vatapi|Kalyani|Vengi/, 'Deccan and Vengi context', [16.5, 77], 650],

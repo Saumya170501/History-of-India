@@ -25,7 +25,7 @@ export function recordsForYear(records, year, type = "all", query = "") {
       year <= record.endYear &&
       (type === "all" || record.type === type) &&
       (!term ||
-        `${record.title} ${record.place} ${record.summary} ${(record.tags || []).join(' ')} ${(record.details || []).map(section => section.text).join(' ')}`
+        `${record.title} ${record.place} ${record.summary} ${(record.tags || []).join(' ')} ${(record.details || []).map(section => section.text).join(' ')} ${record.searchText || ''}`
           .toLocaleLowerCase("en")
           .includes(term)),
   );

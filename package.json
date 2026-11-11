@@ -8,8 +8,8 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "npm run validate:data && vite build",
+    "dev": "node scripts/split-catalogue.mjs && vite --host 127.0.0.1",
+    "build": "npm run validate:data && node scripts/split-catalogue.mjs && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test",
     "validate:data": "node scripts/validate-data.mjs",
