@@ -25,6 +25,7 @@ import basemapIndex from "./data/basemap-index.json";
 import polityLinks from "./data/polity-links.json";
 import { FRAME, boundsOfFeatures, nearestSnapshot, polityColor, recordsForPolity, summarizeYear } from "./period-map.js";
 import { applySheetReading, sheetIsSuppressed } from "./sheet-policy.js";
+import { PLAY_SPEEDS, compareNames, nextPlaybackYear } from "./playback.js";
 import { fillPolityCard, fillYearList, fillYearSources, fillYearSummary } from "./year-panel.js";
 
 const catalogueResponse = await fetch(`${import.meta.env.BASE_URL}data/catalogue.json`);
@@ -63,7 +64,7 @@ $("#app").innerHTML = `
     </section>
     <section class="timeline" aria-label="Choose a historical year">
       <div class="year-block"><span class="eyebrow">EXPLORING THE YEAR</span><div><output id="year-display" for="year-slider year-input">1</output><span class="ce">CE</span></div></div>
-      <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="1" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026 CE</span></div>      <div class="jumps"><span>Explore a window</span><button data-year="1">1 CE</button><button data-year="300">300</button><button data-year="500">500</button><button data-year="1000">1000</button><button data-year="1600">1600</button><button data-year="1800">1800</button><button data-year="1858">1858</button><button data-year="1947">1947</button></div></div>
+      <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="1" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026 CE</span></div>      <div class="jumps"><span>Explore a window</span><button data-year="1">1 CE</button><button data-year="300">300</button><button data-year="500">500</button><button data-year="1000">1000</button><button data-year="1600">1600</button><button data-year="1800">1800</button><button data-year="1858">1858</button><button data-year="1947">1947</button><button id="play-toggle" type="button" aria-pressed="false">Play</button><label class="play-speed">Speed <select id="play-speed" aria-label="Playback speed"><option value="slow">Slow</option><option value="steady" selected>Steady</option><option value="fast">Fast</option></select></label><button id="compare-toggle" type="button" aria-pressed="false">Compare</button></div></div>
       <div class="year-entry"><label for="year-input">Go to year</label><div><button id="previous-year" aria-label="Previous year">−</button><input id="year-input" type="number" min="1" max="2026" step="1" value="1"><button id="next-year" aria-label="Next year">+</button></div></div>
       <div id="year-summary" class="year-summary" role="status" aria-live="polite"></div>
     </section>
@@ -118,7 +119,26 @@ yearSearch.placeholder = 'Find an area on this sheet…';
 yearSearch.setAttribute('aria-label', 'Filter areas shown for this year');
 const yearList = element('div'); yearList.id = 'year-polity-list';
 const yearCited = element('div'); yearCited.id = 'year-cited-list';
-yearView.append(yearSearch, yearList, yearCited);
+const comparePanel = element('div', undefined, 'compare-panel');
+comparePanel.id = 'compare-panel';
+comparePanel.hidden = true;
+const compareControls = element('div', undefined, 'compare-controls');
+const compareLabel = element('label', 'Other year ');
+const compareInput = element('input');
+compareInput.id = 'compare-year';
+compareInput.type = 'number';
+compareInput.min = '1';
+compareInput.max = '2026';
+compareInput.value = '1600';
+compareInput.setAttribute('aria-label', 'Year to compare with the map');
+compareLabel.append(compareInput);
+const compareSwap = element('button', 'Show the other year on the map', 'compare-swap');
+compareSwap.type = 'button';
+const compareResult = element('div');
+compareResult.id = 'compare-result';
+compareControls.append(compareLabel, compareSwap);
+comparePanel.append(element('h3', 'What changed between the two years'), compareControls, compareResult);
+yearView.append(comparePanel, yearSearch, yearList, yearCited);
 const polityView = element('div'); polityView.id = 'drawer-polity';
 const recordsView = element('div'); recordsView.id = 'drawer-records';
 const recordSwitcher = element('div', undefined, 'record-switcher');
@@ -892,6 +912,7 @@ function render() {
   renderStoryNav();
   pulseRecord(matches.find((record) => record.id === selectedId) || null);
   syncPeriod();
+  refreshCompare();
 }
 
 function update() {
@@ -914,7 +935,65 @@ function paintYear(year) {
   $("#year-input").value = year;
   $("#year-display").value = year.toLocaleString("en");
 }
-function setYear(value, immediate = false) {
+let playTimer = 0;
+let compareOn = false;
+let compareYear = 1600;
+let compareToken = 0;
+function stopPlayback() {
+  clearTimeout(playTimer);
+  playTimer = 0;
+  const button = $('#play-toggle');
+  button.textContent = 'Play';
+  button.setAttribute('aria-pressed', 'false');
+}
+async function sheetNames(year) {
+  const choice = nearestSnapshot(year, basemapIndex.snapshots);
+  if (!choice) return { names: [], note: 'No snapshot is published.' };
+  if (sheetIsSuppressed(year, choice))
+    return { names: [], note: `No close political sheet. Nearest is ${choice.snapshot.year}, ${choice.gapYears} years away, and it is not drawn.` };
+  if (!snapshotCache.has(choice.snapshot.year)) {
+    const response = await fetch(`${import.meta.env.BASE_URL}data/basemaps/${choice.snapshot.file}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    snapshotCache.set(choice.snapshot.year, await response.json());
+  }
+  const features = applySheetReading(snapshotCache.get(choice.snapshot.year).features, year);
+  return {
+    names: [...new Set(features.filter(feature => feature.properties.kind === 'named').map(feature => feature.properties.name))],
+    note: choice.gapYears === 0
+      ? `Sheet ${choice.snapshot.year}.`
+      : `Nearest sheet ${choice.snapshot.year}, ${choice.gapYears} years away. Borders are not interpolated.`,
+  };
+}
+async function refreshCompare() {
+  if (!compareOn) return;
+  const token = ++compareToken;
+  compareResult.replaceChildren(element('p', 'Comparing the two sheets…'));
+  try {
+    const [left, right] = await Promise.all([sheetNames(state.year), sheetNames(compareYear)]);
+    if (token !== compareToken) return;
+    const diff = compareNames(left.names, right.names);
+    compareResult.replaceChildren(
+      element('p', `${state.year} CE on the map. ${left.note}`),
+      element('p', `${compareYear} CE compared. ${right.note}`),
+      element('p', `Only on the map’s year: ${diff.onlyLeft.join(', ') || 'none'}.`),
+      element('p', `Only in ${compareYear}: ${diff.onlyRight.join(', ') || 'none'}.`),
+      element('p', `Named on both sheets: ${diff.both.join(', ') || 'none'}.`),
+    );
+  } catch (error) {
+    if (token === compareToken) compareResult.replaceChildren(element('p', `Comparison unavailable: ${error.message}`));
+  }
+}
+function stepPlayback() {
+  const speed = PLAY_SPEEDS[$('#play-speed').value] || PLAY_SPEEDS.steady;
+  const move = nextPlaybackYear({
+    year: state.year, maxYear: MAX_YEAR, step: speed.step, snapshots: basemapIndex.snapshots,
+  });
+  setYear(move.year, true, 'play');
+  if (move.pause || move.done) stopPlayback();
+  return move;
+}
+function setYear(value, immediate = false, source = 'user') {
+  if (source !== 'play') stopPlayback();
   state.year = normalizeYear(value, state.year);
   paintYear(state.year);
   clearTimeout(yearTimer);
@@ -940,6 +1019,43 @@ $("#year-input").addEventListener("keydown", (event) => {
     setYear(event.target.value, true);
     event.target.blur();
   }
+});
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('#play-toggle').addEventListener('click', () => {
+  if (playTimer) return stopPlayback();
+  if (reducedMotion) return stepPlayback();
+  $('#play-toggle').textContent = 'Pause';
+  $('#play-toggle').setAttribute('aria-pressed', 'true');
+  const tick = () => {
+    const move = stepPlayback();
+    if (move.pause || move.done || !playTimer) return;
+    const speed = PLAY_SPEEDS[$('#play-speed').value] || PLAY_SPEEDS.steady;
+    playTimer = window.setTimeout(tick, speed.everyMs);
+  };
+  const speed = PLAY_SPEEDS[$('#play-speed').value] || PLAY_SPEEDS.steady;
+  playTimer = window.setTimeout(tick, speed.everyMs);
+});
+$('#compare-toggle').addEventListener('click', () => {
+  compareOn = !compareOn;
+  $('#compare-toggle').setAttribute('aria-pressed', String(compareOn));
+  comparePanel.hidden = !compareOn;
+  if (compareOn) {
+    setEvidenceOpen(true, { refit: false });
+    setDrawerView('year');
+    refreshCompare();
+  }
+});
+compareInput.addEventListener('change', () => {
+  compareYear = normalizeYear(compareInput.value, compareYear);
+  compareInput.value = String(compareYear);
+  if (compareOn) refreshCompare();
+});
+compareSwap.addEventListener('click', () => {
+  const shown = state.year;
+  const other = compareYear;
+  compareYear = shown;
+  compareInput.value = String(shown);
+  setYear(other, true);
 });
 $("#previous-year").addEventListener("click", () => setYear(state.year - 1, true));
 $("#next-year").addEventListener("click", () => setYear(state.year + 1, true));
