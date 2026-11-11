@@ -5,6 +5,8 @@ import {
   PALETTE, boundsOfFeatures, isResidualName, nearestSnapshot, polityColor, recordsForPolity,
   summarizeYear, validateBasemapCollection, validateBasemapIndex,
 } from '../src/period-map.js';
+import { countPhrase, yearOpenLabel } from '../src/year-panel.js';
+import { applySheetReading, sheetIsSuppressed } from '../src/sheet-policy.js';
 
 const read = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url)));
 const atlas = read('../src/data/atlas.json');
@@ -69,8 +71,64 @@ test('year summary names the gap and refuses interpolated borders', () => {
   assert.deepEqual(summary.residual, ['Rajput kingdoms']);
   assert.match(summary.statement, /not interpolated/);
   assert.match(summary.statement, /not a verified political map/);
+  assert.match(summary.lead, /nearest snapshot 1000/);
+  assert.deepEqual(summary.cautions, []);
   assert.equal(summary.statement.includes('1047 CE sheet'), false);
   assert.ok(summary.kingdoms.includes('Imperial Chola chronology'));
+});
+
+test('one residual category is singular, and a disagreed sheet label is counted', () => {
+  assert.equal(countPhrase(1, 'residual category', 'residual categories'), '1 residual category');
+  assert.equal(countPhrase(4, 'residual category', 'residual categories'), '4 residual categories');
+  const summary = summarizeYear({
+    year: 1600, snapshotYear: 1600, gapYears: 0,
+    features: [
+      { properties: { name: 'Mughal Empire', kind: 'named' } },
+      { properties: { name: 'Vijayanagara', kind: 'caution', caution: 'City destroyed in 1565.' } },
+      { properties: { name: 'Islamic and Hindu states', kind: 'residual' } },
+    ],
+    records: [],
+  });
+  assert.deepEqual(summary.named, ['Mughal Empire']);
+  assert.equal(summary.cautions[0].name, 'Vijayanagara');
+  assert.match(summary.statement, /disagree with the cited research: Vijayanagara/);
+  assert.equal(yearOpenLabel(summary), '1 named area · 1 residual category · 1 disagreement with the research in the archive');
+});
+
+test('a later country sheet is not offered as the political map of a distant year', () => {
+  const far = nearestSnapshot(2026, index.snapshots);
+  assert.equal(far.snapshot.year, 2010);
+  assert.equal(sheetIsSuppressed(2026, far), true);
+  assert.equal(sheetIsSuppressed(2010, nearestSnapshot(2010, index.snapshots)), false);
+  assert.equal(sheetIsSuppressed(1947, nearestSnapshot(1947, index.snapshots)), false);
+  const hidden = summarizeYear({
+    year: 2026, snapshotYear: 2010, gapYears: 16, features: [{ properties: { name: 'India', kind: 'named' } }],
+    records: atlas.records, suppressed: true,
+  });
+  assert.equal(hidden.suppressed, true);
+  assert.deepEqual(hidden.named, []);
+  assert.match(hidden.lead, /not drawn/);
+  assert.match(hidden.statement, /not interpolated/);
+});
+
+test('Vijayanagara after 1565 and Bangladesh before 1971 are flagged, not deleted', () => {
+  const later = applySheetReading([
+    { id: 1, properties: { name: 'Vijayanagara', kind: 'named' } },
+    { id: 2, properties: { name: 'Mughal Empire', kind: 'named' } },
+  ], 1600);
+  assert.equal(later[0].properties.kind, 'caution');
+  assert.match(later[0].properties.caution, /1565/);
+  assert.equal(later[1].properties.kind, 'named');
+  const beforeSack = applySheetReading([{ properties: { name: 'Vijayanagara', kind: 'named' } }], 1565);
+  assert.equal(beforeSack[0].properties.kind, 'named');
+  const partition = applySheetReading([
+    { properties: { name: 'Bangladesh', kind: 'named' } },
+    { properties: { name: 'Pakistan', kind: 'named' } },
+    { properties: { name: 'India', kind: 'named' } },
+  ], 1947);
+  assert.equal(partition[0].properties.kind, 'caution');
+  assert.equal(partition[1].properties.kind, 'named');
+  assert.equal(partition[2].properties.kind, 'named');
 });
 
 test('map fit uses named areas and ignores a residual sheet that covers the frame', () => {

@@ -81,27 +81,55 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
-export function summarizeYear({ year, snapshotYear, gapYears, features, records }) {
+export function summarizeYear({ year, snapshotYear, gapYears, features, records, suppressed = false }) {
   if (!Number.isInteger(year) || !Number.isInteger(snapshotYear) || !Number.isInteger(gapYears))
     throw new Error('Year summary needs integer years');
+  const cited = (records || []).filter(record =>
+    POLITY_TYPES.includes(record.type) && year >= record.startYear && year <= record.endYear);
+  const kingdoms = cited.filter(record => record.type !== 'ruler').map(record => record.title);
+  const rulers = cited.filter(record => record.type === 'ruler').map(record => record.title);
+  if (suppressed) {
+    const lead = `No close political sheet for ${year} CE. The nearest sheet is ${snapshotYear} CE, ${gapYears} years away, and it is a later country map, so it is not drawn.`;
+    return {
+      year, snapshotYear, gapYears, exact: false, suppressed: true,
+      named: [], residual: [], cautions: [], kingdoms, rulers, lead,
+      statement: `${lead} Cited records for this year are still listed. Borders are not interpolated.`,
+    };
+  }
   const named = [];
   const residual = [];
+  const cautions = [];
   for (const feature of features || []) {
     const name = feature?.properties?.name;
     if (!name) continue;
+    if (feature.properties.kind === 'caution') {
+      cautions.push({ name, note: feature.properties.caution || '' });
+      continue;
+    }
     (feature.properties.kind === 'residual' || isResidualName(name) ? residual : named).push(name);
   }
-  const cited = (records || []).filter(record =>
-    POLITY_TYPES.includes(record.type) && year >= record.startYear && year <= record.endYear);
+  const namedList = unique(named);
+  const residualList = unique(residual);
+  const cautionList = [];
+  const seenCaution = new Set();
+  for (const item of cautions) {
+    if (seenCaution.has(item.name)) continue;
+    seenCaution.add(item.name);
+    cautionList.push(item);
+  }
   const gap = gapYears === 0
     ? `The ${snapshotYear} CE snapshot is the published sheet for this year.`
     : `No sheet is published for ${year} CE. The nearest sheet is ${snapshotYear} CE, ${gapYears} years away. Borders are not interpolated.`;
-  const namedList = unique(named);
-  const residualList = unique(residual);
+  const lead = gapYears === 0
+    ? `Who was mapped in ${year} CE · snapshot ${snapshotYear}`
+    : `Who was mapped near ${year} CE · nearest snapshot ${snapshotYear} · ${gapYears} years away · borders are not interpolated`;
   const statement = [
     gap,
     `Named areas on this approximate sheet: ${namedList.length ? namedList.join(', ') : 'none'}.`,
     residualList.length ? `Residual source categories, not single kingdoms: ${residualList.join(', ')}.` : '',
+    cautionList.length
+      ? `Sheet labels that disagree with the cited research: ${cautionList.map(item => item.name).join(', ')}.`
+      : '',
     'The coast follows a modern land mask so the colour stops at the sea. Inland edges are the coarse sheet, lightly softened for display, not a surveyed frontier. A straight edge on the frame is a display cut. They are not a verified political map.',
   ].filter(Boolean).join(' ');
   return {
@@ -109,10 +137,13 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records 
     snapshotYear,
     gapYears,
     exact: gapYears === 0,
+    suppressed: false,
     named: namedList,
     residual: residualList,
-    kingdoms: cited.filter(record => record.type !== 'ruler').map(record => record.title),
-    rulers: cited.filter(record => record.type === 'ruler').map(record => record.title),
+    cautions: cautionList,
+    kingdoms,
+    rulers,
+    lead,
     statement,
   };
 }

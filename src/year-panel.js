@@ -7,20 +7,31 @@ const el = (tag, className, text) => {
   return node;
 };
 
+export function countPhrase(count, singular, plural) {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
+
+export function yearOpenLabel(summary) {
+  if (!summary?.named?.length && !summary?.cautions?.length) return 'Open this year in the archive';
+  const bits = [];
+  if (summary.named.length) bits.push(countPhrase(summary.named.length, 'named area', 'named areas'));
+  if (summary.residual.length) bits.push(countPhrase(summary.residual.length, 'residual category', 'residual categories'));
+  if (summary.cautions?.length) bits.push(countPhrase(summary.cautions.length, 'disagreement with the research', 'disagreements with the research'));
+  return `${bits.join(' · ')} in the archive`;
+}
+
 export function fillYearSummary(container, summary, { onOpenList }) {
   container.replaceChildren();
   if (!summary) {
     container.append(el('p', 'year-line', 'No historical snapshot is available.'));
     return;
   }
-  const line = el('p', 'year-line');
-  line.textContent = summary.exact
-    ? `Who was mapped in ${summary.year} CE · snapshot ${summary.snapshotYear}`
-    : `Who was mapped near ${summary.year} CE · nearest snapshot ${summary.snapshotYear} · ${summary.gapYears} years away · borders are not interpolated`;
+  const line = el('p', 'year-line', summary.lead
+    || (summary.exact
+      ? `Who was mapped in ${summary.year} CE · snapshot ${summary.snapshotYear}`
+      : `Who was mapped near ${summary.year} CE · nearest snapshot ${summary.snapshotYear} · ${summary.gapYears} years away · borders are not interpolated`));
   container.append(line);
-  const open = el('button', 'year-open', summary.named.length
-    ? `${summary.named.length} named areas${summary.residual.length ? ` · ${summary.residual.length} residual categories` : ''} in the archive`
-    : 'Open this year in the archive');
+  const open = el('button', 'year-open', yearOpenLabel(summary));
   open.type = 'button';
   open.addEventListener('click', () => onOpenList?.());
   container.append(open);
@@ -48,7 +59,8 @@ export function fillYearList(container, { features, query = '', selectedName, on
     container.append(el('p', 'year-empty', term ? 'No area name matches that search.' : 'No snapshot areas are loaded for this year.'));
     return;
   }
-  const named = rows.filter(feature => feature.properties.kind !== 'residual');
+  const named = rows.filter(feature => feature.properties.kind === 'named');
+  const caution = rows.filter(feature => feature.properties.kind === 'caution');
   const residual = rows.filter(feature => feature.properties.kind === 'residual');
   const addGroup = (title, group) => {
     if (!group.length) return;
@@ -62,12 +74,14 @@ export function fillYearList(container, { features, query = '', selectedName, on
       swatch.style.background = feature.properties.color || '#8a8d91';
       button.append(swatch, el('span', 'polity-row-name', feature.properties.name));
       if (feature.properties.kind === 'residual') button.append(el('span', 'polity-row-note', 'Category, not one kingdom'));
+      if (feature.properties.kind === 'caution') button.append(el('span', 'polity-row-note', 'Disagrees with the research'));
       button.addEventListener('click', () => onPolity(feature.properties.name));
       list.append(button);
     }
     container.append(list);
   };
   addGroup('Named areas on this sheet', named);
+  addGroup('Sheet labels that disagree with the research', caution);
   addGroup('Residual categories', residual);
 }
 
@@ -106,7 +120,10 @@ export function fillPolityCard(container, { feature, year, summary, links, recor
   container.replaceChildren();
   const name = feature?.properties?.name;
   const head = el('div', 'polity-head');
-  head.append(el('p', 'eyebrow', feature?.properties?.kind === 'residual' ? 'RESIDUAL CATEGORY' : 'SNAPSHOT POLITY'));
+  const kindLabel = feature?.properties?.kind === 'residual'
+    ? 'RESIDUAL CATEGORY'
+    : feature?.properties?.kind === 'caution' ? 'SHEET LABEL, NOT THE RESEARCH' : 'SNAPSHOT POLITY';
+  head.append(el('p', 'eyebrow', kindLabel));
   const close = el('button', 'quiet', 'Close');
   close.type = 'button';
   close.addEventListener('click', onClose);
@@ -120,6 +137,8 @@ export function fillPolityCard(container, { feature, year, summary, links, recor
     : `No sheet exists for ${year} CE. This shape is from ${summary.snapshotYear} CE, ${summary.gapYears} years away. Borders are not interpolated, and the shape is not a verified border of ${name}.`));
   if (feature?.properties?.kind === 'residual')
     container.append(el('p', null, 'The source uses this name for an undifferentiated area. It is not shown as one kingdom.'));
+  if (feature?.properties?.kind === 'caution')
+    container.append(el('p', 'polity-warning', feature.properties.caution || 'This sheet label disagrees with the cited research for the selected year.'));
   const matches = recordsForPolity(name, links, records, year);
   if (!matches.length) {
     container.append(el('p', null, 'No cited research record is linked to this snapshot name for this year. The name comes from the basemap only.'));

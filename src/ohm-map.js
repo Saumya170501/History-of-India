@@ -21,6 +21,9 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
   let sketch = EMPTY_BOUNDARY, sketchMessage = '', request = null, sketchKey = '';
   let empireData = EMPTY_EMPIRES;
   const resources = createResourceStatus();
+  let noticeTimer = 0;
+  const publishNotice = persistent => onError(resources.notice({ persistent }));
+  const clearNotice = () => { clearTimeout(noticeTimer); onError(''); };
   const layerIds = ['selected-ohm-halo', 'selected-ohm-fill'];
   let features = { type: 'FeatureCollection', features: [] };
   let regions = { type: 'FeatureCollection', features: [] };
@@ -95,10 +98,21 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     const layer = maplibreGL({ style: atlasStyle(), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a> · <a href="https://github.com/aourednik/historical-basemaps">Historical basemaps (GPL-3.0)</a>' }, interactive: false }).addTo(map);
     gl = layer.getMaplibreMap();
     gl.on('error', event => {
-      resources.fail(event); onError(resources.message()); updateStatus();
+      resources.fail(event);
+      if (!resources.message()) return;
+      clearTimeout(noticeTimer);
+      noticeTimer = setTimeout(() => publishNotice(true), 2500);
+      updateStatus();
     });
     gl.on('sourcedata', event => {
-      resources.recover(event); onError(resources.message());
+      resources.recover(event);
+      if (!resources.message()) clearNotice();
+    });
+    gl.on('idle', () => {
+      resources.prunePartial();
+      if (!resources.message()) clearNotice();
+      else publishNotice(true);
+      updateStatus();
     });
     gl.on('style.load', () => {
       // A replacement style needs new date constraints even when global date state survives.
@@ -137,7 +151,10 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     gl.on('idle', updateStatus);
     fetchEmpires(`${import.meta.env.BASE_URL}data/historical_empires.geojson`, AbortSignal.timeout(15000))
       .then(data => { empireData = data; sync(); })
-      .catch(error => onError(`Imported empire polygons unavailable: ${error.message}. Existing record layers remain available.`));
+      .catch(error => {
+        resources.fail({ sourceId: 'empires', error });
+        publishNotice(true);
+      });
   } catch {
     onError('OpenHistoricalMap needs WebGL and internet access. Open the OHM link below if this browser cannot display the map.');
   }
@@ -155,13 +172,13 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       hoveredPeriod = null;
       if (!ready) return;
       gl.getSource('period-polities').setData(period);
-      for (const id of ['period-fill', 'period-line', 'period-label'])
+      for (const id of ['period-fill', 'period-line', 'period-label', 'period-caution-label'])
         gl.setLayoutProperty(id, 'visibility', periodEnabled ? 'visible' : 'none');
     },
     setPeriodVisible(show) {
       periodEnabled = show;
       if (!ready) return;
-      for (const id of ['period-fill', 'period-line', 'period-label'])
+      for (const id of ['period-fill', 'period-line', 'period-label', 'period-caution-label'])
         gl.setLayoutProperty(id, 'visibility', show ? 'visible' : 'none');
     },
     hoverPeriod(id) {
@@ -173,6 +190,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     retry() {
       if (!gl) { onError('This browser could not initialize WebGL. Try another browser or open the direct OHM link.'); return; }
       ready = false;
+      clearTimeout(noticeTimer);
       resources.reset(); onError(''); onStatus('Retrying OpenHistoricalMap…');
       gl.getCanvas().style.visibility = 'hidden';
       gl.setStyle(atlasStyle(), { diff: false });
