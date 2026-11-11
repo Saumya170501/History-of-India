@@ -23,8 +23,8 @@ import {
 } from "./atlas.js";
 import basemapIndex from "./data/basemap-index.json";
 import polityLinks from "./data/polity-links.json";
-import { nearestSnapshot, summarizeYear } from "./period-map.js";
-import { fillPolityCard, fillYearSummary } from "./year-panel.js";
+import { FRAME, boundsOfFeatures, nearestSnapshot, summarizeYear } from "./period-map.js";
+import { fillPolityCard, fillYearList, fillYearSources, fillYearSummary } from "./year-panel.js";
 
 const errors = [...validateAtlas(data), ...validateMapLayers(mapLayers, data)];
 if (errors.length) throw new Error(errors.join("\n"));
@@ -89,15 +89,38 @@ $("#app").innerHTML = `
   <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated physical map. Colour-filled areas are clipped sheets from André Ourednik’s historical-basemaps (GPL-3.0). They are coarse external digitizations. A year between sheets uses the nearest sheet and says so; borders are not interpolated. A straight edge at the map frame is a display cut, not a frontier. Grey areas are residual categories in the source, not single kingdoms. Clicking a name opens cited research where a link exists. The link is not proof that the shape was that polity’s border.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Period sheets: <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener noreferrer">historical-basemaps</a>, GPL-3.0-only, clipped and labelled as approximate. Internet and WebGL are required; no API key is needed.</p></dialog>
 `;
 
-// One scrolling surface, with separate browsing and selected-record views.
+// One scrolling surface. Tabs: this year, the selected polity, records, sources.
 const drawer = $('#evidence-drawer');
+const resizeHandle = element('button', undefined, 'drawer-resize');
+resizeHandle.type = 'button';
+resizeHandle.setAttribute('aria-label', 'Drag to resize the archive');
 const switcher = element('div', undefined, 'drawer-switcher');
-const browseViewButton = element('button', 'Discover', 'drawer-view-button');
-const detailViewButton = element('button', 'Selected record', 'drawer-view-button');
+const tabButtons = {};
+for (const [name, label] of [['year', 'This year'], ['polity', 'Polity'], ['records', 'Records'], ['sources', 'Sources']]) {
+  const button = element('button', label, 'drawer-view-button');
+  button.type = 'button';
+  button.addEventListener('click', () => setDrawerView(name));
+  tabButtons[name] = button;
+  switcher.append(button);
+}
 const noticeButton = element('button', 'Map notice', 'drawer-notice-button');
 noticeButton.hidden = true;
-switcher.append(browseViewButton, detailViewButton, noticeButton);
+switcher.append(noticeButton);
 const scroller = element('div', undefined, 'drawer-scroll');
+const yearView = element('div'); yearView.id = 'drawer-year';
+const yearSearch = element('input');
+yearSearch.type = 'search';
+yearSearch.placeholder = 'Find an area on this sheet…';
+yearSearch.setAttribute('aria-label', 'Filter areas shown for this year');
+const yearList = element('div'); yearList.id = 'year-polity-list';
+const yearCited = element('div'); yearCited.id = 'year-cited-list';
+yearView.append(yearSearch, yearList, yearCited);
+const polityView = element('div'); polityView.id = 'drawer-polity';
+const recordsView = element('div'); recordsView.id = 'drawer-records';
+const recordSwitcher = element('div', undefined, 'record-switcher');
+const browseViewButton = element('button', 'Discover', 'drawer-view-button');
+const detailViewButton = element('button', 'Selected record', 'drawer-view-button');
+recordSwitcher.append(browseViewButton, detailViewButton);
 const browseView = element('div'); browseView.id = 'drawer-discover';
 const detailView = element('div'); detailView.id = 'drawer-selected';
 for (const selector of ['.filters', '.browse', '#record-list']) browseView.append($(selector));
@@ -110,29 +133,69 @@ const contextDetails = element('details', undefined, 'drawer-context');
 contextDetails.append(element('summary', 'Map context, legend & battles'));
 for (const selector of ['.map-caption', '#map-context', '.battle-context']) contextDetails.append($(selector));
 detailView.append(contextDetails, $('#map-error'));
-scroller.append(browseView, detailView);
-drawer.append(switcher, scroller);
-function setDrawerView(view) {
-  const discovering = view === 'discover';
+recordsView.append(recordSwitcher, browseView, detailView);
+const sourcesView = element('div'); sourcesView.id = 'drawer-sources';
+scroller.append(yearView, polityView, recordsView, sourcesView);
+drawer.append(resizeHandle, switcher, scroller);
+let archiveTab = 'year';
+let yearQuery = '';
+function showRecordMode(view) {
+  const discovering = view !== 'selected';
   browseView.hidden = !discovering;
   detailView.hidden = discovering;
   browseViewButton.setAttribute('aria-pressed', String(discovering));
   detailViewButton.setAttribute('aria-pressed', String(!discovering));
+}
+function setDrawerView(view) {
+  if (view === 'discover' || view === 'selected') {
+    archiveTab = 'records';
+    showRecordMode(view);
+  } else archiveTab = view;
+  yearView.hidden = archiveTab !== 'year';
+  polityView.hidden = archiveTab !== 'polity';
+  recordsView.hidden = archiveTab !== 'records';
+  sourcesView.hidden = archiveTab !== 'sources';
+  for (const [name, button] of Object.entries(tabButtons)) button.setAttribute('aria-pressed', String(name === archiveTab));
   scroller.scrollTop = 0;
 }
-browseViewButton.setAttribute('aria-controls', browseView.id);
-detailViewButton.setAttribute('aria-controls', detailView.id);
 browseViewButton.addEventListener('click', () => setDrawerView('discover'));
 detailViewButton.addEventListener('click', () => setDrawerView('selected'));
 backButton.addEventListener('click', () => { setDrawerView('discover'); browseViewButton.focus(); });
 noticeButton.addEventListener('click', () => { setDrawerView('selected'); $('#map-error').scrollIntoView({ block: 'nearest' }); });
-setDrawerView('discover');
+yearSearch.addEventListener('input', () => { yearQuery = yearSearch.value; refreshYearPanel(); });
+setDrawerView('year');
+showRecordMode('discover');
 $('#about-dialog').append($('.research-note'), $('footer'));
 
-function setEvidenceOpen(open) {
+function setDrawerWidth(px) {
+  const max = Math.min(720, Math.round(window.innerWidth * 0.62));
+  const width = Math.max(380, Math.min(max, Math.round(px)));
+  document.documentElement.style.setProperty('--drawer-width', `${width}px`);
+}
+setDrawerWidth(480);
+resizeHandle.addEventListener('pointerdown', event => {
+  if (window.innerWidth <= 760) return;
+  event.preventDefault();
+  const startX = event.clientX;
+  const startW = drawer.getBoundingClientRect().width;
+  const move = next => setDrawerWidth(startW + (startX - next.clientX));
+  const up = () => {
+    resizeHandle.releasePointerCapture(event.pointerId);
+    window.removeEventListener('pointermove', move);
+    window.removeEventListener('pointerup', up);
+    refitMap();
+  };
+  resizeHandle.setPointerCapture(event.pointerId);
+  window.addEventListener('pointermove', move);
+  window.addEventListener('pointerup', up);
+});
+let mapReady = false;
+function setEvidenceOpen(open, { refit = true } = {}) {
+  const changed = drawer.hidden === open;
   drawer.hidden = !open;
   document.body.classList.toggle('evidence-closed', !open);
   $('#toggle-evidence').setAttribute('aria-expanded', String(open));
+  if (refit && mapReady && changed) refitMap();
 }
 setEvidenceOpen(!window.matchMedia('(max-width: 760px)').matches);
 $('#toggle-evidence').addEventListener('click', () => setEvidenceOpen(drawer.hidden));
@@ -192,28 +255,21 @@ for (const source of data.sources) {
   $("#source-list").append(item);
 }
 
+const frameBounds = L.latLngBounds([FRAME.south, FRAME.west], [FRAME.north, FRAME.east]);
 const map = L.map("map", {
   zoomControl: false,
-  minZoom: 3,
+  minZoom: 4,
   maxZoom: 8,
   scrollWheelZoom: false,
-  maxBounds: [
-    [-20, 35],
-    [60, 125],
-  ],
-  maxBoundsViscosity: 0.8,
-}).setView([22, 80], 4);
+  maxBounds: frameBounds.pad(0.04),
+  maxBoundsViscosity: 1,
+}).setView([22.5, 80], 5);
 L.control.zoom({ position: "topright" }).addTo(map);
 map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
 const markerLayer = L.layerGroup().addTo(map);
 const regionLayer = L.featureGroup().addTo(map);
 const battleLayer = L.featureGroup().addTo(map);
 const periodLayer = L.featureGroup().addTo(map);
-const polityCard = element('aside', undefined, 'polity-card');
-polityCard.id = 'polity-card';
-polityCard.hidden = true;
-polityCard.setAttribute('aria-label', 'Polity in the selected year');
-$('.map-panel').append(polityCard);
 const snapshotCache = new Map();
 let periodFeatures = [];
 let periodSummary = null;
@@ -454,21 +510,92 @@ function selectRecord(record, focus = false) {
 function featureByName(name) {
   return periodFeatures.find(feature => feature.properties.name === name) || null;
 }
+function featuresByName(name) {
+  return periodFeatures.filter(feature => feature.properties.name === name);
+}
+function mapPadding() {
+  const open = drawer && !drawer.hidden && window.innerWidth > 760;
+  const right = open ? drawer.getBoundingClientRect().width + 28 : 24;
+  const timeline = document.querySelector('.timeline');
+  const bottom = (timeline?.getBoundingClientRect().height || 140) + 28;
+  return { paddingTopLeft: [24, 84], paddingBottomRight: [right, bottom] };
+}
+function fitLatLngBounds(bounds, maxZoom) {
+  if (!bounds?.isValid()) return;
+  map.fitBounds(bounds, {
+    ...mapPadding(), maxZoom,
+    animate: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  });
+}
+function boundsToLeaflet(box) {
+  if (!box) return null;
+  return L.latLngBounds([box.south, box.west], [box.north, box.east]);
+}
+function fitYear(features) {
+  fitLatLngBounds(boundsToLeaflet(boundsOfFeatures(features)) || frameBounds, 5.5);
+}
+function fitFeatures(features, maxZoom) {
+  fitLatLngBounds(boundsToLeaflet(boundsOfFeatures(features, { namedOnly: false })) || frameBounds, maxZoom);
+}
+function tightenFrame() {
+  map.invalidateSize({ animate: false });
+  if (map.getSize().x < 50 || map.getSize().y < 50) return;
+  const fitZoom = map.getBoundsZoom(frameBounds, false);
+  if (Number.isFinite(fitZoom) && fitZoom > 0 && fitZoom < 12) map.setMinZoom(fitZoom);
+  map.setMaxBounds(frameBounds.pad(0.06));
+}
+function refitMap() {
+  if (openPolityName && featuresByName(openPolityName).length) fitFeatures(featuresByName(openPolityName), 6);
+  else if (periodFeatures.length) fitYear(periodFeatures);
+  else fitLatLngBounds(frameBounds, 5);
+}
+function refreshYearPanel() {
+  fillYearList(yearList, {
+    features: periodFeatures,
+    query: yearQuery,
+    selectedName: openPolityName,
+    onPolity: name => showPolity(featureByName(name), { zoom: true, focus: true }),
+  });
+  yearCited.replaceChildren();
+  if (!periodSummary) return;
+  const cited = [...periodSummary.kingdoms, ...periodSummary.rulers];
+  if (!cited.length) return;
+  yearCited.append(element('h3', 'Cited research in this year', 'year-group'));
+  yearCited.append(element('p', 'A date window that includes this year is not proof of rule throughout it.', 'year-empty'));
+  const list = element('div', undefined, 'cited-list');
+  for (const title of cited) {
+    const record = data.records.find(item => item.title === title && state.year >= item.startYear && state.year <= item.endYear);
+    const button = element('button', title, 'cited-row');
+    button.type = 'button';
+    if (!record) { button.disabled = true; list.append(button); continue; }
+    button.addEventListener('click', () => { selectRecord(record, false); setDrawerView('selected'); });
+    list.append(button);
+  }
+  yearCited.append(list);
+}
 function closePolity() {
   openPolityName = null;
-  polityCard.hidden = true;
-  polityCard.replaceChildren();
+  polityView.replaceChildren();
   historicalMap.hoverPeriod(null);
+  refreshYearPanel();
+  if (archiveTab === 'polity') setDrawerView('year');
+  fitYear(periodFeatures);
 }
-function showPolity(feature) {
+function showPolity(feature, { zoom = true, focus = false } = {}) {
   if (!feature || !periodSummary) return closePolity();
   openPolityName = feature.properties.name;
-  polityCard.hidden = false;
-  fillPolityCard(polityCard, {
+  fillPolityCard(polityView, {
     feature, year: state.year, summary: periodSummary, links: polityLinks.links,
     records: data.records, sources, onClose: closePolity,
-    onRecord: record => { selectRecord(record, true); setDrawerView('selected'); },
+    onRecord: record => { selectRecord(record, false); setDrawerView('selected'); },
   });
+  historicalMap.hoverPeriod(feature.id);
+  refreshYearPanel();
+  if (focus) {
+    setEvidenceOpen(true, { refit: false });
+    setDrawerView('polity');
+  }
+  if (zoom) fitFeatures(featuresByName(feature.properties.name), 6);
 }
 function drawPeriodHits(collection) {
   periodLayer.clearLayers();
@@ -485,7 +612,7 @@ function drawPeriodHits(collection) {
     shape.on('mouseout', () => historicalMap.hoverPeriod(null));
     shape.on('click', event => {
       L.DomEvent.stopPropagation(event);
-      showPolity(feature);
+      showPolity(feature, { zoom: true, focus: true });
     });
   }
 }
@@ -493,8 +620,9 @@ async function syncPeriod() {
   const token = ++periodToken;
   const choice = nearestSnapshot(state.year, basemapIndex.snapshots);
   const summaryBox = $('#year-summary');
-  if (!choice) {
-    fillYearSummary(summaryBox, null, { onPolity() {} });
+    if (!choice) {
+    fillYearSummary(summaryBox, null, {});
+    refreshYearPanel();
     return;
   }
   try {
@@ -514,14 +642,24 @@ async function syncPeriod() {
       records: data.records,
     });
     const visible = $('#show-period').checked;
-    if (shownSnapshot !== choice.snapshot.year || shownPeriodVisible !== visible) {
+    const sheetChanged = shownSnapshot !== choice.snapshot.year || shownPeriodVisible !== visible;
+    if (sheetChanged) {
       historicalMap.setPeriod(visible ? collection : { type: 'FeatureCollection', features: [] });
       drawPeriodHits(collection);
       shownSnapshot = choice.snapshot.year;
       shownPeriodVisible = visible;
     }
-    fillYearSummary(summaryBox, periodSummary, { onPolity: name => showPolity(featureByName(name)) });
-    if (openPolityName) showPolity(featureByName(openPolityName));
+    fillYearSummary(summaryBox, periodSummary, {
+      onOpenList: () => { setEvidenceOpen(true, { refit: false }); setDrawerView('year'); },
+    });
+    fillYearSources(sourcesView, { year: state.year, records: data.records, sources });
+    const current = openPolityName ? featureByName(openPolityName) : null;
+    if (current) showPolity(current, { zoom: sheetChanged, focus: false });
+    else {
+      if (openPolityName) { openPolityName = null; polityView.replaceChildren(); }
+      refreshYearPanel();
+      if (sheetChanged) fitYear(visible ? collection.features : []);
+    }
   } catch (error) {
     if (token !== periodToken) return;
     summaryBox.replaceChildren();
@@ -717,14 +855,14 @@ function browseRecord(event) {
   $('#browse-menu').open = false;
   for (const group of document.querySelectorAll('.browse-group')) group.open = false;
 }
-$("#reset-map").addEventListener("click", () => map.setView([22, 80], 4));
+$("#reset-map").addEventListener("click", () => fitYear(periodFeatures));
 $('#show-regions').addEventListener('change', () => renderRegion(data.records.find(record => record.id === selectedId)));
 $('#show-period').addEventListener('change', () => {
   historicalMap.setPeriodVisible($('#show-period').checked);
   syncPeriod();
 });
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !polityCard.hidden) closePolity();
+  if (event.key === 'Escape' && openPolityName && archiveTab === 'polity' && !event.defaultPrevented) closePolity();
 });
 $('#show-battles').addEventListener('change', renderBattles);
 for (const id of ["#about-button", "#footer-sources"])
@@ -734,5 +872,7 @@ window.addEventListener("popstate", () => {
   state = stateFromSearch(location.search);
   render();
 });
-new ResizeObserver(() => map.invalidateSize()).observe($("#map"));
+new ResizeObserver(() => { if (mapReady) tightenFrame(); }).observe($("#map"));
+mapReady = true;
+tightenFrame();
 render();

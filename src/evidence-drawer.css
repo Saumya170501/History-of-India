@@ -1,16 +1,40 @@
 /* Archive drawer: a deliberate reading surface with one scrollbar. */
-:root { --drawer-width: 390px; }
+:root { --drawer-width: 480px; }
 .record-panel { display: flex; flex-direction: column; overflow: hidden; scrollbar-gutter: auto; background: #f3f3ed; border-radius: 18px; border: 1px solid #ffffffcc; box-shadow: 0 12px 45px #133e3033; }
 .record-heading { flex: none; padding: 23px 23px 14px; background: #203f36; color: #fffdf4; }
 .record-heading .eyebrow { color: #b7c8b5; font-size: 9px; letter-spacing: 2px; margin-bottom: 8px; }
 .record-heading h2 { font-size: 29px; line-height: 1.1; margin-bottom: 10px; }
 #record-count { color: #d1dbcb; font-size: 11px; margin: 0; }
-.drawer-switcher { display: flex; align-items: center; gap: 4px; padding: 9px 16px; background: #203f36; flex: none; }
+.drawer-switcher, .record-switcher { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; padding: 9px 12px; background: #203f36; flex: none; }
+.record-switcher { background: #e7ece4; padding: 8px 12px 0; }
+.record-switcher .drawer-view-button { color: #3d5346; }
+.record-switcher .drawer-view-button[aria-pressed="true"] { background: #203f36; color: #fffdf4; }
+.drawer-resize {
+  position: absolute; left: -6px; top: 0; bottom: 0; width: 12px; padding: 0; border: 0;
+  background: transparent; cursor: ew-resize; touch-action: none;
+}
+.drawer-resize::after {
+  content: ''; position: absolute; left: 5px; top: 18px; bottom: 18px; width: 2px; border-radius: 2px; background: #ffffff88;
+}
 .drawer-view-button { color: #c8d5c6; background: none; border: 0; border-radius: 7px; padding: 9px 12px; font-size: 11px; min-height: 36px; }
 .drawer-view-button[aria-pressed="true"] { background: #f3f3ed; color: #203f36; font-weight: 600; }
 .drawer-notice-button { border: 1px solid #dbc288; background: #fff0d5; color: #644825; border-radius: 6px; font-size: 10px; padding: 6px; margin-left: auto; }
 .drawer-scroll { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #bcc8be transparent; }
-#drawer-discover[hidden], #drawer-selected[hidden] { display: none; }
+#drawer-discover[hidden], #drawer-selected[hidden], #drawer-year[hidden], #drawer-polity[hidden], #drawer-records[hidden], #drawer-sources[hidden] { display: none; }
+#drawer-year, #drawer-polity, #drawer-sources { padding: 14px 16px 24px; }
+#drawer-year input[type="search"] { width: 100%; margin-bottom: 12px; padding: 10px 12px; border-radius: 8px; border: 1px solid #d5dbd2; background: #fff; }
+.year-group { margin: 14px 0 6px; font-size: 12px; letter-spacing: 0.4px; }
+.polity-list, .cited-list { display: grid; gap: 4px; }
+.polity-row, .cited-row {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+  border: 1px solid #e1e6dc; background: #fff; border-radius: 8px; padding: 8px 10px; cursor: pointer;
+}
+.polity-row[aria-pressed="true"] { border-color: #203f36; box-shadow: inset 3px 0 0 #203f36; }
+.polity-swatch { width: 14px; height: 14px; border-radius: 3px; flex: none; }
+.polity-row-name { font-weight: 600; }
+.polity-row-note, .year-empty { color: #667268; font-size: 12px; }
+.source-row { padding: 10px 0; border-top: 1px solid #e1e6dc; }
+#drawer-polity { padding-top: 8px; }
 .filters { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 16px 18px 0; }
 .filters > label { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
 .filters input[type="search"] { grid-row: 1; background: #fff; padding: 12px 14px; border-radius: 9px; font-size: 12px; border-color: #dce1d7; }
@@ -48,9 +72,12 @@
 .detail-story h2 { font-size: 32px; }
 #map-selection-status { font-size: 11px; padding: 12px 18px; background: #e6ece2; border: 0; }
 #map-error { margin: 12px 18px 20px; padding: 12px; border-radius: 8px; }
-@media (max-width: 1100px) { :root { --drawer-width: 350px; } }
+@media (max-width: 1100px) { :root { --drawer-width: 420px; } }
 @media (max-width: 760px) {
-  :root { --drawer-width: min(390px, calc(100vw - 16px)); }
+  .record-panel {
+    left: 0; right: 0; top: 56px; bottom: 168px; width: auto; max-height: none;
+    border-radius: 0; z-index: 12;
+  }
   .record-heading { padding: 16px 18px 10px; }
   .record-heading h2 { font-size: 26px; }
   .record-artwork { height: 88px; }

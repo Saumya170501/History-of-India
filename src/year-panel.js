@@ -7,7 +7,7 @@ const el = (tag, className, text) => {
   return node;
 };
 
-export function fillYearSummary(container, summary, { onPolity }) {
+export function fillYearSummary(container, summary, { onOpenList }) {
   container.replaceChildren();
   if (!summary) {
     container.append(el('p', 'year-line', 'No historical snapshot is available.'));
@@ -18,27 +18,88 @@ export function fillYearSummary(container, summary, { onPolity }) {
     ? `Who was mapped in ${summary.year} CE · snapshot ${summary.snapshotYear}`
     : `Who was mapped near ${summary.year} CE · nearest snapshot ${summary.snapshotYear} · ${summary.gapYears} years away · borders are not interpolated`;
   container.append(line);
-  const chips = el('div', 'year-chips');
-  for (const name of summary.named) {
-    const button = el('button', 'year-chip', name);
-    button.type = 'button';
-    button.addEventListener('click', () => onPolity(name));
-    chips.append(button);
-  }
-  for (const name of summary.residual) {
-    const button = el('button', 'year-chip residual', name);
-    button.type = 'button';
-    button.title = 'Residual category in the source sheet, not a single kingdom';
-    button.addEventListener('click', () => onPolity(name));
-    chips.append(button);
-  }
-  container.append(chips);
+  const open = el('button', 'year-open', summary.named.length
+    ? `${summary.named.length} named areas${summary.residual.length ? ` · ${summary.residual.length} residual categories` : ''} in the archive`
+    : 'Open this year in the archive');
+  open.type = 'button';
+  open.addEventListener('click', () => onOpenList?.());
+  container.append(open);
   const cited = [...summary.kingdoms, ...summary.rulers];
-  const shown = cited.slice(0, 10);
+  const shown = cited.slice(0, 4);
   const extra = cited.length - shown.length;
   container.append(el('p', 'year-cited', shown.length
-    ? `Cited research windows that include ${summary.year}: ${shown.join('; ')}${extra > 0 ? `; and ${extra} more in the archive` : ''}. A window is not proof of rule in this exact year.`
+    ? `Cited windows: ${shown.join('; ')}${extra > 0 ? `; +${extra} in the archive` : ''}. A window is not proof of rule in this exact year.`
     : `No cited ruler, kingdom or state window includes ${summary.year}. That is a research gap, not evidence that nobody ruled.`));
+}
+
+export function fillYearList(container, { features, query = '', selectedName, onPolity }) {
+  container.replaceChildren();
+  const term = query.trim().toLocaleLowerCase('en');
+  const rows = [];
+  const seen = new Set();
+  for (const feature of features || []) {
+    const name = feature?.properties?.name;
+    if (!name || seen.has(name)) continue;
+    if (term && !name.toLocaleLowerCase('en').includes(term)) continue;
+    seen.add(name);
+    rows.push(feature);
+  }
+  if (!rows.length) {
+    container.append(el('p', 'year-empty', term ? 'No area name matches that search.' : 'No snapshot areas are loaded for this year.'));
+    return;
+  }
+  const named = rows.filter(feature => feature.properties.kind !== 'residual');
+  const residual = rows.filter(feature => feature.properties.kind === 'residual');
+  const addGroup = (title, group) => {
+    if (!group.length) return;
+    container.append(el('h3', 'year-group', title));
+    const list = el('div', 'polity-list');
+    for (const feature of group) {
+      const button = el('button', 'polity-row');
+      button.type = 'button';
+      button.setAttribute('aria-pressed', String(feature.properties.name === selectedName));
+      const swatch = el('i', 'polity-swatch');
+      swatch.style.background = feature.properties.color || '#8a8d91';
+      button.append(swatch, el('span', 'polity-row-name', feature.properties.name));
+      if (feature.properties.kind === 'residual') button.append(el('span', 'polity-row-note', 'Category, not one kingdom'));
+      button.addEventListener('click', () => onPolity(feature.properties.name));
+      list.append(button);
+    }
+    container.append(list);
+  };
+  addGroup('Named areas on this sheet', named);
+  addGroup('Residual categories', residual);
+}
+
+export function fillYearSources(container, { year, records, sources }) {
+  container.replaceChildren();
+  container.append(el('p', null, `Sources cited by records whose date window includes ${year} CE, plus the external sheet used for the shapes.`));
+  const licence = el('p', 'polity-licence');
+  licence.append(document.createTextNode('Shapes: historical-basemaps, André Ourednik and contributors, GPL-3.0-only. '));
+  const repo = el('a', null, 'Source repository');
+  repo.href = 'https://github.com/aourednik/historical-basemaps';
+  repo.target = '_blank';
+  repo.rel = 'noopener noreferrer';
+  licence.append(repo);
+  container.append(licence, el('p', null, 'A straight edge at the map frame is a display cut, not a frontier. Borders are not interpolated between sheets.'));
+  const seen = new Set();
+  const active = (records || []).filter(record => year >= record.startYear && year <= record.endYear);
+  for (const record of active) {
+    for (const citation of [...(record.citations || []), ...(record.details || []).flatMap(section => section.citations || [])]) {
+      if (!citation?.sourceId || seen.has(citation.sourceId)) continue;
+      seen.add(citation.sourceId);
+      const source = sources.get(citation.sourceId);
+      if (!source) continue;
+      const item = el('article', 'source-row');
+      const link = el('a', null, source.title);
+      link.href = source.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      item.append(link, el('p', null, `${source.publisher}. Accessed ${source.accessed}.`));
+      container.append(item);
+    }
+  }
+  if (!seen.size) container.append(el('p', null, 'No catalogue source is attached to a record in this year.'));
 }
 
 export function fillPolityCard(container, { feature, year, summary, links, records, sources, onRecord, onClose }) {

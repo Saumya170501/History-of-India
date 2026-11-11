@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  PALETTE, isResidualName, nearestSnapshot, polityColor, recordsForPolity,
+  PALETTE, boundsOfFeatures, isResidualName, nearestSnapshot, polityColor, recordsForPolity,
   summarizeYear, validateBasemapCollection, validateBasemapIndex,
 } from '../src/period-map.js';
 
@@ -71,6 +71,20 @@ test('year summary names the gap and refuses interpolated borders', () => {
   assert.match(summary.statement, /not a verified political map/);
   assert.equal(summary.statement.includes('1047 CE sheet'), false);
   assert.ok(summary.kingdoms.includes('Imperial Chola chronology'));
+});
+
+test('map fit uses named areas and ignores a residual sheet that covers the frame', () => {
+  const named = { properties: { kind: 'named', name: 'Mughal Empire' }, geometry: { type: 'Polygon', coordinates: [[[70, 20], [80, 20], [80, 30], [70, 30], [70, 20]]] } };
+  const residual = { properties: { kind: 'residual', name: 'Islamic and Hindu states' }, geometry: { type: 'Polygon', coordinates: [[[56, 3], [101, 3], [101, 40], [56, 40], [56, 3]]] } };
+  const box = boundsOfFeatures([residual, named]);
+  assert.equal(box.west, 70);
+  assert.equal(box.east, 80);
+  assert.equal(box.south, 20);
+  assert.equal(box.north, 30);
+  assert.equal(boundsOfFeatures([]), null);
+  const onlyResidual = boundsOfFeatures([residual], { namedOnly: false });
+  assert.equal(onlyResidual.west, 56);
+  assert.equal(onlyResidual.north, 40);
 });
 
 test('vendored snapshots stay inside the clip frame and keep sample polities', () => {

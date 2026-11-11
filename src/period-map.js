@@ -123,6 +123,29 @@ function walkPositions(coords, visit) {
   else for (const part of coords) walkPositions(part, visit);
 }
 
+// Bounds of the shapes actually drawn. Named polities define the frame when any exist,
+// so a residual category that covers the whole clip does not pull the view out to empty ocean.
+export function boundsOfFeatures(features, { namedOnly = true } = {}) {
+  const list = Array.isArray(features) ? features : [];
+  const named = list.filter(feature => feature?.properties?.kind !== 'residual');
+  const chosen = namedOnly && named.length ? named : list;
+  let west = Infinity;
+  let south = Infinity;
+  let east = -Infinity;
+  let north = -Infinity;
+  for (const feature of chosen) {
+    walkPositions(feature?.geometry?.coordinates, ([lon, lat]) => {
+      if (!Number.isFinite(lon) || !Number.isFinite(lat)) return;
+      west = Math.min(west, lon);
+      east = Math.max(east, lon);
+      south = Math.min(south, lat);
+      north = Math.max(north, lat);
+    });
+  }
+  if (![west, south, east, north].every(Number.isFinite) || east - west < 0.05 || north - south < 0.05) return null;
+  return { west, south, east, north };
+}
+
 export function validateBasemapIndex(index) {
   const errors = [];
   if (index?.schemaVersion !== 1) errors.push('Basemap index schemaVersion must be 1.');

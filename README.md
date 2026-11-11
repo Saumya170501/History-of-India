@@ -78,7 +78,7 @@ No project-wide code license has been selected by the owner. Public repository a
 
 ## Map workspace layout
 
-The map fills the viewport (`100vh`, with `100dvh` for mobile browser chrome). A compact header floats at the top and the glass timeline floats at the bottom. The Evidence button toggles a fixed-height, scrollable right drawer; it starts closed on phones. Selected-record citations, provider status, and expandable map context/battle notes remain in that drawer. Sources and project notes are available through Sources & approach. Layout overrides live in `src/layout.css`; no React migration is required.
+The map fills the viewport (`100vh`, with `100dvh` for mobile browser chrome). A compact header floats at the top and the glass timeline floats at the bottom. The Evidence button toggles a wide, resizable archive. On a phone it becomes a full-width sheet between the header and the timeline, and it starts closed. The archive has tabs for this year’s areas, the selected polity, records, and sources. Sources and project notes are available through Sources & approach. Layout overrides live in `src/layout.css`; no React migration is required.
 
 ## Deploy to Vercel
 
@@ -109,6 +109,6 @@ See [OHM ingestion](docs/OHM_INGESTION.md) for the import command, current netwo
 
 `src/record-card.js` renders keyboard-accessible museum-style tiles with the shared empire color palette, circular initial/image avatars, date/role badges and location uncertainty notes. `src/record-card.css` supplies the responsive styling. `examples/react/RecordCard.jsx` provides the equivalent React component with `factionColor`, `avatarUrl`, `featureBbox`, and `handleCardClick(featureBbox)` props. Missing bounds may be null; the caller must retain a safe no-geometry fallback. No historical portraits or faction emblems are invented.
 
-The live archive drawer now uses a gallery layout (`src/evidence-drawer.css`): decorative role illustrations, place labels, short story excerpts, and separate Discover/Selected record views. It has one scrolling content area; warnings remain available through Map notice and full citations remain in the selected-record view. Illustrations are generic category pictograms, not historical portraits or reconstructed monuments. The earlier React card example remains a standalone compact variant.
+The live archive is wider on desktop and can be dragged wider. It uses a gallery layout (`src/evidence-drawer.css`): decorative role illustrations, place labels, short story excerpts, and separate Discover/Selected record views inside the Records tab. The year’s colour-keyed areas live on the This year tab, not as a scrolling row of pills. It has one scrolling content area; warnings remain available through Map notice and full citations remain in the selected-record view. Illustrations are generic category pictograms, not historical portraits or reconstructed monuments. The earlier React card example remains a standalone compact variant.
 
 The optional OHM raster hillshade is excluded before style initialization because its India-view tile URLs were returning HTTP 404. Vector land, water, rivers and historical overlays remain enabled. This removes those failed requests rather than suppressing genuine errors from other map sources; terrain relief shading is unavailable until a working, verified source is configured.

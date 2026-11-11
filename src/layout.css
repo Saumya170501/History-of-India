@@ -1,5 +1,5 @@
 /* Full-viewport map; all controls float above the canvas. */
-:root { --drawer-width: 350px; --edge: 16px; }
+:root { --drawer-width: 480px; --edge: 16px; }
 html, body, #app { width: 100%; height: 100%; overflow: hidden; }
 main { max-width: none; margin: 0; padding: 0; }
 .workspace, .map-panel, #map {
@@ -41,23 +41,14 @@ main { max-width: none; margin: 0; padding: 0; }
   padding: 14px 18px; grid-template-columns: 100px minmax(0, 1fr) 140px; gap: 16px;
   background-color: #244c42ed;
 }
-.year-summary { grid-column: 1 / -1; max-height: 92px; overflow: auto; }
+.year-summary { grid-column: 1 / -1; }
 .year-line, .year-cited { margin: 0; font-size: 12px; line-height: 1.35; color: #f6f1e4; }
 .year-cited { margin-top: 4px; color: #e7dcc4; }
-.year-chips { display: flex; gap: 6px; overflow-x: auto; margin-top: 6px; }
-.year-chip {
-  flex: 0 0 auto; border: 1px solid #f6f1e455; background: #f6f1e414; color: #fffcef;
-  border-radius: 999px; min-height: 26px; padding: 2px 8px; font-size: 11px; cursor: pointer;
+.year-open {
+  display: inline; margin: 4px 0 0; padding: 0; border: 0; background: none; color: #f3e2bc;
+  font: inherit; font-size: 12px; text-align: left; cursor: pointer; text-decoration: underline;
+  text-underline-offset: 2px;
 }
-.year-chip.residual { font-style: italic; opacity: 0.8; }
-.polity-card {
-  position: absolute; z-index: 6; left: var(--edge); top: 188px;
-  width: min(360px, calc(100vw - var(--drawer-width) - 48px));
-  max-height: min(460px, calc(100dvh - 400px)); overflow: auto;
-  padding: 12px 14px 16px; border-radius: 12px; background: #fbfaf5f5;
-  border: 1px solid #ffffff90; box-shadow: 0 6px 28px #163c3324;
-}
-.evidence-closed .polity-card { width: min(380px, calc(100vw - 32px)); }
 .polity-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .polity-title { font-family: Georgia, serif; font-size: 26px; line-height: 1.1; margin: 0 0 8px; }
 .polity-card p, .polity-card h4 { margin: 6px 0; }
@@ -70,7 +61,7 @@ main { max-width: none; margin: 0; padding: 0; }
 .year-block output { font-size: 32px; }
 .year-block .eyebrow { font-size: 8px; }
 .slider-block { padding-left: 16px; }
-.jumps { margin-top: 8px; gap: 6px; flex-wrap: nowrap; overflow-x: auto; }
+.jumps { margin-top: 8px; gap: 6px; flex-wrap: wrap; overflow: visible; }
 .jumps > span { display: none; }
 .jumps button { flex-shrink: 0; min-height: 30px; }
 .year-entry { display: block; grid-column: auto; padding: 0; }
@@ -78,8 +69,8 @@ main { max-width: none; margin: 0; padding: 0; }
 .year-entry input { width: 100%; }
 .record-panel {
   position: fixed; z-index: 10; top: 80px; right: var(--edge); bottom: 26px;
-  width: var(--drawer-width); overflow-y: auto; overscroll-behavior: contain;
-  display: block; scrollbar-gutter: stable;
+  width: var(--drawer-width); overflow: hidden; overscroll-behavior: contain;
+  display: flex;
 }
 .record-panel[hidden] { display: none; }
 .record-heading { padding: 20px 18px 0; }
@@ -107,14 +98,14 @@ main { max-width: none; margin: 0; padding: 0; }
 .research-symbol { display: none; }
 footer { padding: 16px 0; gap: 12px; flex-wrap: wrap; }
 @media (max-width: 1100px) {
-  :root { --drawer-width: 310px; }
+  :root { --drawer-width: 420px; }
   .timeline { grid-template-columns: 85px minmax(0, 1fr); }
   .year-entry { grid-column: 1 / -1; display: flex; gap: 12px; align-items: center; }
   .year-entry label { margin: 0; }
   .year-entry > div { width: 150px; }
 }
 @media (max-width: 760px) {
-  :root { --edge: 8px; --drawer-width: min(350px, calc(100vw - 16px)); }
+  :root { --edge: 8px; }
   .masthead { height: 48px; padding: 0 10px; }
   .brand strong { font-size: 11px; }
   .brand-mark { display: none; }
@@ -123,14 +114,17 @@ footer { padding: 16px 0; gap: 12px; flex-wrap: wrap; }
   .map-heading { top: 68px; }
   .map-controls { top: 116px; max-width: calc(100% - 70px); font-size: 11px; }
   .timeline { left: 8px; right: 8px; padding: 10px 12px; gap: 8px; grid-template-columns: 70px minmax(0, 1fr); }
-  .year-summary { max-height: 72px; }
-  .polity-card { top: 168px; width: min(360px, calc(100vw - 16px)); max-height: 34dvh; }
+  .year-cited { display: none; }
+  .record-panel {
+    left: 0; right: 0; top: 56px; bottom: 0; width: auto;
+    border-radius: 16px 16px 0 0; z-index: 16; max-height: 78dvh; margin-top: auto;
+  }
   .slider-block { padding-left: 8px; border: 0; }
   .year-block .eyebrow { display: block; margin: 0 0 4px; }
   .year-block output { font-size: 26px; }
   .ce { font-size: 10px; margin-left: 4px; }
   .ruler { font-size: 9px; }
-  .record-panel { top: 68px; bottom: 196px; }
+  .drawer-resize { display: none; }
   .leaflet-top.leaflet-right { top: 64px; right: 0; }
 }
 @media (max-height: 500px) {
