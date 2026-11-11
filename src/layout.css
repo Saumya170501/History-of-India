@@ -41,6 +41,31 @@ main { max-width: none; margin: 0; padding: 0; }
   padding: 14px 18px; grid-template-columns: 100px minmax(0, 1fr) 140px; gap: 16px;
   background-color: #244c42ed;
 }
+.year-summary { grid-column: 1 / -1; max-height: 92px; overflow: auto; }
+.year-line, .year-cited { margin: 0; font-size: 12px; line-height: 1.35; color: #f6f1e4; }
+.year-cited { margin-top: 4px; color: #e7dcc4; }
+.year-chips { display: flex; gap: 6px; overflow-x: auto; margin-top: 6px; }
+.year-chip {
+  flex: 0 0 auto; border: 1px solid #f6f1e455; background: #f6f1e414; color: #fffcef;
+  border-radius: 999px; min-height: 26px; padding: 2px 8px; font-size: 11px; cursor: pointer;
+}
+.year-chip.residual { font-style: italic; opacity: 0.8; }
+.polity-card {
+  position: absolute; z-index: 6; left: var(--edge); top: 188px;
+  width: min(360px, calc(100vw - var(--drawer-width) - 48px));
+  max-height: min(460px, calc(100dvh - 400px)); overflow: auto;
+  padding: 12px 14px 16px; border-radius: 12px; background: #fbfaf5f5;
+  border: 1px solid #ffffff90; box-shadow: 0 6px 28px #163c3324;
+}
+.evidence-closed .polity-card { width: min(380px, calc(100vw - 32px)); }
+.polity-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.polity-title { font-family: Georgia, serif; font-size: 26px; line-height: 1.1; margin: 0 0 8px; }
+.polity-card p, .polity-card h4 { margin: 6px 0; }
+.polity-warning { font-size: 13px; }
+.polity-record { border-top: 1px solid #e4dcc8; margin-top: 12px; padding-top: 8px; }
+.polity-record h4 { font-size: 14px; }
+.polity-open { background: none; border: 0; padding: 0; color: inherit; font: inherit; font-weight: 650; text-align: left; cursor: pointer; text-decoration: underline; }
+.polity-licence { font-size: 12px; }
 @supports (backdrop-filter: blur(16px)) { .timeline { background-color: #244c42db; } }
 .year-block output { font-size: 32px; }
 .year-block .eyebrow { font-size: 8px; }
@@ -98,6 +123,8 @@ footer { padding: 16px 0; gap: 12px; flex-wrap: wrap; }
   .map-heading { top: 68px; }
   .map-controls { top: 116px; max-width: calc(100% - 70px); font-size: 11px; }
   .timeline { left: 8px; right: 8px; padding: 10px 12px; gap: 8px; grid-template-columns: 70px minmax(0, 1fr); }
+  .year-summary { max-height: 72px; }
+  .polity-card { top: 168px; width: min(360px, calc(100vw - 16px)); max-height: 34dvh; }
   .slider-block { padding-left: 8px; border: 0; }
   .year-block .eyebrow { display: block; margin: 0 0 4px; }
   .year-block output { font-size: 26px; }

@@ -21,6 +21,10 @@ import {
   stateFromSearch,
   validateAtlas,
 } from "./atlas.js";
+import basemapIndex from "./data/basemap-index.json";
+import polityLinks from "./data/polity-links.json";
+import { nearestSnapshot, summarizeYear } from "./period-map.js";
+import { fillPolityCard, fillYearSummary } from "./year-panel.js";
 
 const errors = [...validateAtlas(data), ...validateMapLayers(mapLayers, data)];
 if (errors.length) throw new Error(errors.join("\n"));
@@ -55,16 +59,17 @@ $("#app").innerHTML = `
     </section>
     <section class="timeline" aria-label="Choose a historical year">
       <div class="year-block"><span class="eyebrow">EXPLORING THE YEAR</span><div><output id="year-display" for="year-slider year-input">1</output><span class="ce">CE</span></div></div>
-      <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="1" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026 CE</span></div><div class="jumps"><span>Explore a window</span><button data-year="1">1 CE</button><button data-year="150">150</button><button data-year="250">250</button><button data-year="500">500</button><button data-year="1500">1500</button><button data-year="1565">1565</button><button data-year="1632">1632</button><button data-year="2026">2026</button></div></div>
+      <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="1" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026 CE</span></div>      <div class="jumps"><span>Explore a window</span><button data-year="1">1 CE</button><button data-year="300">300</button><button data-year="500">500</button><button data-year="1000">1000</button><button data-year="1600">1600</button><button data-year="1800">1800</button><button data-year="1858">1858</button><button data-year="1947">1947</button></div></div>
       <div class="year-entry"><label for="year-input">Go to year</label><div><button id="previous-year" aria-label="Previous year">−</button><input id="year-input" type="number" min="1" max="2026" step="1" value="1"><button id="next-year" aria-label="Next year">+</button></div></div>
+      <div id="year-summary" class="year-summary" role="status" aria-live="polite"></div>
     </section>
     <div class="workspace">
       <section class="map-panel" aria-label="Historical atlas map">
-        <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>OpenHistoricalMap</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
-        <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-regions" type="checkbox" checked> Highlight selected area</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
+        <div class="map-heading"><div><span class="eyebrow">THE SUBCONTINENT</span><h2>This year</h2></div><button id="reset-map" class="quiet">Reset view ↺</button></div>
+        <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-period" type="checkbox" checked> Period snapshot</label><label><input id="show-regions" type="checkbox" checked> Highlight selected area</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
         <div id="map" tabindex="-1" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
         <div id="map-error" role="alert" hidden></div><p id="map-selection-status" class="map-selection-status" role="status" aria-live="polite"></p>
-        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Solid dots: associated places · Purple: dated boundary match or reviewed region<br>B: battle · S: siege · A: aftermath</span><span>OHM context · 1 January of selected year · Internet required</span></div>
+        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Colours: approximate snapshot polities · Grey: residual category · Purple: selected OHM match<br>B: battle · S: siege · A: aftermath</span><span>Snapshot sheets are not annual borders · OHM context is 1 January · Internet required</span></div>
         <div id="map-context" class="map-context" aria-live="polite"></div>
         <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
@@ -81,7 +86,7 @@ $("#app").innerHTML = `
     <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>${data.records.length} cited records are a starting point, not a complete history. Empty years mean research is still needed. Regional overlays require dated map evidence and independent review. Published period maps are linked as context, not exact annual borders.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
   </main>
   <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><button id="footer-sources" class="quiet">${data.sources.length} sources · ${data.records.length} records</button></footer>
-  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated map context. Highlighted matches are provider features, not independently verified territorial reconstructions. A ruler’s name may not have a matching boundary in the provider.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Internet and WebGL are required; no API key is needed.</p></dialog>
+  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated physical map. Colour-filled areas are clipped sheets from André Ourednik’s historical-basemaps (GPL-3.0). They are coarse external digitizations. A year between sheets uses the nearest sheet and says so; borders are not interpolated. A straight edge at the map frame is a display cut, not a frontier. Grey areas are residual categories in the source, not single kingdoms. Clicking a name opens cited research where a link exists. The link is not proof that the shape was that polity’s border.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Period sheets: <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener noreferrer">historical-basemaps</a>, GPL-3.0-only, clipped and labelled as approximate. Internet and WebGL are required; no API key is needed.</p></dialog>
 `;
 
 // One scrolling surface, with separate browsing and selected-record views.
@@ -203,6 +208,20 @@ map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
 const markerLayer = L.layerGroup().addTo(map);
 const regionLayer = L.featureGroup().addTo(map);
 const battleLayer = L.featureGroup().addTo(map);
+const periodLayer = L.featureGroup().addTo(map);
+const polityCard = element('aside', undefined, 'polity-card');
+polityCard.id = 'polity-card';
+polityCard.hidden = true;
+polityCard.setAttribute('aria-label', 'Polity in the selected year');
+$('.map-panel').append(polityCard);
+const snapshotCache = new Map();
+let periodFeatures = [];
+let periodSummary = null;
+let openPolityName = null;
+let shownSnapshot = null;
+let shownPeriodVisible = null;
+let yearTimer = 0;
+let periodToken = 0;
 const historicalMap = attachHistoricalMap(map, {
   onStatus: message => { $('#map-selection-status').textContent = message; },
   onError: message => {
@@ -432,6 +451,83 @@ function selectRecord(record, focus = false) {
   }
 }
 
+function featureByName(name) {
+  return periodFeatures.find(feature => feature.properties.name === name) || null;
+}
+function closePolity() {
+  openPolityName = null;
+  polityCard.hidden = true;
+  polityCard.replaceChildren();
+  historicalMap.hoverPeriod(null);
+}
+function showPolity(feature) {
+  if (!feature || !periodSummary) return closePolity();
+  openPolityName = feature.properties.name;
+  polityCard.hidden = false;
+  fillPolityCard(polityCard, {
+    feature, year: state.year, summary: periodSummary, links: polityLinks.links,
+    records: data.records, sources, onClose: closePolity,
+    onRecord: record => { selectRecord(record, true); setDrawerView('selected'); },
+  });
+}
+function drawPeriodHits(collection) {
+  periodLayer.clearLayers();
+  periodFeatures = collection?.features || [];
+  if (!$('#show-period').checked) return;
+  for (const feature of periodFeatures) {
+    const shape = L.geoJSON(feature, {
+      style: { opacity: 0, fillOpacity: 0, weight: 12 },
+    }).addTo(periodLayer);
+    shape.bindTooltip(feature.properties.kind === 'residual'
+      ? `${feature.properties.name} · residual category, not a single kingdom`
+      : feature.properties.name, { sticky: true, opacity: 0.92 });
+    shape.on('mouseover', () => historicalMap.hoverPeriod(feature.id));
+    shape.on('mouseout', () => historicalMap.hoverPeriod(null));
+    shape.on('click', event => {
+      L.DomEvent.stopPropagation(event);
+      showPolity(feature);
+    });
+  }
+}
+async function syncPeriod() {
+  const token = ++periodToken;
+  const choice = nearestSnapshot(state.year, basemapIndex.snapshots);
+  const summaryBox = $('#year-summary');
+  if (!choice) {
+    fillYearSummary(summaryBox, null, { onPolity() {} });
+    return;
+  }
+  try {
+    if (!snapshotCache.has(choice.snapshot.year)) {
+      const response = await fetch(`${import.meta.env.BASE_URL}data/basemaps/${choice.snapshot.file}`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const collection = await response.json();
+      snapshotCache.set(choice.snapshot.year, collection);
+    }
+    if (token !== periodToken) return;
+    const collection = snapshotCache.get(choice.snapshot.year);
+    periodSummary = summarizeYear({
+      year: state.year,
+      snapshotYear: choice.snapshot.year,
+      gapYears: choice.gapYears,
+      features: collection.features,
+      records: data.records,
+    });
+    const visible = $('#show-period').checked;
+    if (shownSnapshot !== choice.snapshot.year || shownPeriodVisible !== visible) {
+      historicalMap.setPeriod(visible ? collection : { type: 'FeatureCollection', features: [] });
+      drawPeriodHits(collection);
+      shownSnapshot = choice.snapshot.year;
+      shownPeriodVisible = visible;
+    }
+    fillYearSummary(summaryBox, periodSummary, { onPolity: name => showPolity(featureByName(name)) });
+    if (openPolityName) showPolity(featureByName(openPolityName));
+  } catch (error) {
+    if (token !== periodToken) return;
+    summaryBox.replaceChildren();
+    summaryBox.append(element('p', `Period snapshot unavailable: ${error.message}. Cited records are still listed.`, 'year-line'));
+  }
+}
 function render() {
   const matches = recordsForYear(
     data.records,
@@ -546,6 +642,7 @@ function render() {
   }
   renderBattles();
   renderDetail(matches.find((record) => record.id === selectedId));
+  syncPeriod();
 }
 
 function update() {
@@ -562,28 +659,45 @@ function update() {
   );
   render();
 }
-function setYear(value) {
+function paintYear(year) {
+  $("#year-slider").value = year;
+  $("#year-slider").setAttribute("aria-valuetext", `${year} CE`);
+  $("#year-input").value = year;
+  $("#year-display").value = year.toLocaleString("en");
+}
+function setYear(value, immediate = false) {
   state.year = normalizeYear(value, state.year);
-  update();
+  paintYear(state.year);
+  clearTimeout(yearTimer);
+  if (immediate) update();
+  else yearTimer = setTimeout(update, 90);
+}
+function onYearWheel(event) {
+  if (event.target.closest('#evidence-drawer, .polity-card, input, textarea, select, a, button')) return;
+  event.preventDefault();
+  const step = event.shiftKey ? 10 : 1;
+  setYear(state.year + (event.deltaY > 0 ? step : -step));
 }
 $("#year-slider").addEventListener("input", (event) =>
   setYear(event.target.value),
 );
+document.querySelector('#map').addEventListener('wheel', onYearWheel, { passive: false });
+document.querySelector('.timeline').addEventListener('wheel', onYearWheel, { passive: false });
 $("#year-input").addEventListener("change", (event) =>
-  setYear(event.target.value),
+  setYear(event.target.value, true),
 );
 $("#year-input").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    setYear(event.target.value);
+    setYear(event.target.value, true);
     event.target.blur();
   }
 });
-$("#previous-year").addEventListener("click", () => setYear(state.year - 1));
-$("#next-year").addEventListener("click", () => setYear(state.year + 1));
+$("#previous-year").addEventListener("click", () => setYear(state.year - 1, true));
+$("#next-year").addEventListener("click", () => setYear(state.year + 1, true));
 document
   .querySelectorAll("[data-year]")
   .forEach((button) =>
-    button.addEventListener("click", () => setYear(button.dataset.year)),
+    button.addEventListener("click", () => setYear(button.dataset.year, true)),
   );
 $("#record-type").addEventListener("change", (event) => {
   state.type = event.target.value;
@@ -605,6 +719,13 @@ function browseRecord(event) {
 }
 $("#reset-map").addEventListener("click", () => map.setView([22, 80], 4));
 $('#show-regions').addEventListener('change', () => renderRegion(data.records.find(record => record.id === selectedId)));
+$('#show-period').addEventListener('change', () => {
+  historicalMap.setPeriodVisible($('#show-period').checked);
+  syncPeriod();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !polityCard.hidden) closePolity();
+});
 $('#show-battles').addEventListener('change', renderBattles);
 for (const id of ["#about-button", "#footer-sources"])
   $(id).addEventListener("click", () => $("#about-dialog").showModal());

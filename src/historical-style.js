@@ -47,3 +47,35 @@ export function pointLayer(source) {
       'circle-stroke-color': '#fffaf0', 'circle-stroke-width': 1.25,
     } };
 }
+// Colour-coded snapshot polygons. Residual categories stay faint and unlabelled.
+// Labels use an external glyph source set by the map, not the hidden OHM symbol layers.
+export function periodLayers(source) {
+  return [
+    { id: 'period-fill', type: 'fill', source, filter: polygonFilter, paint: {
+      'fill-color': ['get', 'color'],
+      'fill-opacity': ['case',
+        ['boolean', ['feature-state', 'hover'], false], 0.62,
+        ['==', ['get', 'kind'], 'residual'], 0.1,
+        0.4],
+      'fill-antialias': true,
+    } },
+    { id: 'period-line', type: 'line', source, filter: polygonFilter, paint: {
+      'line-color': ['case', ['==', ['get', 'kind'], 'residual'], '#8d887c', ['get', 'color']],
+      'line-width': ['case', ['==', ['get', 'kind'], 'residual'], 0.7, 1.15],
+      'line-opacity': 0.9,
+    } },
+    { id: 'period-label', type: 'symbol', source, filter: ['==', ['get', 'kind'], 'named'], layout: {
+      'text-field': ['get', 'name'],
+      'text-font': ['Open Sans Semibold'],
+      'text-size': ['interpolate', ['linear'], ['zoom'], 3, 10, 6, 13, 8, 16],
+      'text-max-width': 8,
+      'text-padding': 4,
+      'text-allow-overlap': false,
+      'symbol-sort-key': ['get', 'labelRank'],
+    }, paint: {
+      'text-color': '#1c2420',
+      'text-halo-color': '#fbfaf5',
+      'text-halo-width': 1.3,
+    } },
+  ];
+}

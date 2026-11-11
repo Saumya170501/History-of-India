@@ -31,6 +31,14 @@ Historical summaries are short original paraphrases. UNESCO descriptions display
 - License: [public domain](https://www.naturalearthdata.com/about/terms-of-use/).
 - This is a generalized modern physical land outline. It includes no administrative boundaries and makes no claim about historical coastlines, river courses or sovereignty. At high zoom the geometry remains coarse; the map caps zoom accordingly.
 
+## Historical basemap snapshots (11 November 2026)
+
+- Dataset: [historical-basemaps](https://github.com/aourednik/historical-basemaps), André Ourednik and contributors.
+- Retrieved from the jsDelivr mirror of the `master` branch on 11 November 2026.
+- Licence: GNU General Public License v3.0 only, as published in that repository. The full text is `public/data/basemaps/LICENSE-GPL-3.0.txt`. An open upstream issue still asks whether GPL was intended for the GeoJSON; this project follows the licence file the maintainer added and does not relicense the data.
+- Local change: world sheets were clipped to longitude 56–101 and latitude 3–40, coordinates rounded to two decimal degrees, unnamed features dropped, and properties reduced. No border was drawn by hand and none was interpolated between sheets. The modification is described in `src/data/basemap-index.json`.
+- These shapes are coarse world-scale digitizations. They overlap, they contain anachronisms, and they are not a reviewed reconstruction. The application code is not placed under GPL by this data.
+
 ## Software
 
 Leaflet `1.9.4` (BSD-2-Clause) supplies map interactions; Vite `8.3.6` (MIT) supplies local development and builds. Exact dependencies are pinned in `package-lock.json`. Their notices remain available in their installed packages. No external fonts, remote imagery, tracking scripts, tile services, secret keys or account connections are required by the app.

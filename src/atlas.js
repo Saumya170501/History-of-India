@@ -6,6 +6,7 @@ export const TYPES = {
   kingdom: "Kingdoms",
   battle: "Battles & aftermath",
   culture: "Culture & learning",
+  state: "States & governments",
 };
 
 export function normalizeYear(value, fallback = MIN_YEAR) {

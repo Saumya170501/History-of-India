@@ -1,5 +1,11 @@
 # Research expansion register
 
+## Batch — 11 November 2026 — year-polity profiles
+
+Added cited kingdom or state profiles for the Gupta dynasty and Chandragupta II, the Vakatakas, the Vatapi, Kalyani and Vengi Chalukyas, the Pallavas, the Palas, the Rashtrakutas, a Delhi sultanate overview, Vijayanagara, Shivaji, the Maratha confederacy, Ranjit Singh and the Sikh kingdom, East India Company territorial government, the British raj, princely states as a class, and the Dominion of India from 1947. The Bahmani record keeps the Met search window and now records Britannica’s earlier dissolution dates without merging them. Mauryan-successor coverage in the 1–300 range remains the existing Kushan, Satavahana and Kshatrapa records; no new Mauryan reign was placed inside this atlas’s 1 CE start.
+
+Encyclopaedia Britannica articles and the Indian Independence Act 1947, section 1, were read on 11 November 2026. The notes are paraphrases. They are cited, not independently reviewed, and they do not authenticate the historical-basemaps polygons.
+
 ## Batch 1 — 7 November 2026
 
 Expanded from 7 to 31 records and from 5 to 9 sources. Added selected Delhi Sultanate, Lodi and early Mughal reigns; separate Humayun reign intervals; Chola, Hoysala and Bahmanid overview chronologies; Rajendra I, Rajadhiraja I and temple-patronage entries; and Chola sculpture and construction records.

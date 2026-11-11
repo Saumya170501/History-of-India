@@ -287,6 +287,111 @@
       "publisher": "Department of Tourism, Government of Rajasthan",
       "url": "https://www.tourism.rajasthan.gov.in/jaisalmer.html",
       "accessed": "2026-11-07"
+    },
+    {
+      "id": "britannica-gupta",
+      "title": "Gupta dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Gupta-dynasty",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-vakataka",
+      "title": "Vakataka dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Vakataka-dynasty",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-chalukya",
+      "title": "Chalukya dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Chalukya-dynasty",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-pallava",
+      "title": "Pallava dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Pallava-dynasty",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-pala",
+      "title": "Pala dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Pala-dynasty",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-rashtrakuta",
+      "title": "Rashtrakuta dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Rashtrakuta-dynasty",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-delhi",
+      "title": "Delhi sultanate",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Delhi-sultanate",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-vijayanagara",
+      "title": "Vijayanagara",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Vijayanagar",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-bahmani",
+      "title": "Bahmanī sultanate",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Bahmani-sultanate",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-maratha",
+      "title": "Maratha confederacy",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Maratha-confederacy",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-shivaji",
+      "title": "Shivaji",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/biography/Shivaji",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-ranjit",
+      "title": "Ranjit Singh",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/biography/Ranjit-Singh-Sikh-maharaja",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-eic",
+      "title": "East India Company",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/East-India-Company",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-raj",
+      "title": "British raj",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://kids.britannica.com/scholars/article/British-raj/631851",
+      "accessed": "2026-11-11"
+    },
+    {
+      "id": "uk-independence-1947",
+      "title": "Indian Independence Act 1947, section 1",
+      "publisher": "The National Archives (legislation.gov.uk)",
+      "url": "https://www.legislation.gov.uk/ukpga/Geo6/10-11/30/section/1",
+      "accessed": "2026-11-11"
     }
   ],
   "records": [
@@ -1104,7 +1209,7 @@
       "datePrecision": "approximate",
       "dateLabel": "1347–1528 CE",
       "dateNote": "This source’s overview dates are used for discovery, not as a claim of unchanged rule or borders.",
-      "summary": "Regional dynastic chronology. Territorial changes require separate research.",
+      "summary": "Deccan sultanate founded in 1347. Its end is dated 1528 in the Met window used for search and 1490–1518 by Britannica. The disagreement is kept.",
       "geometry": null,
       "locationSourceId": null,
       "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
@@ -1115,7 +1220,74 @@
           "supports": "Identity and chronology of this entry; not geographic boundaries."
         }
       ],
-      "reviewStatus": "cited"
+      "reviewStatus": "cited",
+      "tags": [
+        "Bahmani",
+        "Bahmanid",
+        "Deccan"
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "A Muslim sultanate in the Deccan, founded in 1347 by Ala al-Din Bahman Shah in rebellion against Muhammad ibn Tughluq. The Met discovery window used for this record runs to 1528. Britannica dates the sultanate 1347–1518 and says it dissolved into Bijapur, Ahmadnagar, Golconda, Berar and Bidar between 1490 and 1518. The two endings are not reconciled.",
+          "citations": [
+            {
+              "sourceId": "britannica-bahmani",
+              "locator": "Opening; final paragraph",
+              "supports": "Foundation, the 1518 date and the five successors."
+            },
+            {
+              "sourceId": "met-south",
+              "locator": "Timeline → regional dynasties",
+              "supports": "The 1347–1528 discovery window already used by this record."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "Ahsanabad, now Gulbarga, from 1347 to 1425, then Muhammadabad, now Bidar.",
+          "citations": [
+            {
+              "sourceId": "britannica-bahmani",
+              "locator": "Opening",
+              "supports": "The two capitals and the 1425 move."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "This overview does not list every sultan. Mahmud Gawan’s vizierate, 1466–81, is called the peak. His provincial reforms did not stop the tarafs from pulling apart.",
+          "citations": [
+            {
+              "sourceId": "britannica-bahmani",
+              "locator": "Opening; provinces paragraph",
+              "supports": "Gawan and the four tarafs."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "The article names wars with Vijayanagara, Telingana, Orissa, Khandesh, Malwa and Gujarat. A settlement with Malwa was reached by 1468. Krishna Deva Raya of Vijayanagara took the Raichur tract. Gawan occupied Sangameshwar and Goa in 1471–72. The Western Ghats were not held.",
+          "citations": [
+            {
+              "sourceId": "britannica-bahmani",
+              "locator": "Middle paragraphs",
+              "supports": "Rivals, Raichur and the western limit."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The article says Muslim political domination in a mostly Hindu region was eased by mutual non-interference, and that the sultans often encouraged a fusion of Deccan cultures. That is not a single religion for the population, and it is not a revenue survey.",
+          "citations": [
+            {
+              "sourceId": "britannica-bahmani",
+              "locator": "Culture and provinces paragraph",
+              "supports": "Non-interference and Deccan cultural fusion."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "rajendra-reign",
@@ -4201,6 +4373,1660 @@
           "sourceId": "rajasthan-jaisal",
           "locator": "Indexed introductory history passage; full-page retrieval timed out",
           "supports": "Foundation association and year only; preliminary tourism synthesis."
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "gupta-empire",
+      "title": "Gupta dynasty",
+      "type": "kingdom",
+      "place": "Ganga-Yamuna Doab and Magadha",
+      "startYear": 300,
+      "endYear": 550,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 300–mid-6th century CE",
+      "dateNote": "Britannica describes a broad Gupta period beginning about 300 and a dynasty ruling from the early 4th century to the mid-6th century. The Gupta era itself is thought to begin about 319. This window opens at 300 so that period can be found; it is not a claim that an empire already existed in 300, and 550 only closes the mid-6th-century search range.",
+      "summary": "A north Indian dynasty, later remembered for Sanskrit court culture, whose political reach and “golden age” reputation are both debated.",
+      "tags": [
+        "Gupta",
+        "Guptas"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-gupta",
+          "locator": "Opening; Top questions: when the dynasty ruled",
+          "supports": "Dynastic span, debated origin, and the distinction between the dynasty and the wider cultural period."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Chandragupta I, not the earlier maharaja Sri Gupta, is treated as the founder of the empire. He took the title maharajadhiraja and married into the Licchavis. The family’s origin has been placed in Magadha or Bengal and, later, in the lower Ganga-Yamuna Doab. Their varna is not settled.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Opening; Chandragupta I",
+              "supports": "Founder, title, marriage alliance and disputed origin."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "This article does not name one enduring capital. It associates Chandragupta I’s kingdom with parts of present-day Bihar, Uttar Pradesh and West Bengal, and Chandragupta II with an extension toward Ujjain.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Chandragupta I; Chandragupta II",
+              "supports": "Regional associations. No single capital coordinate is claimed here."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Named reigns include Chandragupta I (c. 319–c. 335 or 350), Samudragupta (c. 335 or c. 350–c. 370), Chandragupta II (c. 375–413/415), Kumaragupta (415–454) and Skandagupta (454–467). A possible predecessor or rival, Ramagupta or Kacha, is disputed. Later kings faced Huna pressure.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "History, ruler sections",
+              "supports": "The named reigns and the disputed successions. The ranges are not averaged."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Samudragupta’s campaigns are praised on the Allahabad pillar in a Sanskrit eulogy by Harishena. Chandragupta II’s daughter Prabhavati Gupta married into the Vakatakas. Faxian visited during Chandragupta II’s reign. Huna attacks, Vakataka competition and Yashodharman of Malwa are among the pressures named in the decline.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Samudragupta; Chandragupta II; later kings",
+              "supports": "Pillar eulogy, Vakataka marriage, Faxian and the stated causes of decline."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "Courts used Sanskrit. Kalidasa is often associated with Chandragupta II, though the article notes that “Vikramaditya” may mean another king. Sculpture and early temple forms are discussed for Sarnath, Mathura, Udayagiri and Deogarh, alongside Buddhist and Jain images. Land grants, guilds on city boards, and gold coinage are described. The idea of a golden age for every region and social class is explicitly disputed.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Opening; Administration, society, and culture",
+              "supports": "Court language, patronage debate, religious images, revenue and the golden-age argument."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "gupta-chandragupta-ii",
+      "title": "Chandragupta II",
+      "type": "ruler",
+      "place": "Ganga-Yamuna Doab and Magadha",
+      "startYear": 375,
+      "endYear": 415,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 375–413/415 CE",
+      "dateNote": "Britannica gives c. 375–413/415. This window ends in 415 and does not decide the 413 variant. Gupta records that name him as the third emperor are not the only evidence: a king Ramagupta (c. 370–375) may have preceded him.",
+      "summary": "Gupta ruler associated with the western extension toward Ujjain and with a court later linked, uncertainly, to Kalidasa.",
+      "tags": [
+        "Gupta",
+        "Vikramaditya"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-gupta",
+          "locator": "Chandragupta II (reigned c. 375–413/415 ce)",
+          "supports": "Reign window, Ujjain, Faxian and the Vakataka marriage."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "A Gupta emperor, also called Vikramaditya. Gupta records present him as the third ruler. Other evidence suggests his brother Ramagupta reigned about 370–375 and may have been killed by him.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Chandragupta II",
+              "supports": "Name, disputed succession and the Ramagupta problem."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "The article credits him with extending the empire to Ujjain. It does not say Ujjain replaced every other centre.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Chandragupta II",
+              "supports": "Ujjain as an extension, not a mapped capital district."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "The cited reign is c. 375–413 or 415. His daughter Prabhavati Gupta’s marriage tied the family to the Vakatakas.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Chandragupta II",
+              "supports": "Reign variants and the marriage alliance."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "The Chinese pilgrim Faxian spent about 405–411 in India during this reign and described government, charity and medicine in favourable terms. Those are a visitor’s observations, not an administrative census.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Chandragupta II",
+              "supports": "Faxian’s visit and its limits."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The reign is associated more with learning than with the article’s account of conquest. An iron pillar at Mehrauli names a king Chandra, identified by some scholars as this ruler. The identification is stated as a scholarly view, not as a settled fact.",
+          "citations": [
+            {
+              "sourceId": "britannica-gupta",
+              "locator": "Chandragupta II; Administration, society, and culture",
+              "supports": "Cultural emphasis and the uncertain Iron Pillar identification."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "vakataka-dynasty",
+      "title": "Vakataka dynasty",
+      "type": "kingdom",
+      "place": "Vakataka Deccan",
+      "startYear": 250,
+      "endYear": 500,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 250–5th century CE",
+      "dateNote": "Vindhyashakti is dated c. 250–270. Prithvisena II, the last king named in this article, acceded about 470. No dissolution year is given. The year 500 only closes the century of that accession.",
+      "summary": "A Deccan house contemporary with the Guptas, split into at least two lines and known for encouraging arts and letters.",
+      "tags": [
+        "Vakataka",
+        "Vakatakas"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-vakataka",
+          "locator": "Opening and main line",
+          "supports": "Origin, rough extent as believed by the article, and the absence of a dissolution year."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "The house began in the central Deccan in the mid-3rd century and claimed a Brahmanical origin. Little is said about the founder Vindhyashakti. After Pravarasena I the kingdom was partitioned. A Vatsagulma branch held the area between the Indhyadri range and the Godavari.",
+          "citations": [
+            {
+              "sourceId": "britannica-vakataka",
+              "locator": "Opening; Vatsagulma paragraph",
+              "supports": "Origin, partition and the second line."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "No single capital is named for the senior line. Vatsagulma is identified with Basim in Akola district.",
+          "citations": [
+            {
+              "sourceId": "britannica-vakataka",
+              "locator": "Vatsagulma paragraph",
+              "supports": "Only the branch centre is named."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Pravarasena I acceded about 270 and reached the Narmada. Later senior kings include Rudrasena I (c. 330), Prithvisena I (c. 350), Rudrasena II (c. 400), Narendrasena (c. 450–470) and Prithvisena II (accession about 470).",
+          "citations": [
+            {
+              "sourceId": "britannica-vakataka",
+              "locator": "Main narrative",
+              "supports": "The named accessions. They are not a complete king list."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Prabhavati Gupta, daughter of Chandra Gupta II, married Rudrasena II. She was regent for their sons. After the Guptas were occupied with the Hunas, Narendrasena’s influence is said to have reached Kosala, Mekala and Malava, before a setback against the Nalas.",
+          "citations": [
+            {
+              "sourceId": "britannica-vakataka",
+              "locator": "Gupta contact and Narendrasena",
+              "supports": "Marriage, regency and the Nala conflict."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The article’s cultural remark is brief: the Vakatakas encouraged arts and letters, and Gupta influence on their polity and culture was significant in the marriage period. It does not describe a uniform religion or tax system.",
+          "citations": [
+            {
+              "sourceId": "britannica-vakataka",
+              "locator": "Gupta-contact sentence; closing sentence",
+              "supports": "The limited cultural claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "chalukya-badami",
+      "title": "Western Chalukyas of Vatapi",
+      "type": "kingdom",
+      "place": "Vatapi",
+      "startYear": 543,
+      "endYear": 757,
+      "datePrecision": "approximate",
+      "dateLabel": "543–757 CE",
+      "dateNote": "The article dates these Deccan emperors from 543 until replacement by the Rashtrakutas in 757. Several reigns inside that span are approximate. A Rashtrakuta article says “about 755” for the same transition; both figures are kept.",
+      "summary": "The first Western Chalukya line, based at Vatapi (Badami), between the Krishna and Tungabhadra and in conflict with the Pallavas.",
+      "tags": [
+        "Chalukya",
+        "Badami",
+        "Vatapi"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-chalukya",
+          "locator": "Opening; Pulakeshin I through Kirtivarman II",
+          "supports": "Span, capital and the Rashtrakuta replacement."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "One of two Chalukya houses in this article. Pulakeshin I, a chieftain of Pattadakal, began the line in 543. It is not the later Kalyani house and not the Eastern Chalukyas of Vengi.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Opening and Pulakeshin I",
+              "supports": "Separate houses and the 543 start."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "Pulakeshin I fortified Vatapi, modern Badami. The article does not treat Badami as the capital of every later Chalukya line.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Pulakeshin I",
+              "supports": "Vatapi/Badami."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Kirtivarman I reigned 566–597. Pulakeshin II reigned about 610–642 and fixed a boundary with Harsha on the Narmada. Vikramaditya I reigned 655–680. Vikramaditya II reigned 733–746. Kirtivarman II was replaced in 757.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Narrative reigns",
+              "supports": "Named reigns, including the approximate dates."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "About 624 Pulakeshin II took Vengi from the Vishnukundins and gave it to his brother Kubja Vishnuvardhana. Between 641 and 647 the Pallavas captured Vatapi; the family had recovered by 655. Vikramaditya I took Kanchipuram about 670, and Vikramaditya II captured it again in 742 but spared the city.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Pulakeshin II; Pallava wars",
+              "supports": "Vengi grant and the Pallava conflicts."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "This political article does not describe a court religion or a revenue system. The territorial claims, including the Narmada boundary with Harsha, are the article’s summary, not a plotted border.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Pulakeshin II paragraph",
+              "supports": "What the article does and does not specify."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "chalukya-kalyani",
+      "title": "Western Chalukyas of Kalyani",
+      "type": "kingdom",
+      "place": "Kalyani",
+      "startYear": 975,
+      "endYear": 1189,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 975–1189 CE",
+      "dateNote": "After the last Rashtrakuta, about 975, Taila founded a second Western Chalukya dynasty. The article says Someshvara IV lost the empire in 1189. The gap between 757 and 975 is not filled in.",
+      "summary": "A later Western Chalukya line, named for Kalyani, ended by the Yadavas, Hoysalas and Kakatiyas.",
+      "tags": [
+        "Chalukya",
+        "Kalyani"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-chalukya",
+          "locator": "Kalyani paragraph",
+          "supports": "Second foundation, capital name and 1189 loss."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Taila founded this house when the last Rashtrakuta fell, about 975. It is a separate record from the Vatapi line.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Kalyani paragraph",
+              "supports": "Foundation and the break with the earlier line."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "The dynasty is named for the more central capital, Kalyani. No coordinate is supplied by this article.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Kalyani paragraph",
+              "supports": "Capital name only."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Taila’s achievement in this article is subduing the Paramaras of Malwa. Bijjala of the Kalachuri family usurped the throne about 1156–1167. Someshvara IV was then restored and lost the empire in 1189.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Kalyani paragraph",
+              "supports": "Taila, Bijjala and Someshvara IV."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Rajaraja I invaded the south Deccan about 993, and the article says Chola invasions of the plateau continued until about 1021. In 1189 the Yadavas of Devagiri, the Hoysalas of Dorasamudra and the Kakatiyas of Warangal divided the loss.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Kalyani paragraph",
+              "supports": "Chola pressure and the 1189 successors."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "Not described in this article. Territorial change is political narrative, not a boundary survey.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Kalyani paragraph",
+              "supports": "The article’s silence on culture and economy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "chalukya-vengi",
+      "title": "Eastern Chalukyas of Vengi",
+      "type": "kingdom",
+      "place": "Vengi",
+      "startYear": 624,
+      "endYear": 1070,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 624–c. 1070 CE",
+      "dateNote": "About 624 to about 1070. The article describes the house as repeatedly fought over by the Deccan Chalukyas and the Cholas, so the span is not stable control of one frontier.",
+      "summary": "The Vengi branch, begun by Kubja Vishnuvardhana, later joined to the Cholas under Kulottunga I.",
+      "tags": [
+        "Chalukya",
+        "Vengi"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-chalukya",
+          "locator": "Opening; final paragraph",
+          "supports": "Vengi dates and the Chola connection."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Kubja Vishnuvardhana, brother of Pulakeshin II, is called the first Eastern Chalukya ruler. Descendants remained a separate house in the eastern Deccan.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Pulakeshin II; final paragraph",
+              "supports": "Founder and the separate eastern line."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "The kingdom is located in Vengi, in the eastern part of present-day Andhra Pradesh. A city site is not coordinated here.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Opening",
+              "supports": "Regional name only."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "The article does not list every Eastern Chalukya reign. It says Kulottunga I, also called Rajendra II, began a reign in 1070 that united the Chola and Chalukya countries.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Final paragraph",
+              "supports": "The 1070 union and the lack of a full king list."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "The house “had to constantly fight for the riches of Vengi” and is described as a pawn between Deccan emperors and Chola kings.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Final paragraph",
+              "supports": "The contested position of Vengi."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "Not described here beyond the political value of Vengi. No religious establishment is stated.",
+          "citations": [
+            {
+              "sourceId": "britannica-chalukya",
+              "locator": "Final paragraph",
+              "supports": "Limit of the article."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "pallava-dynasty",
+      "title": "Pallava dynasty",
+      "type": "kingdom",
+      "place": "Kanchipuram",
+      "startYear": 301,
+      "endYear": 880,
+      "datePrecision": "approximate",
+      "dateLabel": "early 4th century–c. 880 CE",
+      "dateNote": "The article calls this an early 4th-century to late 9th-century line and says the dominions passed to the Cholas about 880. Genealogy and chronology are “highly disputed”. The year 301 only opens the early 4th century as a search window. It is not a foundation year.",
+      "summary": "Rulers at Kanchi, remembered for the Mamallapuram monuments and for long wars with the Vatapi Chalukyas.",
+      "tags": [
+        "Pallava",
+        "Pallavas",
+        "Kanchi"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-pallava",
+          "locator": "Opening",
+          "supports": "Disputed chronology, Kanchi and the transfer about 880."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "The article traces them from subordinates of the Satavahanas into Andhra and then to Kanchi. Prakrit records mention Vishnugopa, defeated and then liberated by Samudra Gupta about the middle of the 4th century. Simhavarman is mentioned in the Lokavibhaga as reigning from 436.",
+          "citations": [
+            {
+              "sourceId": "britannica-pallava",
+              "locator": "Opening",
+              "supports": "Origin story and the two early dated notices."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "Kanci, Kanchipuram in modern Tamil Nadu, is the capital named here. Mamallapuram was a port with major monuments, not described as the capital.",
+          "citations": [
+            {
+              "sourceId": "britannica-pallava",
+              "locator": "Opening; monuments paragraph",
+              "supports": "Kanchi as capital and Mamallapuram as a port."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Mahendravarman I reigned about 600–630. His successor Narasimhavarman I is associated with the 7th-century rathas at Mahabalipuram. A full king list is not given, and the article warns that the genealogy is disputed.",
+          "citations": [
+            {
+              "sourceId": "britannica-pallava",
+              "locator": "Mahendravarman I and successor",
+              "supports": "Two named reigns and the dispute."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Mahendravarman fought the Western Chalukyas of Badami under Pulakeshin II. Narasimhavarman recovered some lost territory. The article still calls the Pallavas ineffective against later Chalukya pressure. About 880 the dominions passed to the Cholas.",
+          "citations": [
+            {
+              "sourceId": "britannica-pallava",
+              "locator": "Chalukya wars; closing sentence",
+              "supports": "Wars and the Chola succession."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "They patronised Buddhism, Jainism and Brahmanical worship, and music, painting and literature. Mahendravarman, born a Jain, is said to have converted to Shaivism and to have written the Sanskrit farce Mattavilasa. The Shore Temple, monolithic rathas and Varaha cave at Mamallapuram were inscribed by UNESCO in 1984. Commercial enterprise and some Southeast Asian colonisation are mentioned; interference in Sri Lanka is described as inherited rather than begun by them.",
+          "citations": [
+            {
+              "sourceId": "britannica-pallava",
+              "locator": "Religion and monuments paragraphs",
+              "supports": "Patronage, the play, the monuments and the commercial remark."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "pala-dynasty",
+      "title": "Pala dynasty",
+      "type": "kingdom",
+      "place": "Bengal and Bihar",
+      "startYear": 750,
+      "endYear": 1160,
+      "datePrecision": "approximate",
+      "dateLabel": "mid-8th–12th century CE",
+      "dateNote": "Gopala rose in the mid-8th century. After Ramapala (c. 1077–1120) the dynasty was “virtually eclipsed” by the Senas, while Pala kings continued in southern Bihar for 40 years. The year 1160 is that 40-year reading from about 1120, not a quoted final inscription. The mid-8th-century start is not a single year.",
+      "summary": "A Buddhist-supporting dynasty in Bihar and Bengal, with a main capital the article places at Mudgagiri.",
+      "tags": [
+        "Pala",
+        "Palas"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-pala",
+          "locator": "Opening; capital sentence",
+          "supports": "Region, approximate span and Mudgagiri."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Gopala, a local chieftain, rose during a period of anarchy in the mid-8th century. The house ruled in Bihar and Bengal from the 8th to the 12th century.",
+          "citations": [
+            {
+              "sourceId": "britannica-pala",
+              "locator": "Opening",
+              "supports": "Founder and region."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "The main capital “appears to have been” Mudgagiri, now Munger, in eastern Bihar. The wording is cautious.",
+          "citations": [
+            {
+              "sourceId": "britannica-pala",
+              "locator": "Capital sentence",
+              "supports": "Mudgagiri, with the article’s uncertainty."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Dharmapala reigned about 770–810 and for a while controlled Kannauj. Devapala reigned about 810–850. Mahipala I reigned about 988–1038. Ramapala, called the last important king, reigned about 1077–1120.",
+          "citations": [
+            {
+              "sourceId": "britannica-pala",
+              "locator": "Narrative reigns",
+              "supports": "The four named reigns."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Devapala raided in the north, the Deccan and the peninsula. Mahendrapala, a Gurjara-Pratihara emperor of Kannauj, later reached northern Bengal. Mahipala’s influence is said to have reached Varanasi. Ramapala expanded in Assam and Orissa and is the hero of Sandhyakara’s Ramacharita. The Senas then overshadowed the house.",
+          "citations": [
+            {
+              "sourceId": "britannica-pala",
+              "locator": "Middle paragraphs",
+              "supports": "Raids, the Pratihara intrusion, Varanasi and the Sena eclipse."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The Palas supported Buddhism. The article says missionaries from their kingdom established Buddhism in Tibet, and that their patronage produced a school of stone and metal sculpture. No revenue system is described.",
+          "citations": [
+            {
+              "sourceId": "britannica-pala",
+              "locator": "Closing paragraph",
+              "supports": "Buddhism, Tibet and sculpture."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "rashtrakuta-dynasty",
+      "title": "Rashtrakuta dynasty",
+      "type": "kingdom",
+      "place": "Rashtrakuta Deccan",
+      "startYear": 755,
+      "endYear": 975,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 755–c. 975 CE",
+      "dateNote": "“About 755” until Taila Chalukya won the succession about 975. The Chalukya article dates the replacement of Kirtivarman II to 757. Both dates are retained. Neither is a mapped frontier.",
+      "summary": "A Deccan dynasty between the two Western Chalukya lines, patrons of the Kailasa temple at Ellora and of early Kannada verse.",
+      "tags": [
+        "Rashtrakuta",
+        "Rashtrakutas"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-rashtrakuta",
+          "locator": "Opening",
+          "supports": "The about-755 to 975 span and the Deccan setting."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Described as a Hindu dynasty of the Deccan and neighbouring areas. The article says they were probably Dravidian farmers, the royal family of Lattalur (Latur), speaking Kannada and the northern Deccan language.",
+          "citations": [
+            {
+              "sourceId": "britannica-rashtrakuta",
+              "locator": "Opening paragraphs",
+              "supports": "Identity, language and the Chalukya defeat."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "The article says Khottiga failed to protect “the capital” and that its sack destroyed confidence in the dynasty. The capital’s name is not given in the passages used, so none is stated here.",
+          "citations": [
+            {
+              "sourceId": "britannica-rashtrakuta",
+              "locator": "Closing narrative",
+              "supports": "A capital is mentioned and not named."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Krishna I reigned about 756–773. Amoghavarsha I reigned about 814–878. Krishna II succeeded in 878. Indra III came to the throne in 914. Krishna III campaigned in the north about 940 and in the Tamil plains in 948–966/967. Khottiga reigned 968–972. Taila took the succession about 975.",
+          "citations": [
+            {
+              "sourceId": "britannica-rashtrakuta",
+              "locator": "Monarch paragraphs",
+              "supports": "Named reigns and the 975 end."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Dhruva subdued the Gangas, contained the Pallavas and defeated a king of Bengal and a Pratihara king who were contending for Kannauj. Indra III captured Kannauj. Krishna III occupied Kanchi and much of the Tamil plains. A Muslim traveller is said to have ranked the king among four great rulers of the world, with the caliph and the emperors of Byzantium and China.",
+          "citations": [
+            {
+              "sourceId": "britannica-rashtrakuta",
+              "locator": "Middle paragraphs",
+              "supports": "Kannauj, Kanchi and the traveller’s ranking."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "Krishna I is credited with the Kailasa rock temple at Ellora, a UNESCO site since 1983. Amoghavarsha I wrote part of the Kavirajamarga, called the earliest known Kannada poem. The article does not describe taxation.",
+          "citations": [
+            {
+              "sourceId": "britannica-rashtrakuta",
+              "locator": "Learning and the arts",
+              "supports": "Ellora and the Kannada poem."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "delhi-sultanate",
+      "title": "Delhi sultanate",
+      "type": "kingdom",
+      "place": "Delhi Sultanate",
+      "startYear": 1206,
+      "endYear": 1556,
+      "datePrecision": "approximate",
+      "dateLabel": "13th century–1556 CE",
+      "dateNote": "The article places the sultanate in the 13th to 16th centuries and ties its creation to campaigns through 1206, especially Taraori in 1192 and Chandawar in 1194. It says the sultanate was submerged in the Mughal empire after the Second Battle of Panipat on 5 November 1556. The year 1206 is the end of that campaign window, not a coronation day established here. Sher Shah’s restoration sits inside the same narrative. Individual reigns already in this catalogue keep their own sources.",
+      "summary": "The north Indian sultanate centred on Delhi, from the Ghurid campaigns to its absorption after Panipat in 1556.",
+      "tags": [
+        "Delhi Sultanate",
+        "Sultanate"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-delhi",
+          "locator": "Opening; The Mongols, Afghans, and Mughals",
+          "supports": "Creation narrative and the 1556 end."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Several houses are named: a Mamluk or early line, the Khaljis (1290–1320), the Tughluqs, the Sayyids (c. 1414–51) and the Lodis (1451–1526), plus Sher Shah’s Sur restoration. They are not one family.",
+          "citations": [
+            {
+              "sourceId": "britannica-delhi",
+              "locator": "Section headings and dynasty dates",
+              "supports": "Successive houses rather than a single dynasty."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "Iltutmish (reigned 1211–36) made a permanent capital at Delhi. Muhammad ibn Tughluq tried a second capital at Daulatabad. The Qutb Minar was begun in 1199 by Qutb ud-Din Aibak and completed by Iltutmish.",
+          "citations": [
+            {
+              "sourceId": "britannica-delhi",
+              "locator": "Establishment; Tughluqs; Qutb Minar caption",
+              "supports": "Delhi, the Daulatabad experiment and the minaret."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Iltutmish reigned 1211–36. Balban was sultan in 1266–87. Alauddin Khalji reigned 1296–1316. Muhammad ibn Tughluq reigned 1325–51 and Firuz Shah 1351–88. Babur ended Lodi rule at Panipat on 21 April 1526. Humayun took Delhi again in 1555 and died in January 1556. Akbar’s victory at the second Panipat was on 5 November 1556.",
+          "citations": [
+            {
+              "sourceId": "britannica-delhi",
+              "locator": "Establishment through Panipat",
+              "supports": "Dated reigns and the two Panipat battles."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "The Khaljis conquered Gujarat about 1297 and fortified places in Rajasthan in 1301–12, and reduced southern kingdoms to vassalage in 1307–12. The Bahmani sultanate broke away in 1347. Timur sacked Delhi in 1398–99. The article says the sultanate sought paramountcy rather than exclusive sovereignty and left discretion to local governors.",
+          "citations": [
+            {
+              "sourceId": "britannica-delhi",
+              "locator": "Khaljis; Tughluqs; Nature of the sultanate",
+              "supports": "Expansion, the Bahmani break, Timur and the limits of control."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The ruling elite is described as Turks, Afghans, Khaljis and Hindu converts, with Hindu officials and vassals accepted. No single religion is attributed to the population. Communications and Mongol pressure are given as reasons for local autonomy. Economic detail is not the subject of this article.",
+          "citations": [
+            {
+              "sourceId": "britannica-delhi",
+              "locator": "Nature of the sultanate",
+              "supports": "Elite, vassals and the limits of central control."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "vijayanagara-empire",
+      "title": "Vijayanagara empire",
+      "type": "kingdom",
+      "place": "Vijayanagara",
+      "startYear": 1336,
+      "endYear": 1614,
+      "datePrecision": "approximate",
+      "dateLabel": "1336–c. 1614 CE",
+      "dateNote": "Founded in 1336. The city was destroyed after the battle of Talikota in 1565. The article says the Aravidu dynasty then ruled from Penukonda until the empire collapsed about 1614. The year 1614 is that approximate end. A later map sheet that still labels a shape “Vijayanagara” does not show that the city at Hampi was intact.",
+      "summary": "A southern empire ruled first from the city on the Tungabhadra and later from Penukonda.",
+      "tags": [
+        "Vijayanagara",
+        "Vijayanagar"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-vijayanagara",
+          "locator": "Opening",
+          "supports": "Dates, the move to Penukonda and the Hampi identification."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Four houses are distinguished: Sangama, from 1336 to about 1485; Saluva, after Narasimha’s usurpation; Tuluva, by 1503; and Aravidu, founded by Tirumala after 1565.",
+          "citations": [
+            {
+              "sourceId": "britannica-vijayanagara",
+              "locator": "Dynastic paragraphs",
+              "supports": "The four houses and their rough handovers."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "The first capital was the city of Vijayanagara, now partly occupied by the village of Hampi. Its ruins were designated a UNESCO site in 1986. After 1565 the Aravidu capital was Penukonda, in present-day southwestern Andhra Pradesh. Hampi’s existing catalogue point is a site reference, not this empire’s border.",
+          "citations": [
+            {
+              "sourceId": "britannica-vijayanagara",
+              "locator": "Opening; 1565 paragraph",
+              "supports": "Hampi, UNESCO and Penukonda."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Harihara and Bukka, sons of Sangama, were the city’s first kings. Krishna Deva Raya, the outstanding Tuluva king, reigned 1509–29. Rama Raya led the army in 1565 as chief minister. Tirumala then seized control.",
+          "citations": [
+            {
+              "sourceId": "britannica-vijayanagara",
+              "locator": "Foundation; Krishna Deva; Talikota",
+              "supports": "Named rulers. Not a complete list."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Krishna Deva acquired the Raichur doab in 1512, took Udayagiri in 1514 and defeated Bijapur in 1520. In 1565 the combined forces of Bijapur, Ahmadnagar and Golconda routed the army at Talikota and the city was destroyed. Internal dissension and those sultanates’ intrigues led to collapse about 1614.",
+          "citations": [
+            {
+              "sourceId": "britannica-vijayanagara",
+              "locator": "Krishna Deva and Talikota paragraphs",
+              "supports": "Campaigns, 1565 and the later collapse."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The article says the empire fostered Hindu administration after the disorders of the 12th and 13th centuries, encouraged Sanskrit and regional literatures, and that contact with Muslims stimulated new work. “Unexampled peace and prosperity” is the article’s judgement, not a measured economic series.",
+          "citations": [
+            {
+              "sourceId": "britannica-vijayanagara",
+              "locator": "Middle paragraph",
+              "supports": "Religion, languages and the prosperity claim."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "shivaji",
+      "title": "Shivaji",
+      "type": "ruler",
+      "place": "Raigad",
+      "startYear": 1674,
+      "endYear": 1680,
+      "datePrecision": "year",
+      "dateLabel": "1674–1680 CE",
+      "dateNote": "The crowned reign is dated from the summer of 1674 to his death on 3 April 1680. Birth is given as April 1627 or 19 February 1630. Campaigns from about 1655 are not treated as the crowned reign.",
+      "summary": "Founder of the Maratha kingdom, crowned in 1674, with his capital at Raigad.",
+      "tags": [
+        "Maratha",
+        "Bhonsle"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-shivaji",
+          "locator": "Summary; Independent sovereign",
+          "supports": "Coronation, death, Raigad and the birth-date disagreement."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Shivaji Bhonsle, later called Chhatrapati. His kingdom is the predecessor of the 18th-century confederacy, not the same political form.",
+          "citations": [
+            {
+              "sourceId": "britannica-shivaji",
+              "locator": "Summary",
+              "supports": "Identity and the kingdom he founded."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "He died at Raigad, “which he had made his capital”, on 3 April 1680. Birthplace is given as Shivner, near Poona, under the disputed birth date.",
+          "citations": [
+            {
+              "sourceId": "britannica-shivaji",
+              "locator": "Summary dates; closing paragraphs",
+              "supports": "Raigad and Shivner."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "This entry is the crowned period only: summer 1674 to 3 April 1680. He ruled through a cabinet of eight ministers.",
+          "citations": [
+            {
+              "sourceId": "britannica-shivaji",
+              "locator": "Independent sovereign",
+              "supports": "Coronation, death and the eight ministers."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "From about 1655 he seized weaker Bijapur posts. In 1659 he killed Afzal Khan and routed the Bijapur army. He sacked Surat, was held at Agra, and escaped on 17 August 1666. The 1674 coronation is called the formal beginning of the Maratha empire. A southern campaign and an alliance with sultanates are mentioned after the coronation.",
+          "citations": [
+            {
+              "sourceId": "britannica-shivaji",
+              "locator": "Early life; Challenging the Mughals; Escape; Independent sovereign",
+              "supports": "The dated episodes. Troop numbers in the article are not repeated as verified counts."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The article says his administration joined Brahmans, Marathas and Prabhus, that Muslims served him, and that he protected places of worship of more than one community. He organised a naval force for trade and defence. Those are the article’s judgements. His earlier conflict with Bijapur and the Mughals is not evidence for a single religious policy across the Deccan.",
+          "citations": [
+            {
+              "sourceId": "britannica-shivaji",
+              "locator": "Summary; Independent sovereign",
+              "supports": "Council, service and the navy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "maratha-confederacy",
+      "title": "Maratha confederacy",
+      "type": "kingdom",
+      "place": "Pune",
+      "startYear": 1707,
+      "endYear": 1818,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1707–c. 1818 CE",
+      "dateNote": "Britannica’s quick facts date the confederacy about 1707 to about 1818. It revived under Shahu after Aurangzeb’s death in 1707 and was destroyed by British intervention by 1818. The years are approximate and are not a claim of unified annual control.",
+      "summary": "An 18th-century Maratha alliance under a peshwa at Pune, divided among Sindhia, Holkar, Bhonsle and Gaekwar.",
+      "tags": [
+        "Maratha",
+        "Peshwa"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-maratha",
+          "locator": "Opening and quick facts",
+          "supports": "The c. 1707–c. 1818 span and the peshwa structure."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Not one royal house. After Shahu (Shivaji’s grandson) the Brahman Bhat family became hereditary peshwas. Sindhia, Holkar, Bhonsle and Gaekwar became increasingly independent. The article says the confederacy expressed a Maratha nationalist sentiment and was divided by its chiefs’ jealousies.",
+          "citations": [
+            {
+              "sourceId": "britannica-maratha",
+              "locator": "Opening paragraphs",
+              "supports": "Families and the divided structure."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "Nominal leadership sat with the peshwa at Poona, now Pune. The other houses had their own centres, which this article does not coordinate.",
+          "citations": [
+            {
+              "sourceId": "britannica-maratha",
+              "locator": "After 1772",
+              "supports": "Pune as the peshwa’s seat."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Shahu held power until his death in 1749, after which the peshwas were the effective rulers. Madhav Rao I died in 1772. Baji Rao II sought British protection after his defeat by Holkar in 1802. Shivaji’s own crowned reign is a separate record and ends in 1680.",
+          "citations": [
+            {
+              "sourceId": "britannica-maratha",
+              "locator": "Narrative dates",
+              "supports": "Shahu, Madhav Rao and Baji Rao II."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Effective peshwa control ended with the Afghan victory at Panipat in 1761 and Madhav Rao’s death. The houses sometimes united, as against the British in 1775–82, and more often quarrelled. British intervention after 1802 destroyed the confederacy by 1818.",
+          "citations": [
+            {
+              "sourceId": "britannica-maratha",
+              "locator": "Panipat through 1818",
+              "supports": "Panipat, the Anglo-Maratha fighting and the 1818 end."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "Not described in this short political article. The confederacy should not be read as a single national economy or a single religious establishment.",
+          "citations": [
+            {
+              "sourceId": "britannica-maratha",
+              "locator": "Closing sentence",
+              "supports": "The article’s own limit: a divided alliance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "ranjit-singh",
+      "title": "Ranjit Singh",
+      "type": "ruler",
+      "place": "Lahore",
+      "startYear": 1799,
+      "endYear": 1839,
+      "datePrecision": "year",
+      "dateLabel": "1799–1839 CE",
+      "dateNote": "He seized Lahore in July 1799 and proclaimed himself maharaja in 1801. This window opens at the seizure so that year can be found; it does not mean the proclamation had already happened. He died on 27 June 1839. The 1809 Treaty of Amritsar, as described here, fixed the Sutlej as his eastern boundary with the English.",
+      "summary": "Maharaja of the Punjab from 1801, ruling from Lahore with armies drawn from more than one religion.",
+      "tags": [
+        "Sikh",
+        "Punjab"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-ranjit",
+          "locator": "Summary; Early life and conquests",
+          "supports": "Proclamation, death, Lahore and the Sutlej treaty."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Chief of the Shukerchakias from 1792, then maharaja of the Punjab. He administered the state in the name of the Sikh commonwealth and struck coins in the name of the Sikh Gurus. This is not a claim that every Sikh principality had already been absorbed in 1801.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Summary; Early life",
+              "supports": "Titles and the 1801 proclamation."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "He seized Lahore in July 1799. The Afghan king Zaman Shah confirmed him as governor, and in 1801 he proclaimed himself maharaja. He died at Lahore.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Early life; closing paragraph",
+              "supports": "Lahore as capital."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "The maharaja’s reign in this article is 1801–39. By 1820 he had consolidated the Punjab between the Sutlej and the Indus. At its height the article extends his domains from the Khyber Pass to the Sutlej and from Kashmir to the Thar. That is the article’s geographical description, not a digitised border.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Summary; Consolidation",
+              "supports": "Reign and the described extent."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "He took Amritsar in 1802. The 1809 Treaty of Amritsar stopped his expansion east of the Sutlej. Multan fell in summer 1818, Peshawar later that year, and Kashmir in July 1819. A Dogra expedition under Zorawar Singh reached Ladakh in 1834. He died in June 1839.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Early life; Consolidation",
+              "supports": "The dated campaigns and the treaty."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "Commanders and ministers came from Sikh, Muslim and Hindu communities, and the armies are described the same way. From 1820 European officers, many of them veterans of Napoleon’s army, trained the infantry and artillery. The article calls him free of religious bigotry. It does not set out a tax system.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Consolidation of territory",
+              "supports": "Composition of the army and the military reform."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "sikh-kingdom",
+      "title": "Sikh kingdom of the Punjab",
+      "type": "kingdom",
+      "place": "Punjab",
+      "startYear": 1799,
+      "endYear": 1845,
+      "datePrecision": "approximate",
+      "dateLabel": "1799–c. 1845 CE",
+      "dateNote": "The window opens with the July 1799 seizure of Lahore, before the 1801 proclamation. Ranjit Singh died on 27 June 1839. The same article says the state collapsed from internal strife in little more than six years. The year 1845 is that horizon, not a quoted annexation day. A separate Company article dates Sikh Wars to 1845–46 and 1848–49.",
+      "summary": "The Punjab kingdom proclaimed by Ranjit Singh, which the article says did not survive long after his death.",
+      "tags": [
+        "Sikh",
+        "Punjab"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-ranjit",
+          "locator": "Summary; final paragraph",
+          "supports": "Foundation, death and the collapse within about six years."
+        },
+        {
+          "sourceId": "britannica-eic",
+          "locator": "Control of India",
+          "supports": "Sikh Wars dated 1845–46 and 1848–49 as Company campaigns, not as this kingdom’s internal chronology."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Founded by Ranjit Singh and administered in the name of the Sikh Gurus. After his death the article attributes the collapse to rival chiefs, not to a single named successor’s reign.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Summary; final paragraph",
+              "supports": "Founder and the succession crisis."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "Lahore. The article’s height-of-power description runs from the Khyber to the Sutlej and from Kashmir toward the Thar, qualified by the 1809 Sutlej treaty.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Summary; Treaty of Amritsar",
+              "supports": "Capital and the described limits."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Ranjit Singh’s own reign is 1801–1839 and has a separate record. This kingdom window is slightly longer because the article keeps the state in being for a few years of internal strife. No successor is given a sourced reign here.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Final paragraph",
+              "supports": "Why the kingdom window passes 1839, and what it does not name."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "See the Ranjit Singh record for the conquest sequence. The Company article adds wars in 1845–46 and 1848–49 among the campaigns by which the Company consolidated the northwest. Those wars are not given battlefields in this entry.",
+          "citations": [
+            {
+              "sourceId": "britannica-eic",
+              "locator": "Control of India, Sikh Wars",
+              "supports": "The later wars as Company campaigns."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The state’s armies, commanders and ministers are described as Sikh, Muslim and Hindu. Coins were struck in the name of the Sikh Gurus. That is a religious idiom of sovereignty, not a census of the Punjab.",
+          "citations": [
+            {
+              "sourceId": "britannica-ranjit",
+              "locator": "Early life; Consolidation",
+              "supports": "Coinage and the mixed administration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "east-india-company",
+      "title": "East India Company territorial government",
+      "type": "state",
+      "place": "Company presidencies",
+      "startYear": 1757,
+      "endYear": 1858,
+      "datePrecision": "approximate",
+      "dateLabel": "1757–1858 CE",
+      "dateNote": "The company was chartered on 31 December 1600 as a trading body. This entry starts at the Battle of Plassey in 1757, which the article calls the beginning of its transformation into a colonial power, and ends when the Government of India Act was passed on 2 August 1858. The company remained a legal entity until 1873. Trade before 1757 is not treated as rule of the subcontinent.",
+      "summary": "The English company’s period of territorial government in India, from Plassey to the transfer of that government to the Crown.",
+      "tags": [
+        "Company",
+        "British",
+        "EIC"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-eic",
+          "locator": "Opening; Control of India; Decline and loss of power",
+          "supports": "Charter, Plassey, presidencies and the loss of political control."
+        },
+        {
+          "sourceId": "britannica-raj",
+          "locator": "Government of India Act of 1858",
+          "supports": "The Act of 2 August 1858 transferred British power in India from the company to the Crown."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Not a dynasty. A chartered English company, formally the Governor and Company of Merchants of London Trading into the East Indies and, from 1708, the United Company of Merchants of England Trading to the East Indies. It acted as an agent of British imperialism.",
+          "citations": [
+            {
+              "sourceId": "britannica-eic",
+              "locator": "Opening; other names",
+              "supports": "Corporate identity rather than a royal house."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "Three presidencies are named: Bengal, Madras and Bombay. Madras grew from a fortification of 1639. Calcutta, founded in 1690, became the centre of the company’s commercial and political power. A governor-general later became the centre of authority. There was no single indigenous capital of “India” under the company.",
+          "citations": [
+            {
+              "sourceId": "britannica-eic",
+              "locator": "Early activities; Control of India",
+              "supports": "Presidencies and Calcutta."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Robert Clive commanded the troops at Plassey. The article does not make him a sovereign. Political oversight moved, by the Regulating Act of 1773 and Pitt’s India Act of 1784, toward a British government board. From 1834 the company was “merely a managing agency” for that government.",
+          "citations": [
+            {
+              "sourceId": "britannica-eic",
+              "locator": "Control of India; Decline",
+              "supports": "Clive, the Acts and the 1834 change."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Plassey (1757) and Buxar (1764) opened Company control in Bengal and Bihar. Shah Alam II then granted the diwani of Bengal, Bihar and Orissa. Mysore Wars, Maratha Wars (1775–82, 1803–05, 1817–18) and Sikh Wars (1845–46 and 1848–49) are the campaigns named. The Indian Rebellion of 1857 ended the company’s political role.",
+          "citations": [
+            {
+              "sourceId": "britannica-eic",
+              "locator": "Control of India; Decline",
+              "supports": "Battles, diwani, wars and 1857."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The article describes revenue collection, the decline of Indian textile crafts, a severe land tax, and the Bengal famine of 1770, which it calls a direct result of harsh revenue policy. It also records a judiciary, a postal service, the start of railway construction in 1850, missionary education and the abolition of sati. From the 1620s to the 1770s the company transported enslaved people, mostly from East Africa. Princely states kept nominal autonomy under treaties and residents while submitting to company political authority.",
+          "citations": [
+            {
+              "sourceId": "britannica-eic",
+              "locator": "Economic and social impact; Role as enslavers; princely-state sentences",
+              "supports": "Revenue, famine, institutions, enslavement and indirect rule."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "british-raj",
+      "title": "British raj",
+      "type": "state",
+      "place": "British India",
+      "startYear": 1858,
+      "endYear": 1947,
+      "datePrecision": "year",
+      "dateLabel": "1858–1947 CE",
+      "dateNote": "Britannica dates direct Crown rule from 1858 until the independence of India and Pakistan in 1947. Parliament passed the Government of India Act on 2 August 1858. The Indian Independence Act sets up the two Dominions on 15 August 1947, so 1947 is both the raj’s last year and the Dominions’ first. Provincial borders are not drawn by this entry.",
+      "summary": "Direct British Crown government of the Indian subcontinent from the 1858 Act to independence in 1947.",
+      "tags": [
+        "British",
+        "Raj",
+        "Crown"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-raj",
+          "locator": "Introduction; Government of India Act of 1858",
+          "supports": "The 1858–1947 span and the Act of 2 August 1858."
+        },
+        {
+          "sourceId": "uk-independence-1947",
+          "locator": "Section 1",
+          "supports": "Two independent Dominions, India and Pakistan, from 15 August 1947."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Not a dynasty. The Crown replaced the company. A secretary of state for India sat in the British cabinet. Day-to-day control remained with viceroys and the Indian Civil Service. In 1876 Queen Victoria took the title Empress of India.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Government of India Act of 1858; Social policy",
+              "supports": "Secretary of state, viceroy and the imperial title."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "Viceroys divided their time between Calcutta and Simla. The article later names New Delhi as the new capital city of British India. It does not give the year of the move in the passage used.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Government of India Act; Prelude to independence",
+              "supports": "Calcutta, Simla and New Delhi."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Viceroys named in the passages used include Canning (1856–62), Northbrook (1872–76), Lytton (1876–80), Ripon (1880–84), Lansdowne (1888–94), Elgin (1894–99) and Curzon (1899–1905). These are office-holders, not kings of an Indian dynasty. The list is not complete.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Social policy; Foreign policy",
+              "supports": "Named viceroys and their stated dates."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "The 1857 rebellion is the article’s immediate background. Victoria’s proclamation was announced by Canning on 1 November 1858. The Indian National Congress first met in December 1885. The Muslim League was founded in 1906. The article carries the story through partition in 1947. Independence created two Dominions, not one successor state.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Introduction; Social policy; Congress; partition narrative",
+              "supports": "Rebellion, proclamation, Congress, the League and 1947."
+            },
+            {
+              "sourceId": "uk-independence-1947",
+              "locator": "Section 1",
+              "supports": "The two Dominions and the appointed day."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The 1858 proclamation promised support for “native princes” and non-interference in religious belief. Land revenue, a salt monopoly and the opium trade to China are named as fiscal pillars. Railways grew from barely 200 miles in 1858. Famine, commercial crops and the decline of handicrafts are part of the same economic account. More than 560 princely enclaves remained outside the directly ruled provinces.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Social policy; Economic policy",
+              "supports": "Princes, revenue, railways and famine."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "princely-states",
+      "title": "Princely states under Crown paramountcy",
+      "type": "state",
+      "place": "Princely states",
+      "startYear": 1858,
+      "endYear": 1947,
+      "datePrecision": "approximate",
+      "dateLabel": "1858–1947 CE",
+      "dateNote": "From Victoria’s proclamation of 1 November 1858 through the “nine decades of crown rule” in which the article says more than 560 princely enclaves remained. This is a class of many states, not one kingdom and not a map of each state. The 1935 Act’s federation with the princes was never realized. Individual states need their own records.",
+      "summary": "Hundreds of indirectly ruled states whose princes swore allegiance to the British Crown after 1858.",
+      "tags": [
+        "Princely",
+        "British"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-raj",
+          "locator": "Social policy; Government of India Act of 1935",
+          "supports": "The proclamation, the count of enclaves and the failed federation."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Many dynasties. The article does not merge them. Earlier Company treaties had already put princely states under indirect rule; the 1858 proclamation reversed Dalhousie’s annexation policy and promised continued support for princes who swore allegiance.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Social policy",
+              "supports": "Many states, and the change from annexation."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "No shared capital. Each court had its own seat. The viceroy’s Foreign Department handled relations with them.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Government organization",
+              "supports": "No common capital; the Foreign Department."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "Princes could adopt heirs if they swore allegiance. This entry does not list those rulers. Rajput and other houses already in the catalogue keep their own dates.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Social policy",
+              "supports": "Adoption and allegiance, without a combined king list."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "The article says most important princes did not join the 1857 rebellion. In 1935 a planned federation of provinces and princely states failed because the princes could not agree. Accession of each state after 1947 is not dated by this source.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Indian Rebellion; Act of 1935",
+              "supports": "1857 and the failed federation. Later accession is outside this citation."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "The proclamation promised non-interference in religious belief. The states are described as autocratic enclaves inside British India. Their economies are not surveyed here. They must not be coloured as one cultural region.",
+          "citations": [
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Social policy",
+              "supports": "Religious non-interference and the political form."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "reviewStatus": "cited",
+      "researchBatch": "year-polity-2026",
+      "id": "dominion-of-india",
+      "title": "Dominion of India",
+      "type": "state",
+      "place": "Dominion of India",
+      "startYear": 1947,
+      "endYear": 2026,
+      "datePrecision": "approximate",
+      "dateLabel": "from 15 August 1947 CE",
+      "dateNote": "Section 1 of the Indian Independence Act 1947 sets up a Dominion named India on 15 August 1947, alongside Pakistan. The search window runs to 2026 so the successor state remains discoverable. This citation does not date a republican constitution, internal state borders, or who held office in a given year. It is not a kingdom, and elected leaders are not listed as rulers.",
+      "summary": "The state named India created as a Dominion on 15 August 1947. Later constitutional change is outside this citation.",
+      "tags": [
+        "India",
+        "Dominion"
+      ],
+      "citations": [
+        {
+          "sourceId": "uk-independence-1947",
+          "locator": "Section 1",
+          "supports": "The appointed day and the name of the Dominion."
+        },
+        {
+          "sourceId": "britannica-raj",
+          "locator": "Introduction",
+          "supports": "Independence of India and Pakistan in 1947 as the end of the raj."
+        }
+      ],
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "None. The Act creates a Dominion, not a royal house. Partition created two Dominions. This record follows only the one named India.",
+          "citations": [
+            {
+              "sourceId": "uk-independence-1947",
+              "locator": "Section 1",
+              "supports": "Dominion status and the separate Dominion of Pakistan."
+            }
+          ]
+        },
+        {
+          "heading": "Capital",
+          "text": "The Act’s section 1 does not name a capital. The raj article calls New Delhi the new capital of British India before independence. That is not restated here as a 1947 legal capital.",
+          "citations": [
+            {
+              "sourceId": "uk-independence-1947",
+              "locator": "Section 1",
+              "supports": "No capital is enacted in this section."
+            },
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Prelude to independence",
+              "supports": "New Delhi as the late-raj capital, not as a section of the Act."
+            }
+          ]
+        },
+        {
+          "heading": "Rulers and reigns",
+          "text": "No ruler is attached. Office-holders after 1947 need their own sources and are not kings.",
+          "citations": [
+            {
+              "sourceId": "uk-independence-1947",
+              "locator": "Section 1",
+              "supports": "The Act names the Dominion and not a monarch of India."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "The appointed day is 15 August 1947. The same Act is the legal end of the raj entry. Communal violence and mass migration are described in the raj article’s partition narrative and are not given as a single map layer here.",
+          "citations": [
+            {
+              "sourceId": "uk-independence-1947",
+              "locator": "Section 1",
+              "supports": "The appointed day."
+            },
+            {
+              "sourceId": "britannica-raj",
+              "locator": "Partition narrative",
+              "supports": "The article’s account of partition violence, without a boundary file."
+            }
+          ]
+        },
+        {
+          "heading": "Culture, religion and economy",
+          "text": "Not established by the Act. The Dominion was a constitutional state containing many religious communities. A modern outline on a historical sheet is still not a claim about culture or about the borders of 1947.",
+          "citations": [
+            {
+              "sourceId": "uk-independence-1947",
+              "locator": "Section 1",
+              "supports": "The section is a constitutional provision, not a cultural or economic description."
+            }
+          ]
         }
       ]
     }

@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "dataset": "historical-basemaps",
+  "author": "André Ourednik and contributors",
+  "repository": "https://github.com/aourednik/historical-basemaps",
+  "license": "GPL-3.0-only",
+  "licenseUrl": "https://github.com/aourednik/historical-basemaps/blob/master/LICENSE",
+  "retrieved": "2026-11-11",
+  "modification": "Each world sheet was clipped to longitude 56–101 and latitude 3–40, coordinates were rounded to 2 decimal degrees, unnamed features were dropped, and properties were reduced to name, part-of, subject-to, kind, year and colour. No borders were interpolated between sheets. Clipped edges are display cuts, not frontiers. Topology was not repaired.",
+  "warning": "Coarse world-scale snapshots for orientation. Not an independently reviewed reconstruction of any year. Overlapping polygons and residual categories are retained and labelled. A name match with a research record is not proof of sovereignty or of the drawn extent.",
+  "frame": {
+    "west": 56,
+    "south": 3,
+    "east": 101,
+    "north": 40
+  },
+  "core": {
+    "west": 64,
+    "south": 6,
+    "east": 98,
+    "north": 37
+  },
+  "snapshots": [
+    {
+      "year": 100,
+      "file": "year-100.geojson",
+      "featureCount": 10
+    },
+    {
+      "year": 200,
+      "file": "year-200.geojson",
+      "featureCount": 8
+    },
+    {
+      "year": 300,
+      "file": "year-300.geojson",
+      "featureCount": 8
+    },
+    {
+      "year": 400,
+      "file": "year-400.geojson",
+      "featureCount": 5
+    },
+    {
+      "year": 500,
+      "file": "year-500.geojson",
+      "featureCount": 14
+    },
+    {
+      "year": 600,
+      "file": "year-600.geojson",
+      "featureCount": 12
+    },
+    {
+      "year": 700,
+      "file": "year-700.geojson",
+      "featureCount": 24
+    },
+    {
+      "year": 800,
+      "file": "year-800.geojson",
+      "featureCount": 17
+    },
+    {
+      "year": 900,
+      "file": "year-900.geojson",
+      "featureCount": 24
+    },
+    {
+      "year": 1000,
+      "file": "year-1000.geojson",
+      "featureCount": 16
+    },
+    {
+      "year": 1100,
+      "file": "year-1100.geojson",
+      "featureCount": 20
+    },
+    {
+      "year": 1200,
+      "file": "year-1200.geojson",
+      "featureCount": 17
+    },
+    {
+      "year": 1279,
+      "file": "year-1279.geojson",
+      "featureCount": 13
+    },
+    {
+      "year": 1300,
+      "file": "year-1300.geojson",
+      "featureCount": 13
+    },
+    {
+      "year": 1400,
+      "file": "year-1400.geojson",
+      "featureCount": 12
+    },
+    {
+      "year": 1492,
+      "file": "year-1492.geojson",
+      "featureCount": 24
+    },
+    {
+      "year": 1500,
+      "file": "year-1500.geojson",
+      "featureCount": 21
+    },
+    {
+      "year": 1530,
+      "file": "year-1530.geojson",
+      "featureCount": 20
+    },
+    {
+      "year": 1600,
+      "file": "year-1600.geojson",
+      "featureCount": 21
+    },
+    {
+      "year": 1650,
+      "file": "year-1650.geojson",
+      "featureCount": 21
+    },
+    {
+      "year": 1700,
+      "file": "year-1700.geojson",
+      "featureCount": 15
+    },
+    {
+      "year": 1715,
+      "file": "year-1715.geojson",
+      "featureCount": 18
+    },
+    {
+      "year": 1783,
+      "file": "year-1783.geojson",
+      "featureCount": 29
+    },
+    {
+      "year": 1800,
+      "file": "year-1800.geojson",
+      "featureCount": 29
+    },
+    {
+      "year": 1815,
+      "file": "year-1815.geojson",
+      "featureCount": 17
+    },
+    {
+      "year": 1880,
+      "file": "year-1880.geojson",
+      "featureCount": 9
+    },
+    {
+      "year": 1900,
+      "file": "year-1900.geojson",
+      "featureCount": 9
+    },
+    {
+      "year": 1914,
+      "file": "year-1914.geojson",
+      "featureCount": 10
+    },
+    {
+      "year": 1920,
+      "file": "year-1920.geojson",
+      "featureCount": 11
+    },
+    {
+      "year": 1930,
+      "file": "year-1930.geojson",
+      "featureCount": 10
+    },
+    {
+      "year": 1938,
+      "file": "year-1938.geojson",
+      "featureCount": 10
+    },
+    {
+      "year": 1945,
+      "file": "year-1945.geojson",
+      "featureCount": 13
+    },
+    {
+      "year": 1960,
+      "file": "year-1960.geojson",
+      "featureCount": 11
+    },
+    {
+      "year": 1994,
+      "file": "year-1994.geojson",
+      "featureCount": 13
+    },
+    {
+      "year": 2000,
+      "file": "year-2000.geojson",
+      "featureCount": 13
+    },
+    {
+      "year": 2010,
+      "file": "year-2010.geojson",
+      "featureCount": 13
+    }
+  ]
+}

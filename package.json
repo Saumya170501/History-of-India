@@ -13,7 +13,8 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test",
     "validate:data": "node scripts/validate-data.mjs",
-    "ingest:ohm": "node scripts/ingest-ohm.mjs"
+    "ingest:ohm": "node scripts/ingest-ohm.mjs",
+    "prepare:basemaps": "node scripts/prepare-basemaps.mjs"
   },
   "dependencies": {
     "@maplibre/maplibre-gl-leaflet": "^0.1.4",

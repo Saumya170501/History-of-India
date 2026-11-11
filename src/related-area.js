@@ -1,6 +1,19 @@
 // Editorial navigation buffers around associated geography, NOT historical extents.
 // Centers/radii below are deliberately coarse and carry no sovereignty claim.
 const areas = [
+  [/Gupta|Magadha|Ganga-Yamuna/, 'Ganga-Yamuna and Magadha context', [26, 82], 700],
+  [/Vakataka/, 'Vakataka Deccan context', [20, 78], 550],
+  [/Chalukya|Vatapi|Kalyani|Vengi/, 'Deccan and Vengi context', [16.5, 77], 650],
+  [/Pallava|Kanchipuram/, 'Kanchipuram and the northern Tamil country', [12.8, 79.7], 280],
+  [/Pala|Bengal and Bihar/, 'Bengal and eastern Bihar', [24.5, 87.5], 450],
+  [/Rashtrakuta/, 'Rashtrakuta Deccan context', [18.5, 76.5], 600],
+  [/Vijayanagara/, 'Vijayanagara–Hampi region', [15.3, 76.5], 350],
+  [/Maratha|Pune|Raigad/, 'Western Deccan Maratha context', [18.2, 74], 450],
+  [/Sikh|Punjab|Lahore/, 'Punjab context', [31.5, 74.3], 400],
+  [/Company presidencies|East India Company/, 'Company presidencies — broad context', [20, 78], 1100],
+  [/British India|British raj/, 'British Indian provinces — broad context', [23, 80], 1200],
+  [/Princely/, 'Scattered princely states — not one territory', [24, 78], 1000],
+  [/Dominion of India/, 'India after 1947 — a modern state, not a kingdom extent', [22.5, 79], 1200],
   [/Mewar/, 'Mewar region', [25, 74], 220],
   [/Marwar/, 'Marwar region', [26.5, 73], 260],
   [/Amber|Jaipur/, 'Amber–Jaipur region', [27, 76], 130],

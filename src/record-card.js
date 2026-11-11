@@ -4,7 +4,7 @@ export function recordFactionColor(record) {
   const category = empireCategory((record.tags || []).join(' '));
   return EMPIRE_COLORS[category];
 }
-const roles = { ruler: 'Ruler', kingdom: 'Kingdom', site: 'Monument', battle: 'Battle', culture: 'Culture' };
+const roles = { ruler: 'Ruler', kingdom: 'Kingdom', site: 'Monument', battle: 'Battle', culture: 'Culture', state: 'State' };
 
 // The current app uses DOM components; CSS is also shared by the React example.
 export function createRecordCard({ record, factionColor, selected = false, avatarUrl,
@@ -31,6 +31,7 @@ export function createRecordCard({ record, factionColor, selected = false, avata
     site: '<path d="M20 78h80M30 78V48h60v30M36 48a24 24 0 0 1 48 0M60 24V16M50 78V64a10 10 0 0 1 20 0v14"/>',
     battle: '<path d="m30 22 58 58m-6-58L24 80M20 62l18 18m44-18L64 80M30 22l4 20 12-12m36-8-4 20-12-12"/>',
     culture: '<path d="M60 34c-12-10-26-12-40-9v48c14-3 28-1 40 9 12-10 26-12 40-9V25c-14-3-28-1-40 9v48M30 38l18 5m-18 8 18 5m24-13 18-5m-18 18 18-5"/>',
+    state: '<path d="M28 78V42h64v36M40 78V54h16v24M64 78V50h16v28M36 42 60 24l24 18"/>',
   };
   const icon = node('span', 'record-art-icon');
   icon.innerHTML = `<svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${motifs[record.type] || motifs.culture}</svg>`;

@@ -6,8 +6,15 @@ import { filterByDate, constrainStyleToDateRange } from '@openhistoricalmap/mapl
 import style from '@openhistoricalmap/map-styles/dist/historical/historical.json';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { createResourceStatus } from './map-resource-status.js';
-import { physicalBasemapStyle, hideBasemapContext, influenceLayers, pointLayer } from './historical-style.js';
+import { physicalBasemapStyle, hideBasemapContext, influenceLayers, pointLayer, periodLayers } from './historical-style.js';
 import { kingdomNames, selectionFilter } from './ohm-selection.js';
+
+const PERIOD_GLYPHS = 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf';
+function atlasStyle() {
+  const cleaned = physicalBasemapStyle(style);
+  cleaned.glyphs = PERIOD_GLYPHS;
+  return cleaned;
+}
 
 export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange = () => {} }) {
   let gl, ready = false, selection = null, year = 1, enabled = true, hasBoundary = false;
@@ -17,6 +24,9 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
   const layerIds = ['selected-ohm-halo', 'selected-ohm-fill'];
   let features = { type: 'FeatureCollection', features: [] };
   let regions = { type: 'FeatureCollection', features: [] };
+  let period = { type: 'FeatureCollection', features: [] };
+  let periodEnabled = true;
+  let hoveredPeriod = null;
   function updateStatus() {
     if (!ready) return;
     const names = kingdomNames(selection);
@@ -82,7 +92,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     }
   }
   try {
-    const layer = maplibreGL({ style: physicalBasemapStyle(style), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a>' }, interactive: false }).addTo(map);
+    const layer = maplibreGL({ style: atlasStyle(), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a> · <a href="https://github.com/aourednik/historical-basemaps">Historical basemaps (GPL-3.0)</a>' }, interactive: false }).addTo(map);
     gl = layer.getMaplibreMap();
     gl.on('error', event => {
       resources.fail(event); onError(resources.message()); updateStatus();
@@ -115,6 +125,8 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
         spec.paint[spec.type === 'fill' ? 'fill-color' : 'line-color'] = '#8b5cf6';
         gl.addLayer(spec);
       }
+      gl.addSource('period-polities', { type: 'geojson', data: period });
+      for (const spec of periodLayers('period-polities')) gl.addLayer(spec);
       gl.addSource('historical-records', { type: 'geojson', data: features });
       gl.addLayer(pointLayer('historical-records'));
       ready = true;
@@ -138,12 +150,32 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       regions = next;
       if (ready) gl.getSource('historical-regions').setData(regions);
     },
+    setPeriod(next) {
+      period = next?.type === 'FeatureCollection' ? next : { type: 'FeatureCollection', features: [] };
+      hoveredPeriod = null;
+      if (!ready) return;
+      gl.getSource('period-polities').setData(period);
+      for (const id of ['period-fill', 'period-line', 'period-label'])
+        gl.setLayoutProperty(id, 'visibility', periodEnabled ? 'visible' : 'none');
+    },
+    setPeriodVisible(show) {
+      periodEnabled = show;
+      if (!ready) return;
+      for (const id of ['period-fill', 'period-line', 'period-label'])
+        gl.setLayoutProperty(id, 'visibility', show ? 'visible' : 'none');
+    },
+    hoverPeriod(id) {
+      if (!ready) return;
+      if (hoveredPeriod != null) gl.setFeatureState({ source: 'period-polities', id: hoveredPeriod }, { hover: false });
+      hoveredPeriod = Number.isInteger(id) ? id : null;
+      if (hoveredPeriod != null) gl.setFeatureState({ source: 'period-polities', id: hoveredPeriod }, { hover: true });
+    },
     retry() {
       if (!gl) { onError('This browser could not initialize WebGL. Try another browser or open the direct OHM link.'); return; }
       ready = false;
       resources.reset(); onError(''); onStatus('Retrying OpenHistoricalMap…');
       gl.getCanvas().style.visibility = 'hidden';
-      gl.setStyle(physicalBasemapStyle(style), { diff: false });
+      gl.setStyle(atlasStyle(), { diff: false });
     },
     select(record, selectedYear, show = true) {
       if (selection?.id !== record?.id || year !== selectedYear) hasBoundary = false;

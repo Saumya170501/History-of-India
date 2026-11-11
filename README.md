@@ -6,7 +6,8 @@ A source-led historical atlas of India, **1 CE–2026 CE**. Explore a year, sele
 
 - OpenHistoricalMap historical map with date filtering, neighbouring kingdoms, and gold highlighting of dated kingdom-name matches. Requires internet and WebGL; no API key.
 - Year slider, exact-year input, previous/next controls and sample date shortcuts.
-- 117 cited research records across sites, rulers, kingdoms, battle aftermath, and culture/learning; 41 source entries, including museum, university and scholarly references.
+- 136 cited research records across sites, rulers, kingdoms, states, battle aftermath, and culture/learning; 56 source entries, including museum, university and scholarly references.
+- The year control is the primary view. Scrolling or dragging the year loads the nearest openly licensed historical-basemaps sheet for the subcontinent, colour-coded and labelled. Sheets are not interpolated, and a gap is stated. Clicking a name opens cited research where a link exists.
 - Mughal and Rajput choices in the existing evidence browser, searchable biography notes and section-level citations. Coverage is explicitly incomplete; see [research coverage](docs/RESEARCH_MUGHAL_RAJPUT.md).
 - Search, type filters, accessible record cards, source details and shareable year/filter URLs.
 - Explicit date uncertainty, location meaning and empty research windows.
@@ -91,6 +92,8 @@ This supersedes earlier circle, dashed-outline, gold-highlight, and neighbouring
 `src/historical-style.js` defines zoom-scaled, solid MapLibre circle markers for Point records, and separate Polygon/MultiPolygon fill/blurred-halo layers. Leaflet retains transparent keyboard/click targets and source popups. Battles retain separate B/S/A markers. Original date notes and citations remain unchanged.
 
 No geographic context circles or substitute territories are drawn. Related-area definitions orient the viewport only. Dated OHM name matches use a purple translucent fill and a solid blurred halo. Reviewed GeoJSON polygons use the same styling; the reviewed collection remains empty. No empire polygons have been fabricated or added to the point-only catalogue.
+
+Colour-filled areas on the year view are clipped sheets from [historical-basemaps](https://github.com/aourednik/historical-basemaps) (André Ourednik and contributors, GPL-3.0-only). They are coarse external digitizations, not reviewed project boundaries. A year without its own sheet shows the nearest sheet and says how far away it is. Borders are not interpolated. Grey shapes are residual categories in that source, not single kingdoms. See [provenance](docs/PROVENANCE.md).
 
 MapLibre has no polygon fill-blur or continuous spatial fill-opacity gradient. The two-layer halo is a bounded-cost visual approximation with a residual fill edge, not a true seamless distance-field fade or quantified historical confidence. A continuous fade requires a separately prepared raster alpha mask/custom shader; non-overlapping inward opacity bands can approximate one. Blur widths are pixels, not geographic uncertainty distances.
 

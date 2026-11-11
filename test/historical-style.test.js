@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { hideBasemapContext, influenceLayers, pointLayer } from '../src/historical-style.js';
+import { hideBasemapContext, influenceLayers, periodLayers, pointLayer } from '../src/historical-style.js';
 test('basemap sanitization hides labels and political fills but preserves physical geography', () => {
   const hidden = [];
   hideBasemapContext({ getStyle: () => ({ layers: [
@@ -18,6 +18,10 @@ test('point and polygon styles separate geometry without dashed territory lines'
   assert.ok(layers[0].paint['line-blur']);
   assert.equal(layers[0].paint['line-dasharray'], undefined);
   assert.equal(layers[1].paint['fill-blur'], undefined);
+  const period = periodLayers('period-polities');
+  assert.equal(period[0].paint['fill-color'][1], 'color');
+  assert.equal(period[2].filter[2], 'named');
+  assert.equal(period[1].paint['line-dasharray'], undefined);
 });
 
 test('physical style removes glyph and sprite downloads before initialization without mutating input', async () => {
