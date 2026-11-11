@@ -9,7 +9,7 @@ test('basemap sanitization hides labels and political fills but preserves physic
     { id: 'land', type: 'fill' }, { id: 'water_lines_river', type: 'line' },
     { id: 'ohm_landcover_hillshade', type: 'raster' },
   ] }), setLayoutProperty: id => hidden.push(id) });
-  assert.deepEqual(hidden, ['city', 'country_label', 'admin_country_lines_z10', 'military']);
+  assert.deepEqual(hidden, ['city', 'country_label', 'admin_country_lines_z10', 'military', 'ohm_landcover_hillshade']);
 });
 test('point and polygon styles separate geometry without dashed territory lines', () => {
   assert.deepEqual(pointLayer('records').filter, ['==', ['geometry-type'], 'Point']);
@@ -28,4 +28,19 @@ test('physical style removes glyph and sprite downloads before initialization wi
   assert.equal(cleaned.glyphs, undefined);
   assert.deepEqual(Object.keys(cleaned.sources), ['land']);
   assert.equal(original.layers.length, 2);
+});
+
+
+test('pinned OHM style never requests unavailable hillshade but retains vector land and water', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const { physicalBasemapStyle } = await import('../src/historical-style.js');
+  const original = JSON.parse(await readFile(new URL('../node_modules/@openhistoricalmap/map-styles/dist/historical/historical.json', import.meta.url)));
+  for (const cleaned of [physicalBasemapStyle(original), physicalBasemapStyle(original)]) {
+    assert.equal(cleaned.sources.ohm_landcover_hillshade, undefined);
+    assert.equal(cleaned.layers.some(layer => layer.type === 'raster'), false);
+    assert.equal(JSON.stringify(cleaned).includes('static-tiles.openhistoricalmap.org'), false);
+    for (const id of ['land', 'water_areas', 'water_lines_river']) assert.ok(cleaned.layers.some(layer => layer.id === id));
+    for (const layer of cleaned.layers) if (layer.source) assert.ok(cleaned.sources[layer.source]);
+  }
+  assert.ok(original.sources.ohm_landcover_hillshade);
 });

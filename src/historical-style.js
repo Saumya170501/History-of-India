@@ -1,6 +1,8 @@
 // Pinned OHM 0.9.22 physical geography only. Never classify every fill as land.
+// OHM static-tiles hillshade returns 404 for tiles in the India viewport.
+// Omit that optional raster and its source before any requests start; keep vector geography.
 const physicalIds = new Set([
-  'background', 'land', 'landuse_areas_earth', 'ohm_landcover_hillshade',
+  'background', 'land', 'landuse_areas_earth',
   'water_areas', 'water_areas_ne', 'water_lines_river',
   'water_lines_stream_no_name', 'water_lines_stream_name',
   'landuse_areas_z12_glacier-outline',
