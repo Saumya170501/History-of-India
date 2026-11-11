@@ -19,5 +19,6 @@ export async function fetchEmpires(url, signal) {
   filterEmpires(data, 1500); // Validate the collection envelope.
   return data;
 }
+export const EMPIRE_COLORS = { Mughal: '#658674', Maratha: '#cf8b42', Rajput: '#c3a34d', Other: '#8a8d91' };
 export const empireColor = ['match', ['get', 'empire_category'],
-  'Mughal', '#658674', 'Maratha', '#cf8b42', 'Rajput', '#c3a34d', '#8a8d91'];
+  'Mughal', EMPIRE_COLORS.Mughal, 'Maratha', EMPIRE_COLORS.Maratha, 'Rajput', EMPIRE_COLORS.Rajput, EMPIRE_COLORS.Other];

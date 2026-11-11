@@ -101,3 +101,7 @@ Selecting Akbar during 1556–1605 loads `public/data/1500s.geojson` and fits th
 ## Automated empire ingestion
 
 See [OHM ingestion](docs/OHM_INGESTION.md) for the import command, current network limitation, date semantics, categorical colors and reusable React hook.
+
+### Record tiles
+
+`src/record-card.js` renders keyboard-accessible museum-style tiles with the shared empire color palette, circular initial/image avatars, date/role badges and location uncertainty notes. `src/record-card.css` supplies the responsive styling. `examples/react/RecordCard.jsx` provides the equivalent React component with `factionColor`, `avatarUrl`, `featureBbox`, and `handleCardClick(featureBbox)` props. Missing bounds may be null; the caller must retain a safe no-geometry fallback. No historical portraits or faction emblems are invented.

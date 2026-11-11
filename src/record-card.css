@@ -1,0 +1,32 @@
+#record-list { padding: 6px 14px 14px; }
+.record-card {
+  --faction-color: #8a8d91;
+  display: flex; flex-direction: row; align-items: flex-start; gap: 12px;
+  width: 100%; margin: 0 0 10px; padding: 15px 12px;
+  border: 1px solid #e4e7e2; border-left: 4px solid var(--faction-color);
+  border-radius: 12px; background: #fff; text-align: left;
+  box-shadow: 0 2px 5px #203d3509;
+  transition: box-shadow 160ms ease, background-color 160ms ease;
+}
+.record-card:hover { background: #fff; box-shadow: 0 5px 14px #203d351c; }
+.record-card[aria-pressed="true"] {
+  background: #fff; padding-left: 12px; border: 1px solid #b5c2b9;
+  border-left: 4px solid var(--faction-color);
+  box-shadow: 0 0 0 1px #203d3520, 0 4px 12px #203d3510;
+}
+.record-card:focus-visible { outline: 3px solid #244c42; outline-offset: 2px; }
+.record-avatar {
+  display: grid; place-items: center; flex: 0 0 42px; height: 42px;
+  border-radius: 50%; overflow: hidden; background: #f0f2ee;
+  border: 1px solid #e1e5dd; color: #345044;
+  font-size: 12px; font-weight: 700; letter-spacing: .5px;
+}
+.record-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.record-card-body { flex: 1; min-width: 0; }
+.record-card .record-title { display: block; font-size: 18px; line-height: 1.3; overflow-wrap: anywhere; }
+.record-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+.record-badge { display: inline-block; padding: 4px 8px; border-radius: 999px; font-size: 10px; line-height: 1.4; }
+.record-date-badge { background: #f0f3ee; color: #334b3e; }
+.record-role-badge { background: #f6f1e8; color: #725b38; }
+.record-location-note { display: block; margin-top: 9px; font-size: 10px; line-height: 1.5; color: #64736a; }
+@media (prefers-reduced-motion: reduce) { .record-card { transition: none; } }

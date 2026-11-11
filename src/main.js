@@ -1,8 +1,10 @@
+import { createRecordCard, recordFactionColor } from './record-card.js';
 import { sketchAvailable, SKETCH_NOTICE } from './local-boundary.js';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./style.css";
 import "./layout.css";
+import "./record-card.css";
 import data from "./data/atlas.json";
 import { mapReference } from './map-reference.js';
 import { relatedArea } from './related-area.js';
@@ -432,22 +434,16 @@ function render() {
     selectedId = matches[0]?.id || null;
   const groups = new Map();
   for (const record of matches) {
-    const button = element("button", undefined, "record-card");
-    button.type = "button";
-    button.dataset.id = record.id;
-    button.setAttribute("aria-pressed", String(record.id === selectedId));
-    button.append(
-      element("span", TYPES[record.type], "card-type"),
-      element("strong", record.title),
-      element("span", record.dateLabel, "card-date"),
-      element("span", "View map & evidence ↘", "card-action"),
-    );
-    button.addEventListener("click", () => selectRecord(record, true));
+    const button = createRecordCard({
+      record,
+      factionColor: sketchAvailable(record, state.year) ? '#8b5cf6' : recordFactionColor(record),
+      selected: record.id === selectedId,
+      handleCardClick: () => selectRecord(record, true),
+      locationNote: !record.geometry ? (sketchAvailable(record, state.year)
+        ? 'Unverified user sketch available' : 'Location pending · timeline only') : '',
+    });
     list.append(button);
-    if (!record.geometry) {
-      button.append(element('span', sketchAvailable(record, state.year) ? 'Unverified user sketch available' : 'Location pending · timeline only', 'card-date'));
-      continue;
-    }
+    if (!record.geometry) continue;
     // Battle symbols belong to their own layer, including when catalogue filters hide them.
     if (record.type === 'battle') continue;
     const key = record.geometry.coordinates.join(",");

@@ -1,3 +1,4 @@
+import { recordFactionColor } from './record-card.js';
 import { EMPTY_EMPIRES, fetchEmpires, filterEmpires, empireColor } from './empire-data.js';
 import { EMPTY_BOUNDARY, SKETCH_NOTICE, sketchAvailable, fetchAkbarSketch, boundaryBounds } from './local-boundary.js';
 import { maplibreGL } from '@maplibre/maplibre-gl-leaflet';
@@ -43,6 +44,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     for (const id of ['imported-empires-halo', 'imported-empires-fill']) gl.setLayoutProperty(id, 'visibility', enabled ? 'visible' : 'none');
     filterByDate(gl, `${String(year).padStart(4, '0')}-01-01`);
     for (const id of layerIds) {
+      gl.setPaintProperty(id, id.endsWith('fill') ? 'fill-color' : 'line-color', selection ? recordFactionColor(selection) : '#8a8d91');
       gl.setFilter(id, ['all', ['==', ['geometry-type'], 'Polygon'], selectionFilter(selection, year)]);
       gl.setLayoutProperty(id, 'visibility', enabled && !sketch.features.length && kingdomNames(selection).length ? 'visible' : 'none');
     }
