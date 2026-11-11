@@ -105,3 +105,5 @@ See [OHM ingestion](docs/OHM_INGESTION.md) for the import command, current netwo
 ### Record tiles
 
 `src/record-card.js` renders keyboard-accessible museum-style tiles with the shared empire color palette, circular initial/image avatars, date/role badges and location uncertainty notes. `src/record-card.css` supplies the responsive styling. `examples/react/RecordCard.jsx` provides the equivalent React component with `factionColor`, `avatarUrl`, `featureBbox`, and `handleCardClick(featureBbox)` props. Missing bounds may be null; the caller must retain a safe no-geometry fallback. No historical portraits or faction emblems are invented.
+
+The live archive drawer now uses a gallery layout (`src/evidence-drawer.css`): decorative role illustrations, place labels, short story excerpts, and separate Discover/Selected record views. It has one scrolling content area; warnings remain available through Map notice and full citations remain in the selected-record view. Illustrations are generic category pictograms, not historical portraits or reconstructed monuments. The earlier React card example remains a standalone compact variant.

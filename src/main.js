@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import "./style.css";
 import "./layout.css";
 import "./record-card.css";
+import "./evidence-drawer.css";
 import data from "./data/atlas.json";
 import { mapReference } from './map-reference.js';
 import { relatedArea } from './related-area.js';
@@ -68,8 +69,8 @@ $("#app").innerHTML = `
         <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
       <aside id="evidence-drawer" class="record-panel" aria-labelledby="records-heading">
-        <div class="record-heading"><span class="eyebrow">IN THE RECORD</span><h2 id="records-heading" tabindex="-1">Explore the evidence</h2><p id="record-count" role="status" aria-live="polite"></p></div>
-        <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Search people, places, Mughal, Rajput…" autocomplete="off"></div>
+        <div class="record-heading"><span class="eyebrow">THE LIVING ARCHIVE</span><h2 id="records-heading" tabindex="-1">Explore the evidence</h2><p id="record-count" role="status" aria-live="polite"></p></div>
+        <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Find a person, place or story…" autocomplete="off"></div>
         <div class="browse"><details id="browse-menu"><summary>Jump to a record…</summary><div id="browse-groups" class="browse-groups"></div></details></div>
         <p class="window-note">Date windows may be approximate. A match is not proof of an event in this exact year. Mughal and Rajput coverage is incomplete; some profiles contain chronology only.</p>
         <div id="record-list"></div>
@@ -83,15 +84,44 @@ $("#app").innerHTML = `
   <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated map context. Highlighted matches are provider features, not independently verified territorial reconstructions. A ruler’s name may not have a matching boundary in the provider.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Internet and WebGL are required; no API key is needed.</p></dialog>
 `;
 
-// Keep evidence in the scrollable drawer instead of below the full-screen map.
+// One scrolling surface, with separate browsing and selected-record views.
 const drawer = $('#evidence-drawer');
-for (const selector of ['#map-error', '#map-selection-status', '#record-detail'])
-  drawer.append($(selector));
+const switcher = element('div', undefined, 'drawer-switcher');
+const browseViewButton = element('button', 'Discover', 'drawer-view-button');
+const detailViewButton = element('button', 'Selected record', 'drawer-view-button');
+const noticeButton = element('button', 'Map notice', 'drawer-notice-button');
+noticeButton.hidden = true;
+switcher.append(browseViewButton, detailViewButton, noticeButton);
+const scroller = element('div', undefined, 'drawer-scroll');
+const browseView = element('div'); browseView.id = 'drawer-discover';
+const detailView = element('div'); detailView.id = 'drawer-selected';
+for (const selector of ['.filters', '.browse', '#record-list']) browseView.append($(selector));
+const readingNote = element('details', undefined, 'reading-note');
+readingNote.append(element('summary', 'How to read these dates'), $('.window-note'));
+browseView.append(readingNote);
+const backButton = element('button', '← Back to the collection', 'collection-back');
+detailView.append(backButton, $('#map-selection-status'), $('#record-detail'));
 const contextDetails = element('details', undefined, 'drawer-context');
 contextDetails.append(element('summary', 'Map context, legend & battles'));
-for (const selector of ['.map-caption', '#map-context', '.battle-context'])
-  contextDetails.append($(selector));
-drawer.append(contextDetails);
+for (const selector of ['.map-caption', '#map-context', '.battle-context']) contextDetails.append($(selector));
+detailView.append(contextDetails, $('#map-error'));
+scroller.append(browseView, detailView);
+drawer.append(switcher, scroller);
+function setDrawerView(view) {
+  const discovering = view === 'discover';
+  browseView.hidden = !discovering;
+  detailView.hidden = discovering;
+  browseViewButton.setAttribute('aria-pressed', String(discovering));
+  detailViewButton.setAttribute('aria-pressed', String(!discovering));
+  scroller.scrollTop = 0;
+}
+browseViewButton.setAttribute('aria-controls', browseView.id);
+detailViewButton.setAttribute('aria-controls', detailView.id);
+browseViewButton.addEventListener('click', () => setDrawerView('discover'));
+detailViewButton.addEventListener('click', () => setDrawerView('selected'));
+backButton.addEventListener('click', () => { setDrawerView('discover'); browseViewButton.focus(); });
+noticeButton.addEventListener('click', () => { setDrawerView('selected'); $('#map-error').scrollIntoView({ block: 'nearest' }); });
+setDrawerView('discover');
 $('#about-dialog').append($('.research-note'), $('footer'));
 
 function setEvidenceOpen(open) {
@@ -178,6 +208,7 @@ const historicalMap = attachHistoricalMap(map, {
   onError: message => {
     const notice = $('#map-error');
     notice.hidden = !message;
+    noticeButton.hidden = !message;
     notice.replaceChildren();
     if (message) {
       notice.append(element('span', message));
@@ -438,7 +469,7 @@ function render() {
       record,
       factionColor: sketchAvailable(record, state.year) ? '#8b5cf6' : recordFactionColor(record),
       selected: record.id === selectedId,
-      handleCardClick: () => selectRecord(record, true),
+      handleCardClick: () => { selectRecord(record, true); setDrawerView('selected'); $('#record-detail').focus({ preventScroll: true }); },
       locationNote: !record.geometry ? (sketchAvailable(record, state.year)
         ? 'Unverified user sketch available' : 'Location pending · timeline only') : '',
     });

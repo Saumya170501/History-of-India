@@ -1,0 +1,61 @@
+/* Archive drawer: a deliberate reading surface with one scrollbar. */
+:root { --drawer-width: 390px; }
+.record-panel { display: flex; flex-direction: column; overflow: hidden; scrollbar-gutter: auto; background: #f3f3ed; border-radius: 18px; border: 1px solid #ffffffcc; box-shadow: 0 12px 45px #133e3033; }
+.record-heading { flex: none; padding: 23px 23px 14px; background: #203f36; color: #fffdf4; }
+.record-heading .eyebrow { color: #b7c8b5; font-size: 9px; letter-spacing: 2px; margin-bottom: 8px; }
+.record-heading h2 { font-size: 29px; line-height: 1.1; margin-bottom: 10px; }
+#record-count { color: #d1dbcb; font-size: 11px; margin: 0; }
+.drawer-switcher { display: flex; align-items: center; gap: 4px; padding: 9px 16px; background: #203f36; flex: none; }
+.drawer-view-button { color: #c8d5c6; background: none; border: 0; border-radius: 7px; padding: 9px 12px; font-size: 11px; min-height: 36px; }
+.drawer-view-button[aria-pressed="true"] { background: #f3f3ed; color: #203f36; font-weight: 600; }
+.drawer-notice-button { border: 1px solid #dbc288; background: #fff0d5; color: #644825; border-radius: 6px; font-size: 10px; padding: 6px; margin-left: auto; }
+.drawer-scroll { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #bcc8be transparent; }
+#drawer-discover[hidden], #drawer-selected[hidden] { display: none; }
+.filters { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 16px 18px 0; }
+.filters > label { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+.filters input[type="search"] { grid-row: 1; background: #fff; padding: 12px 14px; border-radius: 9px; font-size: 12px; border-color: #dce1d7; }
+.filters select { padding: 8px 10px; border-radius: 7px; font-size: 11px; background: transparent; }
+.browse { padding: 8px 18px 14px; }
+#browse-menu { background: transparent; border: 0; }
+#browse-menu > summary { min-height: 32px; padding: 7px 2px; font-size: 11px; color: #496254; }
+.browse-entries { max-height: none; overflow: visible; }
+#record-list { max-height: none; overflow: visible; min-height: 0; padding: 0 18px 6px; }
+.record-card, .record-card[aria-pressed="true"] { display: block; padding: 0; border: 1px solid #dfe4da; border-left: 4px solid var(--faction-color); border-radius: 12px; overflow: hidden; margin-bottom: 17px; position: relative; }
+.record-card:hover { box-shadow: 0 8px 22px #243c3220; }
+.record-card[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--faction-color), 0 6px 18px #203d3515; }
+.record-artwork { height: 100px; position: relative; display: block; color: #fff; background: var(--faction-color); overflow: hidden; }
+.record-artwork::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 90% 110%, #fff3 0 35%, transparent 35.5%), repeating-linear-gradient(115deg, transparent 0 25px, #fff1 26px 27px, transparent 28px 52px), linear-gradient(90deg, #11271a60, transparent); }
+.record-artwork img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; }
+.record-art-icon { position: absolute; right: 12px; bottom: -8px; width: 130px; height: 108px; opacity: .75; }
+.record-art-icon svg { width: 100%; height: 100%; }
+.record-art-label { position: absolute; left: 16px; bottom: 16px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+.record-selected-label { display: none; position: absolute; left: 12px; top: 12px; background: #fff; color: #203d35; padding: 4px 7px; border-radius: 4px; font-size: 9px; }
+.record-card[aria-pressed="true"] .record-selected-label { display: block; }
+.record-card-body { display: block; position: relative; padding: 16px; }
+.record-place { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #6b766b; margin-bottom: 6px; padding-right: 20px; }
+.record-card .record-title { font-size: 25px; line-height: 1.15; padding-right: 15px; }
+.record-badges { gap: 5px; margin-top: 10px; }
+.record-badge { font-size: 10px; }
+.record-role-badge { background: #f6f1e8; }
+.record-excerpt { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 11px; line-height: 1.65; color: #5d6d60; margin-top: 11px; }
+.record-open-arrow { position: absolute; top: 12px; right: 13px; font-size: 18px; color: #506a58; }
+.record-location-note { border-top: 1px solid #eef0e9; padding-top: 9px; font-size: 10px; }
+.reading-note { margin: 0 18px 20px; border-top: 1px solid #d8ded3; padding-top: 12px; font-size: 11px; }
+.reading-note summary { cursor: pointer; }
+.reading-note .window-note { margin: 10px 0 0; }
+.collection-back { border: 0; background: none; margin: 16px 18px 10px; padding: 6px 0; font-size: 11px; color: #42614e; }
+.detail-panel { border: 0; padding: 20px; }
+.detail-story h2 { font-size: 32px; }
+#map-selection-status { font-size: 11px; padding: 12px 18px; background: #e6ece2; border: 0; }
+#map-error { margin: 12px 18px 20px; padding: 12px; border-radius: 8px; }
+@media (max-width: 1100px) { :root { --drawer-width: 350px; } }
+@media (max-width: 760px) {
+  :root { --drawer-width: min(390px, calc(100vw - 16px)); }
+  .record-heading { padding: 16px 18px 10px; }
+  .record-heading h2 { font-size: 26px; }
+  .record-artwork { height: 88px; }
+}
+@media (max-height: 500px) { .record-heading .eyebrow, #record-count { display: none; } .record-heading { padding: 12px 18px 0; } }
+.record-open-arrow { width: 15px; height: 15px; top: 18px; }
+.record-open-arrow::before { content: ''; position: absolute; width: 9px; height: 9px; right: 0; top: 0; border-right: 1.5px solid currentColor; border-top: 1.5px solid currentColor; }
+.record-open-arrow::after { content: ''; position: absolute; width: 14px; height: 1.5px; background: currentColor; right: -1px; top: 5px; transform: rotate(-45deg); }
