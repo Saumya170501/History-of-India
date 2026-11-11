@@ -18,6 +18,7 @@ import {
   TYPES,
   normalizeYear,
   recordsForYear,
+  searchAtlas,
   stateFromSearch,
   validateAtlas,
 } from "./atlas.js";
@@ -26,6 +27,7 @@ import polityLinks from "./data/polity-links.json";
 import { FRAME, boundsOfFeatures, nearestSnapshot, polityColor, recordsForPolity, summarizeYear } from "./period-map.js";
 import { applySheetReading, sheetIsSuppressed } from "./sheet-policy.js";
 import { PLAY_SPEEDS, compareNames, nextPlaybackYear } from "./playback.js";
+import { TOURS, resolveTour, successionLine } from "./guides.js";
 import { fillPolityCard, fillYearList, fillYearSources, fillYearSummary } from "./year-panel.js";
 
 const catalogueResponse = await fetch(`${import.meta.env.BASE_URL}data/catalogue.json`);
@@ -80,7 +82,7 @@ $("#app").innerHTML = `
       </section>
       <aside id="evidence-drawer" class="record-panel" aria-labelledby="records-heading">
         <div class="record-heading"><span class="eyebrow">THE LIVING ARCHIVE</span><h2 id="records-heading" tabindex="-1">Explore the evidence</h2><p id="record-count" role="status" aria-live="polite"></p></div>
-        <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Find a person, place or story…" autocomplete="off"></div>
+        <div class="filters"><label for="record-type">Record type</label><select id="record-type"><option value="all">All records</option></select><label class="sr-only" for="search">Search records in this year</label><input id="search" type="search" placeholder="Search this year, or the whole atlas…" autocomplete="off"></div>
         <div class="browse"><details id="browse-menu"><summary>Jump to a record…</summary><div id="browse-groups" class="browse-groups"></div></details></div>
         <p class="window-note">Date windows may be approximate. A match is not proof of an event in this exact year. Mughal and Rajput coverage is incomplete; some profiles contain chronology only.</p>
         <div id="record-list"></div>
@@ -138,7 +140,48 @@ const compareResult = element('div');
 compareResult.id = 'compare-result';
 compareControls.append(compareLabel, compareSwap);
 comparePanel.append(element('h3', 'What changed between the two years'), compareControls, compareResult);
-yearView.append(comparePanel, yearSearch, yearList, yearCited);
+const guideBlock = element('details', undefined, 'guide-block');
+guideBlock.append(element('summary', 'Guided tours'));
+const guideIntro = element('p', 'A tour walks through records that are already in the atlas. It does not add a new claim.');
+guideBlock.append(guideIntro);
+for (const tour of TOURS) {
+  const stops = resolveTour(tour, data.records);
+  const block = element('section', undefined, 'tour');
+  block.append(element('h3', tour.title), element('p', tour.summary));
+  stops.forEach((stop, index) => {
+    const button = element('button', `${index + 1}. ${stop.title} · ${stop.year} CE`, 'tour-stop');
+    button.type = 'button';
+    button.addEventListener('click', () => {
+      state.year = stop.year;
+      state.type = 'all';
+      state.query = '';
+      selectedId = stop.record.id;
+      update();
+      selectRecord(stop.record, false);
+      setDrawerView('selected');
+    });
+    block.append(button);
+  });
+  guideBlock.append(block);
+}
+const successionBlock = element('details', undefined, 'guide-block');
+successionBlock.append(element('summary', 'Mughal succession'));
+successionBlock.append(element('p', 'Cited Mughal ruler records, in date order. A later name is not always the child of the previous one. Competing claims stay in the list. Open the record before treating a link as kinship.'));
+for (const record of successionLine(data.records)) {
+  const button = element('button', `${record.title} · ${record.dateLabel}`, 'tour-stop');
+  button.type = 'button';
+  button.addEventListener('click', () => {
+    state.year = record.startYear;
+    state.type = 'all';
+    state.query = '';
+    selectedId = record.id;
+    update();
+    selectRecord(record, false);
+    setDrawerView('selected');
+  });
+  successionBlock.append(button);
+}
+yearView.append(comparePanel, guideBlock, successionBlock, yearSearch, yearList, yearCited);
 const polityView = element('div'); polityView.id = 'drawer-polity';
 const recordsView = element('div'); recordsView.id = 'drawer-records';
 const recordSwitcher = element('div', undefined, 'record-switcher');
@@ -837,6 +880,30 @@ function render() {
       pointGroups.get(key).push(record);
     }
     list.append(section);
+  }
+  if (state.query.trim()) {
+    const others = searchAtlas(data.records, state.query)
+      .filter(record => state.year < record.startYear || state.year > record.endYear)
+      .slice(0, 12);
+    if (others.length) {
+      const block = element('div', undefined, 'other-years');
+      block.append(element('h3', 'Other years'));
+      for (const record of others) {
+        const button = element('button', `${record.title} · ${record.dateLabel}`, 'tour-stop');
+        button.type = 'button';
+        button.addEventListener('click', () => {
+          state.year = record.startYear;
+          state.type = 'all';
+          state.query = '';
+          selectedId = record.id;
+          update();
+          selectRecord(record, false);
+          setDrawerView('selected');
+        });
+        block.append(button);
+      }
+      list.append(block);
+    }
   }
   const groups = pointGroups;
   if (!matches.length) {

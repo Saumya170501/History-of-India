@@ -83,6 +83,17 @@
 .story-count { margin: 0 auto; font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 700; color: var(--muted); }
 .detail-panel { background: transparent; }
 .detail-story h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.guide-block { margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid #d8ded3; }
+.guide-block summary { cursor: pointer; font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.guide-block h3 { margin: 12px 0 4px; font-family: Georgia, "Times New Roman", serif; font-size: 18px; font-weight: 400; color: var(--green); }
+.guide-block p { margin: 4px 0 8px; font-size: 12px; }
+.tour-stop, .other-years .tour-stop {
+  display: block; width: 100%; text-align: left; margin: 0 0 6px; padding: 8px 10px;
+  border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--green); font-size: 13px;
+}
+.tour-stop:hover { border-color: var(--gold-strong); }
+.other-years { margin-top: 12px; }
+.other-years h3 { margin: 0 0 8px; font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); }
 .reading-note { margin: 0 18px 20px; border-top: 1px solid #d8ded3; padding-top: 12px; font-size: 11px; }
 .reading-note summary { cursor: pointer; }
 .reading-note .window-note { margin: 10px 0 0; }

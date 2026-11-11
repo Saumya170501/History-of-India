@@ -17,6 +17,10 @@ export function normalizeYear(value, fallback = MIN_YEAR) {
     : fallback;
 }
 
+export function recordSearchText(record) {
+  return `${record.title} ${record.place} ${record.summary} ${(record.tags || []).join(" ")} ${(record.details || []).map((section) => `${section.heading} ${section.text}`).join(" ")} ${record.searchText || ""}`;
+}
+
 export function recordsForYear(records, year, type = "all", query = "") {
   const term = query.trim().toLocaleLowerCase("en");
   return records.filter(
@@ -24,11 +28,16 @@ export function recordsForYear(records, year, type = "all", query = "") {
       year >= record.startYear &&
       year <= record.endYear &&
       (type === "all" || record.type === type) &&
-      (!term ||
-        `${record.title} ${record.place} ${record.summary} ${(record.tags || []).join(' ')} ${(record.details || []).map(section => section.text).join(' ')} ${record.searchText || ''}`
-          .toLocaleLowerCase("en")
-          .includes(term)),
+      (!term || recordSearchText(record).toLocaleLowerCase("en").includes(term)),
   );
+}
+
+export function searchAtlas(records, query) {
+  const term = query.trim().toLocaleLowerCase("en");
+  if (!term) return [];
+  return records
+    .filter((record) => recordSearchText(record).toLocaleLowerCase("en").includes(term))
+    .sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title, "en"));
 }
 
 export function stateFromSearch(search) {
