@@ -952,6 +952,139 @@
       "publisher": "OpenStreetMap Nominatim",
       "url": "https://www.openstreetmap.org/search?query=Raigad%20Fort%20Maharashtra",
       "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-kodungallur",
+      "title": "Kodungallur",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q1006282",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-tiruchirappalli",
+      "title": "Tiruchirappalli",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Tiruchirappalli",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-mathura",
+      "title": "Mathura",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Mathura",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-nashik",
+      "title": "Nashik",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Nashik",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-kumbakonam",
+      "title": "Kumbakonam",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Kumbakonam",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-kolkata",
+      "title": "Kolkata",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Kolkata",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-new-delhi",
+      "title": "New Delhi",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/New_Delhi",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-raipur",
+      "title": "Raipur",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Raipur",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-hyderabad",
+      "title": "Hyderabad",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Hyderabad",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-rajgir",
+      "title": "Rajgir",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Rajgir",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-jodhpur",
+      "title": "Jodhpur",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q200019",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-kota",
+      "title": "Kota",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q330531",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-basavakalyan",
+      "title": "Basavakalyan",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q712521",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-nagarjunakonda",
+      "title": "Nagarjunakonda",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q749108",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-sivasagar",
+      "title": "Sivasagar",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q1284453",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-mandore",
+      "title": "Mandore",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q3285556",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-ajmer",
+      "title": "Ajmer",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q200049",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-amber",
+      "title": "Amber",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q8197166",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-pedavegi",
+      "title": "Pedavegi",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q7159019",
+      "accessed": "2026-11-12"
     }
   ],
   "records": [
@@ -1888,9 +2021,9 @@
       "dateLabel": "1000–1300 CE",
       "dateNote": "Approximate art-historical period; not the date of every surviving bronze.",
       "summary": "Metal images of Hindu deities, including Shiva as Nataraja, form a major artistic tradition.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [79.13778, 10.78694]},
+      "locationSourceId": "wiki-thanjavur",
+      "locationNote": "Representative point at Thanjavur, the Chola centre already used for the temple records. English Wikipedia coordinate. It is not a map of where every bronze was made.",
       "citations": [
         {
           "sourceId": "met-south",
@@ -1980,9 +2113,9 @@
       "dateLabel": "1143–1173 CE",
       "dateNote": "Source-provided ruler window, not an exact construction schedule; requires comparison with epigraphic chronologies.",
       "summary": "Rajaraja II commissioned Airavatesvara.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [79.38450, 10.96020]},
+      "locationSourceId": "wiki-kumbakonam",
+      "locationNote": "The record names Darasuram. That article has no coordinate, so the point is Kumbakonam, the town of the Airavatesvara temple, from the English Wikipedia coordinate.",
       "citations": [
         {
           "sourceId": "unesco-chola",
@@ -2247,9 +2380,9 @@
       "dateLabel": "c. 15 CE",
       "dateNote": "Approximate attestation, not a complete reign.",
       "summary": "Source-dated ruler entry.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [77.67361, 27.49250]},
+      "locationSourceId": "wiki-mathura",
+      "locationNote": "Representative point at Mathura, the seat of the northern Kshatrapas. English Wikipedia coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "harvard-early",
@@ -2555,9 +2688,9 @@
       "dateLabel": "c. 225–240 CE",
       "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
       "summary": "Ikshvaku ruler in the cited chronology.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [79.23930, 16.52032]},
+      "locationSourceId": "wd-nagarjunakonda",
+      "locationNote": "Representative point at Nagarjunakonda, the Ikshvaku capital Vijayapuri. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "harvard-early",
@@ -2579,9 +2712,9 @@
       "dateLabel": "c. 240–265 CE",
       "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
       "summary": "Ikshvaku ruler in the cited chronology.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [79.23930, 16.52032]},
+      "locationSourceId": "wd-nagarjunakonda",
+      "locationNote": "Representative point at Nagarjunakonda, the Ikshvaku capital Vijayapuri. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "harvard-early",
@@ -2603,9 +2736,9 @@
       "dateLabel": "c. 265–290 CE",
       "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
       "summary": "Ikshvaku ruler in the cited chronology.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [79.23930, 16.52032]},
+      "locationSourceId": "wd-nagarjunakonda",
+      "locationNote": "Representative point at Nagarjunakonda, the Ikshvaku capital Vijayapuri. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "harvard-early",
@@ -2627,9 +2760,9 @@
       "dateLabel": "c. 290–315 CE",
       "dateNote": "Approximate source chronology. Endpoints are not exact accession or death dates; this record is awaiting independent review.",
       "summary": "Ikshvaku ruler in the cited chronology.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [79.23930, 16.52032]},
+      "locationSourceId": "wd-nagarjunakonda",
+      "locationNote": "Representative point at Nagarjunakonda, the Ikshvaku capital Vijayapuri. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "harvard-early",
@@ -2699,9 +2832,9 @@
       "dateLabel": "c. 225–315 CE",
       "dateNote": "The source ends this interval in 315; it has not been truncated to 300.",
       "summary": "Dynastic chronology extending beyond this research batch.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [79.23930, 16.52032]},
+      "locationSourceId": "wd-nagarjunakonda",
+      "locationNote": "Representative point at Nagarjunakonda, the Ikshvaku capital Vijayapuri. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "harvard-early",
@@ -2747,9 +2880,9 @@
       "dateLabel": "c. 1–300 CE",
       "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
       "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [76.22000, 10.22000]},
+      "locationSourceId": "wiki-kodungallur",
+      "locationNote": "Representative point at Kodungallur, a Chera centre. Wikidata coordinate. It is not a boundary of the chiefdoms.",
       "citations": [
         {
           "sourceId": "ignou-tamilakam",
@@ -2771,9 +2904,9 @@
       "dateLabel": "c. 1–300 CE",
       "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
       "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [78.68917, 10.80644]},
+      "locationSourceId": "wiki-tiruchirappalli",
+      "locationNote": "Representative point at Tiruchirappalli, the city of the early Chola centre Urayur. English Wikipedia coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "ignou-tamilakam",
@@ -2795,9 +2928,9 @@
       "dateLabel": "c. 1–300 CE",
       "dateNote": "1–300 is the CE portion of a broader period beginning before this atlas. It is not a foundation or continuous sovereign reign. The source describes chiefdoms; full PDF/page verification remains pending.",
       "summary": "One of the early southern ruling traditions; distinct from later dynastic formations.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [78.11980, 9.92520]},
+      "locationSourceId": "wiki-madurai",
+      "locationNote": "Representative point at Madurai, the Pandya centre. English Wikipedia coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "ignou-tamilakam",
@@ -2819,9 +2952,9 @@
       "dateLabel": "c. 60–90 CE",
       "dateNote": "Shown in the museum text’s approximate Gautamiputra window, not an exact minting date. Alternative ruler chronologies move this evidence later. The proposed war-booty explanation is a hypothesis, not a proven provenance.",
       "summary": "A surviving coin retains traces of Nahapana’s designs beneath Satavahana overstrikes, providing evidence for a political transition.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [73.78981, 19.99750]},
+      "locationSourceId": "wiki-nashik",
+      "locationNote": "The record names Nasik-associated finds. The point is Nashik, from the English Wikipedia coordinate.",
       "citations": [
         {
           "sourceId": "bm-overstrike",
@@ -2843,9 +2976,9 @@
       "dateLabel": "c. 1–400 CE",
       "dateNote": "Broad compilation window used by the Met. Individual poems, their subjects and later compilation can belong to different dates.",
       "summary": "The Sangam corpus includes anthologies and works on grammar and rhetoric.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [78.11980, 9.92520]},
+      "locationSourceId": "wiki-madurai",
+      "locationNote": "Representative point at Madurai, the city traditionally linked with the Sangam anthologies. English Wikipedia coordinate. It is not a map of the whole corpus.",
       "citations": [
         {
           "sourceId": "met-early",
@@ -2867,9 +3000,9 @@
       "dateLabel": "c. 101–200 CE",
       "dateNote": "Second-century activity window from this overview, not a verified lifespan or a precise location.",
       "summary": "Nagarjuna is associated with the Madhyamika school of Buddhist thought.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [79.23930, 16.52032]},
+      "locationSourceId": "wd-nagarjunakonda",
+      "locationNote": "The record gives no single place. The point is Nagarjunakonda, the site traditionally linked with Nagarjuna. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "met-early",
@@ -2891,9 +3024,9 @@
       "dateLabel": "c. 1–300 CE",
       "dateNote": "Contextual first–third-century window from Iranica; individual coin issues need separate catalogue dates.",
       "summary": "Kushan coins depict deities from several religious traditions.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only: no independently sourced map point is attached. Regional association does not establish borders or the ruler’s physical location.",
+      "geometry": {"type": "Point", "coordinates": [77.67361, 27.49250]},
+      "locationSourceId": "wiki-mathura",
+      "locationNote": "Representative point at Mathura, a major find-place of Kushan sculpture. English Wikipedia coordinate. It is not a map of every mint.",
       "citations": [
         {
           "sourceId": "rbi-ancient",
@@ -4172,9 +4305,9 @@
       "dateLabel": "1384–1428 CE",
       "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
       "summary": "Established his capital at Mandore according to the fort museum’s history.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [73.03310, 26.35350]},
+      "locationSourceId": "wd-mandore",
+      "locationNote": "The record says the capital was Mandore. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "mehrangarh-history",
@@ -4200,9 +4333,9 @@
       "dateLabel": "1438–1489 CE",
       "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
       "summary": "Founded Mehrangarh in 1459; the associated town took the name Jodhpur.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [73.02778, 26.29444]},
+      "locationSourceId": "wd-jodhpur",
+      "locationNote": "Representative point at Jodhpur, the Marwar capital founded in this line. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "mehrangarh-history",
@@ -4233,9 +4366,9 @@
       "dateLabel": "1531–1562 CE",
       "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
       "summary": "Strengthened Mehrangarh after its capture by Sher Shah’s forces.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [73.02778, 26.29444]},
+      "locationSourceId": "wd-jodhpur",
+      "locationNote": "Representative point at Jodhpur, the Marwar capital. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "mehrangarh-architecture",
@@ -4274,9 +4407,9 @@
       "dateLabel": "1707–1724 CE",
       "dateNote": "The museum gives 1707–1724 for this building-era reign phase. It is not a claim that earlier accession claims, exile or resistance did not exist.",
       "summary": "Associated with a major early-eighteenth-century building phase at Mehrangarh.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [73.02778, 26.29444]},
+      "locationSourceId": "wd-jodhpur",
+      "locationNote": "Representative point at Jodhpur, the Marwar capital. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "mehrangarh-architecture",
@@ -4302,9 +4435,9 @@
       "dateLabel": "1619–1638 CE",
       "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
       "summary": "Served the Mughals in the Deccan and helped connect Jodhpur with Deccani art.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [73.02778, 26.29444]},
+      "locationSourceId": "wd-jodhpur",
+      "locationNote": "Representative point at Jodhpur, the Marwar capital. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "mehrangarh-paintings",
@@ -4343,9 +4476,9 @@
       "dateLabel": "1562–1614 CE (service window)",
       "dateNote": "A career window from entry into Akbar’s court in 1562 to death in 1614. These are not accession dates for rule over Amber.",
       "summary": "An Amber noble who served at Akbar’s court and later under Jahangir.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [75.86667, 26.98333]},
+      "locationSourceId": "wd-amber",
+      "locationNote": "The record names Amber. The point is Amber, not the later city of Jaipur. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "met-man-singh",
@@ -4384,9 +4517,9 @@
       "dateLabel": "1631–1648 CE",
       "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
       "summary": "Founding Kota ruler later commemorated in a hunting portrait.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [75.83000, 25.18000]},
+      "locationSourceId": "wd-kota",
+      "locationNote": "Representative point at Kota, the place named for this ruler. Wikidata coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "met-madho-kota",
@@ -4425,9 +4558,9 @@
       "dateLabel": "c. 1669–1698 CE (start disputed)",
       "dateNote": "Cleveland gives 1669–1698; the Asian Art Museum’s Google Arts & Culture record gives 1674–1698. The Cleveland interval is selected provisionally; both assertions remain visible.",
       "summary": "Bikaner ruler represented in Ruknuddin’s court portrait.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [73.31194, 28.01667]},
+      "locationSourceId": "wiki-bikaner",
+      "locationNote": "Representative point at Bikaner, the place named for this ruler. English Wikipedia coordinate. It is not a boundary.",
       "citations": [
         {
           "sourceId": "cma-anup",
@@ -4775,9 +4908,9 @@
       "datePrecision": "approximate",
       "dateLabel": "c. 1178–1192 CE (accession varies)",
       "dateNote": "The consulted explainer gives accession as 1177 or 1178. This filter uses 1178 provisionally; it is not an assertion against the 1177 alternative. This is a secondary journalistic synthesis of scholarship; the cited critical editions have not been read in full here.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: Ajmer is the regional association; no battlefield or territorial geometry has been verified.",
+      "geometry": {"type": "Point", "coordinates": [74.63900, 26.46800]},
+      "locationSourceId": "wd-ajmer",
+      "locationNote": "The record names Ajmer. Wikidata coordinate. It is not a boundary.",
       "reviewStatus": "cited",
       "researchBatch": "mughal-rajput-01",
       "tags": [
@@ -5278,9 +5411,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [76.95000, 17.87000]},
+      "locationSourceId": "wd-basavakalyan",
+      "locationNote": "The record names Kalyani. The point is Basavakalyan, the modern town of that capital. Wikidata coordinate. It is not a boundary.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "chalukya-kalyani",
@@ -5363,9 +5496,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [81.10678, 16.80948]},
+      "locationSourceId": "wd-pedavegi",
+      "locationNote": "The record names Vengi. The point is Pedavegi, the site identified with Vengi. Wikidata coordinate. It is not a boundary.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "chalukya-vengi",
@@ -6219,9 +6352,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [88.37000, 22.56750]},
+      "locationSourceId": "wiki-kolkata",
+      "locationNote": "Representative point at Calcutta, the seat of the territorial government. English Wikipedia coordinate for Kolkata. It is not a map of the presidencies.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "east-india-company",
@@ -6310,9 +6443,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [88.37000, 22.56750]},
+      "locationSourceId": "wiki-kolkata",
+      "locationNote": "Representative point at Calcutta, the capital through most of this span. English Wikipedia coordinate for Kolkata. The 1909 gazetteer plate is public domain but is not traced here. This is not a provincial boundary.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "british-raj",
@@ -6406,9 +6539,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [78.47472, 17.36167]},
+      "locationSourceId": "wiki-hyderabad",
+      "locationNote": "Representative point at Hyderabad, the largest princely capital. English Wikipedia coordinate. It is not a boundary of the states. The 1909 gazetteer plate, which colours the states, is public domain but is not traced here.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "princely-states",
@@ -6491,9 +6624,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [77.20890, 28.61390]},
+      "locationSourceId": "wiki-new-delhi",
+      "locationNote": "Representative point at New Delhi, the capital. English Wikipedia coordinate. It is not a boundary of the Dominion.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "dominion-of-india",
@@ -6822,9 +6955,9 @@
       "dateLabel": "1696–1714",
       "dateNote": "The article gives these years as the reign in which Ahom power in Assam reached its peak. It does not describe the start or end as a particular day, or name a capital.",
       "summary": "Ahom king during the years the article calls the peak of their power in Assam.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. No coordinate is given for Rudra Singh or for a capital, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [94.63000, 26.98000]},
+      "locationSourceId": "wd-sivasagar",
+      "locationNote": "The cited article names Assam and does not name a capital. The point is Sivasagar, the Ahom centre in this period. Wikidata coordinate. The traced sheet is the pre-expansion valley and does not cover this reign.",
       "tags": [
         "Ahom",
         "Rudra Singh"
@@ -6903,9 +7036,9 @@
       "dateLabel": "from 26 January 1950",
       "dateNote": "The Constitution was adopted on 26 November 1949 and went into effect on 26 January 1950. The search window starts at 1950, the year it took effect, and runs to 2026 so the republic remains findable. The end year is the atlas limit, not a constitutional end. This is not a list of presidents or prime ministers, and it is not a map of state borders.",
       "summary": "The Constitution took effect on 26 January 1950 and established India as a democratic republic and a union of states.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. A constitution is not a coordinate and not a border. No point is shown.",
+      "geometry": {"type": "Point", "coordinates": [77.20890, 28.61390]},
+      "locationSourceId": "wiki-new-delhi",
+      "locationNote": "Representative point at New Delhi, the capital. English Wikipedia coordinate. It is not a boundary of the Republic.",
       "tags": [
         "Republic",
         "Constitution",
@@ -7592,9 +7725,9 @@
       "dateLabel": "c. 543–c. 491 BCE",
       "dateNote": "Britannica gives Bimbisara of the Haryanka line a reign of about 543 to about 491 BCE. Both ends are approximate. The years are 543 and 491 BCE, stored as -543 and -491 because the atlas has no year 0.",
       "summary": "Haryanka king of Magadha who added the kingdom of Anga.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The article places Magadha in what is now west-central Bihar and does not give a coordinate for Bimbisara, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [85.42000, 25.03000]},
+      "locationSourceId": "wiki-rajgir",
+      "locationNote": "Representative point at Rajgir, the Haryanka capital. English Wikipedia coordinate. It is not a boundary of Magadha.",
       "tags": [
         "Haryanka",
         "Magadha"
@@ -7633,9 +7766,9 @@
       "dateLabel": "6th century BCE–c. 325 BCE",
       "dateNote": "The Magadha article says the kingdom was important from the 6th century BCE. The year 599 BCE only opens that century’s search window. It is not a foundation date. The end, about 325 BCE, is the year the Chandragupta article gives for his taking the throne of Magadha. Nanda rule in the 4th century BCE sits inside this window and is not given its own kings here. The later Gupta use of Magadha is a separate record.",
       "summary": "The Ganges kingdom that was the base of the Haryanka and Nanda lines before Chandragupta.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The article places Magadha in present west-central Bihar and names Pataliputra as a later imperial capital. No coordinate is copied for this early kingdom, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [85.12833, 25.61250]},
+      "locationSourceId": "wiki-pataliputra",
+      "locationNote": "Representative point at Pataliputra, the later Magadha capital. English Wikipedia coordinate. It is not a boundary.",
       "tags": [
         "Magadha",
         "Haryanka",
@@ -7967,9 +8100,9 @@
       "dateLabel": "73–28 BCE",
       "dateNote": "The article dates the dynasty to 73–28 BCE and says Vasudeva Kanva overthrew the Shunga ruler Devabhuti. Puranas name Pataliputra, while the article says the coins concentrate around Vidisha. No outline is drawn.",
       "summary": "The short-lived house that replaced the Shungas, dated by the article to 73–28 BCE.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The article does not settle a single capital between the Puranic Pataliputra and the coins around Vidisha, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [85.12833, 25.61250]},
+      "locationSourceId": "wiki-pataliputra",
+      "locationNote": "Representative point at Pataliputra, the Magadha capital of this house. English Wikipedia coordinate. It is not a boundary.",
       "tags": [
         "Magadha"
       ],
@@ -8048,9 +8181,9 @@
       "dateLabel": "documented from the 3rd century BCE",
       "dateNote": "The article says the Cheras are documented as early as the third century BCE and names them as one of the three crowned kings of Tamilakam, with the Cholas and the Pandyas. The window is that century. It is not a continuous reign, and it does not replace the existing 1–300 CE Chera record.",
       "summary": "One of the three crowned houses of Tamilakam, documented as early as the third century BCE.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. No coordinate is taken from the article, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [76.22000, 10.22000]},
+      "locationSourceId": "wiki-kodungallur",
+      "locationNote": "Representative point at Kodungallur, a Chera centre. Wikidata coordinate. It is not a boundary.",
       "tags": [
         "Chera"
       ],
@@ -8075,9 +8208,9 @@
       "dateLabel": "600 BCE–300 CE in the article; this record is the BCE part",
       "dateNote": "The Early Cholas article gives the pre- and post-Sangam window as 600 BCE–300 CE, with capitals at Urayur (Tiruchirappalli) and Kaveripattinam, and says written records are scarce. This record keeps only the BCE part so it can be found on the early timeline. The existing early Chola record still covers 1–300 CE. Neither record is a territorial outline.",
       "summary": "The early Chola house, whose article dates the scarce written record from 600 BCE.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The named capitals are not given a coordinate here, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [78.68917, 10.80644]},
+      "locationSourceId": "wiki-tiruchirappalli",
+      "locationNote": "Representative point at Tiruchirappalli, the city of the early Chola centre Urayur. English Wikipedia coordinate. It is not a boundary.",
       "tags": [
         "Chola"
       ],
@@ -8102,9 +8235,9 @@
       "dateLabel": "at least the 5th–3rd centuries BCE",
       "dateNote": "The article says the dynasty existed since at least the 5th to 3rd centuries BCE, with later imperial phases in the 6th–10th and 13th–14th centuries. This window is only that early span. It is not a claim that one king ruled the whole of it, and it does not replace the existing early Pandya record.",
       "summary": "The Pandya house, which the article traces back at least to the 5th–3rd centuries BCE.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. No coordinate is taken from the article, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [78.11980, 9.92520]},
+      "locationSourceId": "wiki-madurai",
+      "locationNote": "Representative point at Madurai, the Pandya centre. English Wikipedia coordinate. It is not a boundary.",
       "tags": [
         "Pandya"
       ],
@@ -8245,9 +8378,9 @@
       "dateLabel": "empire 1175–1215 CE",
       "dateNote": "The article says the dynasty ruled in Ghor from the 8th century and became an empire from 1175 to 1215. This record uses the empire years only. It says Muhammad of Ghor seized Lahore and expelled the Ghaznavids from their last stronghold. The earlier local chiefdom is not given its own window.",
       "summary": "The Ghurid empire of 1175–1215, which took Lahore from the Ghaznavids.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. Ghor and Lahore are named, but no coordinate was taken, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [74.34361, 31.54972]},
+      "locationSourceId": "wiki-lahore",
+      "locationNote": "The record says the Ghurids took Lahore. The point is Lahore, from the English Wikipedia coordinate. It is not a boundary of the campaigns.",
       "tags": [
         "Ghurid"
       ],
@@ -8328,9 +8461,9 @@
       "dateLabel": "1947 CE",
       "dateNote": "The article says British India was divided into the Union of India and the Dominion of Pakistan under the Indian Independence Act 1947, and that Bengal and Punjab were divided. The two dominions came into existence at midnight on 14–15 August 1947. This record is that year. It is not a boundary of either new state.",
       "summary": "The 1947 division of British India into two dominions, with Bengal and Punjab divided.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. No outline of the partition is drawn.",
+      "geometry": {"type": "Point", "coordinates": [77.20890, 28.61390]},
+      "locationSourceId": "wiki-new-delhi",
+      "locationNote": "The division had no single site. The point is New Delhi, the capital of the transfer. English Wikipedia coordinate. It is not the Radcliffe line.",
       "tags": [
         "Partition"
       ],
@@ -8355,9 +8488,9 @@
       "dateLabel": "after 1947, over the next decade",
       "dateNote": "The article says India in 1947 included 562 princely states under British suzerainty, and that integrating them into an Indian Union was pursued over the next decade. The window is 1947 through 1957 as that decade. It is not a statute date for every accession, and no state boundary is drawn.",
       "summary": "The post-1947 effort to bring 562 princely states into the Indian Union.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The states were not one territory, so no outline is drawn.",
+      "geometry": {"type": "Point", "coordinates": [77.20890, 28.61390]},
+      "locationSourceId": "wiki-new-delhi",
+      "locationNote": "Representative point at New Delhi, the seat of the integration. English Wikipedia coordinate. It is not a boundary of the states.",
       "tags": [
         "Princely"
       ],
@@ -8382,9 +8515,9 @@
       "dateLabel": "1956 CE",
       "dateNote": "The article calls the Act a major reform that organised state boundaries along linguistic lines, in force with the Constitution (Seventh Amendment) Act, 1956. It notes Potti Sreeramulu’s death in 1952 and Andhra State in 1953 as the movement’s turning point. This record is the 1956 Act, not a map of the new states.",
       "summary": "The 1956 linguistic reorganisation of India’s states.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The Act’s new boundaries are not drawn.",
+      "geometry": {"type": "Point", "coordinates": [77.20890, 28.61390]},
+      "locationSourceId": "wiki-new-delhi",
+      "locationNote": "Representative point at New Delhi, where the reorganisation was enacted. English Wikipedia coordinate. It is not a state boundary.",
       "tags": [
         "Republic"
       ],
@@ -8409,9 +8542,9 @@
       "dateLabel": "statehood from 1 November 2000",
       "dateNote": "The article says Chhattisgarh was formerly part of Madhya Pradesh and was granted statehood on 1 November 2000, with Raipur as the capital. The window runs to 2026 so the state remains findable. 2026 is the atlas limit, not an end of the state. The States Reorganisation Act, 1956, had placed the region in Madhya Pradesh.",
       "summary": "State created from Madhya Pradesh on 1 November 2000, with its capital at Raipur.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. No state boundary is drawn.",
+      "geometry": {"type": "Point", "coordinates": [81.63056, 21.24444]},
+      "locationSourceId": "wiki-raipur",
+      "locationNote": "The record names Raipur as the capital. English Wikipedia coordinate. It is not the state boundary.",
       "tags": [
         "Chhattisgarh"
       ],
@@ -8436,9 +8569,9 @@
       "dateLabel": "statehood in 2014",
       "dateNote": "The article says the Telangana movement obtained bifurcation with the creation, in 2014, of the state of Telangana. The lead used here does not give the day. The window runs to 2026 so the state remains findable. 2026 is the atlas limit, not an end of the state.",
       "summary": "State created in 2014 from the Telugu-speaking region described in the article.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. No state boundary is drawn.",
+      "geometry": {"type": "Point", "coordinates": [78.47472, 17.36167]},
+      "locationSourceId": "wiki-hyderabad",
+      "locationNote": "The cited lead does not name the capital. The point is Hyderabad. English Wikipedia coordinate. It is not the state boundary.",
       "tags": [
         "Telangana"
       ],

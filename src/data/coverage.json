@@ -1,9 +1,9 @@
 {
   "note": "Coverage of every atlas record. Outline means a traced Commons extent is linked. Where the traced window does not cover the whole record, the note says dynasty extent, not reign-specific. Point means a sourced coordinate and no traced extent. Missing means neither.",
   "summary": {
-    "outline": 71,
-    "point": 42,
-    "missing": 82
+    "outline": 110,
+    "point": 85,
+    "missing": 0
   },
   "records": [
     {
@@ -209,10 +209,12 @@
       "place": "Mughal",
       "startYear": 1526,
       "endYear": 1530,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
     },
     {
       "id": "humayun-first",
@@ -221,10 +223,12 @@
       "place": "Mughal",
       "startYear": 1530,
       "endYear": 1540,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
     },
     {
       "id": "humayun-second",
@@ -233,10 +237,12 @@
       "place": "Mughal",
       "startYear": 1555,
       "endYear": 1556,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
     },
     {
       "id": "akbar",
@@ -273,10 +279,12 @@
       "place": "Mughal",
       "startYear": 1628,
       "endYear": 1658,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
     },
     {
       "id": "chola-dynasty",
@@ -341,10 +349,10 @@
       "place": "Chola cultural context",
       "startYear": 1000,
       "endYear": 1300,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajaraja-temple",
@@ -389,10 +397,10 @@
       "place": "Darasuram",
       "startYear": 1143,
       "endYear": 1173,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajadhiraja-career",
@@ -541,10 +549,10 @@
       "place": "Northern Kshatrapa",
       "startYear": 15,
       "endYear": 15,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-chastana",
@@ -553,10 +561,12 @@
       "place": "Western Kshatrapa traditions",
       "startYear": 78,
       "endYear": 130,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-western-satraps."
     },
     {
       "id": "early-rudradaman",
@@ -565,10 +575,12 @@
       "place": "Western Kshatrapa traditions",
       "startYear": 150,
       "endYear": 150,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-western-satraps."
     },
     {
       "id": "early-rudrasimha",
@@ -577,10 +589,12 @@
       "place": "Western Kshatrapa traditions",
       "startYear": 177,
       "endYear": 178,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-western-satraps."
     },
     {
       "id": "early-nahapana",
@@ -589,10 +603,12 @@
       "place": "Western Kshatrapa traditions",
       "startYear": 54,
       "endYear": 65,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-western-satraps."
     },
     {
       "id": "early-gautamiputra",
@@ -699,10 +715,10 @@
       "place": "Ikshvaku; Andhra",
       "startYear": 225,
       "endYear": 240,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-virapurushadatta",
@@ -711,10 +727,10 @@
       "place": "Ikshvaku; Andhra",
       "startYear": 240,
       "endYear": 265,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-ehuvala",
@@ -723,10 +739,10 @@
       "place": "Ikshvaku; Andhra",
       "startYear": 265,
       "endYear": 290,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-rudrapurushadatta",
@@ -735,10 +751,10 @@
       "place": "Ikshvaku; Andhra",
       "startYear": 290,
       "endYear": 315,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-kushan",
@@ -775,10 +791,10 @@
       "place": "Andhra",
       "startYear": 225,
       "endYear": 315,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-western-kshatrapas",
@@ -787,10 +803,12 @@
       "place": "Western India",
       "startYear": 1,
       "endYear": 400,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-western-satraps."
     },
     {
       "id": "early-chera-chiefdom",
@@ -799,10 +817,10 @@
       "place": "Tamilakam",
       "startYear": 1,
       "endYear": 300,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-chola-chiefdom",
@@ -811,10 +829,10 @@
       "place": "Tamilakam",
       "startYear": 1,
       "endYear": 300,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-pandya-chiefdom",
@@ -823,10 +841,10 @@
       "place": "Tamilakam",
       "startYear": 1,
       "endYear": 300,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-overstrike",
@@ -835,10 +853,10 @@
       "place": "Western Deccan; Nasik-associated finds",
       "startYear": 60,
       "endYear": 90,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-sangam",
@@ -847,10 +865,10 @@
       "place": "Tamilakam",
       "startYear": 1,
       "endYear": 400,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-nagarjuna",
@@ -859,10 +877,10 @@
       "place": "South India (broad association)",
       "startYear": 101,
       "endYear": 200,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "early-kushan-icons",
@@ -871,10 +889,10 @@
       "place": "Kushan numismatic tradition",
       "startYear": 1,
       "endYear": 300,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "dawar-bakhsh",
@@ -883,10 +901,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1627,
       "endYear": 1628,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
     },
     {
       "id": "aurangzeb",
@@ -895,10 +915,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1658,
       "endYear": 1707,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "azam-shah",
@@ -907,10 +929,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1707,
       "endYear": 1707,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707."
     },
     {
       "id": "kam-bakhsh",
@@ -919,10 +943,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1707,
       "endYear": 1709,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "bahadur-shah-i",
@@ -931,10 +957,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1707,
       "endYear": 1712,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "jahandar-shah",
@@ -943,10 +971,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1712,
       "endYear": 1713,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "farrukhsiyar",
@@ -955,10 +985,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1713,
       "endYear": 1719,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "rafi-darajat",
@@ -967,10 +999,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1719,
       "endYear": 1719,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "shah-jahan-ii",
@@ -979,10 +1013,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1719,
       "endYear": 1719,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "nikusiyar",
@@ -991,10 +1027,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1719,
       "endYear": 1719,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "ibrahim-claim",
@@ -1003,10 +1041,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1720,
       "endYear": 1720,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "muhammad-shah",
@@ -1015,10 +1055,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1719,
       "endYear": 1748,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "ahmad-shah-bahadur",
@@ -1027,10 +1069,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1748,
       "endYear": 1754,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "alamgir-ii",
@@ -1039,10 +1083,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1754,
       "endYear": 1759,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "shah-jahan-iii",
@@ -1051,10 +1097,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1759,
       "endYear": 1759,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "shah-alam-ii-first",
@@ -1063,10 +1111,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1759,
       "endYear": 1788,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "bidar-bakht",
@@ -1075,10 +1125,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1788,
       "endYear": 1788,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "shah-alam-ii-second",
@@ -1087,10 +1139,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1788,
       "endYear": 1806,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "akbar-ii",
@@ -1099,10 +1153,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1806,
       "endYear": 1837,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "bahadur-shah-ii",
@@ -1111,10 +1167,12 @@
       "place": "Mughal imperial succession",
       "startYear": 1837,
       "endYear": 1858,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
     },
     {
       "id": "rajput-kumbha",
@@ -1123,10 +1181,12 @@
       "place": "Rajput \u00b7 Sisodia Mewar",
       "startYear": 1433,
       "endYear": 1468,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
     },
     {
       "id": "rajput-sanga",
@@ -1135,10 +1195,12 @@
       "place": "Rajput \u00b7 Sisodia Mewar",
       "startYear": 1509,
       "endYear": 1528,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
     },
     {
       "id": "rajput-ratan-singh-ii",
@@ -1147,10 +1209,12 @@
       "place": "Rajput \u00b7 Sisodia Mewar",
       "startYear": 1528,
       "endYear": 1531,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
     },
     {
       "id": "rajput-vikramaditya-mewar",
@@ -1159,10 +1223,12 @@
       "place": "Rajput \u00b7 Sisodia Mewar",
       "startYear": 1531,
       "endYear": 1536,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
     },
     {
       "id": "rajput-udai-singh-ii",
@@ -1171,10 +1237,12 @@
       "place": "Rajput \u00b7 Sisodia Mewar",
       "startYear": 1537,
       "endYear": 1572,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
     },
     {
       "id": "rajput-pratap",
@@ -1183,10 +1251,12 @@
       "place": "Rajput \u00b7 Sisodia Mewar",
       "startYear": 1572,
       "endYear": 1597,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
     },
     {
       "id": "rajput-amar-singh-i",
@@ -1195,10 +1265,12 @@
       "place": "Rajput \u00b7 Sisodia Mewar",
       "startYear": 1597,
       "endYear": 1620,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
     },
     {
       "id": "rajput-chunda",
@@ -1207,10 +1279,10 @@
       "place": "Rajput \u00b7 Rathore Marwar",
       "startYear": 1384,
       "endYear": 1428,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-jodha",
@@ -1219,10 +1291,10 @@
       "place": "Rajput \u00b7 Rathore Marwar",
       "startYear": 1438,
       "endYear": 1489,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-maldeo",
@@ -1231,10 +1303,10 @@
       "place": "Rajput \u00b7 Rathore Marwar",
       "startYear": 1531,
       "endYear": 1562,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-ajit-singh",
@@ -1243,10 +1315,10 @@
       "place": "Rajput \u00b7 Rathore Marwar",
       "startYear": 1707,
       "endYear": 1724,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-gaj-singh",
@@ -1255,10 +1327,10 @@
       "place": "Rajput \u00b7 Rathore Marwar",
       "startYear": 1619,
       "endYear": 1638,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-man-singh-amber",
@@ -1267,10 +1339,10 @@
       "place": "Rajput \u00b7 Amber / Mughal service",
       "startYear": 1562,
       "endYear": 1614,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-madho-kota",
@@ -1279,10 +1351,10 @@
       "place": "Rajput \u00b7 Kota",
       "startYear": 1631,
       "endYear": 1648,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-anup-bikaner",
@@ -1291,10 +1363,10 @@
       "place": "Rajput \u00b7 Bikaner",
       "startYear": 1669,
       "endYear": 1698,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-jai-singh-ii",
@@ -1423,10 +1495,10 @@
       "place": "Chahamana / Chauhan \u00b7 Ajmer",
       "startYear": 1178,
       "endYear": 1192,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "tarain-1191",
@@ -1529,8 +1601,8 @@
       "outlines": [
         "traced-chalukya-badami"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-chalukya-badami. A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-chalukya-badami."
     },
     {
       "id": "chalukya-kalyani",
@@ -1539,10 +1611,10 @@
       "place": "Kalyani",
       "startYear": 975,
       "endYear": 1189,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "chalukya-vengi",
@@ -1551,10 +1623,10 @@
       "place": "Vengi",
       "startYear": 624,
       "endYear": 1070,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "pallava-dynasty",
@@ -1623,8 +1695,8 @@
       "outlines": [
         "traced-vijayanagara"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-vijayanagara (dynasty extent, not reign-specific). A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-vijayanagara (dynasty extent, not reign-specific)."
     },
     {
       "id": "shivaji",
@@ -1649,8 +1721,8 @@
       "outlines": [
         "traced-maratha"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-maratha (dynasty extent, not reign-specific). A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-maratha (dynasty extent, not reign-specific)."
     },
     {
       "id": "ranjit-singh",
@@ -1671,10 +1743,12 @@
       "place": "Punjab",
       "startYear": 1799,
       "endYear": 1845,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-sikh"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-sikh (dynasty extent, not reign-specific)."
     },
     {
       "id": "east-india-company",
@@ -1683,10 +1757,10 @@
       "place": "Company presidencies",
       "startYear": 1757,
       "endYear": 1858,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "british-raj",
@@ -1695,10 +1769,10 @@
       "place": "British India",
       "startYear": 1858,
       "endYear": 1947,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "princely-states",
@@ -1707,10 +1781,10 @@
       "place": "Princely states",
       "startYear": 1858,
       "endYear": 1947,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "dominion-of-india",
@@ -1719,10 +1793,10 @@
       "place": "Dominion of India",
       "startYear": 1947,
       "endYear": 2026,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "ellora-caves",
@@ -1767,10 +1841,12 @@
       "place": "Assam",
       "startYear": 1201,
       "endYear": 1838,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-ahom"
+      ],
       "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "why": "Approximate traced extent: traced-ahom (dynasty extent, not reign-specific)."
     },
     {
       "id": "rudra-singh",
@@ -1779,10 +1855,10 @@
       "place": "Assam",
       "startYear": 1696,
       "endYear": 1714,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "quit-india",
@@ -1803,10 +1879,10 @@
       "place": "Republic of India",
       "startYear": 1950,
       "endYear": 2026,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "maitraka-dynasty",
@@ -1831,8 +1907,8 @@
       "outlines": [
         "traced-pratihara"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-pratihara (dynasty extent, not reign-specific). A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-pratihara (dynasty extent, not reign-specific)."
     },
     {
       "id": "mihira-bhoja",
@@ -1857,8 +1933,8 @@
       "outlines": [
         "traced-pratihara"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-pratihara (dynasty extent, not reign-specific). A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-pratihara (dynasty extent, not reign-specific)."
     },
     {
       "id": "khajuraho-temples",
@@ -1969,10 +2045,12 @@
       "place": "Seringapatam (Srirangapatna)",
       "startYear": 1782,
       "endYear": 1799,
-      "status": "point",
-      "outlines": [],
-      "point": true,
-      "why": "Sourced point only. No reusable extent has been traced for this record."
+      "status": "outline",
+      "outlines": [
+        "traced-mysore-1784"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mysore-1784 (dynasty extent, not reign-specific)."
     },
     {
       "id": "salt-march",
@@ -1993,10 +2071,10 @@
       "place": "Magadha",
       "startYear": -543,
       "endYear": -491,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "magadha-early",
@@ -2005,10 +2083,10 @@
       "place": "Magadha",
       "startYear": -599,
       "endYear": -325,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "maurya-empire",
@@ -2021,8 +2099,8 @@
       "outlines": [
         "traced-maurya-core"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-maurya-core. A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-maurya-core."
     },
     {
       "id": "chandragupta-maurya",
@@ -2035,8 +2113,8 @@
       "outlines": [
         "traced-maurya-core"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-maurya-core. A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-maurya-core."
     },
     {
       "id": "ashoka",
@@ -2091,8 +2169,8 @@
       "outlines": [
         "traced-maurya-core"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-maurya-core. A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-maurya-core."
     },
     {
       "id": "kanva-dynasty",
@@ -2101,10 +2179,10 @@
       "place": "Magadha",
       "startYear": -73,
       "endYear": -28,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "kharavela",
@@ -2131,8 +2209,8 @@
       "outlines": [
         "traced-indo-greek"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-indo-greek. A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-indo-greek."
     },
     {
       "id": "chera-sangam",
@@ -2141,10 +2219,10 @@
       "place": "Tamilakam",
       "startYear": -299,
       "endYear": -201,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "chola-sangam",
@@ -2153,10 +2231,10 @@
       "place": "Tamil region",
       "startYear": -600,
       "endYear": -1,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "pandya-sangam",
@@ -2165,10 +2243,10 @@
       "place": "Tamilakam",
       "startYear": -499,
       "endYear": -201,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "kakatiya-dynasty",
@@ -2181,8 +2259,8 @@
       "outlines": [
         "traced-kakatiya"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-kakatiya. A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-kakatiya."
     },
     {
       "id": "paramara-dynasty",
@@ -2233,10 +2311,10 @@
       "place": "Ghurid campaigns",
       "startYear": 1175,
       "endYear": 1215,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "peshwa-office",
@@ -2249,8 +2327,8 @@
       "outlines": [
         "traced-maratha"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-maratha (dynasty extent, not reign-specific). A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-maratha (dynasty extent, not reign-specific)."
     },
     {
       "id": "baji-rao-i",
@@ -2271,10 +2349,10 @@
       "place": "British India",
       "startYear": 1947,
       "endYear": 1947,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "princely-integration",
@@ -2283,10 +2361,10 @@
       "place": "Princely states",
       "startYear": 1947,
       "endYear": 1957,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "states-reorganisation-1956",
@@ -2295,10 +2373,10 @@
       "place": "Republic of India",
       "startYear": 1956,
       "endYear": 1956,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "chhattisgarh-state",
@@ -2307,10 +2385,10 @@
       "place": "Chhattisgarh",
       "startYear": 2000,
       "endYear": 2026,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "telangana-state",
@@ -2319,10 +2397,10 @@
       "place": "Telangana",
       "startYear": 2014,
       "endYear": 2026,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "Still open. No traced Commons extent overlaps this record, and no matching coordinate was found in Wikidata or Nominatim during this pass."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "shashanka",
@@ -2419,8 +2497,8 @@
       "outlines": [
         "traced-later-pandya"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-later-pandya. A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-later-pandya."
     },
     {
       "id": "malwa-sultanate",
@@ -2447,8 +2525,8 @@
       "outlines": [
         "traced-gajapati"
       ],
-      "point": true,
-      "why": "Approximate traced extent: traced-gajapati. A sourced point is also attached."
+      "point": false,
+      "why": "Approximate traced extent: traced-gajapati."
     },
     {
       "id": "bijapur-sultanate",

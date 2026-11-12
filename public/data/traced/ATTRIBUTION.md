@@ -351,3 +351,63 @@ Traced shapes are approximate. The tracing is CC BY-SA 4.0 data. See LICENSE-DAT
 - Depicted date: The file is the Mughal Empire under Akbar in 1605 and cites Schwartzberg. The border is a line. Shown in 1605.
 - Confidence: moderate
 - What was traced: The coastline was fitted, then the green border line was closed and filled and cut to the coast. Cape Comorin lands within half a degree. For Jahangir this is the first year of the reign, not a map of the whole reign.
+
+## Mughal Empire in 1707
+
+- Commons file: [File:Mughal Empire.png](https://commons.wikimedia.org/wiki/File:Mughal_Empire.png)
+- Author: NXcrypto
+- Licence of the file: CC BY-SA 4.0
+- The file’s own source: The file page says it is the author’s own work and titles it Mughal Empire under Aurangzeb (1707).
+- Depicted date: The file is titled Mughal Empire under Aurangzeb (1707). Shown in 1707.
+- Confidence: moderate
+- What was traced: The green territory was traced and cut to the coast. Delhi, Lahore, Dhaka, Thatta, Golconda and Ahmedabad fall inside. The unshaded southern tip stays outside, and Kabul falls just outside. For Aurangzeb this is the end of the reign. Later emperors are linked to this nearest dated sheet. Dynasty extent, not reign-specific.
+
+## Sikh kingdom under Ranjit Singh
+
+- Commons file: [File:Sikh Empire.JPG](https://commons.wikimedia.org/wiki/File:Sikh_Empire.JPG)
+- Author: Khalid Mahmood
+- Licence of the file: CC BY-SA 3.0
+- The file’s own source: The file page says it is the author’s own work and describes the boundaries of Maharaja Ranjit Singh.
+- Depicted date: The file says Boundaries of Maharaja Ranjit Singh and prints no year. Shown across 1799–1839, the cited span of his rule.
+- Confidence: moderate
+- What was traced: The yellow territory was traced. Lahore lies on the south-eastern edge, and Multan and Srinagar fall inside. The southern tip follows the Indus bend. Amritsar is not printed on the sheet and falls just east of the drawn edge. The kingdom record runs to about 1845, after this maharaja’s boundary. Dynasty extent, not reign-specific, for those later years.
+
+## Ahom dominion before Suhungmung
+
+- Commons file: [File:Ahom Kingdom Map.jpg](https://commons.wikimedia.org/wiki/File:Ahom_Kingdom_Map.jpg)
+- Author: Ananya Taye
+- Licence of the file: CC0
+- The file’s own source: The file page says it is the author’s own work. The caption on the sheet bounds the tint by the Burhi Dihing, the Dikhou-Namdang and the Naga hills.
+- Depicted date: The sheet is captioned Ahom dominion (1228–1522) and the file text says this is the kingdom before Suhungmung’s expansion. Shown across 1228–1522.
+- Confidence: low
+- What was traced: Only the yellow tint was traced. Charaideo falls inside and Sivasagar is on the edge. Guwahati is not on this sheet, so it was not used as a control. The scale uses Charaideo, the Brahmaputra immediately north of it, and the eastern end of the tint toward the Naga hills. This is the pre-expansion valley, not the later kingdom. Dynasty extent, not reign-specific, for the longer Ahom record.
+
+## Mewar dominion about 1521
+
+- Commons file: [File:Kingdom of Mewar.svg](https://commons.wikimedia.org/wiki/File:Kingdom_of_Mewar.svg)
+- Author: Nikel3012
+- Licence of the file: CC0
+- The file’s own source: The file page cites Har Bilas Sarda, Maharana Sanga, page 2, and says the drawing is Mewar at its apex about 1521.
+- Depicted date: The file text says Kingdom of Mewar at its apex, about 1521. Shown in 1521.
+- Confidence: moderate
+- What was traced: The red tint was fitted from the printed graticule and the labelled cities. The residual is about 0.3 degrees. Chittorgarh and Udaipur fall inside; Delhi and Ahmedabad fall outside. The same sheet prints Marwar and Amber inside that red, so this is the book’s shaded dominion, not a boundary of Mewar alone. Other Sisodia reigns are linked to this sheet. Dynasty extent, not reign-specific.
+
+## Western Satraps
+
+- Commons file: [File:Map of the Western Satraps.png](https://commons.wikimedia.org/wiki/File:Map_of_the_Western_Satraps.png)
+- Author: Koba-chan, drawn by पाटलिपुत्र
+- Licence of the file: CC BY-SA 3.0
+- The file’s own source: DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. The file cites Schwartzberg’s Historical Atlas of South Asia, page 145, map XIV.1 (h).
+- Depicted date: The file is a map of the Western Satraps and cites Schwartzberg, page 145, map XIV.1 (h). It prints no year. Shown across the cited window 1–400 CE.
+- Confidence: higher
+- What was traced: The brown tint was separated from the shared DEMIS base and placed with the same coastline fit used for the other DEMIS sheets, about 0.2 degrees. Ujjain, Bharuch, Girnar and Pushkar fall inside. Delhi falls outside. Northern Kshatrapa rulers are not on this sheet.
+
+## Mysore about 1784
+
+- Commons file: [File:Indian Mysore Kingdom 1784 map.svg](https://commons.wikimedia.org/wiki/File:Indian_Mysore_Kingdom_1784_map.svg)
+- Author: PlaneMad
+- Licence of the file: CC BY-SA 3.0
+- The file’s own source: The file page says it is the author’s own work. The modern borders on the sheet are credited to the University of Texas map library and were not traced.
+- Depicted date: The drawing is titled Mysore Kingdom, about 1784, and the file text says the extent under Tipu Sultan, including Keladi, about 1780. Shown in 1784.
+- Confidence: moderate
+- What was traced: The orange territory was traced. The fit is anchored on the Mysore capital mark and the peninsula tip, and Bangalore falls inside while Madras falls outside. This is the sheet’s about-1784 extent, including Keladi, not the reduced realm after 1792. Dynasty extent, not reign-specific, for the rest of Tipu’s reign.

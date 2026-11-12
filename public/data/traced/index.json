@@ -659,14 +659,155 @@
       "confidence": "moderate",
       "recordIds": [
         "akbar",
-        "jahangir"
+        "jahangir",
+        "babur",
+        "humayun-first",
+        "humayun-second",
+        "shah-jahan-reign",
+        "dawar-bakhsh"
       ],
       "commonsUrl": "https://commons.wikimedia.org/wiki/File:Mughal_Empire,_1605.png",
       "commonsFile": "File:Mughal Empire, 1605.png",
       "author": "Avantiputra7",
       "licence": "CC BY-SA 4.0",
       "mapSource": "The file page says Mughal Empire under Akbar, 1605, and cites Schwartzberg\u2019s Historical Atlas of South Asia. Lighter dotted areas of partial control were not filled.",
-      "changes": "The coastline was fitted, then the green border line was closed and filled and cut to the coast. Cape Comorin lands within half a degree. For Jahangir this is the first year of the reign, not a map of the whole reign."
+      "changes": "The coastline was fitted, then the green border line was closed and filled and cut to the coast. Cape Comorin lands within half a degree. For Jahangir this is the first year of the reign, not a map of the whole reign. Babur, both of Humayun\u2019s reigns, Shah Jahan and Dawar Bakhsh are linked to this 1605 sheet. Dynasty extent, not reign-specific."
+    },
+    {
+      "id": "traced-mughal-1707",
+      "title": "Mughal Empire in 1707",
+      "file": "era-after-1200.geojson",
+      "startYear": 1707,
+      "endYear": 1707,
+      "depicted": "The file is titled Mughal Empire under Aurangzeb (1707). Shown in 1707.",
+      "confidence": "moderate",
+      "recordIds": [
+        "aurangzeb",
+        "azam-shah",
+        "kam-bakhsh",
+        "bahadur-shah-i",
+        "jahandar-shah",
+        "farrukhsiyar",
+        "rafi-darajat",
+        "shah-jahan-ii",
+        "nikusiyar",
+        "ibrahim-claim",
+        "muhammad-shah",
+        "ahmad-shah-bahadur",
+        "alamgir-ii",
+        "shah-jahan-iii",
+        "shah-alam-ii-first",
+        "bidar-bakht",
+        "shah-alam-ii-second",
+        "akbar-ii",
+        "bahadur-shah-ii"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Mughal_Empire.png",
+      "commonsFile": "File:Mughal Empire.png",
+      "author": "NXcrypto",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "The file page says it is the author\u2019s own work and titles it Mughal Empire under Aurangzeb (1707).",
+      "changes": "The green territory was traced and cut to the coast. Delhi, Lahore, Dhaka, Thatta, Golconda and Ahmedabad fall inside. The unshaded southern tip stays outside, and Kabul falls just outside. For Aurangzeb this is the end of the reign. Later emperors are linked to this nearest dated sheet. Dynasty extent, not reign-specific."
+    },
+    {
+      "id": "traced-sikh",
+      "title": "Sikh kingdom under Ranjit Singh",
+      "file": "era-after-1200.geojson",
+      "startYear": 1799,
+      "endYear": 1839,
+      "depicted": "The file says Boundaries of Maharaja Ranjit Singh and prints no year. Shown across 1799\u20131839, the cited span of his rule.",
+      "confidence": "moderate",
+      "recordIds": [
+        "sikh-kingdom"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Sikh_Empire.JPG",
+      "commonsFile": "File:Sikh Empire.JPG",
+      "author": "Khalid Mahmood",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "The file page says it is the author\u2019s own work and describes the boundaries of Maharaja Ranjit Singh.",
+      "changes": "The yellow territory was traced. Lahore lies on the south-eastern edge, and Multan and Srinagar fall inside. The southern tip follows the Indus bend. Amritsar is not printed on the sheet and falls just east of the drawn edge. The kingdom record runs to about 1845, after this maharaja\u2019s boundary. Dynasty extent, not reign-specific, for those later years."
+    },
+    {
+      "id": "traced-ahom",
+      "title": "Ahom dominion before Suhungmung",
+      "file": "era-after-1200.geojson",
+      "startYear": 1228,
+      "endYear": 1522,
+      "depicted": "The sheet is captioned Ahom dominion (1228\u20131522) and the file text says this is the kingdom before Suhungmung\u2019s expansion. Shown across 1228\u20131522.",
+      "confidence": "low",
+      "recordIds": [
+        "ahom-kingdom"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Ahom_Kingdom_Map.jpg",
+      "commonsFile": "File:Ahom Kingdom Map.jpg",
+      "author": "Ananya Taye",
+      "licence": "CC0",
+      "mapSource": "The file page says it is the author\u2019s own work. The caption on the sheet bounds the tint by the Burhi Dihing, the Dikhou-Namdang and the Naga hills.",
+      "changes": "Only the yellow tint was traced. Charaideo falls inside and Sivasagar is on the edge. Guwahati is not on this sheet, so it was not used as a control. The scale uses Charaideo, the Brahmaputra immediately north of it, and the eastern end of the tint toward the Naga hills. This is the pre-expansion valley, not the later kingdom. Dynasty extent, not reign-specific, for the longer Ahom record."
+    },
+    {
+      "id": "traced-mewar",
+      "title": "Mewar dominion about 1521",
+      "file": "era-after-1200.geojson",
+      "startYear": 1521,
+      "endYear": 1521,
+      "depicted": "The file text says Kingdom of Mewar at its apex, about 1521. Shown in 1521.",
+      "confidence": "moderate",
+      "recordIds": [
+        "rajput-kumbha",
+        "rajput-sanga",
+        "rajput-ratan-singh-ii",
+        "rajput-vikramaditya-mewar",
+        "rajput-udai-singh-ii",
+        "rajput-pratap",
+        "rajput-amar-singh-i"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Kingdom_of_Mewar.svg",
+      "commonsFile": "File:Kingdom of Mewar.svg",
+      "author": "Nikel3012",
+      "licence": "CC0",
+      "mapSource": "The file page cites Har Bilas Sarda, Maharana Sanga, page 2, and says the drawing is Mewar at its apex about 1521.",
+      "changes": "The red tint was fitted from the printed graticule and the labelled cities. The residual is about 0.3 degrees. Chittorgarh and Udaipur fall inside; Delhi and Ahmedabad fall outside. The same sheet prints Marwar and Amber inside that red, so this is the book\u2019s shaded dominion, not a boundary of Mewar alone. Other Sisodia reigns are linked to this sheet. Dynasty extent, not reign-specific."
+    },
+    {
+      "id": "traced-western-satraps",
+      "title": "Western Satraps",
+      "file": "era-after-1200.geojson",
+      "startYear": 1,
+      "endYear": 400,
+      "depicted": "The file is a map of the Western Satraps and cites Schwartzberg, page 145, map XIV.1 (h). It prints no year. Shown across the cited window 1\u2013400 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "early-western-kshatrapas",
+        "early-chastana",
+        "early-rudradaman",
+        "early-rudrasimha",
+        "early-nahapana"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Western_Satraps.png",
+      "commonsFile": "File:Map of the Western Satraps.png",
+      "author": "Koba-chan, drawn by \u092a\u093e\u091f\u0932\u093f\u092a\u0941\u0924\u094d\u0930",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. The file cites Schwartzberg\u2019s Historical Atlas of South Asia, page 145, map XIV.1 (h).",
+      "changes": "The brown tint was separated from the shared DEMIS base and placed with the same coastline fit used for the other DEMIS sheets, about 0.2 degrees. Ujjain, Bharuch, Girnar and Pushkar fall inside. Delhi falls outside. Northern Kshatrapa rulers are not on this sheet."
+    },
+    {
+      "id": "traced-mysore-1784",
+      "title": "Mysore about 1784",
+      "file": "era-after-1200.geojson",
+      "startYear": 1784,
+      "endYear": 1784,
+      "depicted": "The drawing is titled Mysore Kingdom, about 1784, and the file text says the extent under Tipu Sultan, including Keladi, about 1780. Shown in 1784.",
+      "confidence": "moderate",
+      "recordIds": [
+        "tipu-sultan"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Indian_Mysore_Kingdom_1784_map.svg",
+      "commonsFile": "File:Indian Mysore Kingdom 1784 map.svg",
+      "author": "PlaneMad",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "The file page says it is the author\u2019s own work. The modern borders on the sheet are credited to the University of Texas map library and were not traced.",
+      "changes": "The orange territory was traced. The fit is anchored on the Mysore capital mark and the peninsula tip, and Bangalore falls inside while Madras falls outside. This is the sheet\u2019s about-1784 extent, including Keladi, not the reduced realm after 1792. Dynasty extent, not reign-specific, for the rest of Tipu\u2019s reign."
     }
   ]
 }

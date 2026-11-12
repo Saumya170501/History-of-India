@@ -19,7 +19,7 @@ test('the loaded catalogue keeps search text and leaves biographies for a later 
   assert.deepEqual(atlas.records.find(record => record.id === 'harsha').geometry.coordinates, [79.913971, 27.051019]);
   assert.equal(atlas.records.find(record => record.id === 'ashoka').geometry, null);
   assert.ok(recordsForYear(atlas.records, -300).some(record => record.id === 'chandragupta-maurya'));
-  assert.equal(atlas.records.find(record => record.id === 'republic-of-india').geometry, null);
+  assert.deepEqual(atlas.records.find(record => record.id === 'republic-of-india').geometry.coordinates, [77.2089, 28.6139]);
   assert.ok(recordsForYear(atlas.records, 1950).some(record => record.id === 'republic-of-india'));
   assert.ok(recordsForYear(atlas.records, 1942).some(record => record.id === 'quit-india'));
   assert.equal(recordsForYear(atlas.records, 1941).some(record => record.id === 'quit-india'), false);
