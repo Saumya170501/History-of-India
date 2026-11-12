@@ -490,6 +490,89 @@
       "licence": "CC BY-SA 4.0",
       "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Adil Shahi Dynasty, in Southern India.",
       "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-kushan",
+      "title": "Kushan extent",
+      "file": "era-to-750.geojson",
+      "startYear": 1,
+      "endYear": 300,
+      "depicted": "The file is titled Map of the Kushan Empire and cites Schwartzberg\u2019s atlas, page 145. It prints no year. Shown across the cited Kushan window, 1\u2013300 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "early-kushan",
+        "early-kujula",
+        "early-wima-takto",
+        "early-wima-kadphises",
+        "early-kanishka-i",
+        "early-huvishka",
+        "early-vasudeva-i",
+        "early-kanishka-ii",
+        "early-vasishka",
+        "early-kanishka-iii"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Kushan_Empire.png",
+      "commonsFile": "File:Map of the Kushan Empire.png",
+      "author": "Koba-chan, on a DEMIS Mapserver base",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "The file page credits a public-domain DEMIS base and Schwartzberg\u2019s atlas, page 145.",
+      "changes": "The highlighted tint was separated from the shared base map. Coastline fit residual is given with the confidence. The ring is cut to a Natural Earth land mask."
+    },
+    {
+      "id": "traced-gujarat",
+      "title": "Gujarat Sultanate in 1532",
+      "file": "era-after-1200.geojson",
+      "startYear": 1532,
+      "endYear": 1532,
+      "depicted": "The file says it is the Gujarat Sultanate under Muzaffar Shah III in 1532. Shown in that year only.",
+      "confidence": "higher",
+      "recordIds": [
+        "gujarat-sultanate"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Gujarat_Sultanate.png",
+      "commonsFile": "File:Map of the Gujarat Sultanate.png",
+      "author": "Beylarbey",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "The file page states the year 1532 and Muzaffar Shah III.",
+      "changes": "The highlighted tint on the shared DEMIS base was traced and cut to the coast. Coastline fit residual is given with the confidence. The ring is cut to a Natural Earth land mask."
+    },
+    {
+      "id": "traced-gupta",
+      "title": "Gupta core",
+      "file": "era-to-750.geojson",
+      "startYear": 320,
+      "endYear": 600,
+      "depicted": "The file says Gupta Empire, 320\u2013600, with tributary states drawn separately. Only the core colour is traced. Shown for 320\u2013600.",
+      "confidence": "moderate",
+      "recordIds": [
+        "gupta-empire",
+        "gupta-chandragupta-ii"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_for_Gupta_Empire_and_tributaries.svg",
+      "commonsFile": "File:Map for Gupta Empire and tributaries.svg",
+      "author": "Goran tek-en",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "The file\u2019s own description dates the empire to 320\u2013600 and distinguishes tributary states.",
+      "changes": "The crimson core was traced. The brown tributary colour was left out. Coastline fit root-mean-square residual about 0.4 degrees; Cape Comorin was about 1 degree off."
+    },
+    {
+      "id": "traced-pratihara",
+      "title": "Pratihara extent in 900",
+      "file": "era-to-1200.geojson",
+      "startYear": 900,
+      "endYear": 900,
+      "depicted": "The file says the Gurjara Pratihara Empire at its greatest extent in 900. Shown in 900 only.",
+      "confidence": "moderate",
+      "recordIds": [
+        "pratihara-dynasty",
+        "mahendrapala"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Gurjara_Pratihara_Empire_in_900_AD.png",
+      "commonsFile": "File:Gurjara Pratihara Empire in 900 AD.png",
+      "author": "Thomas Lessman",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "The file page dates the drawing to 900.",
+      "changes": "The highlighted region was traced. Coastline fit root-mean-square residual about 0.5 degrees."
     }
   ]
 }

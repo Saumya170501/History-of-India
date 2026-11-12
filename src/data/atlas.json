@@ -777,6 +777,111 @@
       "publisher": "English Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Bijapur_Sultanate",
       "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-panipat",
+      "title": "Panipat",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Panipat",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-mamallapuram",
+      "title": "Mamallapuram",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Mamallapuram",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-thanjavur",
+      "title": "Thanjavur",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Thanjavur",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-gangaikonda",
+      "title": "Gangaikonda Cholapuram",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Gangaikonda_Cholapuram",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-mumbai",
+      "title": "Mumbai",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Mumbai",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-delhi",
+      "title": "Delhi",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Delhi",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-madurai",
+      "title": "Madurai",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Madurai",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-hampi",
+      "title": "Hampi",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Hampi",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-jaisalmer",
+      "title": "Jaisalmer",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Jaisalmer",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-bikaner",
+      "title": "Bikaner",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Bikaner",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-jaipur",
+      "title": "Jaipur",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Jaipur",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-badami",
+      "title": "Badami",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Badami",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-lahore",
+      "title": "Lahore",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Lahore",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-pune",
+      "title": "Pune",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Pune",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-taxila",
+      "title": "Taxila",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Taxila",
+      "accessed": "2026-11-12"
     }
   ],
   "records": [
@@ -1759,9 +1864,9 @@
       "dateLabel": "1009–1010 CE",
       "dateNote": "The source supplies a two-year conversion of the twenty-fifth regnal year.",
       "summary": "The temple was consecrated by its royal patron.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [79.13778, 10.78694]},
+      "locationSourceId": "wiki-thanjavur",
+      "locationNote": "The point is the English Wikipedia coordinate for Thanjavur. It locates the named city, not a temple plan.",
       "citations": [
         {
           "sourceId": "unesco-chola",
@@ -1782,9 +1887,9 @@
       "dateLabel": "1035–1035 CE",
       "dateNote": "Year-level chronology as given by this source; exact accession and death days are not established here.",
       "summary": "Temple completion is dated to 1035.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [79.44833, 11.20644]},
+      "locationSourceId": "wiki-gangaikonda",
+      "locationNote": "The point is the English Wikipedia coordinate for Gangaikonda Cholapuram. It locates the named place, not a temple plan.",
       "citations": [
         {
           "sourceId": "unesco-chola",
@@ -4283,9 +4388,9 @@
       "dateLabel": "1700–1743 CE",
       "dateNote": "Inclusive year-level source chronology, not exact accession or abdication days. A matching year does not imply continuous control of a fixed territory.",
       "summary": "Patron of the planned city of Jaipur and of astronomical observation.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [75.82, 26.915]},
+      "locationSourceId": "wiki-jaipur",
+      "locationNote": "The point is the English Wikipedia coordinate for Jaipur. It locates the named city, not a kingdom boundary.",
       "citations": [
         {
           "sourceId": "unesco-jaipur-decision",
@@ -4335,9 +4440,9 @@
       "dateLabel": "1526 CE",
       "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
       "summary": "Babur defeated Ibrahim Lodi; the victory preceded occupation of Delhi and Agra.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [76.97, 29.3875]},
+      "locationSourceId": "wiki-panipat",
+      "locationNote": "The point is the English Wikipedia coordinate for this place, accessed 12 November 2026. It is a modern reference point, not a boundary or a troop position.",
       "citations": [
         {
           "sourceId": "iranica-babur",
@@ -4392,9 +4497,9 @@
       "dateLabel": "1556 CE",
       "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
       "summary": "Mughal forces under Bayram Khan defeated Hemu during Akbar’s early reign.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [76.97, 29.3875]},
+      "locationSourceId": "wiki-panipat",
+      "locationNote": "The point is the English Wikipedia coordinate for this place, accessed 12 November 2026. It is a modern reference point, not a boundary or a troop position.",
       "citations": [
         {
           "sourceId": "iranica-akbar",
@@ -4536,9 +4641,9 @@
       "dateLabel": "1857 CE",
       "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
       "summary": "British forces captured Delhi in September 1857 after a siege; looting and killings followed.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [77.23, 28.61]},
+      "locationSourceId": "wiki-delhi",
+      "locationNote": "The point is the English Wikipedia coordinate for Delhi. It is a modern reference for the named city, not a battle line.",
       "citations": [
         {
           "sourceId": "nam-rebellion",
@@ -4713,9 +4818,9 @@
       "datePrecision": "year",
       "dateLabel": "1488 CE (foundation event)",
       "dateNote": "A foundation year in the official tourism page’s indexed passage, not the ruler’s full reign. Full-page retrieval timed out during this pass; primary documentary corroboration remains pending.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: no verified site coordinate has been attached.",
+      "geometry": {"type": "Point", "coordinates": [73.31194, 28.01667]},
+      "locationSourceId": "wiki-bikaner",
+      "locationNote": "The point is the English Wikipedia coordinate for Bikaner. It locates the named place, not a kingdom boundary.",
       "reviewStatus": "cited",
       "researchBatch": "mughal-rajput-01",
       "tags": [
@@ -4741,9 +4846,9 @@
       "datePrecision": "year",
       "dateLabel": "1156 CE (foundation event)",
       "dateNote": "A foundation year in the official tourism page’s indexed passage, not the ruler’s full reign. Full-page retrieval timed out during this pass; primary documentary corroboration remains pending.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: no verified site coordinate has been attached.",
+      "geometry": {"type": "Point", "coordinates": [70.915, 26.913]},
+      "locationSourceId": "wiki-jaisalmer",
+      "locationNote": "The point is the English Wikipedia coordinate for Jaisalmer. It locates the named place, not a kingdom boundary.",
       "reviewStatus": "cited",
       "researchBatch": "mughal-rajput-01",
       "tags": [
@@ -5017,9 +5122,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [75.68028, 15.92]},
+      "locationSourceId": "wiki-badami",
+      "locationNote": "The point is the English Wikipedia coordinate for Badami, the city of Vatapi. It is a reference point, not the Chalukya boundary.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "chalukya-badami",
@@ -5614,9 +5719,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [76.46222, 15.33444]},
+      "locationSourceId": "wiki-hampi",
+      "locationNote": "The point is the English Wikipedia coordinate for Hampi, the site of Vijayanagara. It is a reference point, not the empire boundary.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "vijayanagara-empire",
@@ -5784,9 +5889,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [73.85528, 18.52111]},
+      "locationSourceId": "wiki-pune",
+      "locationNote": "The point is the English Wikipedia coordinate for Pune, the place named on this record. It is not a Maratha boundary.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "maratha-confederacy",
@@ -5869,9 +5974,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [74.34361, 31.54972]},
+      "locationSourceId": "wiki-lahore",
+      "locationNote": "The point is the English Wikipedia coordinate for Lahore. It locates the named city, not the Sikh kingdom boundary.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "ranjit-singh",
@@ -6469,9 +6574,9 @@
       "dateLabel": "7th–8th centuries CE",
       "dateNote": "The opening dates the sanctuaries to the 7th and 8th centuries. The brief synthesis says the Pallavas ruled this area between the 6th and 9th centuries and names Narasimhavarman Rajasimha’s reign as 638–660 for one excavated well. The search window follows the opening’s two centuries, not a foundation year and not continuous building. No property coordinate was copied from the page in this pass, so nothing is placed on the map.",
       "summary": "Rock-cut and structural temples on the Coromandel coast, founded by the Pallava kings.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The page locates the group on the Coromandel coast and names Mahabalipuram, but this pass did not copy a property coordinate, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [80.19444, 12.61972]},
+      "locationSourceId": "wiki-mamallapuram",
+      "locationNote": "The point is the English Wikipedia coordinate for Mamallapuram. It locates the monument town, not a Pallava boundary.",
       "citations": [
         {
           "sourceId": "unesco-mahabalipuram",
@@ -6675,9 +6780,9 @@
       "dateLabel": "1942–1943",
       "dateNote": "The movement was launched on 8 August 1942 at a Congress meeting in Bombay. Protests had largely died down by the end of 1942 and the article says the movement was definitively over by March 1943. The window is that campaign, not a claim that protest filled every day, and not independence itself.",
       "summary": "A mass campaign launched by Gandhi in August 1942 demanding an immediate end to British rule. It did not achieve that end.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The launch meeting was in Bombay, present-day Mumbai, and protests spread widely. The page does not give a coordinate, so no point is shown. Bombay is not the extent of the campaign.",
+      "geometry": {"type": "Point", "coordinates": [72.8775, 19.07611]},
+      "locationSourceId": "wiki-mumbai",
+      "locationNote": "The point is the English Wikipedia coordinate for Mumbai, the city named in the record. It is not the extent of the movement.",
       "tags": [
         "Quit India",
         "Gandhi",
@@ -7846,9 +7951,9 @@
       "dateLabel": "founded about 200 BCE",
       "dateNote": "The article says the kingdom was founded when the Graeco-Bactrian king Demetrius I invaded India from Bactria in about 200 BC, and that the name covers several Hellenistic states with capitals including Taxila, Sagala, Pushkalavati and Bagram. The lead does not give one end year, so this record is only the foundation year. A later sentence about Western Satraps lingering to 415 CE is not used as an end date.",
       "summary": "Hellenistic kingdoms in the northwest, founded about 200 BCE when Demetrius I invaded from Bactria.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The article names several capitals and does not give one coordinate, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [72.7875, 33.74583]},
+      "locationSourceId": "wiki-taxila",
+      "locationNote": "The point is the English Wikipedia coordinate for Taxila, one capital named in the lead. It is not the extent of the Indo-Greek kingdoms.",
       "tags": [
         "Indo-Greek"
       ],
@@ -8097,9 +8202,9 @@
       "dateLabel": "office in the Maratha Empire, 1674–1818",
       "dateNote": "The article calls the Peshwa the second office of the Maratha Empire (1674–1818), after the Chhatrapati. The office became hereditary when Shahu gave it to Bajirao Ballal. After Shahu I, the Peshwas held the government, and from Balaji Rao they were the supreme authority while the Chhatrapati’s position became nominal. The 1674–1818 span is the article’s span for the empire, not a list of every Peshwa’s years.",
       "summary": "The Maratha office that became hereditary under Shahu and later the effective government.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. Pune is the associated later seat used for browsing. No coordinate was taken, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [73.85528, 18.52111]},
+      "locationSourceId": "wiki-pune",
+      "locationNote": "The point is the English Wikipedia coordinate for Pune. It locates the associated city, not the Maratha extent.",
       "tags": [
         "Maratha",
         "Peshwa"
@@ -8125,9 +8230,9 @@
       "dateLabel": "Peshwa 1720–1740 CE",
       "dateNote": "The article says the Peshwa’s office was most powerful under Baji Rao I (r. 1720–1740). Those are the years used here. No extent is drawn.",
       "summary": "Peshwa under whom the article says the office was at its most powerful, 1720–1740.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. No coordinate was taken, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [73.85528, 18.52111]},
+      "locationSourceId": "wiki-pune",
+      "locationNote": "The point is the English Wikipedia coordinate for Pune. It locates the associated city, not a campaign extent.",
       "tags": [
         "Maratha",
         "Peshwa"
@@ -8454,9 +8559,9 @@
       "dateLabel": "13th–14th centuries CE",
       "dateNote": "The lead says the dynasty had a later imperial phase in the 13th and 14th centuries, and that in the second half of the 13th century it ruled territories in south India and northern Sri Lanka through vassals of Madurai. This window is that phase. It does not replace the earlier Pandya records.",
       "summary": "The later imperial Pandyas of Madurai, placed by the lead in the 13th and 14th centuries.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. Madurai is named, but no coordinate was taken, so no point is shown.",
+      "geometry": {"type": "Point", "coordinates": [78.1198, 9.9252]},
+      "locationSourceId": "wiki-madurai",
+      "locationNote": "The point is the English Wikipedia coordinate for Madurai, the later Pandya centre named in the lead. It is not a boundary.",
       "tags": [
         "Pandya"
       ],

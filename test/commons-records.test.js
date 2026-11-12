@@ -18,7 +18,9 @@ test('the Wikipedia-cited gaps are records, not invented outlines', () => {
     const record = byId.get(id);
     assert.ok(record, id);
     assert.equal(record.researchBatch, 'commons-2026');
-    assert.equal(record.geometry?.type, id === 'bindusara' || id === 'kakatiya-dynasty' ? 'Point' : undefined);
+    const pointed = new Set(['bindusara', 'kakatiya-dynasty', 'indo-greek-kingdom', 'peshwa-office', 'baji-rao-i']);
+    assert.equal(record.geometry?.type, pointed.has(id) ? 'Point' : undefined);
+    if (record.geometry) assert.equal(record.geometry.type, 'Point');
     const source = atlas.sources.find(item => item.id === record.citations[0].sourceId);
     assert.match(source.url, /^https:\/\/en\.wikipedia\.org\/wiki\//);
   }

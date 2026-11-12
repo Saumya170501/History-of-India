@@ -186,7 +186,7 @@ test('major periods have cited profiles rather than bare chronology lines', () =
     assert.equal(item.reviewStatus, 'cited');
     assert.ok(item.details.length >= 4, id);
     assert.ok(item.details.some(section => section.heading === 'Capital'), id);
-    assert.equal(item.geometry, null, id);
+    assert.ok(item.geometry == null || item.geometry.type === 'Point', id);
   }
   assert.equal(record('dominion-of-india').type, 'state');
   assert.match(record('bahmanid-dynasty').summary, /1528/);

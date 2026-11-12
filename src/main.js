@@ -856,12 +856,16 @@ function paintTracedCredit(active) {
   tracedCredit.replaceChildren();
   if (!active.length) { tracedCredit.hidden = true; return; }
   tracedCredit.hidden = false;
-  tracedCredit.append(document.createTextNode('Approximate. '));
-  active.forEach((shape, index) => {
-    if (index) tracedCredit.append(document.createTextNode(' '));
-    const anchor = link(`${shape.author}, ${shape.licence}`, shape.commonsUrl);
-    tracedCredit.append(anchor);
-  });
+  if (active.length === 1) {
+    tracedCredit.append(document.createTextNode('Approximate. '));
+    tracedCredit.append(link(`${active[0].author}, ${active[0].licence}`, active[0].commonsUrl));
+    return;
+  }
+  tracedCredit.append(document.createTextNode(`${active.length} approximate outlines. `));
+  const more = element('button', 'Map credits');
+  more.type = 'button';
+  more.addEventListener('click', openMapCredits);
+  tracedCredit.append(more);
 }
 function syncTraced() {
   const active = shapesForYear(tracedIndex, state.year);

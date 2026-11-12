@@ -105,7 +105,7 @@ main { max-width: none; margin: 0; padding: 0; }
   margin: 0; padding: 6px 8px; border-radius: 8px;
   color: #efe6d2; background: #10281fcc; font: 11px/1.4 Inter, sans-serif;
 }
-#traced-credit a { color: #e7c98a; }
+#traced-credit a, #traced-credit button { color: #e7c98a; background: none; border: 0; padding: 0; font: inherit; cursor: pointer; text-decoration: underline; }
 #map-credits { display: grid; gap: 12px; }
 #map-credits article { display: grid; gap: 4px; }
 #map-selection-status { margin: 0; }

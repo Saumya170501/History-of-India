@@ -1,9 +1,9 @@
 {
-  "note": "Coverage of atlas records. Outline means an approximate traced Commons extent is linked. Point means a sourced coordinate and no traced extent. Missing means neither. A missing row stays only when no free source could supply an extent or a coordinate.",
+  "note": "Coverage of every atlas record. Outline means a traced Commons extent is linked. Point means a sourced coordinate and no traced extent. Missing means neither, and the reason says whether the gap is still open.",
   "summary": {
-    "outline": 47,
-    "point": 20,
-    "missing": 126
+    "outline": 62,
+    "point": 33,
+    "missing": 98
   },
   "records": [
     {
@@ -212,7 +212,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "humayun-first",
@@ -224,7 +224,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "humayun-second",
@@ -236,7 +236,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "akbar",
@@ -248,7 +248,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "jahangir",
@@ -260,7 +260,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "shah-jahan-reign",
@@ -272,7 +272,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "chola-dynasty",
@@ -284,7 +284,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "hoysala-dynasty",
@@ -324,7 +324,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "chola-bronzes",
@@ -336,7 +336,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajaraja-temple",
@@ -348,7 +348,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "thanjavur-consecration",
@@ -357,10 +357,10 @@
       "place": "Thanjavur",
       "startYear": 1009,
       "endYear": 1010,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "gangaikonda-temple",
@@ -369,10 +369,10 @@
       "place": "Gangaikondacholapuram",
       "startYear": 1035,
       "endYear": 1035,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajaraja-ii",
@@ -384,7 +384,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajadhiraja-career",
@@ -396,7 +396,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-kujula",
@@ -405,10 +405,12 @@
       "place": "Kushan; northwestern South Asia",
       "startYear": 40,
       "endYear": 90,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-wima-takto",
@@ -417,10 +419,12 @@
       "place": "Kushan; northwestern South Asia",
       "startYear": 90,
       "endYear": 113,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-wima-kadphises",
@@ -429,10 +433,12 @@
       "place": "Kushan; northwestern South Asia",
       "startYear": 113,
       "endYear": 127,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-huvishka",
@@ -441,10 +447,12 @@
       "place": "Kushan; northwestern South Asia",
       "startYear": 150,
       "endYear": 190,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-vasudeva-i",
@@ -453,10 +461,12 @@
       "place": "Kushan; northwestern South Asia",
       "startYear": 190,
       "endYear": 224,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-kanishka-ii",
@@ -465,10 +475,12 @@
       "place": "Kushan; northwestern South Asia",
       "startYear": 230,
       "endYear": 244,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-vasishka",
@@ -477,10 +489,12 @@
       "place": "Kushan; northwestern South Asia",
       "startYear": 248,
       "endYear": 256,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-kanishka-iii",
@@ -489,10 +503,12 @@
       "place": "Kushan; northwestern South Asia",
       "startYear": 256,
       "endYear": 256,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-kanishka-i",
@@ -501,10 +517,12 @@
       "place": "Kushan",
       "startYear": 127,
       "endYear": 150,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-sodasa",
@@ -516,7 +534,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-chastana",
@@ -528,7 +546,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-rudradaman",
@@ -540,7 +558,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-rudrasimha",
@@ -552,7 +570,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-nahapana",
@@ -564,7 +582,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-gautamiputra",
@@ -674,7 +692,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-virapurushadatta",
@@ -686,7 +704,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-ehuvala",
@@ -698,7 +716,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-rudrapurushadatta",
@@ -710,7 +728,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-kushan",
@@ -719,10 +737,12 @@
       "place": "Central Asia and northern South Asia",
       "startYear": 1,
       "endYear": 300,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-kushan."
     },
     {
       "id": "early-satavahana",
@@ -748,7 +768,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-western-kshatrapas",
@@ -760,7 +780,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-chera-chiefdom",
@@ -772,7 +792,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-chola-chiefdom",
@@ -784,7 +804,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-pandya-chiefdom",
@@ -796,7 +816,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-overstrike",
@@ -808,7 +828,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-sangam",
@@ -820,7 +840,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-nagarjuna",
@@ -832,7 +852,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "early-kushan-icons",
@@ -844,7 +864,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "dawar-bakhsh",
@@ -856,7 +876,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "aurangzeb",
@@ -868,7 +888,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "azam-shah",
@@ -880,7 +900,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "kam-bakhsh",
@@ -892,7 +912,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "bahadur-shah-i",
@@ -904,7 +924,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "jahandar-shah",
@@ -916,7 +936,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "farrukhsiyar",
@@ -928,7 +948,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rafi-darajat",
@@ -940,7 +960,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "shah-jahan-ii",
@@ -952,7 +972,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "nikusiyar",
@@ -964,7 +984,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "ibrahim-claim",
@@ -976,7 +996,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "muhammad-shah",
@@ -988,7 +1008,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "ahmad-shah-bahadur",
@@ -1000,7 +1020,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "alamgir-ii",
@@ -1012,7 +1032,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "shah-jahan-iii",
@@ -1024,7 +1044,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "shah-alam-ii-first",
@@ -1036,7 +1056,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "bidar-bakht",
@@ -1048,7 +1068,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "shah-alam-ii-second",
@@ -1060,7 +1080,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "akbar-ii",
@@ -1072,7 +1092,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "bahadur-shah-ii",
@@ -1084,7 +1104,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-kumbha",
@@ -1096,7 +1116,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-sanga",
@@ -1108,7 +1128,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-ratan-singh-ii",
@@ -1120,7 +1140,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-vikramaditya-mewar",
@@ -1132,7 +1152,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-udai-singh-ii",
@@ -1144,7 +1164,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-pratap",
@@ -1156,7 +1176,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-amar-singh-i",
@@ -1168,7 +1188,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-chunda",
@@ -1180,7 +1200,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-jodha",
@@ -1192,7 +1212,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-maldeo",
@@ -1204,7 +1224,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-ajit-singh",
@@ -1216,7 +1236,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-gaj-singh",
@@ -1228,7 +1248,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-man-singh-amber",
@@ -1240,7 +1260,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-madho-kota",
@@ -1252,7 +1272,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-anup-bikaner",
@@ -1264,7 +1284,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-jai-singh-ii",
@@ -1273,10 +1293,10 @@
       "place": "Rajput \u00b7 Amber / Jaipur",
       "startYear": 1700,
       "endYear": 1743,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "panipat-1526",
@@ -1285,10 +1305,10 @@
       "place": "Panipat",
       "startYear": 1526,
       "endYear": 1526,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "khanwa-1527",
@@ -1300,7 +1320,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "panipat-1556",
@@ -1309,10 +1329,10 @@
       "place": "Panipat",
       "startYear": 1556,
       "endYear": 1556,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "chittor-1567-1568",
@@ -1324,7 +1344,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "ranthambore-1569",
@@ -1336,7 +1356,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "haldighati-1576",
@@ -1348,7 +1368,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "dewair-1582",
@@ -1360,7 +1380,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "delhi-1857",
@@ -1369,10 +1389,10 @@
       "place": "Delhi",
       "startYear": 1857,
       "endYear": 1857,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "jaipur-foundation",
@@ -1396,7 +1416,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "tarain-1191",
@@ -1408,7 +1428,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "tarain-1192",
@@ -1420,7 +1440,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rajput-bika-foundation",
@@ -1429,10 +1449,10 @@
       "place": "Rajput \u00b7 Bikaner",
       "startYear": 1488,
       "endYear": 1488,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "rajput-jaisal-foundation",
@@ -1441,10 +1461,10 @@
       "place": "Rajput \u00b7 Jaisalmer",
       "startYear": 1156,
       "endYear": 1156,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "gupta-empire",
@@ -1453,10 +1473,12 @@
       "place": "Ganga-Yamuna Doab and Magadha",
       "startYear": 300,
       "endYear": 550,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-gupta"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-gupta."
     },
     {
       "id": "gupta-chandragupta-ii",
@@ -1465,10 +1487,12 @@
       "place": "Ganga-Yamuna Doab and Magadha",
       "startYear": 375,
       "endYear": 415,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-gupta"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-gupta."
     },
     {
       "id": "vakataka-dynasty",
@@ -1495,8 +1519,8 @@
       "outlines": [
         "traced-chalukya-badami"
       ],
-      "point": false,
-      "why": "Approximate traced extent: traced-chalukya-badami."
+      "point": true,
+      "why": "Approximate traced extent: traced-chalukya-badami. A sourced point is also attached."
     },
     {
       "id": "chalukya-kalyani",
@@ -1508,7 +1532,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "chalukya-vengi",
@@ -1520,7 +1544,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "pallava-dynasty",
@@ -1532,7 +1556,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "pala-dynasty",
@@ -1583,10 +1607,10 @@
       "place": "Vijayanagara",
       "startYear": 1336,
       "endYear": 1614,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "shivaji",
@@ -1598,7 +1622,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "maratha-confederacy",
@@ -1607,10 +1631,10 @@
       "place": "Pune",
       "startYear": 1707,
       "endYear": 1818,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "ranjit-singh",
@@ -1619,10 +1643,10 @@
       "place": "Lahore",
       "startYear": 1799,
       "endYear": 1839,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "sikh-kingdom",
@@ -1634,7 +1658,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "east-india-company",
@@ -1646,7 +1670,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "british-raj",
@@ -1658,7 +1682,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "princely-states",
@@ -1670,7 +1694,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "dominion-of-india",
@@ -1682,7 +1706,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "ellora-caves",
@@ -1703,10 +1727,10 @@
       "place": "Mahabalipuram",
       "startYear": 601,
       "endYear": 800,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "harsha",
@@ -1730,7 +1754,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "rudra-singh",
@@ -1742,7 +1766,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "quit-india",
@@ -1751,10 +1775,10 @@
       "place": "Bombay (Mumbai)",
       "startYear": 1942,
       "endYear": 1943,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "republic-of-india",
@@ -1766,7 +1790,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "maitraka-dynasty",
@@ -1787,10 +1811,12 @@
       "place": "Kannauj",
       "startYear": 701,
       "endYear": 1018,
-      "status": "point",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-pratihara"
+      ],
       "point": true,
-      "why": "Sourced point only. No reusable extent has been traced for this record."
+      "why": "Approximate traced extent: traced-pratihara. A sourced point is also attached."
     },
     {
       "id": "mihira-bhoja",
@@ -1811,10 +1837,12 @@
       "place": "Kannauj",
       "startYear": 890,
       "endYear": 910,
-      "status": "point",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-pratihara"
+      ],
       "point": true,
-      "why": "Sourced point only. No reusable extent has been traced for this record."
+      "why": "Approximate traced extent: traced-pratihara. A sourced point is also attached."
     },
     {
       "id": "khajuraho-temples",
@@ -1940,7 +1968,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "bimbisara",
@@ -1952,7 +1980,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "magadha-early",
@@ -1964,7 +1992,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "maurya-empire",
@@ -1978,7 +2006,7 @@
         "traced-maurya-core"
       ],
       "point": true,
-      "why": "Approximate traced extent: traced-maurya-core."
+      "why": "Approximate traced extent: traced-maurya-core. A sourced point is also attached."
     },
     {
       "id": "chandragupta-maurya",
@@ -1992,7 +2020,7 @@
         "traced-maurya-core"
       ],
       "point": true,
-      "why": "Approximate traced extent: traced-maurya-core."
+      "why": "Approximate traced extent: traced-maurya-core. A sourced point is also attached."
     },
     {
       "id": "ashoka",
@@ -2048,7 +2076,7 @@
         "traced-maurya-core"
       ],
       "point": true,
-      "why": "Approximate traced extent: traced-maurya-core."
+      "why": "Approximate traced extent: traced-maurya-core. A sourced point is also attached."
     },
     {
       "id": "kanva-dynasty",
@@ -2060,7 +2088,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "kharavela",
@@ -2087,8 +2115,8 @@
       "outlines": [
         "traced-indo-greek"
       ],
-      "point": false,
-      "why": "Approximate traced extent: traced-indo-greek."
+      "point": true,
+      "why": "Approximate traced extent: traced-indo-greek. A sourced point is also attached."
     },
     {
       "id": "chera-sangam",
@@ -2100,7 +2128,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "chola-sangam",
@@ -2112,7 +2140,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "pandya-sangam",
@@ -2124,7 +2152,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "kakatiya-dynasty",
@@ -2138,7 +2166,7 @@
         "traced-kakatiya"
       ],
       "point": true,
-      "why": "Approximate traced extent: traced-kakatiya."
+      "why": "Approximate traced extent: traced-kakatiya. A sourced point is also attached."
     },
     {
       "id": "paramara-dynasty",
@@ -2175,10 +2203,12 @@
       "place": "Gujarat Sultanate",
       "startYear": 1394,
       "endYear": 1573,
-      "status": "missing",
-      "outlines": [],
+      "status": "outline",
+      "outlines": [
+        "traced-gujarat"
+      ],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Approximate traced extent: traced-gujarat."
     },
     {
       "id": "ghurid-empire",
@@ -2190,7 +2220,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "peshwa-office",
@@ -2199,10 +2229,10 @@
       "place": "Pune",
       "startYear": 1674,
       "endYear": 1818,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "baji-rao-i",
@@ -2211,10 +2241,10 @@
       "place": "Pune",
       "startYear": 1720,
       "endYear": 1740,
-      "status": "missing",
+      "status": "point",
       "outlines": [],
-      "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
     },
     {
       "id": "partition-of-india",
@@ -2226,7 +2256,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "princely-integration",
@@ -2238,7 +2268,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "states-reorganisation-1956",
@@ -2250,7 +2280,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "chhattisgarh-state",
@@ -2262,7 +2292,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "telangana-state",
@@ -2274,7 +2304,7 @@
       "status": "missing",
       "outlines": [],
       "point": false,
-      "why": "No reusable Commons extent has been traced for this record, and it has no sourced coordinate."
+      "why": "Still open. No traced Commons extent is linked, and this pass did not attach a Wikipedia coordinate for a place article that clearly matches the record."
     },
     {
       "id": "shashanka",
@@ -2371,8 +2401,8 @@
       "outlines": [
         "traced-later-pandya"
       ],
-      "point": false,
-      "why": "Approximate traced extent: traced-later-pandya."
+      "point": true,
+      "why": "Approximate traced extent: traced-later-pandya. A sourced point is also attached."
     },
     {
       "id": "malwa-sultanate",
@@ -2400,7 +2430,7 @@
         "traced-gajapati"
       ],
       "point": true,
-      "why": "Approximate traced extent: traced-gajapati."
+      "why": "Approximate traced extent: traced-gajapati. A sourced point is also attached."
     },
     {
       "id": "bijapur-sultanate",

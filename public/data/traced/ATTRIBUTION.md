@@ -1,8 +1,6 @@
 # Map credits
 
-Traced shapes are approximate. They are a reading of one Commons file, not a surveyed frontier. The fit error is the confidence: higher means the coastline fit was within about half a degree.
-
-The tracing of these files is CC BY-SA 4.0. See LICENSE-DATA. That licence is for the tracing, not the site code.
+Traced shapes are approximate. The tracing is CC BY-SA 4.0 data. See LICENSE-DATA. That licence does not cover the site code. Confidence follows the coastline fit: higher is within about half a degree, moderate is about half a degree to a degree, and low is looser.
 
 ## Mauryan core
 
@@ -263,3 +261,43 @@ The tracing of these files is CC BY-SA 4.0. See LICENSE-DATA. That licence is fo
 - Depicted date: The file is a map of the Adil Shahi dynasty and does not print a year. Shown from the independence in 1490 to the Mughal conquest in 1686, both stated in the Wikipedia lead.
 - Confidence: higher
 - What was traced: The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees.
+
+## Kushan extent
+
+- Commons file: [File:Map of the Kushan Empire.png](https://commons.wikimedia.org/wiki/File:Map_of_the_Kushan_Empire.png)
+- Author: Koba-chan, on a DEMIS Mapserver base
+- Licence of the file: CC BY-SA 3.0
+- The file’s own source: The file page credits a public-domain DEMIS base and Schwartzberg’s atlas, page 145.
+- Depicted date: The file is titled Map of the Kushan Empire and cites Schwartzberg’s atlas, page 145. It prints no year. Shown across the cited Kushan window, 1–300 CE.
+- Confidence: higher
+- What was traced: The highlighted tint was separated from the shared base map. Coastline fit residual is given with the confidence. The ring is cut to a Natural Earth land mask.
+
+## Gujarat Sultanate in 1532
+
+- Commons file: [File:Map of the Gujarat Sultanate.png](https://commons.wikimedia.org/wiki/File:Map_of_the_Gujarat_Sultanate.png)
+- Author: Beylarbey
+- Licence of the file: CC BY-SA 4.0
+- The file’s own source: The file page states the year 1532 and Muzaffar Shah III.
+- Depicted date: The file says it is the Gujarat Sultanate under Muzaffar Shah III in 1532. Shown in that year only.
+- Confidence: higher
+- What was traced: The highlighted tint on the shared DEMIS base was traced and cut to the coast. Coastline fit residual is given with the confidence. The ring is cut to a Natural Earth land mask.
+
+## Gupta core
+
+- Commons file: [File:Map for Gupta Empire and tributaries.svg](https://commons.wikimedia.org/wiki/File:Map_for_Gupta_Empire_and_tributaries.svg)
+- Author: Goran tek-en
+- Licence of the file: CC BY-SA 4.0
+- The file’s own source: The file’s own description dates the empire to 320–600 and distinguishes tributary states.
+- Depicted date: The file says Gupta Empire, 320–600, with tributary states drawn separately. Only the core colour is traced. Shown for 320–600.
+- Confidence: moderate
+- What was traced: The crimson core was traced. The brown tributary colour was left out. Coastline fit root-mean-square residual about 0.4 degrees; Cape Comorin was about 1 degree off.
+
+## Pratihara extent in 900
+
+- Commons file: [File:Gurjara Pratihara Empire in 900 AD.png](https://commons.wikimedia.org/wiki/File:Gurjara_Pratihara_Empire_in_900_AD.png)
+- Author: Thomas Lessman
+- Licence of the file: CC BY-SA 3.0
+- The file’s own source: The file page dates the drawing to 900.
+- Depicted date: The file says the Gurjara Pratihara Empire at its greatest extent in 900. Shown in 900 only.
+- Confidence: moderate
+- What was traced: The highlighted region was traced. Coastline fit root-mean-square residual about 0.5 degrees.
