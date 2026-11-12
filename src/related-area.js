@@ -9,6 +9,8 @@ const areas = [
   [/Ghurid|Ghor/, 'Ghor and the northwest routes', [33.5, 65], 500],
   [/Indo-Greek/, 'Northwestern South Asia', [33, 72.8], 450],
   [/Chhattisgarh/, 'Chhattisgarh context', [21.2, 81.6], 280],
+  [/Jharkhand/, 'Jharkhand', [23.6, 85.3], 220],
+  [/Uttarakhand|Kumaon|Garhwal/, 'Uttarakhand', [30.3, 79.1], 160],
   [/Telangana|Warangal|Orugallu/, 'Telangana and Warangal context', [18, 79.6], 280],
   [/Gujarat Sultanate|Ahmedabad/, 'Gujarat sultanate context', [23.0, 72.6], 250],
   [/Valabhi|Saurashtra|Kathiawar/, 'Saurashtra and Gujarat context', [21.9, 71.8], 280],

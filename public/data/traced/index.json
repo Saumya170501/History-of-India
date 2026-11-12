@@ -573,6 +573,100 @@
       "licence": "CC BY-SA 3.0",
       "mapSource": "The file page dates the drawing to 900.",
       "changes": "The highlighted region was traced. Coastline fit root-mean-square residual about 0.5 degrees."
+    },
+    {
+      "id": "traced-vijayanagara",
+      "title": "Vijayanagara in 1485",
+      "file": "era-after-1200.geojson",
+      "startYear": 1485,
+      "endYear": 1485,
+      "depicted": "The file is titled Vijayanagara Empire c.1485. Shown in 1485.",
+      "confidence": "higher",
+      "recordIds": [
+        "vijayanagara-empire"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Vijayanagara_Empire_c.1485.png",
+      "commonsFile": "File:Vijayanagara Empire c.1485.png",
+      "author": "Avantiputra7",
+      "licence": "CC0",
+      "mapSource": "The file page dates the drawing to about 1485.",
+      "changes": "Placed from Hampi, the west coast at that latitude, and the opposite east coast. The predicted Cape Comorin falls on the drawn southern tip. The orange tint was traced and cut to the coast."
+    },
+    {
+      "id": "traced-chola",
+      "title": "Chola territory in 1030",
+      "file": "era-to-1200.geojson",
+      "startYear": 1030,
+      "endYear": 1030,
+      "depicted": "The file shows the Chola empire in 1030 under Rajendra I. Blue is territory and pink is influence. Only the blue territory is traced. Shown in 1030.",
+      "confidence": "moderate",
+      "recordIds": [
+        "chola-dynasty",
+        "rajendra-reign",
+        "rajadhiraja-career"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Chola_Empire_map_corrected-01.svg",
+      "commonsFile": "File:Chola Empire map corrected-01.svg",
+      "author": "Nipuna Weerasinghe",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "The file\u2019s description dates the greatest extent to 1030 under Rajendra Chola I and separates territory from influence.",
+      "changes": "City dots for Kalyani, Vengi, Kanchipuram, Gangaikonda Cholapuram, Thanjavur and Nagapattinam were fitted. Root-mean-square residual about 0.4 degrees. The pink influence and the trade-route line were left out. For the dynasty record and Rajadhiraja, this is a dynasty extent, not reign-specific."
+    },
+    {
+      "id": "traced-pallava",
+      "title": "Pallava extent about 625",
+      "file": "era-to-750.geojson",
+      "startYear": 625,
+      "endYear": 625,
+      "depicted": "The drawing is labelled Pallava dynasty, about 625. Shown in 625.",
+      "confidence": "higher",
+      "recordIds": [
+        "pallava-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Pallava_dynasty.png",
+      "commonsFile": "File:Pallava dynasty.png",
+      "author": "Rawn3012",
+      "licence": "CC0",
+      "mapSource": "The image is titled for about 625.",
+      "changes": "The coastline fit residual is about 0.5 degrees. The shaded southern region was traced. This is a snapshot of about 625, not a map of the whole Pallava span."
+    },
+    {
+      "id": "traced-maratha",
+      "title": "Maratha territory in 1760",
+      "file": "era-after-1200.geojson",
+      "startYear": 1760,
+      "endYear": 1760,
+      "depicted": "The file is a map of the Maratha Empire in 1760, based on a British map. Shown in 1760.",
+      "confidence": "moderate",
+      "recordIds": [
+        "maratha-confederacy",
+        "peshwa-office"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Maratha_Empire_1760.svg",
+      "commonsFile": "File:Map of the Maratha Empire 1760.svg",
+      "author": "Ayunipear",
+      "licence": "CC0",
+      "mapSource": "The file page says it is based on a British map and the title gives 1760.",
+      "changes": "The green territory was traced. Cape Comorin, Kochi, Goa, Dwarka and the Godavari mouth fall within about 1 degree. The drawn east coast does not reach the real Hooghly, which is about 5 degrees off, so confidence stays moderate. Dynasty extent, not reign-specific, for the confederacy and the Peshwa office."
+    },
+    {
+      "id": "traced-mughal-1605",
+      "title": "Mughal Empire in 1605",
+      "file": "era-after-1200.geojson",
+      "startYear": 1605,
+      "endYear": 1605,
+      "depicted": "The file is the Mughal Empire under Akbar in 1605 and cites Schwartzberg. The border is a line. Shown in 1605.",
+      "confidence": "moderate",
+      "recordIds": [
+        "akbar",
+        "jahangir"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Mughal_Empire,_1605.png",
+      "commonsFile": "File:Mughal Empire, 1605.png",
+      "author": "Avantiputra7",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "The file page says Mughal Empire under Akbar, 1605, and cites Schwartzberg\u2019s Historical Atlas of South Asia. Lighter dotted areas of partial control were not filled.",
+      "changes": "The coastline was fitted, then the green border line was closed and filled and cut to the coast. Cape Comorin lands within half a degree. For Jahangir this is the first year of the reign, not a map of the whole reign."
     }
   ]
 }

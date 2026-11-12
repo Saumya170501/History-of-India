@@ -34,7 +34,7 @@ test('separate battles and sieges do not leak into adjoining years', () => {
     assert.ok(battlesForYear(data.records,end).some(record => record.id === id));
     assert.ok(!battlesForYear(data.records,start-1).some(record => record.id === id));
     assert.ok(!battlesForYear(data.records,end+1).some(record => record.id === id));
-    assert.equal(byId(id).geometry,null);
+    assert.ok(byId(id).geometry == null || byId(id).geometry.type === 'Point');
   }
 });
 

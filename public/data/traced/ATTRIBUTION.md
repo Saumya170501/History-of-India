@@ -1,6 +1,6 @@
 # Map credits
 
-Traced shapes are approximate. The tracing is CC BY-SA 4.0 data. See LICENSE-DATA. That licence does not cover the site code. Confidence follows the coastline fit: higher is within about half a degree, moderate is about half a degree to a degree, and low is looser.
+Traced shapes are approximate. The tracing is CC BY-SA 4.0 data. See LICENSE-DATA. That licence does not cover the site code.
 
 ## Mauryan core
 
@@ -301,3 +301,53 @@ Traced shapes are approximate. The tracing is CC BY-SA 4.0 data. See LICENSE-DAT
 - Depicted date: The file says the Gurjara Pratihara Empire at its greatest extent in 900. Shown in 900 only.
 - Confidence: moderate
 - What was traced: The highlighted region was traced. Coastline fit root-mean-square residual about 0.5 degrees.
+
+## Vijayanagara in 1485
+
+- Commons file: [File:Vijayanagara Empire c.1485.png](https://commons.wikimedia.org/wiki/File:Vijayanagara_Empire_c.1485.png)
+- Author: Avantiputra7
+- Licence of the file: CC0
+- The file’s own source: The file page dates the drawing to about 1485.
+- Depicted date: The file is titled Vijayanagara Empire c.1485. Shown in 1485.
+- Confidence: higher
+- What was traced: Placed from Hampi, the west coast at that latitude, and the opposite east coast. The predicted Cape Comorin falls on the drawn southern tip. The orange tint was traced and cut to the coast.
+
+## Chola territory in 1030
+
+- Commons file: [File:Chola Empire map corrected-01.svg](https://commons.wikimedia.org/wiki/File:Chola_Empire_map_corrected-01.svg)
+- Author: Nipuna Weerasinghe
+- Licence of the file: CC BY-SA 4.0
+- The file’s own source: The file’s description dates the greatest extent to 1030 under Rajendra Chola I and separates territory from influence.
+- Depicted date: The file shows the Chola empire in 1030 under Rajendra I. Blue is territory and pink is influence. Only the blue territory is traced. Shown in 1030.
+- Confidence: moderate
+- What was traced: City dots for Kalyani, Vengi, Kanchipuram, Gangaikonda Cholapuram, Thanjavur and Nagapattinam were fitted. Root-mean-square residual about 0.4 degrees. The pink influence and the trade-route line were left out. For the dynasty record and Rajadhiraja, this is a dynasty extent, not reign-specific.
+
+## Pallava extent about 625
+
+- Commons file: [File:Pallava dynasty.png](https://commons.wikimedia.org/wiki/File:Pallava_dynasty.png)
+- Author: Rawn3012
+- Licence of the file: CC0
+- The file’s own source: The image is titled for about 625.
+- Depicted date: The drawing is labelled Pallava dynasty, about 625. Shown in 625.
+- Confidence: higher
+- What was traced: The coastline fit residual is about 0.5 degrees. The shaded southern region was traced. This is a snapshot of about 625, not a map of the whole Pallava span.
+
+## Maratha territory in 1760
+
+- Commons file: [File:Map of the Maratha Empire 1760.svg](https://commons.wikimedia.org/wiki/File:Map_of_the_Maratha_Empire_1760.svg)
+- Author: Ayunipear
+- Licence of the file: CC0
+- The file’s own source: The file page says it is based on a British map and the title gives 1760.
+- Depicted date: The file is a map of the Maratha Empire in 1760, based on a British map. Shown in 1760.
+- Confidence: moderate
+- What was traced: The green territory was traced. Cape Comorin, Kochi, Goa, Dwarka and the Godavari mouth fall within about 1 degree. The drawn east coast does not reach the real Hooghly, which is about 5 degrees off, so confidence stays moderate. Dynasty extent, not reign-specific, for the confederacy and the Peshwa office.
+
+## Mughal Empire in 1605
+
+- Commons file: [File:Mughal Empire, 1605.png](https://commons.wikimedia.org/wiki/File:Mughal_Empire,_1605.png)
+- Author: Avantiputra7
+- Licence of the file: CC BY-SA 4.0
+- The file’s own source: The file page says Mughal Empire under Akbar, 1605, and cites Schwartzberg’s Historical Atlas of South Asia. Lighter dotted areas of partial control were not filled.
+- Depicted date: The file is the Mughal Empire under Akbar in 1605 and cites Schwartzberg. The border is a line. Shown in 1605.
+- Confidence: moderate
+- What was traced: The coastline was fitted, then the green border line was closed and filled and cut to the coast. Cape Comorin lands within half a degree. For Jahangir this is the first year of the reign, not a map of the whole reign.

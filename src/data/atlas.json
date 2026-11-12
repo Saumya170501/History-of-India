@@ -882,6 +882,76 @@
       "publisher": "English Wikipedia, article coordinates",
       "url": "https://en.wikipedia.org/wiki/Taxila",
       "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-khanwa",
+      "title": "Khanwa",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q6400422",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-haldighati",
+      "title": "Haldighati",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q3249952",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-chittorgarh",
+      "title": "Chittorgarh",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q41827",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-taraori",
+      "title": "Taraori",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q944133",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-dewair",
+      "title": "Dewair",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q56531739",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-jharkhand",
+      "title": "Jharkhand",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q1184",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wd-uttarakhand",
+      "title": "Uttarakhand",
+      "publisher": "Wikidata coordinate",
+      "url": "https://www.wikidata.org/wiki/Q1499",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "osm-ranthambore",
+      "title": "Ranthambore Fort",
+      "publisher": "OpenStreetMap Nominatim",
+      "url": "https://www.openstreetmap.org/search?query=Ranthambore%20Fort",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "osm-dandi",
+      "title": "Dandi, Gujarat",
+      "publisher": "OpenStreetMap Nominatim",
+      "url": "https://www.openstreetmap.org/search?query=Dandi%2C%20Gujarat",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "osm-raigad",
+      "title": "Raigad Fort",
+      "publisher": "OpenStreetMap Nominatim",
+      "url": "https://www.openstreetmap.org/search?query=Raigad%20Fort%20Maharashtra",
+      "accessed": "2026-11-12"
     }
   ],
   "records": [
@@ -1841,9 +1911,9 @@
       "dateLabel": "1003–1010 CE",
       "dateNote": "Construction is tentatively placed in 1003–1004, with consecration in 1009–1010; this is patronage, not a full reign.",
       "summary": "Rajaraja sponsored the Brihadisvara temple.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [79.13778, 10.78694]},
+      "locationSourceId": "wiki-thanjavur",
+      "locationNote": "The point is the English Wikipedia coordinate for Thanjavur, the place named for this temple record. It is not a kingdom boundary.",
       "citations": [
         {
           "sourceId": "unesco-chola",
@@ -4468,9 +4538,9 @@
       "dateLabel": "1527 CE",
       "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
       "summary": "Babur defeated the confederacy led by Rana Sanga of Mewar.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [77.543056, 27.035278]},
+      "locationSourceId": "wd-khanwa",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: Wikidata Q6400422.",
       "citations": [
         {
           "sourceId": "iranica-babur",
@@ -4525,9 +4595,9 @@
       "dateLabel": "1567–1568 CE",
       "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
       "summary": "Akbar’s forces besieged and captured Chittorgarh.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [74.623889, 24.889444]},
+      "locationSourceId": "wd-chittorgarh",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: Wikidata Q41827, Chittorgarh.",
       "citations": [
         {
           "sourceId": "mewar-lineage",
@@ -4554,9 +4624,9 @@
       "dateLabel": "1569 CE",
       "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
       "summary": "Akbar’s campaign brought the fort under Mughal control.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [76.455976, 26.018569]},
+      "locationSourceId": "osm-ranthambore",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: OpenStreetMap Nominatim for Ranthambore Fort.",
       "citations": [
         {
           "sourceId": "iranica-akbar",
@@ -4583,9 +4653,9 @@
       "dateLabel": "1576 CE",
       "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled. The foundation’s timeline specifies 18 June; this entry does not settle disputed casualty totals or wider claims about the war’s outcome.",
       "summary": "Pratap’s army fought Mughal forces commanded by Man Singh of Amber.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [73.702139, 24.894972]},
+      "locationSourceId": "wd-haldighati",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: Wikidata Q3249952.",
       "citations": [
         {
           "sourceId": "mewar-pratap",
@@ -4612,9 +4682,9 @@
       "dateLabel": "1582 CE",
       "dateNote": "Year-level event window. This does not mean fighting continued throughout every matching year. Exact days and troop positions are not modelled.",
       "summary": "The Mewar timeline records a victory involving Amar Singh against Sultan Khan’s Mughal force.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: the named region is sourced, but no verified point or boundary geometry is attached. A museum holding an object is not the historical location.",
+      "geometry": {"type": "Point", "coordinates": [73.55351, 25.497]},
+      "locationSourceId": "wd-dewair",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: Wikidata Q56531739, Dewair.",
       "citations": [
         {
           "sourceId": "mewar-pratap",
@@ -4758,9 +4828,9 @@
       "datePrecision": "year",
       "dateLabel": "1191 CE",
       "dateNote": "A distinct battle in the stated year; the two battles are not represented as continuous fighting across 1191–1192.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: Ajmer is the regional association; no battlefield or territorial geometry has been verified.",
+      "geometry": {"type": "Point", "coordinates": [76.94, 29.78]},
+      "locationSourceId": "wd-taraori",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: Wikidata Q944133, Taraori.",
       "reviewStatus": "cited",
       "researchBatch": "mughal-rajput-01",
       "tags": [
@@ -4788,9 +4858,9 @@
       "datePrecision": "year",
       "dateLabel": "1192 CE",
       "dateNote": "A distinct battle in the stated year; the two battles are not represented as continuous fighting across 1191–1192.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline only: Ajmer is the regional association; no battlefield or territorial geometry has been verified.",
+      "geometry": {"type": "Point", "coordinates": [76.94, 29.78]},
+      "locationSourceId": "wd-taraori",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: Wikidata Q944133, Taraori.",
       "reviewStatus": "cited",
       "researchBatch": "mughal-rajput-01",
       "tags": [
@@ -5804,9 +5874,9 @@
       ]
     },
     {
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record: a source-verified map coordinate has not yet been attached. No territorial extent or personal location is implied.",
+      "geometry": {"type": "Point", "coordinates": [73.445522, 18.23582]},
+      "locationSourceId": "osm-raigad",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: OpenStreetMap Nominatim for Raigad Fort.",
       "reviewStatus": "cited",
       "researchBatch": "year-polity-2026",
       "id": "shivaji",
@@ -7469,9 +7539,9 @@
       "dateLabel": "12 March 1930–early 1931",
       "dateNote": "Gandhi set out on 12 March 1930 and reached Dandi on 5 April. He and his followers took salt on 6 April. The article says this was the first act of a larger civil-disobedience campaign that extended into early 1931. Gandhi was released in January 1931, and the Gandhi-Irwin Pact was signed on 5 March 1931. The window covers the march and that campaign, not every day of protest.",
       "summary": "Gandhi’s march from Sabarmati to Dandi against the British salt monopoly, and the civil disobedience that followed.",
-      "geometry": null,
-      "locationSourceId": null,
-      "locationNote": "Timeline-only record. The article names Sabarmati near Ahmadabad and Dandi near Surat, and a distance of about 240 miles. It does not give a coordinate, so no point is shown. The route is not drawn.",
+      "geometry": {"type": "Point", "coordinates": [72.805908, 20.890571]},
+      "locationSourceId": "osm-dandi",
+      "locationNote": "The point is a published coordinate for this place, accessed 12 November 2026. It is a reference point, not a boundary or a troop position. Source: OpenStreetMap Nominatim for Dandi, Gujarat.",
       "tags": [
         "Gandhi",
         "independence",
@@ -8659,6 +8729,72 @@
           "sourceId": "wiki-bijapur",
           "locator": "Lead",
           "supports": "Independence from the Bahmanis in 1490 and the Mughal conquest in 1686."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "jharkhand-state",
+      "title": "Jharkhand",
+      "type": "state",
+      "place": "Jharkhand",
+      "startYear": 2000,
+      "endYear": 2026,
+      "datePrecision": "year",
+      "dateLabel": "statehood from 15 November 2000",
+      "dateNote": "Wikidata records the inception of Jharkhand as 15 November 2000. The window runs to 2026 so the state remains findable. 2026 is the atlas limit, not an end of the state.",
+      "summary": "State created on 15 November 2000.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.0,
+          23.0
+        ]
+      },
+      "locationSourceId": "wd-jharkhand",
+      "locationNote": "The point is the Wikidata coordinate for Jharkhand. It is a reference point for the state, not a boundary.",
+      "tags": [
+        "Jharkhand"
+      ],
+      "citations": [
+        {
+          "sourceId": "wd-jharkhand",
+          "locator": "Inception (P571)",
+          "supports": "Jharkhand’s inception is recorded as 15 November 2000."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "uttarakhand-state",
+      "title": "Uttarakhand",
+      "type": "state",
+      "place": "Uttarakhand",
+      "startYear": 2000,
+      "endYear": 2026,
+      "datePrecision": "year",
+      "dateLabel": "statehood from 9 November 2000",
+      "dateNote": "Wikidata records the inception of Uttarakhand as 9 November 2000. The window runs to 2026 so the state remains findable. 2026 is the atlas limit, not an end of the state. The Wikipedia lead used earlier did not give this day; this date is the Wikidata inception.",
+      "summary": "State created on 9 November 2000.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.953889,
+          30.511111
+        ]
+      },
+      "locationSourceId": "wd-uttarakhand",
+      "locationNote": "The point is the Wikidata coordinate for Uttarakhand. It is a reference point for the state, not a boundary.",
+      "tags": [
+        "Uttarakhand"
+      ],
+      "citations": [
+        {
+          "sourceId": "wd-uttarakhand",
+          "locator": "Inception (P571)",
+          "supports": "Uttarakhand’s inception is recorded as 9 November 2000."
         }
       ],
       "reviewStatus": "cited",
