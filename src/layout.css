@@ -100,6 +100,14 @@ main { max-width: none; margin: 0; padding: 0; }
 .map-caption { display: block; padding: 16px 18px; }
 .map-caption > span { display: block; }
 .map-caption > span:first-child { margin-bottom: 8px; }
+#traced-credit {
+  position: absolute; z-index: 500; left: 12px; bottom: 12px; max-width: min(320px, 70vw);
+  margin: 0; padding: 6px 8px; border-radius: 8px;
+  color: #efe6d2; background: #10281fcc; font: 11px/1.4 Inter, sans-serif;
+}
+#traced-credit a { color: #e7c98a; }
+#map-credits { display: grid; gap: 12px; }
+#map-credits article { display: grid; gap: 4px; }
 #map-selection-status { margin: 0; }
 #map-selection-status:empty { display: none; }
 .evidence-closed .timeline { right: var(--edge); }

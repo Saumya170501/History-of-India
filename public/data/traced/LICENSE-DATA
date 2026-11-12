@@ -1,0 +1,7 @@
+The traced outlines in this folder are licensed under the Creative Commons Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0).
+
+https://creativecommons.org/licenses/by-sa/4.0/
+
+That licence applies to the traced GeoJSON only. It is not a licence for the application code, and it does not relicense the historical-basemaps sheets in public/data/basemaps/, which remain GPL-3.0-only.
+
+Each shape also keeps the credit of the Wikimedia Commons file it was traced from. See ATTRIBUTION.md. An upstream file may itself be public domain or under a different reusable licence. Sharing a derivative of this tracing still requires attribution and share-alike for the tracing.

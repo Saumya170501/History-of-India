@@ -32,6 +32,7 @@ import { applySheetReading, sheetIsSuppressed } from "./sheet-policy.js";
 import { PLAY_SPEEDS, compareNames, nextPlaybackYear } from "./playback.js";
 import { SUCCESSIONS, TOURS, resolveTour, successionLine } from "./guides.js";
 import { fillPolityCard, fillYearList, fillYearSources, fillYearSummary } from "./year-panel.js";
+import { shapesForYear, validateTracedIndex } from "./traced.js";
 
 const catalogueResponse = await fetch(`${import.meta.env.BASE_URL}data/catalogue.json`);
 if (!catalogueResponse.ok) throw new Error(`Catalogue failed to load (HTTP ${catalogueResponse.status}).`);
@@ -339,6 +340,19 @@ const map = L.map("map", {
   maxBoundsViscosity: 1,
 }).setView([22.5, 80], 5);
 L.control.zoom({ position: "topright" }).addTo(map);
+const tracedCredit = element('p', '', 'traced-credit');
+tracedCredit.id = 'traced-credit';
+tracedCredit.hidden = true;
+$('.map-panel').append(tracedCredit);
+const creditsButton = element('button', 'Map credits', 'quiet');
+creditsButton.id = 'credits-button';
+creditsButton.type = 'button';
+$('#about-button').before(creditsButton);
+const creditsDialog = document.createElement('dialog');
+creditsDialog.id = 'credits-dialog';
+creditsDialog.setAttribute('aria-labelledby', 'credits-title');
+document.body.append(creditsDialog);
+$('#about-dialog').append(element('p', 'When a traced outline is loaded, it is approximate and credited on the map and on Map credits. The tracing is CC BY-SA 4.0 data. That is not a licence for the site code.'));
 map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
 const markerLayer = L.layerGroup().addTo(map);
 const regionLayer = L.featureGroup().addTo(map);
@@ -346,6 +360,8 @@ const battleLayer = L.featureGroup().addTo(map);
 const periodLayer = L.featureGroup().addTo(map);
 const markersById = new Map();
 const snapshotCache = new Map();
+const tracedCache = new Map();
+let tracedIndex = { shapes: [] };
 let periodFeatures = [];
 let periodSummary = null;
 let openPolityName = null;
@@ -521,16 +537,29 @@ function renderDetail(record) {
   });
   story.append(showMap);
   const evidence = element("div", undefined, "detail-evidence");
+  const tracedHere = shapesForYear(tracedIndex, state.year).filter(shape => shape.recordIds?.includes(record.id));
   evidence.append(
     element("h3", record.dateLabel),
     element("p", record.dateNote),
     element("h3", "Location and mapping status"),
     element("p", record.locationNote),
-    element("p", record.geometry
+    element("p", tracedHere.length
+      ? 'An approximate traced outline is drawn for this year. It is labelled approximate and is not a verified border. A cited point, where one is shown, is still only a place.'
+      : record.geometry
       ? 'This point is the cited place. It is not a kingdom boundary. No reviewed territorial outline is attached to this record.'
       : 'No boundary source is available for this record, so no territory is drawn.'),
     element("h3", "Follow the evidence"),
   );
+  if (tracedHere.length) {
+    evidence.append(element('h3', 'Approximate outline'));
+    for (const shape of tracedHere) {
+      evidence.append(
+        element('p', `${shape.title} is labelled approximate. Confidence is ${shape.confidence}. ${shape.changes}`),
+        link(`${shape.author}, ${shape.licence} ↗`, shape.commonsUrl),
+        element('p', `${shape.mapSource} ${shape.depicted} This tracing is CC BY-SA 4.0.`, 'citation-note'),
+      );
+    }
+  }
   for (const citation of record.citations) {
     const source = sources.get(citation.sourceId);
     evidence.append(
@@ -809,7 +838,7 @@ async function syncPeriod() {
     fillYearSummary(summaryBox, periodSummary, {
       onOpenList: () => { setEvidenceOpen(true, { refit: false }); setDrawerView('year'); },
     });
-    fillYearSources(sourcesView, { year: state.year, records: data.records, sources });
+    fillYearSources(sourcesView, { year: state.year, records: data.records, sources, traced: shapesForYear(tracedIndex, state.year) });
     const current = openPolityName ? featureByName(openPolityName) : null;
     if (current) showPolity(current, { zoom: sheetChanged, focus: false });
     else {
@@ -823,7 +852,66 @@ async function syncPeriod() {
     summaryBox.append(element('p', `Period snapshot unavailable: ${error.message}. Cited records are still listed.`, 'year-line'));
   }
 }
+function paintTracedCredit(active) {
+  tracedCredit.replaceChildren();
+  if (!active.length) { tracedCredit.hidden = true; return; }
+  tracedCredit.hidden = false;
+  tracedCredit.append(document.createTextNode('Approximate. '));
+  active.forEach((shape, index) => {
+    if (index) tracedCredit.append(document.createTextNode(' '));
+    const anchor = link(`${shape.author}, ${shape.licence}`, shape.commonsUrl);
+    tracedCredit.append(anchor);
+  });
+}
+function syncTraced() {
+  const active = shapesForYear(tracedIndex, state.year);
+  paintTracedCredit(active);
+  const pending = active.filter(shape => !tracedCache.has(shape.file));
+  Promise.all(pending.map(async shape => {
+    const response = await fetch(`${import.meta.env.BASE_URL}data/traced/${shape.file}`);
+    tracedCache.set(shape.file, response.ok ? await response.json() : { type: 'FeatureCollection', features: [] });
+  })).then(() => {
+    if (shapesForYear(tracedIndex, state.year).map(shape => shape.file).join() !== active.map(shape => shape.file).join()) return;
+    const features = [];
+    for (const shape of active) {
+      for (const feature of tracedCache.get(shape.file)?.features || []) {
+        features.push({ ...feature, properties: { ...feature.properties, confidence: shape.confidence, name: `${shape.title} (approximate)` } });
+      }
+    }
+    historicalMap.setTraced({ type: 'FeatureCollection', features });
+  }).catch(() => historicalMap.setTraced({ type: 'FeatureCollection', features: [] }));
+}
+function openMapCredits() {
+  creditsDialog.replaceChildren();
+  const top = element('div', undefined, 'dialog-top');
+  top.append(element('p', 'MAP CREDITS', 'eyebrow'));
+  const close = element('button', '×');
+  close.type = 'button';
+  close.setAttribute('aria-label', 'Close map credits');
+  close.addEventListener('click', () => creditsDialog.close());
+  top.append(close);
+  const list = element('div');
+  list.id = 'map-credits';
+  list.append(element('h2', 'Approximate traced outlines'));
+  list.append(element('p', 'Each shape is a trace of one reusable Commons map. The tracing is CC BY-SA 4.0 data. That licence does not cover the site code. A shape is skipped when the file’s licence is unclear or the map cannot be placed.'));
+  if (!tracedIndex.shapes?.length) list.append(element('p', 'No traced outline is loaded.'));
+  for (const shape of tracedIndex.shapes || []) {
+    const card = element('article');
+    card.append(
+      element('h3', `${shape.title} (approximate)`),
+      element('p', `${formatYear(shape.startYear)} – ${formatYear(shape.endYear)}. Confidence: ${shape.confidence}.`),
+      element('p', shape.depicted),
+      element('p', shape.changes),
+      link(`${shape.author}, ${shape.licence} ↗`, shape.commonsUrl),
+      element('p', shape.mapSource, 'citation-note'),
+    );
+    list.append(card);
+  }
+  creditsDialog.append(top, list);
+  creditsDialog.showModal();
+}
 function render() {
+  syncTraced();
   const matches = recordsForYear(
     data.records,
     state.year,
@@ -1203,6 +1291,15 @@ $('#show-battles').addEventListener('change', renderBattles);
 for (const id of ["#about-button", "#footer-sources"])
   $(id).addEventListener("click", () => $("#about-dialog").showModal());
 $("#close-about").addEventListener("click", () => $("#about-dialog").close());
+$("#credits-button").addEventListener("click", openMapCredits);
+fetch(`${import.meta.env.BASE_URL}data/traced/index.json`)
+  .then(response => response.ok ? response.json() : null)
+  .then(index => {
+    if (!index || validateTracedIndex(index).length) return;
+    tracedIndex = index;
+    render();
+  })
+  .catch(() => {});
 window.addEventListener("popstate", () => {
   state = stateFromSearch(location.search);
   render();

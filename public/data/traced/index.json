@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "licence": "CC BY-SA 4.0",
+  "licenceNote": "This licence covers the traced GeoJSON in this folder. It is not a licence for the site code.",
+  "shapes": [
+    {
+      "id": "traced-maurya-core",
+      "title": "Mauryan core",
+      "file": "maurya-core.geojson",
+      "startYear": -321,
+      "endYear": -185,
+      "depicted": "The file does not print a year. It is a general political map of the Mauryan Empire, shown here across the cited Maurya window 321–185 BCE.",
+      "confidence": "low",
+      "recordIds": ["maurya-empire", "chandragupta-maurya", "bindusara", "ashoka"],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Mauryan_Empire_map.svg",
+      "commonsFile": "File:Mauryan Empire map.svg",
+      "author": "MaxxL (Maxxl2)",
+      "licence": "Public domain",
+      "mapSource": "The file page’s own source line says “Atlas” and does not name the atlas or a plate.",
+      "changes": "Only the gold fill is traced. A separate cyan fill on the same file, read as tributary or other territory, is left out. City-label positions were fitted to the modern coordinates of Pataliputra, Taxila, Ujjain, Mathura, Sanchi and Bodh Gaya. The fit misses those cities by about one to two degrees. The ring is cut to a Natural Earth land mask."
+    }
+  ]
+}

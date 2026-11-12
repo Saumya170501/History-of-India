@@ -29,6 +29,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
   let features = { type: 'FeatureCollection', features: [] };
   let regions = { type: 'FeatureCollection', features: [] };
   let period = { type: 'FeatureCollection', features: [] };
+  let traced = { type: 'FeatureCollection', features: [] };
   let periodEnabled = true;
   let hoveredPeriod = null;
   function updateStatus() {
@@ -142,6 +143,20 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       }
       gl.addSource('period-polities', { type: 'geojson', data: period });
       for (const spec of periodLayers('period-polities')) gl.addLayer(spec);
+      gl.addSource('traced-shapes', { type: 'geojson', data: traced });
+      gl.addLayer({
+        id: 'traced-fill', type: 'fill', source: 'traced-shapes',
+        paint: { 'fill-color': '#2f6b4f', 'fill-opacity': 0.38 },
+      });
+      gl.addLayer({
+        id: 'traced-line', type: 'line', source: 'traced-shapes',
+        paint: {
+          'line-color': '#e7c98a',
+          'line-width': 2.2,
+          'line-opacity': 0.85,
+          'line-blur': ['match', ['get', 'confidence'], 'low', 4.2, 'moderate', 1.8, 1.1],
+        },
+      });
       gl.addSource('historical-records', { type: 'geojson', data: features });
       gl.addLayer(pointLayer('historical-records'));
       ready = true;
@@ -175,6 +190,10 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       gl.getSource('period-polities').setData(period);
       for (const id of ['period-fill', 'period-line', 'period-label', 'period-caution-label'])
         gl.setLayoutProperty(id, 'visibility', periodEnabled ? 'visible' : 'none');
+    },
+    setTraced(next) {
+      traced = next?.type === 'FeatureCollection' ? next : { type: 'FeatureCollection', features: [] };
+      if (ready) gl.getSource('traced-shapes').setData(traced);
     },
     setPeriodVisible(show) {
       periodEnabled = show;

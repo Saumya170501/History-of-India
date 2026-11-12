@@ -46,7 +46,7 @@ export function resolveTour(tour, records) {
 }
 
 export const SUCCESSIONS = Object.freeze([
-  { title: 'Maurya succession', ids: ['chandragupta-maurya', 'ashoka'] },
+  { title: 'Maurya succession', ids: ['chandragupta-maurya', 'bindusara', 'ashoka'] },
   { title: 'Shunga succession', ids: ['pushyamitra'] },
   { title: 'Mughal succession', tag: 'Mughal' },
   { title: 'Gupta succession', ids: ['gupta-chandragupta-ii'] },

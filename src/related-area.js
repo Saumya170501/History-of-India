@@ -1,6 +1,14 @@
 // Editorial navigation buffers around associated geography, NOT historical extents.
 // Centers/radii below are deliberately coarse and carry no sovereignty claim.
 const areas = [
+  [/Kalinga|Kharavela/, 'Kalinga context', [20.5, 85.5], 220],
+  [/Kashmir|Karkota/, 'Kashmir valley context', [34.1, 74.8], 180],
+  [/Malwa|Paramara|Dhara/, 'Malwa context', [22.6, 75.3], 280],
+  [/Ghurid|Ghor/, 'Ghor and the northwest routes', [33.5, 65], 500],
+  [/Indo-Greek/, 'Northwestern South Asia', [33, 72.8], 450],
+  [/Chhattisgarh/, 'Chhattisgarh context', [21.2, 81.6], 280],
+  [/Telangana|Warangal|Orugallu/, 'Telangana and Warangal context', [18, 79.6], 280],
+  [/Gujarat Sultanate|Ahmedabad/, 'Gujarat sultanate context', [23.0, 72.6], 250],
   [/Valabhi|Saurashtra|Kathiawar/, 'Saurashtra and Gujarat context', [21.9, 71.8], 280],
   [/Khajuraho|Chandella|Chandela/, 'Khajuraho and Bundelkhand context', [24.8, 79.9], 180],
   [/Pattadakal/, 'Pattadakal on the Malaprabha', [15.9, 75.8], 80],

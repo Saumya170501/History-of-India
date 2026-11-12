@@ -581,6 +581,139 @@
       "publisher": "English Wikipedia, article coordinates",
       "url": "https://en.wikipedia.org/wiki/Srirangapatna",
       "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-bindusara",
+      "title": "Bindusara",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bindusara",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-kanva",
+      "title": "Kanva dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kanva_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-kharavela",
+      "title": "Kharavela",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kharavela",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-indo-greek",
+      "title": "Indo-Greek Kingdom",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Indo-Greek_Kingdom",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-chera",
+      "title": "Chera dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chera_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-early-cholas",
+      "title": "Early Cholas",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Early_Cholas",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-pandya",
+      "title": "Pandya dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pandya_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-kakatiya",
+      "title": "Kakatiya dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kakatiya_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-warangal",
+      "title": "Warangal",
+      "publisher": "English Wikipedia, article coordinates",
+      "url": "https://en.wikipedia.org/wiki/Warangal",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-paramara",
+      "title": "Paramara dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Paramara_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-karkota",
+      "title": "Karkota dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Karkota_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-gujarat-sultanate",
+      "title": "Gujarat Sultanate",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gujarat_Sultanate",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-ghurid",
+      "title": "Ghurid dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ghurid_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-peshwa",
+      "title": "Peshwa",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Peshwa",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-partition",
+      "title": "Partition of India",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Partition_of_India",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-integration",
+      "title": "Political integration of India",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Political_integration_of_India",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-states-reorganisation",
+      "title": "States Reorganisation Act, 1956",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/States_Reorganisation_Act,_1956",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-chhattisgarh",
+      "title": "Chhattisgarh",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chhattisgarh",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-telangana",
+      "title": "Telangana",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Telangana",
+      "accessed": "2026-11-12"
     }
   ],
   "records": [
@@ -7551,6 +7684,535 @@
       ],
       "reviewStatus": "cited",
       "researchBatch": "bce-2026"
+    },
+    {
+      "id": "bindusara",
+      "title": "Bindusara",
+      "type": "ruler",
+      "place": "Pataliputra",
+      "startYear": -297,
+      "endYear": -273,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 297–c. 273 BCE",
+      "dateNote": "The article calls him the second Mauryan emperor and gives a reign of c. 297 to c. 273 BCE. He was a son of Chandragupta and the father of Ashoka. Greco-Roman writers call him Amitrochates or Amitraghata. The dates are the article’s approximate reign, not a dated inscription.",
+      "summary": "Second Mauryan emperor, reigning between Chandragupta and Ashoka on the article’s approximate dates.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.128333,
+          25.6125
+        ]
+      },
+      "locationSourceId": "wiki-pataliputra",
+      "locationNote": "The point is the modern Wikipedia coordinate for Pataliputra, the Mauryan capital already used for Chandragupta. It is a reference point, not a boundary.",
+      "tags": [
+        "Maurya"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-bindusara",
+          "locator": "Lead",
+          "supports": "The second Mauryan emperor, son of Chandragupta and father of Ashoka, with a reign given as c. 297 to c. 273 BCE."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "kanva-dynasty",
+      "title": "Kanva dynasty",
+      "type": "kingdom",
+      "place": "Magadha",
+      "startYear": -73,
+      "endYear": -28,
+      "datePrecision": "approximate",
+      "dateLabel": "73–28 BCE",
+      "dateNote": "The article dates the dynasty to 73–28 BCE and says Vasudeva Kanva overthrew the Shunga ruler Devabhuti. Puranas name Pataliputra, while the article says the coins concentrate around Vidisha. No outline is drawn.",
+      "summary": "The short-lived house that replaced the Shungas, dated by the article to 73–28 BCE.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The article does not settle a single capital between the Puranic Pataliputra and the coins around Vidisha, so no point is shown.",
+      "tags": [
+        "Magadha"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-kanva",
+          "locator": "Lead",
+          "supports": "The dynasty’s dates 73–28 BCE, Vasudeva Kanva’s overthrow of Devabhuti, and the Pataliputra versus Vidisha evidence."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "kharavela",
+      "title": "Kharavela",
+      "type": "ruler",
+      "place": "Kalinga",
+      "startYear": -199,
+      "endYear": -1,
+      "datePrecision": "approximate",
+      "dateLabel": "2nd or 1st century BCE",
+      "dateNote": "The article calls him an emperor of Kalinga in the 2nd or 1st century BCE. It says the only source is the Hathigumpha inscription, which is undated and partly illegible. This window is that two-century span. It is not a measured reign, and no year inside it is a dated event.",
+      "summary": "Ruler of Kalinga known from the undated Hathigumpha inscription, placed by the article in the 2nd or 1st century BCE.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The inscription does not supply a coordinate, so no point and no outline are shown.",
+      "tags": [
+        "Kalinga"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-kharavela",
+          "locator": "Lead",
+          "supports": "An emperor of Kalinga in the 2nd or 1st century BCE, known from the undated and partly illegible Hathigumpha inscription."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "indo-greek-kingdom",
+      "title": "Indo-Greek kingdoms",
+      "type": "kingdom",
+      "place": "Indo-Greek northwest",
+      "startYear": -200,
+      "endYear": -200,
+      "datePrecision": "approximate",
+      "dateLabel": "founded about 200 BCE",
+      "dateNote": "The article says the kingdom was founded when the Graeco-Bactrian king Demetrius I invaded India from Bactria in about 200 BC, and that the name covers several Hellenistic states with capitals including Taxila, Sagala, Pushkalavati and Bagram. The lead does not give one end year, so this record is only the foundation year. A later sentence about Western Satraps lingering to 415 CE is not used as an end date.",
+      "summary": "Hellenistic kingdoms in the northwest, founded about 200 BCE when Demetrius I invaded from Bactria.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The article names several capitals and does not give one coordinate, so no point is shown.",
+      "tags": [
+        "Indo-Greek"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-indo-greek",
+          "locator": "Lead",
+          "supports": "Hellenistic states in the northwest, and a foundation about 200 BC when Demetrius I invaded from Bactria."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "chera-sangam",
+      "title": "Chera dynasty, early evidence",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": -299,
+      "endYear": -201,
+      "datePrecision": "century",
+      "dateLabel": "documented from the 3rd century BCE",
+      "dateNote": "The article says the Cheras are documented as early as the third century BCE and names them as one of the three crowned kings of Tamilakam, with the Cholas and the Pandyas. The window is that century. It is not a continuous reign, and it does not replace the existing 1–300 CE Chera record.",
+      "summary": "One of the three crowned houses of Tamilakam, documented as early as the third century BCE.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate is taken from the article, so no point is shown.",
+      "tags": [
+        "Chera"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-chera",
+          "locator": "Lead",
+          "supports": "Documentation as early as the third century BCE, and the Cheras as one of the three crowned kings of Tamilakam."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "chola-sangam",
+      "title": "Early Cholas",
+      "type": "kingdom",
+      "place": "Tamil region",
+      "startYear": -600,
+      "endYear": -1,
+      "datePrecision": "approximate",
+      "dateLabel": "600 BCE–300 CE in the article; this record is the BCE part",
+      "dateNote": "The Early Cholas article gives the pre- and post-Sangam window as 600 BCE–300 CE, with capitals at Urayur (Tiruchirappalli) and Kaveripattinam, and says written records are scarce. This record keeps only the BCE part so it can be found on the early timeline. The existing early Chola record still covers 1–300 CE. Neither record is a territorial outline.",
+      "summary": "The early Chola house, whose article dates the scarce written record from 600 BCE.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The named capitals are not given a coordinate here, so no point is shown.",
+      "tags": [
+        "Chola"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-early-cholas",
+          "locator": "Lead",
+          "supports": "A Sangam window given as 600 BCE–300 CE, capitals at Urayur and Kaveripattinam, and scarce written records."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "pandya-sangam",
+      "title": "Pandya dynasty, early evidence",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": -499,
+      "endYear": -201,
+      "datePrecision": "approximate",
+      "dateLabel": "at least the 5th–3rd centuries BCE",
+      "dateNote": "The article says the dynasty existed since at least the 5th to 3rd centuries BCE, with later imperial phases in the 6th–10th and 13th–14th centuries. This window is only that early span. It is not a claim that one king ruled the whole of it, and it does not replace the existing early Pandya record.",
+      "summary": "The Pandya house, which the article traces back at least to the 5th–3rd centuries BCE.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate is taken from the article, so no point is shown.",
+      "tags": [
+        "Pandya"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-pandya",
+          "locator": "Lead",
+          "supports": "A dynasty existing since at least the 5th to 3rd centuries BCE, with later imperial phases named separately."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "kakatiya-dynasty",
+      "title": "Kakatiya dynasty",
+      "type": "kingdom",
+      "place": "Warangal",
+      "startYear": 1163,
+      "endYear": 1323,
+      "datePrecision": "year",
+      "dateLabel": "sovereign 1163–1323 CE",
+      "dateNote": "The article says the dynasty ruled much of the eastern Deccan in the 12th to 14th centuries, with its capital at Orugallu, now Warangal. Early rulers were feudatories. They assumed sovereignty under Rudradeva in 1163. Ganapati Deva ruled 1199–1262. The article says an attack by Ulugh Khan in 1323 ended in the defeat of the Kakatiya army. The window uses 1163 and that 1323 defeat. The lead was cut off after “the demise of the”, so a later date is not added.",
+      "summary": "Telugu dynasty of Warangal, sovereign from Rudradeva in 1163 until the defeat of 1323.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.5941,
+          17.9689
+        ]
+      },
+      "locationSourceId": "wiki-warangal",
+      "locationNote": "The point is the modern Wikipedia coordinate for Warangal, the city identified with the Kakatiya capital Orugallu. It is a reference point, not a boundary.",
+      "tags": [
+        "Kakatiya"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-kakatiya",
+          "locator": "Lead",
+          "supports": "Capital at Orugallu (Warangal), sovereignty under Rudradeva in 1163, Ganapati Deva’s reign 1199–1262, and the defeat in 1323."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "paramara-dynasty",
+      "title": "Paramara dynasty",
+      "type": "kingdom",
+      "place": "Malwa",
+      "startYear": 948,
+      "endYear": 1305,
+      "datePrecision": "year",
+      "dateLabel": "948–1305 CE",
+      "dateNote": "The article says the dynasty ruled Malwa and surrounding areas between 948 and 1305. Early rulers were probably Rashtrakuta vassals. Around 972 Siyaka sacked Manyakheta and the house became sovereign, with Dhara as a later capital. Mahalakadeva was defeated and killed by Alauddin Khalji’s forces in 1305. The article adds that epigraphic evidence suggests rule continued for a few years after his death, so 1305 is the dated defeat, not a proven last inscription.",
+      "summary": "The Malwa house dated 948–1305, sovereign after Siyaka’s sack of Manyakheta.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Dhara and Mandu are named, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Paramara",
+        "Malwa"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-paramara",
+          "locator": "Lead",
+          "supports": "Rule in Malwa from 948 to 1305, sovereignty after the sack of Manyakheta around 972, and Mahalakadeva’s death in 1305."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "karkota-dynasty",
+      "title": "Karkota dynasty",
+      "type": "kingdom",
+      "place": "Kashmir",
+      "startYear": 625,
+      "endYear": 855,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 625–855 CE",
+      "dateNote": "The article dates the dynasty to c. 625–855 CE and says it ruled the Kashmir valley and some northern parts of the subcontinent. Lalitaditya built the Martand Sun Temple. Avanti Varman took the throne in 855 and began the Utpala dynasty. The opening date is the article’s circa.",
+      "summary": "Kashmir dynasty of about 625–855, ended when Avanti Varman founded the Utpala house.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Martand is named, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Karkota",
+        "Kashmir"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-karkota",
+          "locator": "Lead",
+          "supports": "The c. 625–855 dates, rule in the Kashmir valley, Martand, and Avanti Varman’s accession in 855."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "gujarat-sultanate",
+      "title": "Gujarat Sultanate",
+      "type": "kingdom",
+      "place": "Gujarat Sultanate",
+      "startYear": 1394,
+      "endYear": 1573,
+      "datePrecision": "year",
+      "dateLabel": "1394–1573 CE",
+      "dateNote": "The article says Muzaffar Shah I, governor of Gujarat, declared independence from the Tughlaq dynasty in 1394. Ahmad Shah I moved the capital to Ahmedabad in 1411. The article says the sultanate ended in 1573, when Akbar annexed it. A short restoration after 1583 is described and is not given a separate end year here.",
+      "summary": "The western sultanate founded in 1394 and annexed by Akbar in 1573.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Ahmedabad is named as the capital from 1411, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Gujarat"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-gujarat-sultanate",
+          "locator": "Lead",
+          "supports": "Independence in 1394, the move to Ahmedabad in 1411, and annexation by Akbar in 1573."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "ghurid-empire",
+      "title": "Ghurid empire",
+      "type": "kingdom",
+      "place": "Ghurid campaigns",
+      "startYear": 1175,
+      "endYear": 1215,
+      "datePrecision": "year",
+      "dateLabel": "empire 1175–1215 CE",
+      "dateNote": "The article says the dynasty ruled in Ghor from the 8th century and became an empire from 1175 to 1215. This record uses the empire years only. It says Muhammad of Ghor seized Lahore and expelled the Ghaznavids from their last stronghold. The earlier local chiefdom is not given its own window.",
+      "summary": "The Ghurid empire of 1175–1215, which took Lahore from the Ghaznavids.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Ghor and Lahore are named, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Ghurid"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-ghurid",
+          "locator": "Lead",
+          "supports": "An empire from 1175 to 1215, centered in Ghor, and Muhammad of Ghor’s seizure of Lahore."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "peshwa-office",
+      "title": "Peshwa",
+      "type": "state",
+      "place": "Pune",
+      "startYear": 1674,
+      "endYear": 1818,
+      "datePrecision": "year",
+      "dateLabel": "office in the Maratha Empire, 1674–1818",
+      "dateNote": "The article calls the Peshwa the second office of the Maratha Empire (1674–1818), after the Chhatrapati. The office became hereditary when Shahu gave it to Bajirao Ballal. After Shahu I, the Peshwas held the government, and from Balaji Rao they were the supreme authority while the Chhatrapati’s position became nominal. The 1674–1818 span is the article’s span for the empire, not a list of every Peshwa’s years.",
+      "summary": "The Maratha office that became hereditary under Shahu and later the effective government.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Pune is the associated later seat used for browsing. No coordinate was taken, so no point is shown.",
+      "tags": [
+        "Maratha",
+        "Peshwa"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-peshwa",
+          "locator": "Lead",
+          "supports": "The office in the Maratha Empire of 1674–1818, the hereditary grant to Bajirao Ballal, and the later supremacy of the Peshwas."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "baji-rao-i",
+      "title": "Baji Rao I",
+      "type": "ruler",
+      "place": "Pune",
+      "startYear": 1720,
+      "endYear": 1740,
+      "datePrecision": "year",
+      "dateLabel": "Peshwa 1720–1740 CE",
+      "dateNote": "The article says the Peshwa’s office was most powerful under Baji Rao I (r. 1720–1740). Those are the years used here. No extent is drawn.",
+      "summary": "Peshwa under whom the article says the office was at its most powerful, 1720–1740.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate was taken, so no point is shown.",
+      "tags": [
+        "Maratha",
+        "Peshwa"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-peshwa",
+          "locator": "Lead",
+          "supports": "The office was most powerful under Baji Rao I, r. 1720–1740."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "partition-of-india",
+      "title": "Partition of India",
+      "type": "state",
+      "place": "British India",
+      "startYear": 1947,
+      "endYear": 1947,
+      "datePrecision": "year",
+      "dateLabel": "1947 CE",
+      "dateNote": "The article says British India was divided into the Union of India and the Dominion of Pakistan under the Indian Independence Act 1947, and that Bengal and Punjab were divided. The two dominions came into existence at midnight on 14–15 August 1947. This record is that year. It is not a boundary of either new state.",
+      "summary": "The 1947 division of British India into two dominions, with Bengal and Punjab divided.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No outline of the partition is drawn.",
+      "tags": [
+        "Partition"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-partition",
+          "locator": "Lead",
+          "supports": "The division into two dominions under the Indian Independence Act, the division of Bengal and Punjab, and 14–15 August 1947."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "princely-integration",
+      "title": "Integration of the princely states",
+      "type": "state",
+      "place": "Princely states",
+      "startYear": 1947,
+      "endYear": 1957,
+      "datePrecision": "approximate",
+      "dateLabel": "after 1947, over the next decade",
+      "dateNote": "The article says India in 1947 included 562 princely states under British suzerainty, and that integrating them into an Indian Union was pursued over the next decade. The window is 1947 through 1957 as that decade. It is not a statute date for every accession, and no state boundary is drawn.",
+      "summary": "The post-1947 effort to bring 562 princely states into the Indian Union.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The states were not one territory, so no outline is drawn.",
+      "tags": [
+        "Princely"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-integration",
+          "locator": "Lead",
+          "supports": "562 princely states in 1947, and integration pursued over the following decade."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "states-reorganisation-1956",
+      "title": "States Reorganisation Act, 1956",
+      "type": "state",
+      "place": "Republic of India",
+      "startYear": 1956,
+      "endYear": 1956,
+      "datePrecision": "year",
+      "dateLabel": "1956 CE",
+      "dateNote": "The article calls the Act a major reform that organised state boundaries along linguistic lines, in force with the Constitution (Seventh Amendment) Act, 1956. It notes Potti Sreeramulu’s death in 1952 and Andhra State in 1953 as the movement’s turning point. This record is the 1956 Act, not a map of the new states.",
+      "summary": "The 1956 linguistic reorganisation of India’s states.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The Act’s new boundaries are not drawn.",
+      "tags": [
+        "Republic"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-states-reorganisation",
+          "locator": "Lead",
+          "supports": "A linguistic reorganisation in force with the Seventh Amendment in 1956, after Andhra State in 1953."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "chhattisgarh-state",
+      "title": "Chhattisgarh",
+      "type": "state",
+      "place": "Chhattisgarh",
+      "startYear": 2000,
+      "endYear": 2026,
+      "datePrecision": "year",
+      "dateLabel": "statehood from 1 November 2000",
+      "dateNote": "The article says Chhattisgarh was formerly part of Madhya Pradesh and was granted statehood on 1 November 2000, with Raipur as the capital. The window runs to 2026 so the state remains findable. 2026 is the atlas limit, not an end of the state. The States Reorganisation Act, 1956, had placed the region in Madhya Pradesh.",
+      "summary": "State created from Madhya Pradesh on 1 November 2000, with its capital at Raipur.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No state boundary is drawn.",
+      "tags": [
+        "Chhattisgarh"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-chhattisgarh",
+          "locator": "Lead",
+          "supports": "Statehood on 1 November 2000 with Raipur as capital, after being part of Madhya Pradesh."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "telangana-state",
+      "title": "Telangana",
+      "type": "state",
+      "place": "Telangana",
+      "startYear": 2014,
+      "endYear": 2026,
+      "datePrecision": "year",
+      "dateLabel": "statehood in 2014",
+      "dateNote": "The article says the Telangana movement obtained bifurcation with the creation, in 2014, of the state of Telangana. The lead used here does not give the day. The window runs to 2026 so the state remains findable. 2026 is the atlas limit, not an end of the state.",
+      "summary": "State created in 2014 from the Telugu-speaking region described in the article.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No state boundary is drawn.",
+      "tags": [
+        "Telangana"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-telangana",
+          "locator": "Lead",
+          "supports": "Creation of the state of Telangana in 2014."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
     }
   ]
 }

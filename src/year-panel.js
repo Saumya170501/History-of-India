@@ -87,9 +87,9 @@ export function fillYearList(container, { features, query = '', selectedName, on
   addGroup('Residual categories', residual);
 }
 
-export function fillYearSources(container, { year, records, sources }) {
+export function fillYearSources(container, { year, records, sources, traced = [] }) {
   container.replaceChildren();
-  container.append(el('p', null, `Sources cited by records whose date window includes ${year} CE, plus the external sheet used for the shapes.`));
+  container.append(el('p', null, `Sources cited by records whose date window includes ${formatYear(year)}, plus the external sheet used for the shapes.`));
   const licence = el('p', 'polity-licence');
   licence.append(document.createTextNode('Shapes: historical-basemaps, André Ourednik and contributors, GPL-3.0-only. '));
   const repo = el('a', null, 'Source repository');
@@ -116,6 +116,15 @@ export function fillYearSources(container, { year, records, sources }) {
     }
   }
   if (!seen.size) container.append(el('p', null, 'No catalogue source is attached to a record in this year.'));
+  for (const shape of traced) {
+    const item = el('article', 'source-row');
+    const link = el('a', null, `${shape.title} (approximate)`);
+    link.href = shape.commonsUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    item.append(link, el('p', null, `${shape.author}. ${shape.licence}. ${shape.mapSource} This tracing is CC BY-SA 4.0. Confidence: ${shape.confidence}.`));
+    container.append(item);
+  }
 }
 
 export function fillPolityCard(container, { feature, year, summary, links, records, sources, onRecord, onClose }) {
