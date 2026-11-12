@@ -146,7 +146,10 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       gl.addSource('traced-shapes', { type: 'geojson', data: traced });
       gl.addLayer({
         id: 'traced-fill', type: 'fill', source: 'traced-shapes',
-        paint: { 'fill-color': '#2f6b4f', 'fill-opacity': 0.38 },
+        paint: {
+          'fill-color': ['match', ['get', 'swatch'], 0, '#2f6b4f', 1, '#3d5c78', 2, '#6b5340', 3, '#4f6b3a', 4, '#5c4d78', '#2f6b4f'],
+          'fill-opacity': 0.3,
+        },
       });
       gl.addLayer({
         id: 'traced-line', type: 'line', source: 'traced-shapes',

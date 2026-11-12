@@ -873,11 +873,20 @@ function syncTraced() {
   })).then(() => {
     if (shapesForYear(tracedIndex, state.year).map(shape => shape.file).join() !== active.map(shape => shape.file).join()) return;
     const features = [];
-    for (const shape of active) {
+    active.forEach((shape, index) => {
       for (const feature of tracedCache.get(shape.file)?.features || []) {
-        features.push({ ...feature, properties: { ...feature.properties, confidence: shape.confidence, name: `${shape.title} (approximate)` } });
+        if (feature.properties?.id && feature.properties.id !== shape.id) continue;
+        features.push({
+          ...feature,
+          properties: {
+            ...feature.properties,
+            confidence: shape.confidence,
+            name: `${shape.title} (approximate)`,
+            swatch: index % 5,
+          },
+        });
       }
-    }
+    });
     historicalMap.setTraced({ type: 'FeatureCollection', features });
   }).catch(() => historicalMap.setTraced({ type: 'FeatureCollection', features: [] }));
 }

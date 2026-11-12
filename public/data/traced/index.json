@@ -9,15 +9,487 @@
       "file": "maurya-core.geojson",
       "startYear": -321,
       "endYear": -185,
-      "depicted": "The file does not print a year. It is a general political map of the Mauryan Empire, shown here across the cited Maurya window 321–185 BCE.",
+      "depicted": "The file does not print a year. It is a general political map of the Mauryan Empire, shown here across the cited Maurya window 321\u2013185 BCE.",
       "confidence": "low",
-      "recordIds": ["maurya-empire", "chandragupta-maurya", "bindusara", "ashoka"],
+      "recordIds": [
+        "maurya-empire",
+        "chandragupta-maurya",
+        "bindusara",
+        "ashoka"
+      ],
       "commonsUrl": "https://commons.wikimedia.org/wiki/File:Mauryan_Empire_map.svg",
       "commonsFile": "File:Mauryan Empire map.svg",
       "author": "MaxxL (Maxxl2)",
       "licence": "Public domain",
-      "mapSource": "The file page’s own source line says “Atlas” and does not name the atlas or a plate.",
+      "mapSource": "The file page\u2019s own source line says \u201cAtlas\u201d and does not name the atlas or a plate.",
       "changes": "Only the gold fill is traced. A separate cyan fill on the same file, read as tributary or other territory, is left out. City-label positions were fitted to the modern coordinates of Pataliputra, Taxila, Ujjain, Mathura, Sanchi and Bodh Gaya. The fit misses those cities by about one to two degrees. The ring is cut to a Natural Earth land mask."
+    },
+    {
+      "id": "traced-shunga",
+      "title": "Shunga extent",
+      "file": "era-bce.geojson",
+      "startYear": -185,
+      "endYear": -73,
+      "depicted": "The file is titled Map of the Shungas and does not print a year. Shown across the cited Shunga window, 185\u201373 BCE.",
+      "confidence": "higher",
+      "recordIds": [
+        "shunga-dynasty",
+        "pushyamitra"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Shungas.png",
+      "commonsFile": "File:Map of the Shungas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Shungas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-indo-greek",
+      "title": "Indo-Greek extent",
+      "file": "era-bce.geojson",
+      "startYear": -200,
+      "endYear": -200,
+      "depicted": "The file is titled Map of the Indo-Greeks and cites Schwartzberg\u2019s atlas, page 145. It prints no year. Shown in 200 BCE, the foundation year already cited for this record. The lead gives no single end year.",
+      "confidence": "higher",
+      "recordIds": [
+        "indo-greek-kingdom"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Indo-Greeks.png",
+      "commonsFile": "File:Map of the Indo-Greeks.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: Schwartzberg Atlas, p. 145",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Indo-Greeks",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-meghavahana",
+      "title": "Maha-Meghavahana extent",
+      "file": "era-bce.geojson",
+      "startYear": -199,
+      "endYear": -1,
+      "depicted": "The file is titled Map of the Maha-Megavahanas and does not print a year. Shown across the cited Kharavela window, the 2nd or 1st century BCE. It is not a dated reign.",
+      "confidence": "higher",
+      "recordIds": [
+        "kharavela"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Maha-Meghavahanas.png",
+      "commonsFile": "File:Map of the Maha-Meghavahanas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Maha-Megavahanas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-satavahana",
+      "title": "Satavahana extent",
+      "file": "era-to-750.geojson",
+      "startYear": 50,
+      "endYear": 230,
+      "depicted": "The file is titled Map of the Satavahanas and does not print a year. Shown across the cited Satavahana window, 50\u2013230 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "early-satavahana",
+        "early-gautamiputra",
+        "early-pulumavi",
+        "early-satakarni",
+        "early-yajna",
+        "early-vijaya",
+        "early-canda",
+        "early-mathariputra"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Satavahanas.png",
+      "commonsFile": "File:Map of the Satavahanas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Satavahanas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-vakataka",
+      "title": "Vakataka extent",
+      "file": "era-to-750.geojson",
+      "startYear": 250,
+      "endYear": 500,
+      "depicted": "The file is titled Map of the Vakatakas and does not print a year. Shown across the cited Vakataka window, 250\u2013500 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "vakataka-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Vakatakas.png",
+      "commonsFile": "File:Map of the Vakatakas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Vakatakas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-chalukya-badami",
+      "title": "Chalukya extent",
+      "file": "era-to-750.geojson",
+      "startYear": 543,
+      "endYear": 757,
+      "depicted": "The file is titled Map of the Chalukyas and does not print a year. The drawing labels Vatapi. Shown across the cited Badami Chalukya window, 543\u2013757 CE. It is not the later Kalyani Chalukya kingdom.",
+      "confidence": "higher",
+      "recordIds": [
+        "chalukya-badami"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Chalukyas.png",
+      "commonsFile": "File:Map of the Chalukyas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Chalukyas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-shashanka",
+      "title": "Shashanka\u2019s Gauda",
+      "file": "era-to-750.geojson",
+      "startYear": 600,
+      "endYear": 636,
+      "depicted": "The file is titled Map of the Shashankas and does not print a year. Shown across 600\u2013636, the range historians give in the Wikipedia lead.",
+      "confidence": "higher",
+      "recordIds": [
+        "shashanka"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Shashankas.png",
+      "commonsFile": "File:Map of the Shashankas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Shashankas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-chacha",
+      "title": "Chach kingdom circa 650",
+      "file": "era-to-750.geojson",
+      "startYear": 650,
+      "endYear": 650,
+      "depicted": "The file is titled Map of the Chachas circa 650 CE. Shown in 650 CE. No catalogue record is tied to it yet.",
+      "confidence": "higher",
+      "recordIds": [],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Chachas_circa_650_CE.png",
+      "commonsFile": "File:Map of the Chachas circa 650 CE.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Chachas circa 650 CE",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-karkota",
+      "title": "Karkota extent",
+      "file": "era-to-750.geojson",
+      "startYear": 625,
+      "endYear": 855,
+      "depicted": "The file is titled Map of the Karkotas and does not print a year. Shown across the cited Karkota window, about 625\u2013855 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "karkota-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Karkotas.png",
+      "commonsFile": "File:Map of the Karkotas.png",
+      "author": "Nishit Kumar Sharma Reference: [1]",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Karkotas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-chandela",
+      "title": "Chandela extent",
+      "file": "era-to-1200.geojson",
+      "startYear": 801,
+      "endYear": 1400,
+      "depicted": "The file is titled Map of the Candellas and does not print a year. Shown across the Wikipedia lead\u2019s span, the early 9th century to the 14th century. 801 is the opening of that span, not a foundation day.",
+      "confidence": "higher",
+      "recordIds": [
+        "chandela-empire"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Candellas.png",
+      "commonsFile": "File:Map of the Candellas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Candellas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-pala",
+      "title": "Pala extent",
+      "file": "era-to-1200.geojson",
+      "startYear": 750,
+      "endYear": 1160,
+      "depicted": "The file is titled Map of the Pala Empire and does not print a year. Shown across the cited Pala window, 750\u20131160 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "pala-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Pala_Empire.png",
+      "commonsFile": "File:Map of the Pala Empire.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Pala Empire",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-rashtrakuta",
+      "title": "Rashtrakuta extent",
+      "file": "era-to-1200.geojson",
+      "startYear": 755,
+      "endYear": 975,
+      "depicted": "The file says it is the Rashtrakutas at their peak and does not print a year. Shown across the cited Rashtrakuta window, 755\u2013975 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "rashtrakuta-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_Rashtrakutas.png",
+      "commonsFile": "File:Map of Rashtrakutas.png",
+      "author": "Nikel3012",
+      "licence": "CC0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of Rashtrakutas at its peak",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-chaulukya",
+      "title": "Chaulukya (Solanki) extent",
+      "file": "era-to-1200.geojson",
+      "startYear": 940,
+      "endYear": 1244,
+      "depicted": "The file is titled Map of the Chaulukyas and does not print a year. Shown across the Wikipedia lead\u2019s span, about 940\u20131244 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "chaulukya-gujarat"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Chaulukyas.png",
+      "commonsFile": "File:Map of the Chaulukyas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Chaulukyas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-paramara",
+      "title": "Paramara extent",
+      "file": "era-to-1200.geojson",
+      "startYear": 948,
+      "endYear": 1305,
+      "depicted": "The file is titled Map of the Paramaras and does not print a year. Shown across the cited Paramara window, 948\u20131305 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "paramara-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Paramaras.png",
+      "commonsFile": "File:Map of the Paramaras.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Paramaras",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-eastern-ganga",
+      "title": "Eastern Ganga extent",
+      "file": "era-to-1200.geojson",
+      "startYear": 1077,
+      "endYear": 1436,
+      "depicted": "The file is titled Map of the Eastern Gangas and does not print a year. The drawing covers the Odisha coast, so it is shown for the imperial phase named in the Wikipedia lead, 1077\u20131436, not the earlier or the 20th-century phases.",
+      "confidence": "higher",
+      "recordIds": [
+        "eastern-ganga"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Eastern_Gangas.png",
+      "commonsFile": "File:Map of the Eastern Gangas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Eastern Gangas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-sena",
+      "title": "Sena extent",
+      "file": "era-to-1200.geojson",
+      "startYear": 1095,
+      "endYear": 1204,
+      "depicted": "The file is titled Map of the Senas and does not print a year. Shown from Hemanta Sena\u2019s kingship in 1095 to the 1203\u20131204 campaign named in the Wikipedia lead.",
+      "confidence": "higher",
+      "recordIds": [
+        "sena-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Senas.png",
+      "commonsFile": "File:Map of the Senas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Senas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-hoysala",
+      "title": "Hoysala extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1022,
+      "endYear": 1346,
+      "depicted": "The file is titled Hoysalas at their peak and does not print a year. Shown across the cited Hoysala window, 1022\u20131346 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "hoysala-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Hoysalas_at_their_peak.png",
+      "commonsFile": "File:Hoysalas at their peak.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1] Borders by Rawn3012",
+      "licence": "CC0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Hoysala Kingdom",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-kakatiya",
+      "title": "Kakatiya extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1163,
+      "endYear": 1323,
+      "depicted": "The file is titled Map of the Kakatiyas and does not print a year. Shown across the cited Kakatiya window, 1163\u20131323 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "kakatiya-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Kakatiyas.png",
+      "commonsFile": "File:Map of the Kakatiyas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Kakatiyas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-yadava",
+      "title": "Seuna (Yadava) extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1187,
+      "endYear": 1317,
+      "depicted": "The file is titled Map of the Yadavas and does not print a year. Shown across the Wikipedia lead\u2019s span, about 1187\u20131317 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "seuna-yadava"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Yadavas.png",
+      "commonsFile": "File:Map of the Yadavas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1]",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Yadavas",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-delhi",
+      "title": "Delhi Sultanate extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1206,
+      "endYear": 1556,
+      "depicted": "The file is titled Map of the Delhi Sultanate. Its page says the territorial area follows Schwartzberg\u2019s atlas, page 148, and it prints no year. It is one large-extent drawing, not each sultan\u2019s frontier, shown across the cited sultanate window, 1206\u20131556.",
+      "confidence": "higher",
+      "recordIds": [
+        "delhi-sultanate",
+        "aybak",
+        "aram",
+        "iltutmish",
+        "raziya",
+        "bahram",
+        "khalji-dynasty",
+        "jalaluddin-khalji",
+        "alauddin-khalji",
+        "bahlul",
+        "sikandar",
+        "ibrahim"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Delhi_Sultanate.png",
+      "commonsFile": "File:Map of the Delhi Sultanate.png",
+      "author": "Maps created from DEMIS Mapserver , which are public domain. Koba-chan Territorial area: \u092a\u093e\u091f\u0932\u093f\u092a\u0941\u0924\u094d\u0930 ( talk ), per Schwartberg Atlas p.148",
+      "licence": "CC BY-SA 3.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Delhi Sultanate",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-later-pandya",
+      "title": "Later Pandya extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1201,
+      "endYear": 1400,
+      "depicted": "The file is titled Map of the Pandya Dynasty and does not print a year. The drawing is the far south, including the latitude of northern Sri Lanka, so it is used for the later imperial phase the Wikipedia lead places in the 13th and 14th centuries. It is not the Sangam-era Pandya record.",
+      "confidence": "higher",
+      "recordIds": [
+        "later-pandya"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_Pandyas.png",
+      "commonsFile": "File:Map of Pandyas.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1] Borders by Nikel3012",
+      "licence": "CC0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Pandya Dynasty",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-bahmani",
+      "title": "Bahmani extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1347,
+      "endYear": 1528,
+      "depicted": "The file is titled Map of the Bahmani Sultanate and does not print a year. Shown across the cited Bahmani window, 1347\u20131528 CE.",
+      "confidence": "higher",
+      "recordIds": [
+        "bahmanid-dynasty"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_the_Bahmani_Sultanate.png",
+      "commonsFile": "File:Map of the Bahmani Sultanate.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1] Borders by Noorullah21",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Bahmani Sultanate",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-malwa",
+      "title": "Malwa Sultanate extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1401,
+      "endYear": 1562,
+      "depicted": "The file is a map of the Khaljis of Malwa, the Malwa Sultanate, and does not print a year. Shown across the Wikipedia lead\u2019s span, 1401\u20131562. It is not the Delhi Khalji house.",
+      "confidence": "higher",
+      "recordIds": [
+        "malwa-sultanate"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Khaljis_of_Malwa.png",
+      "commonsFile": "File:Khaljis of Malwa.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Borders by Noorullah21 Reference: [1]",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Khaljis of Malwa that ruled the Malwa Sultanate",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-gajapati",
+      "title": "Gajapati extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1434,
+      "endYear": 1541,
+      "depicted": "The file is titled Map of the Gajapati Empire and does not print a year. Shown across the Wikipedia lead\u2019s span, about 1434\u20131541.",
+      "confidence": "higher",
+      "recordIds": [
+        "gajapati-empire"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Map_of_Gajapatis.png",
+      "commonsFile": "File:Map of Gajapatis.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1] Borders by Rawn3012",
+      "licence": "CC0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Gajapti Empire",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
+    },
+    {
+      "id": "traced-bijapur",
+      "title": "Bijapur (Adil Shahi) extent",
+      "file": "era-after-1200.geojson",
+      "startYear": 1490,
+      "endYear": 1686,
+      "depicted": "The file is a map of the Adil Shahi dynasty and does not print a year. Shown from the independence in 1490 to the Mughal conquest in 1686, both stated in the Wikipedia lead.",
+      "confidence": "higher",
+      "recordIds": [
+        "bijapur-sultanate"
+      ],
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Adil_Shahis.png",
+      "commonsFile": "File:Adil Shahis.png",
+      "author": "Map created from DEMIS Mapserver , which are public domain. Koba-chan . Reference: [1] Borders created by Noorullah21",
+      "licence": "CC BY-SA 4.0",
+      "mapSource": "DEMIS Mapserver base, which the file page calls public domain, with the boundary drawn for this file. Map of the Adil Shahi Dynasty, in Southern India.",
+      "changes": "The highlighted tint was separated from the shared base map and clipped to a Natural Earth land mask. Coastline fit to Natural Earth: Cape Comorin, Kochi, Dwarka, the Gulf of Khambhat, the Godavari and Mahanadi mouths, the Hooghly, and the Indus mouth. Root-mean-square residual about 0.2 degrees. Kutch was the loose point, about 0.6 degrees."
     }
   ]
 }

@@ -714,6 +714,69 @@
       "publisher": "English Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Telangana",
       "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-shashanka",
+      "title": "Shashanka",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shashanka",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-chandela",
+      "title": "Chandela Empire",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chandela_Empire",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-chaulukya",
+      "title": "Chaulukya dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chaulukya_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-eastern-ganga",
+      "title": "Eastern Ganga dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Ganga_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-sena",
+      "title": "Sena dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sena_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-seuna",
+      "title": "Seuna dynasty",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Seuna_dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-malwa-sultanate",
+      "title": "Malwa Sultanate",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Malwa_Sultanate",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-gajapati",
+      "title": "Gajapati Empire",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gajapati_Empire",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "wiki-bijapur",
+      "title": "Bijapur Sultanate",
+      "publisher": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bijapur_Sultanate",
+      "accessed": "2026-11-12"
     }
   ],
   "records": [
@@ -8209,6 +8272,288 @@
           "sourceId": "wiki-telangana",
           "locator": "Lead",
           "supports": "Creation of the state of Telangana in 2014."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "shashanka",
+      "title": "Shashanka",
+      "type": "ruler",
+      "place": "Bengal and Bihar",
+      "startYear": 600,
+      "endYear": 636,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 600–636 CE",
+      "dateNote": "The article says historians place his rule between 600 and 636, while other sources place it between 590 and 625, and that the reign lasted approximately from 593 to 636. This window uses the first of those ranges. His capital was Karnasuvarna. No coordinate was taken, so the point is not shown. An approximate traced outline is separate.",
+      "summary": "King of Gauda in the early 7th century, a contemporary of Harsha.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Karnasuvarna is named, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Gauda"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-shashanka",
+          "locator": "Lead",
+          "supports": "Historians place the reign between 600 and 636, with Karnasuvarna as the capital, and name the alternate ranges."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "chandela-empire",
+      "title": "Chandela empire",
+      "type": "kingdom",
+      "place": "Khajuraho",
+      "startYear": 801,
+      "endYear": 1400,
+      "datePrecision": "approximate",
+      "dateLabel": "early 9th century to the 14th century",
+      "dateNote": "The lead says the empire existed from the early 9th century to the 14th century, with its power base in Jejakabhukti, and that the Chandelas began as feudatories of the Gurjara-Pratiharas. It does not give a foundation year. 801 is the start of the 9th century used as the opening of that span, not a dated accession.",
+      "summary": "The Jejakabhukti house the lead dates from the early 9th century to the 14th century.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Khajuraho is the associated place already cited for the temples. This record does not repeat that coordinate.",
+      "tags": [
+        "Chandela"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-chandela",
+          "locator": "Lead",
+          "supports": "An empire from the early 9th century to the 14th century, based in Jejakabhukti, beginning as Pratihara feudatories."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "chaulukya-gujarat",
+      "title": "Chaulukya (Solanki) dynasty",
+      "type": "kingdom",
+      "place": "Anahilavada (Patan)",
+      "startYear": 940,
+      "endYear": 1244,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 940–c. 1244 CE",
+      "dateNote": "The lead says the dynasty ruled parts of Gujarat and Rajasthan between about 940 and about 1244, with its capital at Anahilavada, now Patan. Mularaja supplanted the last Chavda ruler around 940.",
+      "summary": "The Solanki house of Anahilavada, dated by the lead to about 940–1244.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Patan is named, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Chaulukya",
+        "Solanki"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-chaulukya",
+          "locator": "Lead",
+          "supports": "Rule in Gujarat and Rajasthan from about 940 to about 1244, with the capital at Anahilavada (Patan)."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "eastern-ganga",
+      "title": "Imperial Eastern Gangas",
+      "type": "kingdom",
+      "place": "Kalinga",
+      "startYear": 1077,
+      "endYear": 1436,
+      "datePrecision": "year",
+      "dateLabel": "imperial phase 1077–1436 CE",
+      "dateNote": "The lead divides the dynasty into Early Eastern Gangas (493–1077), Imperial Eastern Gangas (1077–1436) and Khemundi Gangas (1436–1947). This record is the imperial phase, which matches an Odisha-coast drawing. It is not the 20th-century phase.",
+      "summary": "The imperial phase of the Eastern Gangas in Kalinga, 1077–1436.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate was taken, so no point is shown.",
+      "tags": [
+        "Eastern Ganga",
+        "Kalinga"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-eastern-ganga",
+          "locator": "Lead",
+          "supports": "The imperial phase is given as 1077–1436, after the early phase and before the Khemundi Gangas."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "sena-dynasty",
+      "title": "Sena dynasty",
+      "type": "kingdom",
+      "place": "Bengal and Bihar",
+      "startYear": 1095,
+      "endYear": 1204,
+      "datePrecision": "year",
+      "dateLabel": "1095–1204 CE",
+      "dateNote": "The lead says Hemanta Sena styled himself king in 1095, Vijaya Sena ruled 1096–1159, and Lakshmana Sena succeeded in 1179. It says Qutbuddin Aibak’s forces campaigned in 1203–1204. The window uses 1095 and that campaign.",
+      "summary": "The Bengal house that followed the Palas, from Hemanta Sena in 1095 to the 1203–1204 campaign.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Nadia is named as a later capital, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Sena",
+        "Bengal"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-sena",
+          "locator": "Lead",
+          "supports": "Hemanta Sena in 1095, Vijaya Sena’s reign 1096–1159, and the 1203–1204 campaign."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "seuna-yadava",
+      "title": "Seuna (Yadava) dynasty",
+      "type": "kingdom",
+      "place": "Devagiri",
+      "startYear": 1187,
+      "endYear": 1317,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1187–1317 CE",
+      "dateNote": "The lead dates the Yadavas of Devagiri to about 1187–1317 and says the kingdom was annexed by the Khalji dynasty of Delhi in 1308. The window follows the lead’s span. 1308 is the annexation year stated there, not a replacement for 1317.",
+      "summary": "The Devagiri house the lead dates to about 1187–1317.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Devagiri is named, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Yadava",
+        "Seuna"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-seuna",
+          "locator": "Lead",
+          "supports": "The Yadavas of Devagiri, about 1187–1317, annexed by the Khaljis in 1308."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "later-pandya",
+      "title": "Later Pandyas",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1201,
+      "endYear": 1400,
+      "datePrecision": "approximate",
+      "dateLabel": "13th–14th centuries CE",
+      "dateNote": "The lead says the dynasty had a later imperial phase in the 13th and 14th centuries, and that in the second half of the 13th century it ruled territories in south India and northern Sri Lanka through vassals of Madurai. This window is that phase. It does not replace the earlier Pandya records.",
+      "summary": "The later imperial Pandyas of Madurai, placed by the lead in the 13th and 14th centuries.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Madurai is named, but no coordinate was taken, so no point is shown.",
+      "tags": [
+        "Pandya"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-pandya",
+          "locator": "Lead",
+          "supports": "A later imperial phase in the 13th and 14th centuries, including northern Sri Lanka under vassals of Madurai."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "malwa-sultanate",
+      "title": "Malwa Sultanate",
+      "type": "kingdom",
+      "place": "Malwa",
+      "startYear": 1401,
+      "endYear": 1562,
+      "datePrecision": "year",
+      "dateLabel": "1401–1562 CE",
+      "dateNote": "The lead says Dilawar Khan made Malwa independent in 1401 and that the sultanate was conquered from Baz Bahadur in 1562. This is not the Delhi Khalji house.",
+      "summary": "The Malwa sultanate from Dilawar Khan in 1401 to the conquest of 1562.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate was taken, so no point is shown.",
+      "tags": [
+        "Malwa"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-malwa-sultanate",
+          "locator": "Lead",
+          "supports": "Independence in 1401 and the conquest from Baz Bahadur in 1562."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "gajapati-empire",
+      "title": "Gajapati empire",
+      "type": "kingdom",
+      "place": "Kalinga",
+      "startYear": 1434,
+      "endYear": 1541,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 1434–1541 CE",
+      "dateNote": "The lead says the empire reigned from about 1434 to 1541, founded by Kapilendra Deva after Bhanu Deva IV, with its capital at Kataka.",
+      "summary": "The Odisha kingdom founded by Kapilendra Deva, about 1434–1541.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.788056,
+          20.523611
+        ]
+      },
+      "locationSourceId": "wiki-gajapati",
+      "locationNote": "The point is the coordinate on the English Wikipedia article for the Gajapati Empire, accessed 12 November 2026. It is a reference point, not a boundary.",
+      "tags": [
+        "Gajapati",
+        "Kalinga"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-gajapati",
+          "locator": "Lead",
+          "supports": "A reign from about 1434 to 1541, founded by Kapilendra Deva, with the capital at Kataka."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "commons-2026"
+    },
+    {
+      "id": "bijapur-sultanate",
+      "title": "Bijapur Sultanate",
+      "type": "kingdom",
+      "place": "Southern Deccan",
+      "startYear": 1490,
+      "endYear": 1686,
+      "datePrecision": "year",
+      "dateLabel": "1490–1686 CE",
+      "dateNote": "The lead says Bijapur became independent of the Bahmanis in 1490 and was conquered by the Mughal emperor Aurangzeb in 1686.",
+      "summary": "The Adil Shahi sultanate of Bijapur, independent in 1490 and conquered in 1686.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate was taken, so no point is shown.",
+      "tags": [
+        "Adil Shahi",
+        "Deccan"
+      ],
+      "citations": [
+        {
+          "sourceId": "wiki-bijapur",
+          "locator": "Lead",
+          "supports": "Independence from the Bahmanis in 1490 and the Mughal conquest in 1686."
         }
       ],
       "reviewStatus": "cited",
