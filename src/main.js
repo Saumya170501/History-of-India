@@ -9,7 +9,7 @@ import "./record-card.css";
 import "./evidence-drawer.css";
 import { mapReference } from './map-reference.js';
 import { relatedArea } from './related-area.js';
-import { attachHistoricalMap } from './ohm-map.js';
+const mapEngine = import('./ohm-map.js');
 import mapLayers from './data/map-layers.json';
 import { BATTLE_KINDS, battlesForYear, regionsForRecord, referencesForRecord, validateMapLayers } from './map-layers.js';
 import {
@@ -27,7 +27,7 @@ import polityLinks from "./data/polity-links.json";
 import { FRAME, boundsOfFeatures, nearestSnapshot, polityColor, recordsForPolity, summarizeYear } from "./period-map.js";
 import { applySheetReading, sheetIsSuppressed } from "./sheet-policy.js";
 import { PLAY_SPEEDS, compareNames, nextPlaybackYear } from "./playback.js";
-import { TOURS, resolveTour, successionLine } from "./guides.js";
+import { SUCCESSIONS, TOURS, resolveTour, successionLine } from "./guides.js";
 import { fillPolityCard, fillYearList, fillYearSources, fillYearSummary } from "./year-panel.js";
 
 const catalogueResponse = await fetch(`${import.meta.env.BASE_URL}data/catalogue.json`);
@@ -93,7 +93,7 @@ $("#app").innerHTML = `
     <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>${data.records.length} cited records are a starting point, not a complete history. Empty years mean research is still needed. Regional overlays require dated map evidence and independent review. Published period maps are linked as context, not exact annual borders.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
   </main>
   <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><button id="footer-sources" class="quiet">${data.sources.length} sources · ${data.records.length} records</button></footer>
-  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated physical map. Colour-filled areas are clipped sheets from André Ourednik’s historical-basemaps (GPL-3.0). They are coarse external digitizations. A year between sheets uses the nearest sheet and says so; borders are not interpolated. A country sheet from 1960 or later is not drawn when the selected year is more than five years away, because that map is not the political geography of the earlier year. A sheet name that the cited research contradicts stays visible and is labelled as a disagreement, not as a current border. The colour stops at a modern Natural Earth coastline, which is not a historical shore. Long inland edges are lightly softened for display and are not a surveyed frontier. A straight edge on the frame is a display cut. Grey areas are residual categories in the source, not single kingdoms. Clicking a name opens cited research where a link exists. The link is not proof that the shape was that polity’s border.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Period sheets: <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener noreferrer">historical-basemaps</a>, GPL-3.0-only, clipped and labelled as approximate. Internet and WebGL are required; no API key is needed.</p></dialog>
+  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated physical map. Colour-filled areas are clipped sheets from André Ourednik’s historical-basemaps (GPL-3.0). They are coarse external digitizations. A year between sheets uses the nearest sheet and says so; borders are not interpolated. A country sheet from 1960 or later is not drawn when the selected year is more than five years away, because that map is not the political geography of the earlier year. A sheet name that the cited research does not support for the selected year is left off the map. No replacement shape is invented. The archive says which name was left off and why. The colour stops at a modern Natural Earth coastline, which is not a historical shore. Long inland edges are lightly softened for display and are not a surveyed frontier. A straight edge on the frame is a display cut. Grey areas are residual categories in the source, not single kingdoms. Clicking a name opens cited research where a link exists. The link is not proof that the shape was that polity’s border.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Period sheets: <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener noreferrer">historical-basemaps</a>, GPL-3.0-only, clipped and labelled as approximate. Internet and WebGL are required; no API key is needed.</p></dialog>
 `;
 
 // One scrolling surface. Tabs: this year, the selected polity, records, sources.
@@ -164,24 +164,27 @@ for (const tour of TOURS) {
   });
   guideBlock.append(block);
 }
-const successionBlock = element('details', undefined, 'guide-block');
-successionBlock.append(element('summary', 'Mughal succession'));
-successionBlock.append(element('p', 'Cited Mughal ruler records, in date order. A later name is not always the child of the previous one. Competing claims stay in the list. Open the record before treating a link as kinship.'));
-for (const record of successionLine(data.records)) {
-  const button = element('button', `${record.title} · ${record.dateLabel}`, 'tour-stop');
-  button.type = 'button';
-  button.addEventListener('click', () => {
-    state.year = record.startYear;
-    state.type = 'all';
-    state.query = '';
-    selectedId = record.id;
-    update();
-    selectRecord(record, false);
-    setDrawerView('selected');
-  });
-  successionBlock.append(button);
-}
-yearView.append(comparePanel, guideBlock, successionBlock, yearSearch, yearList, yearCited);
+const successionNote = 'Cited ruler records in date order. A later name is not always the child of the previous one. Competing claims stay in the list. Open the record before treating a link as kinship.';
+const successionBlocks = SUCCESSIONS.map((line) => {
+  const block = element('details', undefined, 'guide-block');
+  block.append(element('summary', line.title), element('p', successionNote));
+  for (const record of successionLine(data.records, line)) {
+    const button = element('button', `${record.title} · ${record.dateLabel}`, 'tour-stop');
+    button.type = 'button';
+    button.addEventListener('click', () => {
+      state.year = record.startYear;
+      state.type = 'all';
+      state.query = '';
+      selectedId = record.id;
+      update();
+      selectRecord(record, false);
+      setDrawerView('selected');
+    });
+    block.append(button);
+  }
+  return block;
+});
+yearView.append(comparePanel, guideBlock, ...successionBlocks, yearSearch, yearList, yearCited);
 const polityView = element('div'); polityView.id = 'drawer-polity';
 const recordsView = element('div'); recordsView.id = 'drawer-records';
 const recordSwitcher = element('div', undefined, 'record-switcher');
@@ -346,6 +349,7 @@ let openPolityName = null;
 let shownSnapshot = null;
 let yearTimer = 0;
 let periodToken = 0;
+const { attachHistoricalMap } = await mapEngine;
 const historicalMap = attachHistoricalMap(map, {
   onStatus: message => { $('#map-selection-status').textContent = message; },
   onError: message => {
@@ -519,6 +523,9 @@ function renderDetail(record) {
     element("p", record.dateNote),
     element("h3", "Location and mapping status"),
     element("p", record.locationNote),
+    element("p", record.geometry
+      ? 'This point is the cited place. It is not a kingdom boundary. No reviewed territorial outline is attached to this record.'
+      : 'No boundary source is available for this record, so no territory is drawn.'),
     element("h3", "Follow the evidence"),
   );
   for (const citation of record.citations) {
@@ -686,6 +693,11 @@ function refreshYearPanel() {
   });
   yearCited.replaceChildren();
   if (!periodSummary) return;
+  if (periodSummary.omitted?.length) {
+    yearCited.append(element('h3', 'Not drawn for this year', 'year-group'));
+    for (const item of periodSummary.omitted)
+      yearCited.append(element('p', `${item.name}. ${item.note} No replacement boundary is available.`, 'year-empty'));
+  }
   const cited = [...periodSummary.kingdoms, ...periodSummary.rulers];
   if (!cited.length) return;
   yearCited.append(element('h3', 'Cited research in this year', 'year-group'));
@@ -770,10 +782,10 @@ async function syncPeriod() {
     if (token !== periodToken) return;
     const collection = snapshotCache.get(choice.snapshot.year);
     const suppressed = sheetIsSuppressed(state.year, choice);
-    const reading = {
-      type: 'FeatureCollection',
-      features: suppressed ? [] : applySheetReading(collection.features, state.year),
-    };
+    const interpreted = suppressed
+      ? { features: [], omitted: [] }
+      : applySheetReading(collection.features, state.year);
+    const reading = { type: 'FeatureCollection', features: interpreted.features };
     periodSummary = summarizeYear({
       year: state.year,
       snapshotYear: choice.snapshot.year,
@@ -781,6 +793,7 @@ async function syncPeriod() {
       features: reading.features,
       records: data.records,
       suppressed,
+      omitted: interpreted.omitted,
     });
     const visible = $('#show-period').checked && !suppressed;
     const signature = `${choice.snapshot.year}:${state.year}:${visible}:${suppressed}`;
@@ -1023,7 +1036,7 @@ async function sheetNames(year) {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     snapshotCache.set(choice.snapshot.year, await response.json());
   }
-  const features = applySheetReading(snapshotCache.get(choice.snapshot.year).features, year);
+  const features = applySheetReading(snapshotCache.get(choice.snapshot.year).features, year).features;
   return {
     names: [...new Set(features.filter(feature => feature.properties.kind === 'named').map(feature => feature.properties.name))],
     note: choice.gapYears === 0
@@ -1056,7 +1069,7 @@ function stepPlayback() {
     year: state.year, maxYear: MAX_YEAR, step: speed.step, snapshots: basemapIndex.snapshots,
   });
   setYear(move.year, true, 'play');
-  if (move.pause || move.done) stopPlayback();
+  if (move.done) stopPlayback();
   return move;
 }
 function setYear(value, immediate = false, source = 'user') {

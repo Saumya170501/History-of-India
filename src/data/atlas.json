@@ -434,6 +434,76 @@
       "publisher": "Encyclopaedia Britannica",
       "url": "https://www.britannica.com/topic/Constitution-of-India",
       "accessed": "2026-11-11"
+    },
+    {
+      "id": "britannica-maitraka",
+      "title": "Maitraka dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Maitraka-dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "britannica-pratihara",
+      "title": "Gurjara-Pratihara dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Gurjara-Pratihara-dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "britannica-khalji",
+      "title": "Khalji dynasty",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Khalji-dynasty",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "britannica-tipu",
+      "title": "Tipu Sultan",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/biography/Tipu-Sultan",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "britannica-salt-march",
+      "title": "Salt March",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/Salt-March",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "unesco-khajuraho",
+      "title": "Khajuraho Group of Monuments",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/240/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "unesco-pattadakal",
+      "title": "Group of Monuments at Pattadakal",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/239/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "unesco-qutb",
+      "title": "Qutb Minar and its Monuments, Delhi",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/233/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "unesco-fatehpur",
+      "title": "Fatehpur Sikri",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/255/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "unesco-rani-ki-vav",
+      "title": "Rani-ki-Vav at Patan",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/922/",
+      "accessed": "2026-11-12"
     }
   ],
   "records": [
@@ -6445,6 +6515,596 @@
         }
       ],
       "researchBatch": "coverage-2026"
+    },
+    {
+      "id": "maitraka-dynasty",
+      "title": "Maitrakas of Valabhi",
+      "type": "kingdom",
+      "place": "Valabhi (modern Vala), Gujarat",
+      "startYear": 401,
+      "endYear": 780,
+      "datePrecision": "approximate",
+      "dateLabel": "5th century–c. 780 CE",
+      "dateNote": "The article says the dynasty ruled Gujarat and Saurashtra from the 5th to the 8th century. The year 401 only opens a 5th-century search window. It is not Bhatarka’s accession. The end, about 780, is the date given for the killing of Shiladitya VI and the razing of the capital. The window is not continuous rule of a fixed territory.",
+      "summary": "A dynasty in Gujarat and Saurashtra with its capital at Valabhi, independent in practice even when early kings were loosely feudatory to the Guptas.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The article names Valabhi, modern Vala, as the capital and does not give a coordinate, so no point is shown. The capital is not the kingdom’s border.",
+      "tags": [
+        "Maitraka",
+        "Valabhi",
+        "Gujarat"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-maitraka",
+          "locator": "Opening",
+          "supports": "The region, the capital, the 5th-to-8th-century span, and the end about 780."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b",
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Bhatarka, a general, founded the line as Gupta power decayed. Early kings were loosely feudatory to the Guptas and in fact independent. Shiladitya I, about the late 6th century, is named as a powerful king whose rule extended into Malwa and Rajasthan. Shiladitya VI is named as the last king.",
+          "citations": [
+            {
+              "sourceId": "britannica-maitraka",
+              "locator": "Opening",
+              "supports": "The founder, the Gupta relationship, Shiladitya I, and Shiladitya VI."
+            }
+          ]
+        },
+        {
+          "heading": "Reign",
+          "text": "The kingdom suffered at the hands of the Chalukyas of the Deccan and of Harsha of Kannauj, then revived after Harsha’s death. Arabs established in Sindh in 712 killed Shiladitya VI and razed Valabhi about 780.",
+          "citations": [
+            {
+              "sourceId": "britannica-maitraka",
+              "locator": "Opening",
+              "supports": "The Chalukya and Harsha pressure, and the Arab attack of about 780."
+            }
+          ]
+        },
+        {
+          "heading": "Culture and religion",
+          "text": "The kings patronised religious foundations. The kingdom was an important Buddhist centre, and tradition places the codification of the Shvetambara Jaina canon at Valabhi. That tradition is reported as tradition, not as a dated inscription.",
+          "citations": [
+            {
+              "sourceId": "britannica-maitraka",
+              "locator": "Second paragraph",
+              "supports": "Patronage, Buddhism, and the Jaina tradition."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pratihara-dynasty",
+      "title": "Gurjara-Pratiharas of Kannauj",
+      "type": "kingdom",
+      "place": "Kannauj",
+      "startYear": 701,
+      "endYear": 1018,
+      "datePrecision": "approximate",
+      "dateLabel": "8th century–1018 CE",
+      "dateNote": "This record follows the line of Nagabhata, which the article places at Ujjain and later Kannauj from the 8th to the 11th centuries. The year 701 only opens an 8th-century search window. The year 1018 is when Mahmud of Ghazna drove Rajyapala from Kannauj. A separate Harichandra line at Mandor, mostly feudatory, is not this record. Much of the empire was held through vassals.",
+      "summary": "The main Pratihara line of northern India, with its later capital at Kannauj, from the 8th century until Rajyapala was driven out in 1018.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Kannauj is named as the later capital. No coordinate is given, so no point is shown, and the capital is not the empire’s border.",
+      "tags": [
+        "Pratihara",
+        "Gurjara",
+        "Kannauj"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-pratihara",
+          "locator": "Opening and narrative of the Nagabhata line",
+          "supports": "The two lines, the Kannauj capital, the 8th-to-11th-century span, and Rajyapala’s expulsion in 1018."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b",
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Nagabhata I, in the 8th century, is the founder of the later line and appears to have ruled in Malwa. His grandnephew Vatsaraja is attested as king of Ujjain in 783 and was defeated by the Rashtrakutas. Nagabhata II captured Kannauj from Chakrayudha about 816 and made it his capital.",
+          "citations": [
+            {
+              "sourceId": "britannica-pratihara",
+              "locator": "Narrative paragraphs",
+              "supports": "Nagabhata I, Vatsaraja in 783, and the capture of Kannauj about 816."
+            }
+          ]
+        },
+        {
+          "heading": "Reign",
+          "text": "Under Mihira Bhoja and Mahendrapala (about 890–910) the empire is said to have rivalled the Guptas in extent, from Gujarat and Kathiawar to northern Bengal, much of it loosely held. After Mahendrapala the succession is obscure. Indra III of the Rashtrakutas sacked Kannauj about 916. By the end of the 10th century the Pratiharas controlled little more than the Gangetic doab.",
+          "citations": [
+            {
+              "sourceId": "britannica-pratihara",
+              "locator": "Narrative paragraphs",
+              "supports": "The peak, the loose hold, the 916 sack, and the later shrinkage."
+            }
+          ]
+        },
+        {
+          "heading": "Events",
+          "text": "Rajyapala, the last important king, was driven from Kannauj by Mahmud of Ghazna in 1018 and later killed by the forces of the Chandela king Vidyadhara. A small principality apparently survived near Allahabad for about a generation. That survival is described as apparent, not as a mapped remnant.",
+          "citations": [
+            {
+              "sourceId": "britannica-pratihara",
+              "locator": "Narrative paragraphs",
+              "supports": "1018, Vidyadhara, and the uncertain later principality."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mihira-bhoja",
+      "title": "Mihira Bhoja",
+      "type": "ruler",
+      "place": "Kannauj",
+      "startYear": 836,
+      "endYear": 890,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 836–c. 890 CE",
+      "dateNote": "The article says Mihira Bhoja succeeded about 836. It gives Mahendrapala, called Bhoja’s successor, a reign of about 890–910. The year 890 is that successor’s cited start, not a separately recorded death date for Bhoja.",
+      "summary": "Pratihara king under whom, with his successor, the empire reached its peak.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate is given for Bhoja or for a capital in his own reign, so no point is shown.",
+      "tags": [
+        "Pratihara",
+        "Bhoja"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-pratihara",
+          "locator": "Narrative paragraphs",
+          "supports": "Accession about 836 and the peak shared with Mahendrapala."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b"
+    },
+    {
+      "id": "mahendrapala",
+      "title": "Mahendrapala",
+      "type": "ruler",
+      "place": "Kannauj",
+      "startYear": 890,
+      "endYear": 910,
+      "datePrecision": "approximate",
+      "dateLabel": "c. 890–910 CE",
+      "dateNote": "The article gives this reign as about 890–910. Both ends are approximate. In his time the loosely held territory is said to have reached from Gujarat and Kathiawar to northern Bengal.",
+      "summary": "Pratihara king during the years the article calls the empire’s greatest extent.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate is given, so no point is shown. The described extent is not a boundary.",
+      "tags": [
+        "Pratihara"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-pratihara",
+          "locator": "Narrative paragraphs",
+          "supports": "The reign of about 890–910 and the stated reach."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b"
+    },
+    {
+      "id": "khajuraho-temples",
+      "title": "Temples at Khajuraho",
+      "type": "site",
+      "place": "Khajuraho",
+      "startYear": 950,
+      "endYear": 1050,
+      "datePrecision": "approximate",
+      "dateLabel": "950–1050 CE",
+      "dateNote": "The opening says the temples were built during the Chandella dynasty, which reached its apogee between 950 and 1050. The brief synthesis says the Chandellas ruled the region in the 10th and 11th centuries. The window follows the apogee dates in the opening. It is not a claim that every temple was begun in 950 or finished in 1050. This pass did not copy a property coordinate.",
+      "summary": "A group of Hindu and Jain temples built while the Chandella dynasty was at its height.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The page locates the temples at Khajuraho and does not print a single property coordinate in the text used here, so no point is shown.",
+      "tags": [
+        "Chandella",
+        "Khajuraho"
+      ],
+      "citations": [
+        {
+          "sourceId": "unesco-khajuraho",
+          "locator": "Opening description",
+          "supports": "Chandella patronage, the 950–1050 apogee, and the Hindu and Jain temples."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b",
+      "details": [
+        {
+          "heading": "What stands there",
+          "text": "About 20 temples remain, in three groups. The Temple of Kandariya is singled out for its sculpture. The brief synthesis counts 23 temples, including one partly excavated structure, in western, eastern and southern clusters, and calls them Nagara-style.",
+          "citations": [
+            {
+              "sourceId": "unesco-khajuraho",
+              "locator": "Opening; Outstanding Universal Value, brief synthesis",
+              "supports": "The surviving temples, the clusters, and the Nagara description."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pattadakal-temples",
+      "title": "Temples at Pattadakal",
+      "type": "site",
+      "place": "Pattadakal",
+      "startYear": 601,
+      "endYear": 800,
+      "datePrecision": "century",
+      "dateLabel": "7th–8th centuries CE",
+      "dateNote": "The opening places the monuments in the 7th and 8th centuries under the Chalukya dynasty. The year 601 opens the 7th-century window and is not a foundation date. Queen Lokamahadevi’s Virupaksha temple is dated about 740. No property coordinate was copied.",
+      "summary": "Nine Hindu temples and a Jain sanctuary at Pattadakal, in Karnataka, from the Chalukya period.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The page places the group at Pattadakal in Karnataka and does not print a property coordinate in the text used here.",
+      "tags": [
+        "Chalukya",
+        "Pattadakal"
+      ],
+      "citations": [
+        {
+          "sourceId": "unesco-pattadakal",
+          "locator": "Opening description",
+          "supports": "The Chalukya dating, the temple count, and the Virupaksha temple of about 740."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b"
+    },
+    {
+      "id": "qutb-complex",
+      "title": "Qutb Minar and its monuments",
+      "type": "site",
+      "place": "Delhi",
+      "startYear": 1199,
+      "endYear": 1311,
+      "datePrecision": "approximate",
+      "dateLabel": "1199–1311 CE",
+      "dateNote": "The brief synthesis says a minar was built at the south-eastern corner of the Quwwatu’l-Islam between 1199 and 1503, and dates Alauddin Khalji’s additions, including the Alai Darwaza, to 1296–1311. The opening dates the tower to the early 13th century and the Alai Darwaza to 1311. Those statements are not reconciled. This window runs from the 1199 start to the 1311 gate. It is not a claim of continuous building, and it does not adopt 1503 as an end.",
+      "summary": "The tower, mosque and gates a few kilometres south of Delhi, associated with the early Delhi sultans.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The page places the complex a few kilometres south of Delhi, at the southern fringe of New Delhi, and does not print a property coordinate in the text used here. The complex is not the sultanate’s territory.",
+      "tags": [
+        "Delhi",
+        "Qutb"
+      ],
+      "citations": [
+        {
+          "sourceId": "unesco-qutb",
+          "locator": "Opening; Outstanding Universal Value, brief synthesis",
+          "supports": "The place, the early 13th-century tower, the 1311 gate, and the 1199–1503 and 1296–1311 statements."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b",
+      "details": [
+        {
+          "heading": "Who built it",
+          "text": "The brief synthesis says the Quwwatu’l-Islam was completed by Qutb ud din Aibak and Shamsu’d-Din Iltutmish, and that Alauddin Khalji added the Alai Darwaza and a madrasa between 1296 and 1311. The opening says the mosque reused material from some 20 Brahman temples.",
+          "citations": [
+            {
+              "sourceId": "unesco-qutb",
+              "locator": "Opening; brief synthesis",
+              "supports": "Aibak, Iltutmish, Khalji’s dates, and the reused temple material."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fatehpur-sikri",
+      "title": "Fatehpur Sikri",
+      "type": "site",
+      "place": "Fatehpur Sikri",
+      "startYear": 1571,
+      "endYear": 1585,
+      "datePrecision": "year",
+      "dateLabel": "1571–1585 CE",
+      "dateNote": "The brief synthesis says Akbar made the city his capital and that it was constructed between 1571 and 1573, and that the capital moved to Lahore in 1585. Criterion (iv) describes the ensemble as constructed between 1571 and 1585. The window follows that ensemble dating. It is not a claim that Akbar ruled only these years. His reign record is separate.",
+      "summary": "Akbar’s planned city in Agra district, capital for a short time in the 1570s and 1580s.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6665,
+          27.097528
+        ]
+      },
+      "locationNote": "Converted from the UNESCO property reference N27 5 51.101 E77 39 59.4. The point locates the inscribed city, not the Mughal empire and not Akbar’s movements.",
+      "locationSourceId": "unesco-fatehpur",
+      "tags": [
+        "Mughal",
+        "Akbar",
+        "Fatehpur Sikri"
+      ],
+      "citations": [
+        {
+          "sourceId": "unesco-fatehpur",
+          "locator": "Opening; brief synthesis; property coordinates",
+          "supports": "Akbar’s capital, the 1571–1585 building dates, the move in 1585, and the property reference point."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b"
+    },
+    {
+      "id": "rani-ki-vav",
+      "title": "Rani-ki-Vav at Patan",
+      "type": "site",
+      "place": "Patan, Gujarat",
+      "startYear": 1001,
+      "endYear": 1100,
+      "datePrecision": "century",
+      "dateLabel": "11th century CE",
+      "dateNote": "The page says the stepwell was initially built as a memorial to a king in the 11th century. The years 1001–1100 are that century’s search window, not a start or completion date. The brief synthesis repeats the 11th-century memorial and names the Maru-Gurjara style. It does not name the king.",
+      "summary": "An 11th-century stepwell on the Saraswati at Patan, built as a memorial and as a water structure.",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.101667,
+          23.858889
+        ]
+      },
+      "locationNote": "Converted from the UNESCO property reference N23 51 32 E72 6 6. The point locates the stepwell, not a kingdom.",
+      "locationSourceId": "unesco-rani-ki-vav",
+      "tags": [
+        "Gujarat",
+        "Patan",
+        "stepwell"
+      ],
+      "citations": [
+        {
+          "sourceId": "unesco-rani-ki-vav",
+          "locator": "Opening; property coordinates",
+          "supports": "The 11th-century memorial, the Saraswati at Patan, the Maru-Gurjara style, and the property reference point."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b"
+    },
+    {
+      "id": "khalji-dynasty",
+      "title": "Khalji dynasty",
+      "type": "kingdom",
+      "place": "Delhi",
+      "startYear": 1290,
+      "endYear": 1320,
+      "datePrecision": "year",
+      "dateLabel": "1290–1320 CE",
+      "dateNote": "The article dates the dynasty 1290–1320 and calls it the second ruling dynasty of the Delhi sultanate. The last Khalji, Qutb al-Din Mubarak Shah, was murdered in 1320. The window is the dynasty, not a map of every campaign.",
+      "summary": "The second dynasty of the Delhi sultanate, dated 1290–1320, which expanded campaigns into the south.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. Delhi is the sultanate’s seat in the article. No coordinate is given, so no point is shown, and no territory is drawn.",
+      "tags": [
+        "Khalji",
+        "Delhi",
+        "Delhi Sultanate"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-khalji",
+          "locator": "Opening and closing paragraph",
+          "supports": "The 1290–1320 span, the place in the sultanate, and the murder of the last Khalji in 1320."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b",
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "Jalal-ud-Din Firuz Khalji, formerly the top commander under the Mamluk dynasty, took the throne after his faction killed Kay-Qubad. He was already elderly. His nephew Juna Khan murdered him in 1296 and reigned as Alauddin Khalji. Qutb al-Din Mubarak Shah, the last Khalji, was murdered in 1320. Ghiyath al-Din Tughluq then began the next dynasty.",
+          "citations": [
+            {
+              "sourceId": "britannica-khalji",
+              "locator": "Opening through the closing paragraph",
+              "supports": "The succession from Jalal-ud-Din to Alauddin to Mubarak Shah, and the Tughluq replacement."
+            }
+          ]
+        },
+        {
+          "heading": "Reign",
+          "text": "Alauddin reigned 20 years. The article lists the capture of Ranthambhor in 1301, Chitor in 1303, Mandu in 1305, and the annexation of Devagiri. Malik Kafur’s southern expedition of 1308 is said to have taken Warangal, overthrown the Hoysalas south of the Krishna, and occupied Madura. He returned to Delhi in 1311. These are campaign claims, not borders.",
+          "citations": [
+            {
+              "sourceId": "britannica-khalji",
+              "locator": "Paragraph on Alauddin",
+              "supports": "The 20-year reign and the named campaigns."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jalaluddin-khalji",
+      "title": "Jalal-ud-Din Firuz Khalji",
+      "type": "ruler",
+      "place": "Delhi",
+      "startYear": 1290,
+      "endYear": 1296,
+      "datePrecision": "year",
+      "dateLabel": "1290–1296 CE",
+      "dateNote": "The dynasty is dated from 1290, and the article says his nephew murdered him in 1296. The day of either event is not given. For a time he was so unpopular that he dared not enter the capital.",
+      "summary": "Founder of the Khalji dynasty at Delhi, killed by his nephew in 1296.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate is given, so no point is shown.",
+      "tags": [
+        "Khalji",
+        "Delhi",
+        "Delhi Sultanate"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-khalji",
+          "locator": "Opening and second paragraph",
+          "supports": "The founding, the reluctance to enter the capital, and the murder in 1296."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b"
+    },
+    {
+      "id": "alauddin-khalji",
+      "title": "Alauddin Khalji",
+      "type": "ruler",
+      "place": "Delhi",
+      "startYear": 1296,
+      "endYear": 1316,
+      "datePrecision": "approximate",
+      "dateLabel": "1296–early 1316 CE",
+      "dateNote": "He took the title after murdering his uncle in 1296 and reigned 20 years. The article says he died in early 1316. The year 1316 is that early death, not a day. Campaigns named in the article are not drawn as borders.",
+      "summary": "Khalji sultan from 1296, whose campaigns reached Rajasthan, Malwa and the Deccan.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. No coordinate is given for the sultan or for a capital point, so no point is shown.",
+      "tags": [
+        "Khalji",
+        "Delhi",
+        "Delhi Sultanate"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-khalji",
+          "locator": "Paragraph on Alauddin",
+          "supports": "The 1296 accession, the 20-year reign, the early 1316 death, and the named campaigns."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b"
+    },
+    {
+      "id": "tipu-sultan",
+      "title": "Tipu Sultan",
+      "type": "ruler",
+      "place": "Seringapatam (Srirangapatna)",
+      "startYear": 1782,
+      "endYear": 1799,
+      "datePrecision": "year",
+      "dateLabel": "December 1782–4 May 1799",
+      "dateNote": "The article says he reigned from December 1782 until his death on 4 May 1799, when Seringapatam was stormed. The search years are 1782 and 1799. He was born on 1 December 1751; an earlier birth date of 20 November 1750 is noted as superseded. Birth is not the start of the reign.",
+      "summary": "Sultan of Mysore from December 1782, killed when the British stormed Seringapatam in 1799.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The article names Seringapatam, now Srirangapatna, as the capital where he was killed. It does not give a coordinate, so no point is shown. The capital is not the kingdom’s border.",
+      "tags": [
+        "Mysore",
+        "Tipu"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-tipu",
+          "locator": "Opening and the account of the Fourth Anglo-Mysore War",
+          "supports": "The reign dates, the death on 4 May 1799, and Seringapatam as the capital."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b",
+      "details": [
+        {
+          "heading": "Dynasty",
+          "text": "He was the son of Hyder Ali, who had become ruler of Mysore after ousting the Wodeyar rulers. Tipu succeeded when his father was killed during the Second Anglo-Mysore War, and he took the title of sultan in 1784 with the Treaty of Mangalore.",
+          "citations": [
+            {
+              "sourceId": "britannica-tipu",
+              "locator": "Early life; Tipu the warrior",
+              "supports": "Hyder Ali, the succession in December 1782, and the 1784 title."
+            }
+          ]
+        },
+        {
+          "heading": "Reign",
+          "text": "He fought in the Anglo-Mysore wars. The Treaty of Seringapatam in March 1792 required him to cede half his dominions, pay an indemnity, and give two sons as hostages. In 1799 British-led forces stormed the capital and he was killed in the breach. The ceded half is not given a map here.",
+          "citations": [
+            {
+              "sourceId": "britannica-tipu",
+              "locator": "Tipu the warrior",
+              "supports": "The 1792 treaty and the 1799 storm."
+            }
+          ]
+        },
+        {
+          "heading": "Culture and religion",
+          "text": "The article describes administrative reforms, new coins, the Mauludi calendar, and Mysorean rockets. It also reports forced conversions of some non-Muslim communities and, on the other hand, grants to Hindu temples and letters to the pontiff of Sringeri. Those reports are left side by side.",
+          "citations": [
+            {
+              "sourceId": "britannica-tipu",
+              "locator": "Tipu the ruler",
+              "supports": "The reforms, the rockets, the conversions, and the temple grants."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salt-march",
+      "title": "Salt March",
+      "type": "culture",
+      "place": "Dandi, Gujarat",
+      "startYear": 1930,
+      "endYear": 1931,
+      "datePrecision": "year",
+      "dateLabel": "12 March 1930–early 1931",
+      "dateNote": "Gandhi set out on 12 March 1930 and reached Dandi on 5 April. He and his followers took salt on 6 April. The article says this was the first act of a larger civil-disobedience campaign that extended into early 1931. Gandhi was released in January 1931, and the Gandhi-Irwin Pact was signed on 5 March 1931. The window covers the march and that campaign, not every day of protest.",
+      "summary": "Gandhi’s march from Sabarmati to Dandi against the British salt monopoly, and the civil disobedience that followed.",
+      "geometry": null,
+      "locationSourceId": null,
+      "locationNote": "Timeline-only record. The article names Sabarmati near Ahmadabad and Dandi near Surat, and a distance of about 240 miles. It does not give a coordinate, so no point is shown. The route is not drawn.",
+      "tags": [
+        "Gandhi",
+        "independence",
+        "Salt March"
+      ],
+      "citations": [
+        {
+          "sourceId": "britannica-salt-march",
+          "locator": "Opening and the narrative of the march",
+          "supports": "The dates, the route, the salt laws, and the campaign into early 1931."
+        }
+      ],
+      "reviewStatus": "cited",
+      "researchBatch": "coverage-2026-b",
+      "details": [
+        {
+          "heading": "Events",
+          "text": "The salt laws stopped Indians producing or selling salt and required them to buy taxed salt. On 6 April 1930 the marchers picked up salt at Dandi. Gandhi was arrested in early May. On 21 May Sarojini Naidu led a march on the Dharasana saltworks, where police beat marchers. By the end of 1930 about 60,000 people were in jail.",
+          "citations": [
+            {
+              "sourceId": "britannica-salt-march",
+              "locator": "Narrative of the march and its aftermath",
+              "supports": "The law, the 6 April act, the arrests, Dharasana, and the jail figure as stated."
+            }
+          ]
+        },
+        {
+          "heading": "What this was not",
+          "text": "The march did not end British rule. Independence in 1947 is a separate record. Gandhi is not listed as a ruler.",
+          "citations": [
+            {
+              "sourceId": "britannica-salt-march",
+              "locator": "Opening",
+              "supports": "The march as civil disobedience against British rule, not as a transfer of sovereignty."
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,11 @@
 // Editorial navigation buffers around associated geography, NOT historical extents.
 // Centers/radii below are deliberately coarse and carry no sovereignty claim.
 const areas = [
+  [/Valabhi|Saurashtra|Kathiawar/, 'Saurashtra and Gujarat context', [21.9, 71.8], 280],
+  [/Khajuraho|Chandella|Chandela/, 'Khajuraho and Bundelkhand context', [24.8, 79.9], 180],
+  [/Pattadakal/, 'Pattadakal on the Malaprabha', [15.9, 75.8], 80],
+  [/Seringapatam|Srirangapatna|Mysore/, 'Seringapatam and Mysore context', [12.4, 76.7], 120],
+  [/Dandi|Sabarmati/, 'Gujarat coast between Sabarmati and Dandi', [21.3, 72.6], 160],
   [/Mahabalipuram|Mamallapuram/, 'Coromandel coast at Mahabalipuram', [12.6, 80.2], 80],
   [/Kannauj|Thanesar/, 'Kannauj and the upper Ganga plain', [27.1, 79.9], 280],
   [/Assam|Ahom/, 'Assam and the Brahmaputra valley', [26.5, 93], 400],

@@ -10,17 +10,17 @@ export const SHEET_CAUTIONS = Object.freeze([
     name: 'Vijayanagara',
     afterYear: 1565,
     recordId: 'vijayanagara-empire',
-    note: 'This sheet still draws Vijayanagara. Cited research says the city was destroyed in 1565, and later rulers used Penukonda until the empire ended about 1614. The shape is a sheet label, not proof that the old capital still ruled.',
+    note: 'The sheet names Vijayanagara, but it is not drawn. Cited research says the city was destroyed in 1565 and later rulers used Penukonda until about 1614. There is no sourced outline for that later seat.',
   },
   {
     name: 'Bangladesh',
     beforeYear: 1971,
-    note: 'Bangladesh was not a separate state before 1971. This name comes from a coarse world sheet, not from a political map of the selected year.',
+    note: 'Bangladesh was not a separate state before 1971, so the sheet’s name is not drawn. There is no sourced outline of East Bengal or East Pakistan in this atlas.',
   },
   {
     name: 'Pakistan',
     beforeYear: 1947,
-    note: 'Pakistan was created in 1947. A sheet that labels it in an earlier year is not that year’s political geography.',
+    note: 'Pakistan was created in 1947, so a sheet that names it earlier is not drawn. There is no sourced outline for the territory before that year.',
   },
 ]);
 
@@ -35,20 +35,24 @@ export function cautionFor(name, year) {
   }) || null;
 }
 
+// Drop a sheet name the cited dates do not support. No substitute shape is invented.
 export function applySheetReading(features, year) {
-  return (features || []).map(feature => {
+  const omitted = [];
+  const kept = [];
+  const seen = new Set();
+  for (const feature of features || []) {
     const caution = cautionFor(feature?.properties?.name, year);
-    if (!caution) return feature;
-    return {
-      ...feature,
-      properties: {
-        ...feature.properties,
-        kind: 'caution',
-        caution: caution.note,
-        cautionRecordId: caution.recordId || '',
-      },
-    };
-  });
+    if (!caution) {
+      kept.push(feature);
+      continue;
+    }
+    const name = feature?.properties?.name;
+    if (name && !seen.has(name)) {
+      seen.add(name);
+      omitted.push({ name, note: caution.note, recordId: caution.recordId || '' });
+    }
+  }
+  return { features: kept, omitted };
 }
 
 // A later country map is not drawn when the selected year is too far from that sheet.

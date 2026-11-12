@@ -12,11 +12,12 @@ export function countPhrase(count, singular, plural) {
 }
 
 export function yearOpenLabel(summary) {
-  if (!summary?.named?.length && !summary?.cautions?.length) return 'Open this year in the archive';
+  if (!summary?.named?.length && !summary?.cautions?.length && !summary?.omitted?.length) return 'Open this year in the archive';
   const bits = [];
   if (summary.named.length) bits.push(countPhrase(summary.named.length, 'named area', 'named areas'));
   if (summary.residual.length) bits.push(countPhrase(summary.residual.length, 'residual category', 'residual categories'));
   if (summary.cautions?.length) bits.push(countPhrase(summary.cautions.length, 'disagreement with the research', 'disagreements with the research'));
+  if (summary.omitted?.length) bits.push(countPhrase(summary.omitted.length, 'sheet name left off', 'sheet names left off'));
   return `${bits.join(' · ')} in the archive`;
 }
 

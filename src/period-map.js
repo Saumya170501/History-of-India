@@ -81,7 +81,7 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
-export function summarizeYear({ year, snapshotYear, gapYears, features, records, suppressed = false }) {
+export function summarizeYear({ year, snapshotYear, gapYears, features, records, suppressed = false, omitted = [] }) {
   if (!Number.isInteger(year) || !Number.isInteger(snapshotYear) || !Number.isInteger(gapYears))
     throw new Error('Year summary needs integer years');
   const cited = (records || []).filter(record =>
@@ -92,7 +92,7 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records,
     const lead = `No close political sheet for ${year} CE. The nearest sheet is ${snapshotYear} CE, ${gapYears} years away, and it is a later country map, so it is not drawn.`;
     return {
       year, snapshotYear, gapYears, exact: false, suppressed: true,
-      named: [], residual: [], cautions: [], kingdoms, rulers, lead,
+      named: [], residual: [], cautions: [], omitted: [], kingdoms, rulers, lead,
       statement: `${lead} Cited records for this year are still listed. Borders are not interpolated.`,
     };
   }
@@ -130,6 +130,9 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records,
     cautionList.length
       ? `Sheet labels that disagree with the cited research: ${cautionList.map(item => item.name).join(', ')}.`
       : '',
+    omitted.length
+      ? `Not drawn for ${year} CE, because the cited dates do not support the sheet name: ${omitted.map(item => item.name).join(', ')}. No replacement boundary has been added.`
+      : '',
     'The coast follows a modern land mask so the colour stops at the sea. Inland edges are the coarse sheet, lightly softened for display, not a surveyed frontier. A straight edge on the frame is a display cut. They are not a verified political map.',
   ].filter(Boolean).join(' ');
   return {
@@ -141,6 +144,7 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records,
     named: namedList,
     residual: residualList,
     cautions: cautionList,
+    omitted,
     kingdoms,
     rulers,
     lead,

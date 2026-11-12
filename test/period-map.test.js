@@ -111,24 +111,27 @@ test('a later country sheet is not offered as the political map of a distant yea
   assert.match(hidden.statement, /not interpolated/);
 });
 
-test('Vijayanagara after 1565 and Bangladesh before 1971 are flagged, not deleted', () => {
+test('anachronistic sheet names are left off, and supported names stay', () => {
   const later = applySheetReading([
     { id: 1, properties: { name: 'Vijayanagara', kind: 'named' } },
     { id: 2, properties: { name: 'Mughal Empire', kind: 'named' } },
   ], 1600);
-  assert.equal(later[0].properties.kind, 'caution');
-  assert.match(later[0].properties.caution, /1565/);
-  assert.equal(later[1].properties.kind, 'named');
+  assert.deepEqual(later.features.map(feature => feature.properties.name), ['Mughal Empire']);
+  assert.equal(later.omitted[0].name, 'Vijayanagara');
+  assert.match(later.omitted[0].note, /1565/);
   const beforeSack = applySheetReading([{ properties: { name: 'Vijayanagara', kind: 'named' } }], 1565);
-  assert.equal(beforeSack[0].properties.kind, 'named');
+  assert.equal(beforeSack.features[0].properties.kind, 'named');
+  assert.equal(beforeSack.omitted.length, 0);
   const partition = applySheetReading([
     { properties: { name: 'Bangladesh', kind: 'named' } },
     { properties: { name: 'Pakistan', kind: 'named' } },
     { properties: { name: 'India', kind: 'named' } },
   ], 1947);
-  assert.equal(partition[0].properties.kind, 'caution');
-  assert.equal(partition[1].properties.kind, 'named');
-  assert.equal(partition[2].properties.kind, 'named');
+  assert.deepEqual(partition.features.map(feature => feature.properties.name), ['Pakistan', 'India']);
+  assert.equal(partition.omitted[0].name, 'Bangladesh');
+  const early = applySheetReading([{ properties: { name: 'Pakistan', kind: 'named' } }], 1940);
+  assert.equal(early.features.length, 0);
+  assert.equal(early.omitted[0].name, 'Pakistan');
 });
 
 test('map fit uses named areas and ignores a residual sheet that covers the frame', () => {

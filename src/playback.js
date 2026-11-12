@@ -7,25 +7,42 @@ export const PLAY_SPEEDS = Object.freeze({
   fast: { step: 25, everyMs: 280 },
 });
 
-// Advance the year. Pause when the step lands on a different sheet that is not exact,
-// so a gap warning stays on screen until play is pressed again.
+function describeSheet(year, choice) {
+  if (!choice) return 'No snapshot is published.';
+  if (sheetIsSuppressed(year, choice))
+    return `No close political sheet. Nearest is ${choice.snapshot.year}, ${choice.gapYears} years away.`;
+  if (choice.gapYears === 0) return `Sheet ${choice.snapshot.year}.`;
+  return `Nearest sheet ${choice.snapshot.year}, ${choice.gapYears} years away. Borders are not interpolated.`;
+}
+
+// Keep moving. A year without its own sheet uses the nearest sheet and says so.
+// Years that would show a distant modern country map are skipped to the next year that can be drawn.
 export function nextPlaybackYear({ year, maxYear, step, snapshots }) {
   if (!Number.isInteger(year) || !Number.isInteger(maxYear) || !Number.isInteger(step) || step < 1)
     throw new Error('Playback needs integer years');
-  if (year >= maxYear) return { year, done: true, pause: false, gapYears: 0, snapshotYear: null };
-  const next = Math.min(maxYear, year + step);
-  const before = nearestSnapshot(year, snapshots);
-  const after = nearestSnapshot(next, snapshots);
-  const crossed = before?.snapshot?.year !== after?.snapshot?.year;
-  const suppressed = sheetIsSuppressed(next, after);
-  const pause = Boolean(crossed && after && (after.gapYears > 0 || suppressed));
+  if (year >= maxYear) return { year, done: true, pause: false, skipped: false, gapYears: 0, snapshotYear: null, suppressed: false, label: '' };
+  const stepped = Math.min(maxYear, year + step);
+  let next = stepped;
+  let choice = nearestSnapshot(next, snapshots);
+  let skipped = false;
+  if (sheetIsSuppressed(next, choice)) {
+    let cursor = next;
+    while (cursor < maxYear && sheetIsSuppressed(cursor, nearestSnapshot(cursor, snapshots))) cursor += 1;
+    if (!sheetIsSuppressed(cursor, nearestSnapshot(cursor, snapshots))) {
+      skipped = cursor !== stepped;
+      next = cursor;
+      choice = nearestSnapshot(next, snapshots);
+    }
+  }
   return {
     year: next,
     done: next >= maxYear,
-    pause,
-    gapYears: after?.gapYears ?? 0,
-    snapshotYear: after?.snapshot?.year ?? null,
-    suppressed,
+    pause: false,
+    skipped,
+    gapYears: choice?.gapYears ?? 0,
+    snapshotYear: choice?.snapshot?.year ?? null,
+    suppressed: sheetIsSuppressed(next, choice),
+    label: describeSheet(next, choice),
   };
 }
 

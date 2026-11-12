@@ -30,4 +30,6 @@ test('the Mughal succession is the cited ruler records in date order', () => {
   assert.ok(line.some((record) => record.id === 'akbar'));
   assert.equal(line.some((record) => record.id === 'east-india-company'), false);
   for (let i = 1; i < line.length; i += 1) assert.ok(line[i].startYear >= line[i - 1].startYear);
+  const cholas = successionLine(atlas.records, { ids: ['rajendra-reign', 'rajaraja-ii'] });
+  assert.deepEqual(cholas.map((record) => record.id), ['rajendra-reign', 'rajaraja-ii']);
 });

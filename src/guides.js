@@ -45,9 +45,25 @@ export function resolveTour(tour, records) {
   });
 }
 
-export function successionLine(records, tag = 'Mughal') {
-  return records
-    .filter((record) => record.type === 'ruler' && record.tags?.includes(tag))
+export const SUCCESSIONS = Object.freeze([
+  { title: 'Mughal succession', tag: 'Mughal' },
+  { title: 'Gupta succession', ids: ['gupta-chandragupta-ii'] },
+  { title: 'Chola succession', ids: ['rajaraja-temple', 'rajendra-reign', 'rajadhiraja-career', 'rajaraja-ii'] },
+  { title: 'Delhi sultanate succession', ids: ['aybak', 'aram', 'iltutmish', 'raziya', 'bahram', 'jalaluddin-khalji', 'alauddin-khalji', 'bahlul', 'sikandar', 'ibrahim'] },
+  { title: 'Maratha succession', tag: 'Maratha' },
+]);
+
+export function successionLine(records, spec = 'Mughal') {
+  const tag = typeof spec === 'string' ? spec : spec.tag;
+  const ids = typeof spec === 'object' ? spec.ids : null;
+  const chosen = ids
+    ? ids.map((id) => {
+      const record = records.find((item) => item.id === id);
+      if (!record) throw new Error(`Succession is missing ${id}`);
+      return record;
+    })
+    : records.filter((record) => record.type === 'ruler' && record.tags?.includes(tag));
+  return chosen
     .slice()
     .sort((a, b) => a.startYear - b.startYear || a.endYear - b.endYear || a.title.localeCompare(b.title, 'en'));
 }
