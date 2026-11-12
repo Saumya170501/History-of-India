@@ -1,3 +1,4 @@
+import { formatYear } from './atlas.js';
 import { recordsForPolity } from './period-map.js';
 
 const el = (tag, className, text) => {
@@ -29,8 +30,8 @@ export function fillYearSummary(container, summary, { onOpenList }) {
   }
   const line = el('p', 'year-line', summary.lead
     || (summary.exact
-      ? `Who was mapped in ${summary.year} CE · snapshot ${summary.snapshotYear}`
-      : `Who was mapped near ${summary.year} CE · nearest snapshot ${summary.snapshotYear} · ${summary.gapYears} years away · borders are not interpolated`));
+      ? `Who was mapped in ${formatYear(summary.year)} · snapshot ${formatYear(summary.snapshotYear)} · approximate`
+      : `Who was mapped near ${formatYear(summary.year)} · nearest snapshot ${formatYear(summary.snapshotYear)} · ${summary.gapYears} years away · borders are not interpolated`));
   container.append(line);
   const open = el('button', 'year-open', yearOpenLabel(summary));
   open.type = 'button';

@@ -1,3 +1,5 @@
+import { MIN_YEAR, formatYear } from './atlas.js';
+
 // Year → polity lookup for coarse external snapshots.
 // These shapes are not reviewed regional overlays and are never catalogue geometry.
 
@@ -89,7 +91,7 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records,
   const kingdoms = cited.filter(record => record.type !== 'ruler').map(record => record.title);
   const rulers = cited.filter(record => record.type === 'ruler').map(record => record.title);
   if (suppressed) {
-    const lead = `No close political sheet for ${year} CE. The nearest sheet is ${snapshotYear} CE, ${gapYears} years away, and it is a later country map, so it is not drawn.`;
+    const lead = `No close political sheet for ${formatYear(year)}. The nearest sheet is ${formatYear(snapshotYear)}, ${gapYears} years away, and it is a later country map, so it is not drawn.`;
     return {
       year, snapshotYear, gapYears, exact: false, suppressed: true,
       named: [], residual: [], cautions: [], omitted: [], kingdoms, rulers, lead,
@@ -118,11 +120,11 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records,
     cautionList.push(item);
   }
   const gap = gapYears === 0
-    ? `The ${snapshotYear} CE snapshot is the published sheet for this year.`
-    : `No sheet is published for ${year} CE. The nearest sheet is ${snapshotYear} CE, ${gapYears} years away. Borders are not interpolated.`;
+    ? `The ${formatYear(snapshotYear)} snapshot is the published sheet for this year. The fill is approximate and low confidence: a coarse world sheet, not a surveyed border.`
+    : `No sheet is published for ${formatYear(year)}. The nearest sheet is ${formatYear(snapshotYear)}, ${gapYears} years away. Borders are not interpolated. The fill is approximate and low confidence.`;
   const lead = gapYears === 0
-    ? `Who was mapped in ${year} CE · snapshot ${snapshotYear}`
-    : `Who was mapped near ${year} CE · nearest snapshot ${snapshotYear} · ${gapYears} years away · borders are not interpolated`;
+    ? `Who was mapped in ${formatYear(year)} · snapshot ${formatYear(snapshotYear)} · approximate`
+    : `Who was mapped near ${formatYear(year)} · nearest snapshot ${formatYear(snapshotYear)} · ${gapYears} years away · borders are not interpolated`;
   const statement = [
     gap,
     `Named areas on this approximate sheet: ${namedList.length ? namedList.join(', ') : 'none'}.`,
@@ -131,7 +133,7 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records,
       ? `Sheet labels that disagree with the cited research: ${cautionList.map(item => item.name).join(', ')}.`
       : '',
     omitted.length
-      ? `Not drawn for ${year} CE, because the cited dates do not support the sheet name: ${omitted.map(item => item.name).join(', ')}. No replacement boundary has been added.`
+      ? `Not drawn for ${formatYear(year)}, because the cited dates do not support the sheet name: ${omitted.map(item => item.name).join(', ')}. No replacement boundary has been added.`
       : '',
     'The coast follows a modern land mask so the colour stops at the sea. Inland edges are the coarse sheet, lightly softened for display, not a surveyed frontier. A straight edge on the frame is a display cut. They are not a verified political map.',
   ].filter(Boolean).join(' ');
@@ -188,14 +190,14 @@ export function validateBasemapIndex(index) {
     if (typeof index?.[key] !== 'string' || !index[key].trim()) errors.push(`Basemap index missing ${key}.`);
   if (index?.license !== 'GPL-3.0-only') errors.push('Basemap license must stay GPL-3.0-only.');
   if (!Array.isArray(index?.snapshots) || !index.snapshots.length) errors.push('Basemap index has no snapshots.');
-  let previous = 0;
+  let previous = Number.NEGATIVE_INFINITY;
   const years = new Set();
   for (const snapshot of index?.snapshots || []) {
-    if (!Number.isInteger(snapshot?.year) || snapshot.year < 1 || years.has(snapshot.year) || snapshot.year < previous)
+    if (!Number.isInteger(snapshot?.year) || snapshot.year === 0 || snapshot.year < MIN_YEAR || years.has(snapshot.year) || snapshot.year < previous)
       errors.push(`Basemap snapshot year out of order: ${snapshot?.year}`);
     previous = snapshot?.year || previous;
     years.add(snapshot?.year);
-    if (typeof snapshot?.file !== 'string' || !/^year-\d+\.geojson$/.test(snapshot.file))
+    if (typeof snapshot?.file !== 'string' || !/^year--?\d+\.geojson$/.test(snapshot.file))
       errors.push(`Basemap file name invalid: ${snapshot?.file}`);
     if (!Number.isInteger(snapshot?.featureCount) || snapshot.featureCount < 1)
       errors.push(`Basemap feature count invalid for ${snapshot?.year}`);

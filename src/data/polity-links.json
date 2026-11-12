@@ -3,6 +3,8 @@
   "note": "Name associations for discovery. A link does not mean the snapshot polygon is that record's territory, or that the names are the same polity in every year.",
   "links": [
     { "name": "Gupta Empire", "recordIds": ["gupta-empire", "gupta-chandragupta-ii"] },
+    { "name": "Mauryan Empire", "recordIds": ["maurya-empire", "chandragupta-maurya", "ashoka"] },
+    { "name": "Magadha", "recordIds": ["magadha-early", "bimbisara", "maurya-empire"] },
     { "name": "Vakataka", "recordIds": ["vakataka-dynasty"] },
     { "name": "Satavahanihara", "recordIds": ["early-satavahana"], "placeIncludes": "Satavahana" },
     { "name": "Saka Kingdom", "recordIds": ["early-western-kshatrapas"], "placeIncludes": "Western Kshatrapa" },

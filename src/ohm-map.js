@@ -8,6 +8,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import { createResourceStatus } from './map-resource-status.js';
 import { physicalBasemapStyle, hideBasemapContext, influenceLayers, pointLayer, periodLayers } from './historical-style.js';
 import { kingdomNames, selectionFilter } from './ohm-selection.js';
+import { formatYear, historicalIsoDate } from './atlas.js';
 
 const PERIOD_GLYPHS = 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf';
 function atlasStyle() {
@@ -48,14 +49,14 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     if (!matches.length && hasBoundary) return onStatus(`A dated boundary was found for ${names[0]}. Pan back to its area to see the highlight.`);
     if (!matches.length && resources.boundaryFailed()) return onStatus(`Boundary matching for ${names[0]} could not be confirmed because OHM resources failed to load. Try the direct OHM link below.`);
     onStatus(matches.length
-      ? `Highlighted OHM name match: ${names[0]} · 1 January ${year} CE. This is provider data, not an independently verified extent of ${selection.title}.`
-      : `No dated OHM boundary matching ${names[0]} is available in this view for ${year} CE. No substitute territory is drawn.`);
+      ? `Highlighted OHM name match: ${names[0]} · 1 January ${formatYear(year)}. This is provider data, not an independently verified extent of ${selection.title}.`
+      : `No dated OHM boundary matching ${names[0]} is available in this view for ${formatYear(year)}. No substitute territory is drawn.`);
   }
   function sync() {
     if (!ready) return;
     gl.getSource('imported-empires').setData(filterEmpires(empireData, year));
     for (const id of ['imported-empires-halo', 'imported-empires-fill']) gl.setLayoutProperty(id, 'visibility', enabled ? 'visible' : 'none');
-    filterByDate(gl, `${String(year).padStart(4, '0')}-01-01`);
+    filterByDate(gl, historicalIsoDate(year));
     for (const id of layerIds) {
       gl.setPaintProperty(id, id.endsWith('fill') ? 'fill-color' : 'line-color', selection ? recordFactionColor(selection) : '#8a8d91');
       gl.setFilter(id, ['all', ['==', ['geometry-type'], 'Polygon'], selectionFilter(selection, year)]);
@@ -118,7 +119,7 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       // A replacement style needs new date constraints even when global date state survives.
       if (Object.hasOwn(gl.getGlobalState(), 'maplibre_gl_dates__startISODate')) constrainStyleToDateRange(gl);
       // Constrain the provider's neighbouring features before showing its canvas.
-      filterByDate(gl, `${String(year).padStart(4, '0')}-01-01`);
+      filterByDate(gl, historicalIsoDate(year));
       gl.addSource('ohm-selected-boundaries', {
         type: 'vector', url: 'https://vtiles.openhistoricalmap.org/maps/ohm_admin.json',
       });

@@ -28,6 +28,41 @@
   },
   "snapshots": [
     {
+      "year": -500,
+      "file": "year--500.geojson",
+      "featureCount": 14
+    },
+    {
+      "year": -400,
+      "file": "year--400.geojson",
+      "featureCount": 7
+    },
+    {
+      "year": -323,
+      "file": "year--323.geojson",
+      "featureCount": 7
+    },
+    {
+      "year": -300,
+      "file": "year--300.geojson",
+      "featureCount": 6
+    },
+    {
+      "year": -200,
+      "file": "year--200.geojson",
+      "featureCount": 9
+    },
+    {
+      "year": -100,
+      "file": "year--100.geojson",
+      "featureCount": 6
+    },
+    {
+      "year": -1,
+      "file": "year--1.geojson",
+      "featureCount": 9
+    },
+    {
       "year": 100,
       "file": "year-100.geojson",
       "featureCount": 10

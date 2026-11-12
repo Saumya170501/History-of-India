@@ -24,7 +24,7 @@ test('nearest snapshot never interpolates and ties keep the earlier sheet', () =
   assert.equal(between.gapYears, 40);
   assert.equal(between.exact, false);
   assert.equal(nearestSnapshot(150, snapshots).snapshot.year, 100);
-  assert.equal(nearestSnapshot(1, index.snapshots).snapshot.year, 100);
+  assert.equal(nearestSnapshot(1, index.snapshots).snapshot.year, -1);
   assert.equal(nearestSnapshot(2026, index.snapshots).snapshot.year, 2010);
 });
 
@@ -71,7 +71,7 @@ test('year summary names the gap and refuses interpolated borders', () => {
   assert.deepEqual(summary.residual, ['Rajput kingdoms']);
   assert.match(summary.statement, /not interpolated/);
   assert.match(summary.statement, /not a verified political map/);
-  assert.match(summary.lead, /nearest snapshot 1000/);
+  assert.match(summary.lead, /nearest snapshot 1,000 CE/);
   assert.deepEqual(summary.cautions, []);
   assert.equal(summary.statement.includes('1047 CE sheet'), false);
   assert.ok(summary.kingdoms.includes('Imperial Chola chronology'));
@@ -109,6 +109,19 @@ test('a later country sheet is not offered as the political map of a distant yea
   assert.deepEqual(hidden.named, []);
   assert.match(hidden.lead, /not drawn/);
   assert.match(hidden.statement, /not interpolated/);
+});
+
+test('BCE years use the Mauryan sheet and drop that name after 185 BCE', () => {
+  const at300 = nearestSnapshot(-300, index.snapshots);
+  assert.equal(at300.exact, true);
+  assert.equal(at300.snapshot.year, -300);
+  const names = sheet(-300).features.map(feature => feature.properties.name);
+  assert.ok(names.includes('Mauryan Empire'));
+  const later = applySheetReading([{ properties: { name: 'Mauryan Empire', kind: 'named' } }], -100);
+  assert.equal(later.features.length, 0);
+  assert.match(later.omitted[0].note, /185/);
+  const during = applySheetReading([{ properties: { name: 'Mauryan Empire', kind: 'named' } }], -250);
+  assert.equal(during.features.length, 1);
 });
 
 test('anachronistic sheet names are left off, and supported names stay', () => {

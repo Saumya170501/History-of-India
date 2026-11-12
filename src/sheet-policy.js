@@ -7,6 +7,12 @@ const COUNTRY_SHEETS = new Set([1960, 1994, 2000, 2010]);
 
 export const SHEET_CAUTIONS = Object.freeze([
   {
+    name: 'Mauryan Empire',
+    afterYear: -185,
+    recordId: 'maurya-empire',
+    note: 'The sheet still names a Mauryan Empire. Cited research says Pushyamitra replaced that dynasty about 185 BCE. The name is not drawn after that year. No Shunga outline has been substituted.',
+  },
+  {
     name: 'Vijayanagara',
     afterYear: 1565,
     recordId: 'vijayanagara-empire',

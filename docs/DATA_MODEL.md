@@ -11,7 +11,7 @@ Each source contains a stable `id`, `title`, `publisher`, HTTPS `url`, and `acce
 - `id`: unique stable string; do not reuse IDs for different claims.
 - `title`, `summary`, `place`: short original descriptions, with the geography used by the source where appropriate.
 - `type`: `site`, `ruler`, `kingdom`, `battle`, `culture`, or `state`. These categories organize claims; they do not establish territory. Civilization research belongs under `culture` until a dedicated model is justified. `state` is for constitutional or corporate governments, including the East India Company, the British raj, princely states as a class, and India after 1947. It must not be used to label elected office-holders as kings.
-- `startYear`, `endYear`: inclusive integer filtering window within 1–2026 CE. No year zero. Earlier claims require an explicit model extension, not clipping that could masquerade as a foundation date.
+- `startYear`, `endYear`: inclusive integer filtering window from 600 BCE to 2026 CE. There is no year 0: 1 BCE is `-1` and 1 CE is `1`. A negative year is BCE. Do not clip an earlier claim into year 1.
 - `datePrecision`: `year`, `century`, or `approximate`.
 - `dateLabel`: human-readable date with uncertainty visible.
 - `dateNote`: what the dates actually mean and what remains uncertain.

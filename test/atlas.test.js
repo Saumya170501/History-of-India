@@ -3,7 +3,10 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import {
+  formatYear,
+  historicalIsoDate,
   normalizeYear,
+  shiftYear,
   recordsForYear,
   stateFromSearch,
   validateAtlas,
@@ -62,7 +65,16 @@ test("type and case-insensitive search combine with the year filter", () => {
 });
 
 test("year entry clamps and handles empty, malformed, infinite and decimal values", () => {
-  assert.equal(normalizeYear(-50), 1);
+  assert.equal(normalizeYear(-50), -50);
+  assert.equal(normalizeYear('300 BCE'), -300);
+  assert.equal(normalizeYear(0), 1);
+  assert.equal(normalizeYear(-900), -600);
+  assert.equal(formatYear(-300), '300 BCE');
+  assert.equal(formatYear(1600), '1,600 CE');
+  assert.equal(shiftYear(-1, 1), 1);
+  assert.equal(shiftYear(1, -1), -1);
+  assert.equal(historicalIsoDate(-1), '0000-01-01');
+  assert.equal(historicalIsoDate(-300), '-0299-01-01');
   assert.equal(normalizeYear(3000), 2026);
   assert.equal(normalizeYear("500.6"), 501);
   for (const bad of ["", "  ", null, undefined, "abc", Infinity])

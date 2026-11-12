@@ -1,6 +1,6 @@
 // Rebuild clipped subcontinent snapshots from aourednik/historical-basemaps.
 // Not part of the Vercel build. Run only when refreshing the vendored sheets.
-import { mkdir, writeFile, copyFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, copyFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import polygonClipping from 'polygon-clipping';
@@ -10,11 +10,15 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(root, 'public/data/basemaps');
 const indexPath = join(root, 'src/data/basemap-index.json');
 const upstream = 'https://cdn.jsdelivr.net/gh/aourednik/historical-basemaps@master/geojson';
-const years = [
+const defaultYears = [
+  -500, -400, -323, -300, -200, -100, -1,
   100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1279, 1300,
   1400, 1492, 1500, 1530, 1600, 1650, 1700, 1715, 1783, 1800, 1815, 1880, 1900,
   1914, 1920, 1930, 1938, 1945, 1960, 1994, 2000, 2010,
 ];
+const years = process.env.BASEMAP_YEARS
+  ? process.env.BASEMAP_YEARS.split(',').map(item => Number(item.trim()))
+  : defaultYears;
 
 function inside(point, edge) {
   if (edge === 'left') return point[0] >= FRAME.west;
@@ -113,8 +117,14 @@ function inCore(geometry) {
   visit(geometry.coordinates);
   return maxX >= box.west && minX <= box.east && maxY >= box.south && minY <= box.north;
 }
+function upstreamFile(year) {
+  return year < 0 ? `world_bc${-year}.geojson` : `world_${year}.geojson`;
+}
+function snapshotFile(year) {
+  return year < 0 ? `year--${-year}.geojson` : `year-${year}.geojson`;
+}
 async function fetchYear(year) {
-  const url = `${upstream}/world_${year}.geojson`;
+  const url = `${upstream}/${upstreamFile(year)}`;
   let last;
   for (let attempt = 1; attempt <= 4; attempt += 1) {
     try {
@@ -242,6 +252,8 @@ function convert(collection, year) {
         subjectTo: feature.properties.SUBJECTO && feature.properties.SUBJECTO !== name ? feature.properties.SUBJECTO : undefined,
         kind,
         snapshotYear: year,
+        uncertainty: Number(feature.properties?.BORDERPRECISION) >= 3 ? 'higher'
+          : Number(feature.properties?.BORDERPRECISION) === 2 ? 'moderate' : 'low',
         color: kind === 'residual' ? RESIDUAL_COLOR : polityColor(name.trim()),
         area: Math.round(area * 100) / 100,
         labelRank: -Math.round(area * 10),
@@ -273,12 +285,19 @@ await loadLand();
 const sheets = await pool(years, 4, async year => {
   const raw = await fetchYear(year);
   const collection = convert(raw, year);
-  const file = `year-${year}.geojson`;
+  const file = snapshotFile(year);
   await writeFile(join(outDir, file), JSON.stringify(collection));
   const named = collection.features.filter(feature => feature.properties.kind === 'named').map(feature => feature.properties.name);
   console.log(year, collection.features.length, named.join(' | '));
   return { year, file, featureCount: collection.features.length };
 });
+let snapshots = sheets.filter(sheet => sheet.featureCount > 0);
+if (process.env.BASEMAP_YEARS) {
+  const previous = JSON.parse(await readFile(indexPath, 'utf8'));
+  const byYear = new Map((previous.snapshots || []).map(item => [item.year, item]));
+  for (const sheet of snapshots) byYear.set(sheet.year, sheet);
+  snapshots = [...byYear.values()].sort((a, b) => a.year - b.year);
+}
 const index = {
   schemaVersion: 1,
   dataset: 'historical-basemaps',
@@ -297,7 +316,7 @@ const index = {
   },
   frame: FRAME,
   core: CORE,
-  snapshots: sheets,
+  snapshots,
 };
 await writeFile(indexPath, `${JSON.stringify(index, null, 2)}\n`);
 await copyFile('/tmp/gpl-3.0.txt', join(outDir, 'LICENSE-GPL-3.0.txt'));

@@ -1,3 +1,4 @@
+import { shiftYear } from './atlas.js';
 import { nearestSnapshot } from './period-map.js';
 import { sheetIsSuppressed } from './sheet-policy.js';
 
@@ -21,7 +22,7 @@ export function nextPlaybackYear({ year, maxYear, step, snapshots }) {
   if (!Number.isInteger(year) || !Number.isInteger(maxYear) || !Number.isInteger(step) || step < 1)
     throw new Error('Playback needs integer years');
   if (year >= maxYear) return { year, done: true, pause: false, skipped: false, gapYears: 0, snapshotYear: null, suppressed: false, label: '' };
-  const stepped = Math.min(maxYear, year + step);
+  const stepped = shiftYear(year, step);
   let next = stepped;
   let choice = nearestSnapshot(next, snapshots);
   let skipped = false;

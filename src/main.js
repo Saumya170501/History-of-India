@@ -16,7 +16,10 @@ import {
   MIN_YEAR,
   MAX_YEAR,
   TYPES,
+  formatYear,
+  formatYearParts,
   normalizeYear,
+  shiftYear,
   recordsForYear,
   searchAtlas,
   stateFromSearch,
@@ -66,8 +69,8 @@ $("#app").innerHTML = `
     </section>
     <section class="timeline" aria-label="Choose a historical year">
       <div class="year-block"><span class="eyebrow">EXPLORING THE YEAR</span><div><output id="year-display" for="year-slider year-input">1</output><span class="ce">CE</span></div></div>
-      <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="1" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026 CE</span></div>      <div class="jumps"><span>Explore a window</span><button data-year="1">1 CE</button><button data-year="300">300</button><button data-year="500">500</button><button data-year="1000">1000</button><button data-year="1600">1600</button><button data-year="1800">1800</button><button data-year="1858">1858</button><button data-year="1947">1947</button><button id="play-toggle" type="button" aria-pressed="false">Play</button><label class="play-speed">Speed <select id="play-speed" aria-label="Playback speed"><option value="slow">Slow</option><option value="steady" selected>Steady</option><option value="fast">Fast</option></select></label><button id="compare-toggle" type="button" aria-pressed="false">Compare</button></div></div>
-      <div class="year-entry"><label for="year-input">Go to year</label><div><button id="previous-year" aria-label="Previous year">−</button><input id="year-input" type="number" min="1" max="2026" step="1" value="1"><button id="next-year" aria-label="Next year">+</button></div></div>
+      <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="-600" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>600 BCE</span><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026</span></div>      <div class="jumps"><span>Explore a window</span><button data-year="-500">500 BCE</button><button data-year="-300">300 BCE</button><button data-year="1">1 CE</button><button data-year="300">300</button><button data-year="500">500</button><button data-year="1000">1000</button><button data-year="1600">1600</button><button data-year="1800">1800</button><button data-year="1858">1858</button><button data-year="1947">1947</button><button id="play-toggle" type="button" aria-pressed="false">Play</button><label class="play-speed">Speed <select id="play-speed" aria-label="Playback speed"><option value="slow">Slow</option><option value="steady" selected>Steady</option><option value="fast">Fast</option></select></label><button id="compare-toggle" type="button" aria-pressed="false">Compare</button></div></div>
+      <div class="year-entry"><label for="year-input">Go to year</label><div><button id="previous-year" aria-label="Previous year">−</button><input id="year-input" type="number" min="-600" max="2026" step="1" value="1"><button id="next-year" aria-label="Next year">+</button></div></div>
       <div id="year-summary" class="year-summary" role="status" aria-live="polite"></div>
     </section>
     <div class="workspace">
@@ -76,7 +79,7 @@ $("#app").innerHTML = `
         <fieldset class="map-controls"><legend>Map layers</legend><label><input id="show-period" type="checkbox" checked> Period snapshot</label><label><input id="show-regions" type="checkbox" checked> Highlight selected area</label><label><input id="show-battles" type="checkbox" checked> Battles & aftermath in this year</label></fieldset>
         <div id="map" tabindex="-1" aria-label="Interactive geographic map; equivalent records are listed alongside"></div>
         <div id="map-error" role="alert" hidden></div><p id="map-selection-status" class="map-selection-status" role="status" aria-live="polite"></p>
-        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Colours: approximate snapshot polities · Grey: residual category · Purple: selected OHM match<br>B: battle · S: siege · A: aftermath</span><span>Snapshot sheets are not annual borders · OHM context is 1 January · Internet required</span></div>
+        <div class="map-caption"><span><i class="legend-dot" aria-hidden="true"></i> Colours: approximate snapshot polities · Grey: residual category · Purple: selected OHM match<br>B: battle · S: siege · A: aftermath</span><span>Filled areas are approximate and low confidence · a coarse world sheet, softened at the coast · not a surveyed border · OHM context is 1 January · Internet required</span></div>
         <div id="map-context" class="map-context" aria-live="polite"></div>
         <section class="battle-context" aria-labelledby="battle-heading"><h3 id="battle-heading">Battles & aftermath in this year</h3><p>Across the atlas, independent of the record filters. A matching date window does not prove fighting throughout that year or involvement by the selected ruler.</p><div id="battle-list"></div></section>
       </section>
@@ -828,16 +831,13 @@ function render() {
     state.query,
   );
   const allYear = recordsForYear(data.records, state.year);
-  $("#year-slider").value = state.year;
-  $("#year-slider").setAttribute("aria-valuetext", `${state.year} CE`);
-  $("#year-input").value = state.year;
-  $("#year-display").value = state.year.toLocaleString("en");
+  paintYear(state.year);
   $("#previous-year").disabled = state.year === MIN_YEAR;
   $("#next-year").disabled = state.year === MAX_YEAR;
   $("#record-type").value = state.type;
   $("#search").value = state.query;
   $("#record-count").textContent =
-    `${matches.length} ${matches.length === 1 ? "record window includes" : "record windows include"} ${state.year} CE`;
+    `${matches.length} ${matches.length === 1 ? "record window includes" : "record windows include"} ${formatYear(state.year)}`;
   document
     .querySelectorAll("[data-year]")
     .forEach((button) =>
@@ -1010,10 +1010,14 @@ function update() {
   render();
 }
 function paintYear(year) {
-  $("#year-slider").value = year;
-  $("#year-slider").setAttribute("aria-valuetext", `${year} CE`);
-  $("#year-input").value = year;
-  $("#year-display").value = year.toLocaleString("en");
+  const safe = year === 0 ? 1 : year;
+  const parts = formatYearParts(safe);
+  $("#year-slider").value = safe;
+  $("#year-slider").setAttribute("aria-valuetext", formatYear(safe));
+  $("#year-input").value = safe;
+  $("#year-display").value = parts.number;
+  const era = document.querySelector('.year-block .ce');
+  if (era) era.textContent = parts.era;
 }
 let playTimer = 0;
 let compareOn = false;
@@ -1074,7 +1078,9 @@ function stepPlayback() {
 }
 function setYear(value, immediate = false, source = 'user') {
   if (source !== 'play') stopPlayback();
-  state.year = normalizeYear(value, state.year);
+  const numeric = Number(value);
+  const next = numeric === 0 ? (state.year > 0 ? -1 : 1) : normalizeYear(value, state.year);
+  state.year = next;
   paintYear(state.year);
   clearTimeout(yearTimer);
   if (immediate) update();
@@ -1084,7 +1090,7 @@ function onYearWheel(event) {
   if (event.target.closest('#evidence-drawer, .polity-card, input, textarea, select, a, button')) return;
   event.preventDefault();
   const step = event.shiftKey ? 10 : 1;
-  setYear(state.year + (event.deltaY > 0 ? step : -step));
+  setYear(shiftYear(state.year, event.deltaY > 0 ? step : -step));
 }
 $("#year-slider").addEventListener("input", (event) =>
   setYear(event.target.value),
@@ -1137,8 +1143,8 @@ compareSwap.addEventListener('click', () => {
   compareInput.value = String(shown);
   setYear(other, true);
 });
-$("#previous-year").addEventListener("click", () => setYear(state.year - 1, true));
-$("#next-year").addEventListener("click", () => setYear(state.year + 1, true));
+$("#previous-year").addEventListener("click", () => setYear(shiftYear(state.year, -1), true));
+$("#next-year").addEventListener("click", () => setYear(shiftYear(state.year, 1), true));
 document
   .querySelectorAll("[data-year]")
   .forEach((button) =>
