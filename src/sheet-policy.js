@@ -2,6 +2,8 @@
 // A caution means the sheet still carries a name the cited research does not support for that year.
 
 export const CLOSE_COUNTRY_GAP = 5;
+// A sheet further than this is not drawn. Borders are not stretched across the gap.
+export const MAX_DISPLAY_GAP = 30;
 // World country sheets. They are not historical polity maps of an earlier year.
 const COUNTRY_SHEETS = new Set([1960, 1994, 2000, 2010]);
 
@@ -64,6 +66,7 @@ export function applySheetReading(features, year) {
 // A later country map is not drawn when the selected year is too far from that sheet.
 export function sheetIsSuppressed(year, choice) {
   if (!choice?.snapshot || !Number.isInteger(year)) return false;
+  if (choice.gapYears > MAX_DISPLAY_GAP) return true;
   return year >= 1947
     && COUNTRY_SHEETS.has(choice.snapshot.year)
     && choice.gapYears > CLOSE_COUNTRY_GAP;

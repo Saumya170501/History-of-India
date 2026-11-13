@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  PALETTE, boundsOfFeatures, isResidualName, nearestSnapshot, polityColor, recordsForPolity,
+  PALETTE, boundsOfFeatures, isResidualName, labelPoints, nearestSnapshot, polityColor, recordsForPolity,
   summarizeYear, validateBasemapCollection, validateBasemapIndex,
 } from '../src/period-map.js';
 import { countPhrase, yearOpenLabel } from '../src/year-panel.js';
@@ -26,6 +26,11 @@ test('nearest snapshot never interpolates and ties keep the earlier sheet', () =
   assert.equal(nearestSnapshot(150, snapshots).snapshot.year, 100);
   assert.equal(nearestSnapshot(1, index.snapshots).snapshot.year, -1);
   assert.equal(nearestSnapshot(2026, index.snapshots).snapshot.year, 2010);
+  const at228 = nearestSnapshot(228, index.snapshots);
+  assert.equal(at228.snapshot.year, 200);
+  assert.equal(at228.gapYears, 28);
+  assert.equal(sheetIsSuppressed(228, at228), false);
+  assert.equal(sheetIsSuppressed(250, nearestSnapshot(250, index.snapshots)), true);
 });
 
 test('residual categories are not treated as single kingdoms', () => {
@@ -145,6 +150,31 @@ test('anachronistic sheet names are left off, and supported names stay', () => {
   const early = applySheetReading([{ properties: { name: 'Pakistan', kind: 'named' } }], 1940);
   assert.equal(early.features.length, 0);
   assert.equal(early.omitted[0].name, 'Pakistan');
+});
+
+test('each sheet name gets one label point, even when the polygon is repeated', () => {
+  const square = [[70, 20], [80, 20], [80, 30], [70, 30], [70, 20]];
+  const bigger = [[60, 20], [90, 20], [90, 35], [60, 35], [60, 20]];
+  const labels = labelPoints([
+    { properties: { name: 'Suren Kingdom', kind: 'named' }, geometry: { type: 'Polygon', coordinates: [square] } },
+    { properties: { name: 'Suren Kingdom', kind: 'named' }, geometry: { type: 'Polygon', coordinates: [bigger] } },
+    { properties: { name: 'Saka Kingdom', kind: 'named' }, geometry: { type: 'Polygon', coordinates: [square] } },
+    { properties: { name: 'Hindu kingdoms', kind: 'residual' }, geometry: { type: 'Polygon', coordinates: [square] } },
+  ]);
+  assert.deepEqual(labels.features.map(feature => feature.properties.name).sort(), ['Saka Kingdom', 'Suren Kingdom']);
+  assert.equal(labels.features.every(feature => feature.geometry.type === 'Point'), true);
+  const suren = labels.features.find(feature => feature.properties.name === 'Suren Kingdom');
+  assert.ok(suren.geometry.coordinates[0] > 70);
+});
+
+test('a sheet more than 30 years away is described as not drawn', () => {
+  const summary = summarizeYear({
+    year: 250, snapshotYear: 200, gapYears: 50, features: [{ properties: { name: 'Saka Kingdom', kind: 'named' } }],
+    records: [], suppressed: true,
+  });
+  assert.match(summary.lead, /not drawn/);
+  assert.equal(summary.lead.includes('later country map'), false);
+  assert.deepEqual(summary.named, []);
 });
 
 test('map fit uses named areas and ignores a residual sheet that covers the frame', () => {

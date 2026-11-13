@@ -27,7 +27,8 @@ import {
 } from "./atlas.js";
 import basemapIndex from "./data/basemap-index.json";
 import polityLinks from "./data/polity-links.json";
-import { FRAME, boundsOfFeatures, nearestSnapshot, polityColor, recordsForPolity, summarizeYear } from "./period-map.js";
+import { FRAME, boundsOfFeatures, labelPoints, nearestSnapshot, polityColor, recordsForPolity, summarizeYear } from "./period-map.js";
+import { fetchJson } from "./fetch-json.js";
 import { applySheetReading, sheetIsSuppressed } from "./sheet-policy.js";
 import { PLAY_SPEEDS, compareNames, nextPlaybackYear } from "./playback.js";
 import { SUCCESSIONS, TOURS, resolveTour, successionLine } from "./guides.js";
@@ -70,7 +71,7 @@ $("#app").innerHTML = `
     </section>
     <section class="timeline" aria-label="Choose a historical year">
       <div class="year-block"><span class="eyebrow">EXPLORING THE YEAR</span><div><output id="year-display" for="year-slider year-input">1</output><span class="ce">CE</span></div></div>
-      <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="-600" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>600 BCE</span><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026</span></div>      <div class="jumps"><span>Explore a window</span><button data-year="-500">500 BCE</button><button data-year="-300">300 BCE</button><button data-year="1">1 CE</button><button data-year="300">300</button><button data-year="500">500</button><button data-year="1000">1000</button><button data-year="1600">1600</button><button data-year="1800">1800</button><button data-year="1858">1858</button><button data-year="1947">1947</button><button id="play-toggle" type="button" aria-pressed="false">Play</button><label class="play-speed">Speed <select id="play-speed" aria-label="Playback speed"><option value="slow">Slow</option><option value="steady" selected>Steady</option><option value="fast">Fast</option></select></label><button id="compare-toggle" type="button" aria-pressed="false">Compare</button></div></div>
+      <div class="slider-block"><label for="year-slider" class="sr-only">Historical year</label><input id="year-slider" type="range" min="-600" max="2026" step="1" value="1"><div class="ruler" aria-hidden="true"><span>600 BCE</span><span>1 CE</span><span>500</span><span>1000</span><span>1500</span><span>2026</span></div>      <div class="jumps"><span>Explore a window</span><button data-year="-500">500 BCE</button><button data-year="-300">300 BCE</button><button data-year="1">1 CE</button><button data-year="300">300</button><button data-year="500">500</button><button data-year="1000">1000</button><button data-year="1600">1600</button><button data-year="1800">1800</button><button data-year="1858">1858</button><button data-year="1947">1947</button><div class="playback-controls"><button id="play-toggle" type="button" aria-pressed="false">Play</button><label class="play-speed">Speed <select id="play-speed" aria-label="Playback speed"><option value="slow">Slow</option><option value="steady" selected>Steady</option><option value="fast">Fast</option></select></label><button id="compare-toggle" type="button" aria-pressed="false">Compare</button></div></div></div>
       <div class="year-entry"><label for="year-input">Go to year</label><div><button id="previous-year" aria-label="Previous year">−</button><input id="year-input" type="number" min="-600" max="2026" step="1" value="1"><button id="next-year" aria-label="Next year">+</button></div></div>
       <div id="year-summary" class="year-summary" role="status" aria-live="polite"></div>
     </section>
@@ -97,7 +98,7 @@ $("#app").innerHTML = `
     <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>${data.records.length} cited records are a starting point, not a complete history. Empty years mean research is still needed. Regional overlays require dated map evidence and independent review. Published period maps are linked as context, not exact annual borders.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
   </main>
   <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><button id="footer-sources" class="quiet">${data.sources.length} sources · ${data.records.length} records</button></footer>
-  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated physical map. Colour-filled areas are clipped sheets from André Ourednik’s historical-basemaps (GPL-3.0). They are coarse external digitizations. A year between sheets uses the nearest sheet and says so; borders are not interpolated. A country sheet from 1960 or later is not drawn when the selected year is more than five years away, because that map is not the political geography of the earlier year. A sheet name that the cited research does not support for the selected year is left off the map. No replacement shape is invented. The archive says which name was left off and why. The colour stops at a modern Natural Earth coastline, which is not a historical shore. Long inland edges are lightly softened for display and are not a surveyed frontier. A straight edge on the frame is a display cut. Grey areas are residual categories in the source, not single kingdoms. Clicking a name opens cited research where a link exists. The link is not proof that the shape was that polity’s border.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Period sheets: <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener noreferrer">historical-basemaps</a>, GPL-3.0-only, clipped and labelled as approximate. Internet and WebGL are required; no API key is needed.</p></dialog>
+  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated physical map. Colour-filled areas are clipped sheets from André Ourednik’s historical-basemaps (GPL-3.0). They are coarse external digitizations. A year between sheets uses the nearest sheet and says so; borders are not interpolated. A sheet more than 30 years from the selected year is not drawn. A country sheet from 1960 or later is not drawn when the selected year is more than five years away, because that map is not the political geography of the earlier year. A sheet name that the cited research does not support for the selected year is left off the map. No replacement shape is invented. The archive says which name was left off and why. The colour stops at a modern Natural Earth coastline, which is not a historical shore. Long inland edges are lightly softened for display and are not a surveyed frontier. A straight edge on the frame is a display cut. Grey areas are residual categories in the source, not single kingdoms. Clicking a name opens cited research where a link exists. The link is not proof that the shape was that polity’s border.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Period sheets: <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener noreferrer">historical-basemaps</a>, GPL-3.0-only, clipped and labelled as approximate. Internet and WebGL are required; no API key is needed.</p></dialog>
 `;
 
 // One scrolling surface. Tabs: this year, the selected polity, records, sources.
@@ -336,6 +337,9 @@ const map = L.map("map", {
   minZoom: 4,
   maxZoom: 8,
   scrollWheelZoom: false,
+  zoomAnimation: false,
+  fadeAnimation: false,
+  markerZoomAnimation: false,
   maxBounds: frameBounds.pad(0.04),
   maxBoundsViscosity: 1,
 }).setView([22.5, 80], 5);
@@ -368,6 +372,17 @@ let openPolityName = null;
 let shownSnapshot = null;
 let yearTimer = 0;
 let periodToken = 0;
+let periodAbort = null;
+function dataUrl(path) {
+  const base = new URL(import.meta.env.BASE_URL || './', window.location.href);
+  return new URL(path, base).href;
+}
+function clearPeriodSheet() {
+  shownSnapshot = null;
+  periodSummary = null;
+  historicalMap.setPeriod({ type: 'FeatureCollection', features: [] }, { type: 'FeatureCollection', features: [] });
+  drawPeriodHits({ features: [] });
+}
 const { attachHistoricalMap } = await mapEngine;
 const historicalMap = attachHistoricalMap(map, {
   onStatus: message => { $('#map-selection-status').textContent = message; },
@@ -689,10 +704,7 @@ function mapPadding() {
 }
 function fitLatLngBounds(bounds, maxZoom) {
   if (!bounds?.isValid()) return;
-  map.fitBounds(bounds, {
-    ...mapPadding(), maxZoom,
-    animate: !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-  });
+  map.fitBounds(bounds, { ...mapPadding(), maxZoom, animate: false });
 }
 function boundsToLeaflet(box) {
   if (!box) return null;
@@ -779,14 +791,15 @@ function drawPeriodHits(collection) {
   if (!$('#show-period').checked) return;
   for (const feature of periodFeatures) {
     const shape = L.geoJSON(feature, {
-      style: { opacity: 0, fillOpacity: 0, weight: 12 },
+      interactive: true,
+      style: { stroke: false, color: 'transparent', weight: 0, opacity: 0, fill: true, fillColor: 'transparent', fillOpacity: 0 },
     }).addTo(periodLayer);
-    const tip = feature.properties.kind === 'residual'
-      ? `${feature.properties.name} · residual category, not a single kingdom`
-      : feature.properties.kind === 'caution'
-        ? `${feature.properties.name} · sheet label, disagrees with the research`
-        : feature.properties.name;
-    shape.bindTooltip(tip, { sticky: true, opacity: 0.92 });
+    if (feature.properties.kind === 'residual' || feature.properties.kind === 'caution') {
+      const tip = feature.properties.kind === 'residual'
+        ? `${feature.properties.name} · residual category, not a single kingdom`
+        : `${feature.properties.name} · sheet label, disagrees with the research`;
+      shape.bindTooltip(tip, { sticky: true, opacity: 0.92 });
+    }
     shape.on('mouseover', () => historicalMap.hoverPeriod(feature.id));
     shape.on('mouseout', () => historicalMap.hoverPeriod(null));
     shape.on('click', event => {
@@ -797,18 +810,19 @@ function drawPeriodHits(collection) {
 }
 async function syncPeriod() {
   const token = ++periodToken;
+  periodAbort?.abort();
+  const controller = new AbortController();
+  periodAbort = controller;
   const choice = nearestSnapshot(state.year, basemapIndex.snapshots);
   const summaryBox = $('#year-summary');
-    if (!choice) {
+  if (!choice) {
     fillYearSummary(summaryBox, null, {});
     refreshYearPanel();
     return;
   }
   try {
     if (!snapshotCache.has(choice.snapshot.year)) {
-      const response = await fetch(`${import.meta.env.BASE_URL}data/basemaps/${choice.snapshot.file}`);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const collection = await response.json();
+      const collection = await fetchJson(dataUrl(`data/basemaps/${choice.snapshot.file}`), { signal: controller.signal });
       snapshotCache.set(choice.snapshot.year, collection);
     }
     if (token !== periodToken) return;
@@ -818,6 +832,7 @@ async function syncPeriod() {
       ? { features: [], omitted: [] }
       : applySheetReading(collection.features, state.year);
     const reading = { type: 'FeatureCollection', features: interpreted.features };
+    const labels = labelPoints(reading.features);
     periodSummary = summarizeYear({
       year: state.year,
       snapshotYear: choice.snapshot.year,
@@ -831,8 +846,11 @@ async function syncPeriod() {
     const signature = `${choice.snapshot.year}:${state.year}:${visible}:${suppressed}`;
     const sheetChanged = shownSnapshot !== signature;
     if (sheetChanged) {
-      historicalMap.setPeriod(visible ? reading : { type: 'FeatureCollection', features: [] });
-      drawPeriodHits(reading);
+      historicalMap.setPeriod(
+        visible ? reading : { type: 'FeatureCollection', features: [] },
+        visible ? labels : { type: 'FeatureCollection', features: [] },
+      );
+      drawPeriodHits(visible ? reading : { features: [] });
       shownSnapshot = signature;
     }
     fillYearSummary(summaryBox, periodSummary, {
@@ -847,9 +865,15 @@ async function syncPeriod() {
       if (sheetChanged) fitYear(visible ? collection.features : []);
     }
   } catch (error) {
-    if (token !== periodToken) return;
+    if (token !== periodToken || error?.name === 'AbortError') return;
+    clearPeriodSheet();
     summaryBox.replaceChildren();
-    summaryBox.append(element('p', `Period snapshot unavailable: ${error.message}. Cited records are still listed.`, 'year-line'));
+    summaryBox.append(element('p', 'The political sheet could not be loaded. Cited records for this year are still listed.', 'year-line'));
+    const retry = element('button', 'Try the sheet again', 'year-open');
+    retry.type = 'button';
+    retry.addEventListener('click', () => syncPeriod());
+    summaryBox.append(retry);
+    refreshYearPanel();
   }
 }
 function paintTracedCredit(active) {
@@ -872,8 +896,11 @@ function syncTraced() {
   paintTracedCredit(active);
   const pending = active.filter(shape => !tracedCache.has(shape.file));
   Promise.all(pending.map(async shape => {
-    const response = await fetch(`${import.meta.env.BASE_URL}data/traced/${shape.file}`);
-    tracedCache.set(shape.file, response.ok ? await response.json() : { type: 'FeatureCollection', features: [] });
+    try {
+      tracedCache.set(shape.file, await fetchJson(dataUrl(`data/traced/${shape.file}`)));
+    } catch {
+      tracedCache.set(shape.file, { type: 'FeatureCollection', features: [] });
+    }
   })).then(() => {
     if (shapesForYear(tracedIndex, state.year).map(shape => shape.file).join() !== active.map(shape => shape.file).join()) return;
     const features = [];
@@ -1137,9 +1164,7 @@ async function sheetNames(year) {
   if (sheetIsSuppressed(year, choice))
     return { names: [], note: `No close political sheet. Nearest is ${choice.snapshot.year}, ${choice.gapYears} years away, and it is not drawn.` };
   if (!snapshotCache.has(choice.snapshot.year)) {
-    const response = await fetch(`${import.meta.env.BASE_URL}data/basemaps/${choice.snapshot.file}`);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    snapshotCache.set(choice.snapshot.year, await response.json());
+    snapshotCache.set(choice.snapshot.year, await fetchJson(dataUrl(`data/basemaps/${choice.snapshot.file}`)));
   }
   const features = applySheetReading(snapshotCache.get(choice.snapshot.year).features, year).features;
   return {

@@ -1,4 +1,5 @@
 import { MIN_YEAR, formatYear } from './atlas.js';
+import { MAX_DISPLAY_GAP } from './sheet-policy.js';
 
 // Year → polity lookup for coarse external snapshots.
 // These shapes are not reviewed regional overlays and are never catalogue geometry.
@@ -91,7 +92,9 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records,
   const kingdoms = cited.filter(record => record.type !== 'ruler').map(record => record.title);
   const rulers = cited.filter(record => record.type === 'ruler').map(record => record.title);
   if (suppressed) {
-    const lead = `No close political sheet for ${formatYear(year)}. The nearest sheet is ${formatYear(snapshotYear)}, ${gapYears} years away, and it is a later country map, so it is not drawn.`;
+    const lead = gapYears > MAX_DISPLAY_GAP
+      ? `No close political sheet for ${formatYear(year)}. The nearest sheet is ${formatYear(snapshotYear)}, ${gapYears} years away, so it is not drawn.`
+      : `No close political sheet for ${formatYear(year)}. The nearest sheet is ${formatYear(snapshotYear)}, ${gapYears} years away, and it is a later country map, so it is not drawn.`;
     return {
       year, snapshotYear, gapYears, exact: false, suppressed: true,
       named: [], residual: [], cautions: [], omitted: [], kingdoms, rulers, lead,
@@ -151,6 +154,56 @@ export function summarizeYear({ year, snapshotYear, gapYears, features, records,
     rulers,
     lead,
     statement,
+  };
+}
+
+function ringCentroid(ring) {
+  let area = 0;
+  let x = 0;
+  let y = 0;
+  for (let i = 0; i < ring.length - 1; i += 1) {
+    const [x1, y1] = ring[i];
+    const [x2, y2] = ring[i + 1];
+    const cross = x1 * y2 - x2 * y1;
+    area += cross;
+    x += (x1 + x2) * cross;
+    y += (y1 + y2) * cross;
+  }
+  if (Math.abs(area) < 1e-12) return { area: 0, point: ring[0] };
+  return { area: area / 2, point: [x / (3 * area), y / (3 * area)] };
+}
+
+// One label point per name. A polygon label was repeating once the shape crossed a tile edge.
+export function labelPoints(features) {
+  const best = new Map();
+  for (const feature of features || []) {
+    const name = feature?.properties?.name;
+    const kind = feature?.properties?.kind;
+    if (!name || (kind !== 'named' && kind !== 'caution')) continue;
+    const polygons = feature.geometry?.type === 'Polygon' ? [feature.geometry.coordinates]
+      : feature.geometry?.type === 'MultiPolygon' ? feature.geometry.coordinates : [];
+    for (const polygon of polygons) {
+      const ring = polygon?.[0];
+      if (!ring || ring.length < 4) continue;
+      const { area, point } = ringCentroid(ring);
+      const size = Math.abs(area);
+      const previous = best.get(name);
+      if (!previous || size > previous.size) {
+        best.set(name, {
+          size, point, kind,
+          color: feature.properties.color || '',
+          caution: feature.properties.caution || '',
+        });
+      }
+    }
+  }
+  return {
+    type: 'FeatureCollection',
+    features: [...best.entries()].map(([name, item]) => ({
+      type: 'Feature',
+      properties: { name, kind: item.kind, color: item.color, caution: item.caution },
+      geometry: { type: 'Point', coordinates: item.point.map(value => Math.round(value * 1000) / 1000) },
+    })),
   };
 }
 

@@ -11,8 +11,9 @@ test('playback keeps the nearest sheet labelled and skips a distant country map'
   assert.equal(inside.pause, false);
   assert.match(inside.label, /Nearest sheet 300/);
   const crossed = nextPlaybackYear({ year: 140, maxYear: 2026, step: 20, snapshots });
-  assert.equal(crossed.year, 160);
+  assert.equal(crossed.year, 170);
   assert.equal(crossed.pause, false);
+  assert.equal(crossed.skipped, true);
   assert.equal(crossed.snapshotYear, 200);
   assert.match(crossed.label, /Nearest sheet 200/);
   const end = nextPlaybackYear({ year: 2020, maxYear: 2026, step: 25, snapshots });

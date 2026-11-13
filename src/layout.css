@@ -70,9 +70,10 @@ main { max-width: none; margin: 0; padding: 0; }
 .slider-block { padding-left: 16px; }
 .jumps { margin-top: 8px; gap: 6px; flex-wrap: wrap; overflow: visible; }
 .jumps > span { display: none; }
-.jumps button, .play-speed select { flex-shrink: 0; min-height: 26px; padding: 2px 8px; font-size: 11px; }
-.play-speed { display: inline-flex; align-items: center; gap: 4px; color: #c4d2bd; font-size: 10px; letter-spacing: 0.4px; text-transform: uppercase; }
-.play-speed select { border: 1px solid var(--line-on-dark); background: transparent; color: #eeeedd; border-radius: 20px; }
+.playback-controls { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; }
+.jumps button, .play-speed select { flex: 0 0 auto; min-height: 26px; padding: 2px 8px; font-size: 11px; }
+.play-speed { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 4px; min-width: 9.6rem; color: #c4d2bd; font-size: 10px; letter-spacing: 0.4px; text-transform: uppercase; white-space: nowrap; }
+.play-speed select { flex: 0 0 5.4rem; width: 5.4rem; border: 1px solid var(--line-on-dark); background: #244c42; color: #eeeedd; border-radius: 20px; }
 .compare-panel { margin: 0 0 14px; padding-bottom: 12px; border-bottom: 1px solid #d8ded3; }
 .compare-panel h3 { margin: 0 0 8px; font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); }
 .compare-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
@@ -127,7 +128,8 @@ footer { padding: 16px 0; gap: 12px; flex-wrap: wrap; }
   .year-entry > div { width: 150px; }
 }
 @media (max-width: 760px) {
-  :root { --edge: 8px; --timeline-reserve: 188px; }
+  :root { --edge: 8px; --timeline-reserve: 236px; }
+  #traced-credit { display: none; }
   .masthead { height: 48px; padding: 0 10px; }
   .brand strong { font-size: 11px; }
   .brand-mark { display: none; }
@@ -137,7 +139,8 @@ footer { padding: 16px 0; gap: 12px; flex-wrap: wrap; }
   .map-controls { top: 116px; max-width: calc(100% - 70px); font-size: 11px; }
   .timeline { left: 8px; right: 8px; padding: 8px 12px; gap: 6px; grid-template-columns: 70px minmax(0, 1fr); }
   .year-cited { display: none; }
-  .jumps { flex-wrap: nowrap; overflow-x: auto; margin-top: 4px; }
+  .jumps { flex-wrap: wrap; overflow: visible; margin-top: 4px; }
+  .playback-controls { flex-basis: 100%; }
   .year-line, .year-open {
     display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
   }
