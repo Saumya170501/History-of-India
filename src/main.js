@@ -1,15 +1,12 @@
 import { createRecordCard, recordFactionColor } from './record-card.js';
 import { groupRecords, storyOrder } from './catalogue.js';
 import { sketchAvailable, SKETCH_NOTICE } from './local-boundary.js';
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 import "./style.css";
 import "./layout.css";
 import "./record-card.css";
 import "./evidence-drawer.css";
 import { mapReference } from './map-reference.js';
 import { relatedArea } from './related-area.js';
-const mapEngine = import('./ohm-map.js');
 import mapLayers from './data/map-layers.json';
 import { BATTLE_KINDS, battlesForYear, regionsForRecord, referencesForRecord, validateMapLayers } from './map-layers.js';
 import {
@@ -34,6 +31,7 @@ import { PLAY_SPEEDS, compareNames, nextPlaybackYear } from "./playback.js";
 import { SUCCESSIONS, TOURS, resolveTour, successionLine } from "./guides.js";
 import { fillPolityCard, fillYearList, fillYearSources, fillYearSummary } from "./year-panel.js";
 import { shapesForYear, validateTracedIndex } from "./traced.js";
+import { nearestSnap, nextSnap, sheetHeights } from "./sheet.js";
 
 const catalogueResponse = await fetch(`${import.meta.env.BASE_URL}data/catalogue.json`);
 if (!catalogueResponse.ok) throw new Error(`Catalogue failed to load (HTTP ${catalogueResponse.status}).`);
@@ -62,7 +60,7 @@ $("#app").innerHTML = `
   <a class="skip" href="#records-heading">Skip to historical records</a>
   <header class="masthead">
     <div class="brand"><span class="brand-mark" aria-hidden="true">✳</span><div><strong>HISTORY OF INDIA</strong><span>A source-led historical atlas</span></div></div>
-    <div class="header-actions"><button id="toggle-evidence" class="quiet" aria-controls="evidence-drawer" aria-expanded="true">Evidence</button><button id="about-button" class="quiet">Sources & approach ↗</button></div>
+    <div class="header-actions"><button id="toggle-evidence" class="quiet" aria-controls="evidence-drawer" aria-expanded="true">Evidence</button><a id="about-link" class="quiet" href="./about">About</a><a id="feedback-link" class="quiet" href="./feedback">Feedback</a></div>
   </header>
   <main>
     <section class="introduction" aria-labelledby="page-title">
@@ -97,7 +95,7 @@ $("#app").innerHTML = `
     <section id="record-detail" class="detail-panel" aria-labelledby="detail-title" tabindex="-1"></section>
     <section class="research-note"><span class="research-symbol" aria-hidden="true">↗</span><div><h2>An atlas in the making.</h2><p>${data.records.length} cited records are a starting point, not a complete history. Empty years mean research is still needed. Regional overlays require dated map evidence and independent review. Published period maps are linked as context, not exact annual borders.</p></div><a href="https://github.com/Saumya170501/History-of-India/blob/codex/historical-atlas-prototype/docs/PROJECT_PLAN.md" target="_blank" rel="noopener noreferrer">Read the project plan ↗</a></section>
   </main>
-  <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><button id="footer-sources" class="quiet">${data.sources.length} sources · ${data.records.length} records</button></footer>
+  <footer><span>HISTORY OF INDIA <span class="footer-dot">·</span> Built around evidence.</span><a id="footer-sources" class="quiet" href="./about#sources">${data.sources.length} sources · ${data.records.length} records</a></footer>
   <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><p class="eyebrow">OUR APPROACH</p><button id="close-about" aria-label="Close sources and approach">×</button></div><h2 id="about-title">Every point has a source.</h2><p>This prototype connects historical claims to published evidence. Its records are cited, but still await independent historical review.</p><h3>Reading the timeline</h3><p>Dates are inclusive search windows. A century-dated event appears throughout that century to make it discoverable; this does not mean it happened every year. Read each record's date note.</p><h3>Reading the map</h3><p>Points locate sites or associations. They do not represent a ruler's movements, a kingdom's territory or a civilization's extent. OpenHistoricalMap provides the dated physical map. Colour-filled areas are clipped sheets from André Ourednik’s historical-basemaps (GPL-3.0). They are coarse external digitizations. A year between sheets uses the nearest sheet and says so; borders are not interpolated. A sheet more than 30 years from the selected year is not drawn. A country sheet from 1960 or later is not drawn when the selected year is more than five years away, because that map is not the political geography of the earlier year. A sheet name that the cited research does not support for the selected year is left off the map. No replacement shape is invented. The archive says which name was left off and why. The colour stops at a modern Natural Earth coastline, which is not a historical shore. Long inland edges are lightly softened for display and are not a surveyed frontier. A straight edge on the frame is a display cut. Grey areas are residual categories in the source, not single kingdoms. Clicking a name opens cited research where a link exists. The link is not proof that the shape was that polity’s border.</p><h3>Starter bibliography</h3><ul id="source-list"></ul><p class="small">Source pages checked 7 November 2026. Summaries are paraphrased. Coordinate provenance and claim-specific sections appear in each record.</p><p class="small">Map data: <a href="https://www.openhistoricalmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenHistoricalMap contributors and source licences</a>. Period sheets: <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener noreferrer">historical-basemaps</a>, GPL-3.0-only, clipped and labelled as approximate. Internet and WebGL are required; no API key is needed.</p></dialog>
 `;
 
@@ -282,6 +280,76 @@ drawer.addEventListener('keydown', event => {
   }
 });
 $('.skip').addEventListener('click', () => setEvidenceOpen(true));
+function bindEvidenceSheet() {
+  const phone = window.matchMedia('(max-width: 760px)');
+  const handle = element('button', '', 'sheet-handle');
+  handle.type = 'button';
+  handle.setAttribute('role', 'slider');
+  handle.setAttribute('aria-label', 'Resize the evidence sheet');
+  drawer.prepend(handle);
+  let snap = 'peek';
+  let drag = null;
+  const heights = () => {
+    const yearTop = document.querySelector('.timeline')?.getBoundingClientRect().top ?? (window.innerHeight - 220);
+    const gap = Math.max(8, Math.ceil(window.innerHeight - yearTop));
+    drawer.style.bottom = `${gap}px`;
+    document.documentElement.style.setProperty('--timeline-reserve', `${gap}px`);
+    return sheetHeights(window.innerHeight, { header: 56, timeline: gap, peek: 88 });
+  };
+  function apply(name) {
+    snap = name;
+    const size = heights();
+    drawer.style.setProperty('--sheet-height', `${size[name]}px`);
+    drawer.dataset.snap = name;
+    handle.setAttribute('aria-valuemin', '0');
+    handle.setAttribute('aria-valuemax', '2');
+    handle.setAttribute('aria-valuenow', String(['peek', 'half', 'full'].indexOf(name)));
+    handle.setAttribute('aria-valuetext', name);
+  }
+  handle.addEventListener('pointerdown', event => {
+    if (!phone.matches) return;
+    drag = { y: event.clientY, h: drawer.getBoundingClientRect().height, moved: false };
+    handle.setPointerCapture(event.pointerId);
+    drawer.classList.add('is-dragging');
+  });
+  handle.addEventListener('pointermove', event => {
+    if (!drag) return;
+    const dy = drag.y - event.clientY;
+    if (Math.abs(dy) > 4) drag.moved = true;
+    const size = heights();
+    const next = Math.min(size.full, Math.max(size.peek, drag.h + dy));
+    drawer.style.setProperty('--sheet-height', `${Math.round(next)}px`);
+  });
+  const finishDrag = () => {
+    if (!drag) return;
+    const moved = drag.moved;
+    drag = null;
+    drawer.classList.remove('is-dragging');
+    if (!phone.matches) return;
+    if (!moved) apply(nextSnap(snap, 1) === snap ? 'peek' : nextSnap(snap, 1));
+    else apply(nearestSnap(drawer.getBoundingClientRect().height, heights()));
+  };
+  handle.addEventListener('pointerup', finishDrag);
+  handle.addEventListener('pointercancel', finishDrag);
+  handle.addEventListener('keydown', event => {
+    if (!phone.matches) return;
+    if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') return;
+    event.preventDefault();
+    apply(nextSnap(snap, event.key === 'ArrowUp' ? 1 : -1));
+  });
+  const sync = () => {
+    if (phone.matches) apply(snap);
+    else drawer.style.removeProperty('--sheet-height');
+  };
+  phone.addEventListener('change', sync);
+  window.addEventListener('resize', () => { if (phone.matches) apply(snap); });
+  const yearBar = document.querySelector('.timeline');
+  if (yearBar) new ResizeObserver(() => { if (phone.matches) apply(snap); }).observe(yearBar);
+  if (phone.matches) {
+    setEvidenceOpen(true, { refit: false });
+    apply('peek');
+  }
+}
 
 for (const [value, label] of Object.entries(TYPES))
   $("#record-type").add(new Option(label, value));
@@ -331,6 +399,9 @@ for (const source of data.sources) {
   $("#source-list").append(item);
 }
 
+await new Promise(resolve => requestAnimationFrame(resolve));
+const { default: L } = await import('leaflet');
+await import('leaflet/dist/leaflet.css');
 const frameBounds = L.latLngBounds([FRAME.south, FRAME.west], [FRAME.north, FRAME.east]);
 const map = L.map("map", {
   zoomControl: false,
@@ -351,7 +422,7 @@ $('.map-panel').append(tracedCredit);
 const creditsButton = element('button', 'Map credits', 'quiet');
 creditsButton.id = 'credits-button';
 creditsButton.type = 'button';
-$('#about-button').before(creditsButton);
+$('#about-link').before(creditsButton);
 const creditsDialog = document.createElement('dialog');
 creditsDialog.id = 'credits-dialog';
 creditsDialog.setAttribute('aria-labelledby', 'credits-title');
@@ -383,22 +454,48 @@ function clearPeriodSheet() {
   historicalMap.setPeriod({ type: 'FeatureCollection', features: [] }, { type: 'FeatureCollection', features: [] });
   drawPeriodHits({ features: [] });
 }
-const { attachHistoricalMap } = await mapEngine;
-const historicalMap = attachHistoricalMap(map, {
-  onStatus: message => { $('#map-selection-status').textContent = message; },
-  onError: message => {
+let mapBackend = null;
+const remembered = new Map();
+function callMap(name, args) {
+  remembered.set(name, args);
+  return mapBackend?.[name](...args);
+}
+const historicalMap = {
+  setFeatures: (...args) => callMap('setFeatures', args),
+  setRegions: (...args) => callMap('setRegions', args),
+  setPeriod: (...args) => callMap('setPeriod', args),
+  setTraced: (...args) => callMap('setTraced', args),
+  setPeriodVisible: (...args) => callMap('setPeriodVisible', args),
+  hoverPeriod: (...args) => callMap('hoverPeriod', args),
+  select: (...args) => callMap('select', args),
+  retry: () => mapBackend?.retry(),
+};
+function startHistoricalMap() {
+  const run = () => import('./ohm-map.js').then(({ attachHistoricalMap }) => {
+    mapBackend = attachHistoricalMap(map, {
+      onStatus: message => { $('#map-selection-status').textContent = message; },
+      onError: message => {
+        const notice = $('#map-error');
+        notice.hidden = !message;
+        noticeButton.hidden = !message;
+        notice.replaceChildren();
+        if (message) {
+          notice.append(element('span', message));
+          const retry = element('button', 'Retry map', 'quiet');
+          retry.addEventListener('click', () => historicalMap.retry());
+          notice.append(retry);
+        }
+      },
+    });
+    for (const [name, args] of remembered) mapBackend[name](...args);
+  }).catch(() => {
     const notice = $('#map-error');
-    notice.hidden = !message;
-    noticeButton.hidden = !message;
-    notice.replaceChildren();
-    if (message) {
-      notice.append(element('span', message));
-      const retry = element('button', 'Retry map', 'quiet');
-      retry.addEventListener('click', () => historicalMap.retry());
-      notice.append(retry);
-    }
-  },
-});
+    notice.hidden = false;
+    notice.textContent = 'The map library could not be loaded. The records are still listed.';
+  });
+  if ('requestIdleCallback' in window) requestIdleCallback(run, { timeout: 1200 });
+  else setTimeout(run, 1);
+}
 
 function appendMapEvidence(container, item) {
   container.append(element('h4', item.title), element('p', item.dateLabel),
@@ -1326,10 +1423,15 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && openPolityName && archiveTab === 'polity' && !event.defaultPrevented) closePolity();
 });
 $('#show-battles').addEventListener('change', renderBattles);
-for (const id of ["#about-button", "#footer-sources"])
-  $(id).addEventListener("click", () => $("#about-dialog").showModal());
 $("#close-about").addEventListener("click", () => $("#about-dialog").close());
 $("#credits-button").addEventListener("click", openMapCredits);
+$('#feedback-link').addEventListener('click', event => {
+  event.preventDefault();
+  const target = new URL('./feedback', window.location.href);
+  target.searchParams.set('year', String(state.year));
+  target.searchParams.set('from', `${location.pathname}${location.search}`);
+  location.href = target.href;
+});
 fetch(`${import.meta.env.BASE_URL}data/traced/index.json`)
   .then(response => response.ok ? response.json() : null)
   .then(index => {
@@ -1346,3 +1448,5 @@ new ResizeObserver(() => { if (mapReady) tightenFrame(); }).observe($("#map"));
 mapReady = true;
 tightenFrame();
 render();
+bindEvidenceSheet();
+startHistoricalMap();

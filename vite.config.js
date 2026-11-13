@@ -11,4 +11,17 @@ function shareMeta() {
   };
 }
 
-export default defineConfig({ base: "./", plugins: [shareMeta()] });
+export default defineConfig({
+  base: "./",
+  plugins: [shareMeta()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        about: "about.html",
+        feedback: "feedback.html",
+        privacy: "privacy.html",
+      },
+    },
+  },
+});

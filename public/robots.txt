@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://history-of-india.vercel.app/sitemap.xml
