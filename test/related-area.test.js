@@ -22,7 +22,8 @@ test('every catalogue record has explicit, labelled geographic context without c
 
 test('context follows regional associations and preserves aftermath location semantics', () => {
   assert.match(relatedArea(record('early-huvishka')).label, /Northwestern/);
-  assert.match(relatedArea(record('early-nagarjuna')).label, /Southern/);
+  assert.match(relatedArea(record('early-nagarjuna')).label, /vicinity/);
+  assert.match(relatedArea(record('hoysala-dynasty')).label, /Southern/);
   assert.notDeepEqual(relatedArea(record('rajput-pratap')).center, relatedArea(record('rajput-jodha')).center);
   assert.match(relatedArea(record('kam-bakhsh')).label, /Deccan/);
   const aftermath = record('hampi-1565');

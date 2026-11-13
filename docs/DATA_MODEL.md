@@ -10,8 +10,8 @@ Each source contains a stable `id`, `title`, `publisher`, HTTPS `url`, and `acce
 
 - `id`: unique stable string; do not reuse IDs for different claims.
 - `title`, `summary`, `place`: short original descriptions, with the geography used by the source where appropriate.
-- `type`: `site`, `ruler`, `kingdom`, `battle`, or `culture`. These categories organize claims; they do not establish territory. Civilization research belongs under `culture` until a dedicated model is justified.
-- `startYear`, `endYear`: inclusive integer filtering window within 1–2026 CE. No year zero. Earlier claims require an explicit model extension, not clipping that could masquerade as a foundation date.
+- `type`: `site`, `ruler`, `kingdom`, `battle`, `culture`, or `state`. These categories organize claims; they do not establish territory. Civilization research belongs under `culture` until a dedicated model is justified. `state` is for constitutional or corporate governments, including the East India Company, the British raj, princely states as a class, and India after 1947. It must not be used to label elected office-holders as kings.
+- `startYear`, `endYear`: inclusive integer filtering window from 600 BCE to 2026 CE. There is no year 0: 1 BCE is `-1` and 1 CE is `1`. A negative year is BCE. Do not clip an earlier claim into year 1.
 - `datePrecision`: `year`, `century`, or `approximate`.
 - `dateLabel`: human-readable date with uncertainty visible.
 - `dateNote`: what the dates actually mean and what remains uncertain.
@@ -86,6 +86,10 @@ The owner requested replacing the local basemap with OHM and highlighting select
 The whole provider map is filtered to 1 January of the selected year. Selection uses exact, case-insensitive administrative-boundary name matches (provider `name`, `name_en`, `official_name`, `short_name`), admin levels 1–4, a required source start date, and a compatible end date if present. Associations are research candidates from record identities/places, not proof of sovereignty. A matching name can still be ambiguous; the UI identifies it as an OHM name match. Competing Mughal claimants are not automatically assigned the whole empire, and Rajput states are not combined into one territory. Missing matches keep the surrounding map visible with a no-match notice.
 
 Provider data may change. Attribution links to OHM’s feature-specific licensing guidance. Do not export the displayed highlight as a reviewed boundary without the existing provenance and review process.
+
+## External historical-basemap snapshots
+
+`src/data/basemap-index.json` and `public/data/basemaps/` hold clipped sheets from André Ourednik’s historical-basemaps, licensed GPL-3.0-only. They are a display layer for the year control. They are not catalogue geometry, not reviewed `regions`, and not independently checked historical borders. Each sheet keeps its labelled year. For any other year the interface selects the nearest sheet, states the gap, and does not interpolate a border. Country sheets from 1960, 1994, 2000 and 2010 are not drawn when the selected year is 1947 or later and more than five years from that sheet. Names the cited research does not support for the selected year (Vijayanagara after 1565, Pakistan before 1947, Bangladesh before 1971) are omitted from the drawing. The archive names them and says why. No replacement polygon is added. Each sheet is cut to Natural Earth 50m land so the colour stops at the modern coast. That mask is not a historical shoreline. Long inland segments of the coarse sheet are lightly irregularised for display; the wobble is not a frontier. A straight edge on the frame is still a display cut. Residual names (plural categories such as “kingdoms” or “states”, and combined labels) are drawn faintly and are not treated as one polity. A link in `src/data/polity-links.json` only opens research records whose own date window includes the selected year. It does not transfer the polygon’s shape onto those records.
 
 ## Approximate related-area display
 

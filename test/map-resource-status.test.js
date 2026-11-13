@@ -16,6 +16,26 @@ test('background failures do not invalidate boundary matches, and recovered tile
   assert.equal(status.message(), '');
 });
 
+test('a warning waits until the failure persists, and a recovered source clears it', () => {
+  const status = createResourceStatus();
+  status.fail({ sourceId: 'ohm', error: { message: 'glyph range failed' } });
+  assert.equal(status.message(), '');
+  status.fail({ sourceId: 'ohm', tile: { tileID: { key: 'a' }, state: 'errored' }, error: { message: 'tile' } });
+  assert.equal(status.notice({ persistent: false }), '');
+  assert.match(status.notice({ persistent: true }), /OHM geography/);
+  status.recover({ sourceId: 'ohm', tile: { tileID: { key: 'a' }, state: 'loaded' } });
+  assert.equal(status.notice({ persistent: true }), '');
+});
+
+test('one failed tile does not keep a warning after the same source has loaded', () => {
+  const status = createResourceStatus();
+  const tile = (key, state) => ({ tileID: { key }, state });
+  status.fail({ sourceId: 'ohm', tile: tile('bad', 'errored'), error: { message: 'missing' } });
+  status.recover({ sourceId: 'ohm', tile: tile('good', 'loaded') });
+  status.prunePartial();
+  assert.equal(status.message(), '');
+});
+
 test('retry resets failures and cancellation is not a map outage', () => {
   const status = createResourceStatus();
   status.fail({ error: { name: 'AbortError' } });

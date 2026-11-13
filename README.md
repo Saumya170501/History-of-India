@@ -6,7 +6,8 @@ A source-led historical atlas of India, **1 CE–2026 CE**. Explore a year, sele
 
 - OpenHistoricalMap historical map with date filtering, neighbouring kingdoms, and gold highlighting of dated kingdom-name matches. Requires internet and WebGL; no API key.
 - Year slider, exact-year input, previous/next controls and sample date shortcuts.
-- 117 cited research records across sites, rulers, kingdoms, battle aftermath, and culture/learning; 41 source entries, including museum, university and scholarly references.
+- 136 cited research records across sites, rulers, kingdoms, states, battle aftermath, and culture/learning; 56 source entries, including museum, university and scholarly references.
+- The year control is the primary view, from 600 BCE to 2026 CE. There is no year 0. Scrolling or dragging the year loads the nearest openly licensed historical-basemaps sheet for the subcontinent, colour-coded and labelled. The fill is approximate and low confidence. Sheets are not interpolated, and a gap is stated. A country sheet from 1960 or later is not drawn when it is more than five years from the selected year. A sheet name that the cited research does not support for the selected year is left off the map. No replacement shape is invented. Clicking a name opens cited research where a link exists.
 - Mughal and Rajput choices in the existing evidence browser, searchable biography notes and section-level citations. Coverage is explicitly incomplete; see [research coverage](docs/RESEARCH_MUGHAL_RAJPUT.md).
 - Search, type filters, accessible record cards, source details and shareable year/filter URLs.
 - Explicit date uncertainty, location meaning and empty research windows.
@@ -77,7 +78,7 @@ No project-wide code license has been selected by the owner. Public repository a
 
 ## Map workspace layout
 
-The map fills the viewport (`100vh`, with `100dvh` for mobile browser chrome). A compact header floats at the top and the glass timeline floats at the bottom. The Evidence button toggles a fixed-height, scrollable right drawer; it starts closed on phones. Selected-record citations, provider status, and expandable map context/battle notes remain in that drawer. Sources and project notes are available through Sources & approach. Layout overrides live in `src/layout.css`; no React migration is required.
+The map fills the viewport (`100vh`, with `100dvh` for mobile browser chrome). A compact header floats at the top and the glass timeline floats at the bottom. The Evidence button toggles a wide, resizable archive. On a phone it becomes a full-width sheet between the header and the timeline, and it starts closed. The archive has tabs for this year’s areas, the selected polity, records, and sources. Sources and project notes are available through Sources & approach. Layout overrides live in `src/layout.css`; no React migration is required.
 
 ## Deploy to Vercel
 
@@ -91,6 +92,8 @@ This supersedes earlier circle, dashed-outline, gold-highlight, and neighbouring
 `src/historical-style.js` defines zoom-scaled, solid MapLibre circle markers for Point records, and separate Polygon/MultiPolygon fill/blurred-halo layers. Leaflet retains transparent keyboard/click targets and source popups. Battles retain separate B/S/A markers. Original date notes and citations remain unchanged.
 
 No geographic context circles or substitute territories are drawn. Related-area definitions orient the viewport only. Dated OHM name matches use a purple translucent fill and a solid blurred halo. Reviewed GeoJSON polygons use the same styling; the reviewed collection remains empty. No empire polygons have been fabricated or added to the point-only catalogue.
+
+Colour-filled areas on the year view are clipped sheets from [historical-basemaps](https://github.com/aourednik/historical-basemaps) (André Ourednik and contributors, GPL-3.0-only). They are coarse external digitizations, not reviewed project boundaries. A year without its own sheet shows the nearest sheet and says how far away it is. Borders are not interpolated. Grey shapes are residual categories in that source, not single kingdoms. See [provenance](docs/PROVENANCE.md).
 
 MapLibre has no polygon fill-blur or continuous spatial fill-opacity gradient. The two-layer halo is a bounded-cost visual approximation with a residual fill edge, not a true seamless distance-field fade or quantified historical confidence. A continuous fade requires a separately prepared raster alpha mask/custom shader; non-overlapping inward opacity bands can approximate one. Blur widths are pixels, not geographic uncertainty distances.
 
@@ -106,6 +109,6 @@ See [OHM ingestion](docs/OHM_INGESTION.md) for the import command, current netwo
 
 `src/record-card.js` renders keyboard-accessible museum-style tiles with the shared empire color palette, circular initial/image avatars, date/role badges and location uncertainty notes. `src/record-card.css` supplies the responsive styling. `examples/react/RecordCard.jsx` provides the equivalent React component with `factionColor`, `avatarUrl`, `featureBbox`, and `handleCardClick(featureBbox)` props. Missing bounds may be null; the caller must retain a safe no-geometry fallback. No historical portraits or faction emblems are invented.
 
-The live archive drawer now uses a gallery layout (`src/evidence-drawer.css`): decorative role illustrations, place labels, short story excerpts, and separate Discover/Selected record views. It has one scrolling content area; warnings remain available through Map notice and full citations remain in the selected-record view. Illustrations are generic category pictograms, not historical portraits or reconstructed monuments. The earlier React card example remains a standalone compact variant.
+The live archive is wider on desktop and can be dragged wider. Records are compact catalogue rows grouped under polity or category headings (`src/catalogue.js`), not banner cards. The selected record opens as a story with previous and next through that year. The year’s colour-keyed areas live on the This year tab. It has one scrolling content area; warnings remain available through Map notice and full citations remain in the selected-record view. Illustrations are generic category pictograms, not historical portraits or reconstructed monuments. The earlier React card example remains a standalone compact variant.
 
 The optional OHM raster hillshade is excluded before style initialization because its India-view tile URLs were returning HTTP 404. Vector land, water, rivers and historical overlays remain enabled. This removes those failed requests rather than suppressing genuine errors from other map sources; terrain relief shading is unavailable until a working, verified source is configured.

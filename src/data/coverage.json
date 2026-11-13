@@ -1,0 +1,2570 @@
+{
+  "note": "Coverage of every atlas record. Outline means a traced Commons extent is linked. Where the traced window does not cover the whole record, the note says dynasty extent, not reign-specific. Point means a sourced coordinate and no traced extent. Missing means neither.",
+  "summary": {
+    "outline": 110,
+    "point": 85,
+    "missing": 0
+  },
+  "records": [
+    {
+      "id": "sanchi-gateways",
+      "title": "Sanchi's sculpted gateways",
+      "type": "site",
+      "place": "Sanchi",
+      "startYear": 1,
+      "endYear": 100,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "ajanta-later-caves",
+      "title": "A new chapter at Ajanta",
+      "type": "site",
+      "place": "Ajanta",
+      "startYear": 401,
+      "endYear": 600,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "nalanda-learning",
+      "title": "Learning at Nalanda",
+      "type": "culture",
+      "place": "Nalanda",
+      "startYear": 401,
+      "endYear": 1300,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "hampi-capital",
+      "title": "Vijayanagara at Hampi",
+      "type": "kingdom",
+      "place": "Hampi",
+      "startYear": 1301,
+      "endYear": 1565,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "hampi-1565",
+      "title": "Talikota: the aftermath at Hampi",
+      "type": "battle",
+      "place": "Hampi (affected city)",
+      "startYear": 1565,
+      "endYear": 1565,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "taj-construction",
+      "title": "Building the Taj Mahal",
+      "type": "site",
+      "place": "Agra",
+      "startYear": 1632,
+      "endYear": 1648,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "shah-jahan-patronage",
+      "title": "Shah Jahan's patronage at Agra",
+      "type": "ruler",
+      "place": "Agra",
+      "startYear": 1632,
+      "endYear": 1648,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "aybak",
+      "title": "Qutb al-Din Aybak",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1206,
+      "endYear": 1210,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "aram",
+      "title": "Aram Shah",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1210,
+      "endYear": 1211,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "iltutmish",
+      "title": "Iltutmish",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1211,
+      "endYear": 1236,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "raziya",
+      "title": "Radiyya Begum (Raziya)",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1236,
+      "endYear": 1240,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "bahram",
+      "title": "Bahram Shah",
+      "type": "ruler",
+      "place": "Delhi Sultanate",
+      "startYear": 1240,
+      "endYear": 1242,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "bahlul",
+      "title": "Bahlul Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1451,
+      "endYear": 1489,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "sikandar",
+      "title": "Sikandar Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1489,
+      "endYear": 1517,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "ibrahim",
+      "title": "Ibrahim Lodi",
+      "type": "ruler",
+      "place": "Lodi",
+      "startYear": 1517,
+      "endYear": 1526,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "babur",
+      "title": "Babur",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1526,
+      "endYear": 1530,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "humayun-first",
+      "title": "Humayun: first reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1530,
+      "endYear": 1540,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "humayun-second",
+      "title": "Humayun: restored reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1555,
+      "endYear": 1556,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "akbar",
+      "title": "Akbar",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1556,
+      "endYear": 1605,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "jahangir",
+      "title": "Jahangir",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1605,
+      "endYear": 1627,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "shah-jahan-reign",
+      "title": "Shah Jahan: reign",
+      "type": "ruler",
+      "place": "Mughal",
+      "startYear": 1628,
+      "endYear": 1658,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "chola-dynasty",
+      "title": "Imperial Chola chronology",
+      "type": "kingdom",
+      "place": "Tamil region",
+      "startYear": 880,
+      "endYear": 1279,
+      "status": "outline",
+      "outlines": [
+        "traced-chola"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-chola (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "hoysala-dynasty",
+      "title": "Hoysala dynasty",
+      "type": "kingdom",
+      "place": "Southern Deccan",
+      "startYear": 1022,
+      "endYear": 1346,
+      "status": "outline",
+      "outlines": [
+        "traced-hoysala"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-hoysala."
+    },
+    {
+      "id": "bahmanid-dynasty",
+      "title": "Bahmanid dynasty",
+      "type": "kingdom",
+      "place": "Northern Deccan",
+      "startYear": 1347,
+      "endYear": 1528,
+      "status": "outline",
+      "outlines": [
+        "traced-bahmani"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-bahmani."
+    },
+    {
+      "id": "rajendra-reign",
+      "title": "Rajendra I: rule",
+      "type": "ruler",
+      "place": "Chola",
+      "startYear": 1014,
+      "endYear": 1044,
+      "status": "outline",
+      "outlines": [
+        "traced-chola"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-chola (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "chola-bronzes",
+      "title": "Chola bronze sculpture",
+      "type": "culture",
+      "place": "Chola cultural context",
+      "startYear": 1000,
+      "endYear": 1300,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajaraja-temple",
+      "title": "Rajaraja I: temple patronage",
+      "type": "ruler",
+      "place": "Thanjavur",
+      "startYear": 1003,
+      "endYear": 1010,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "thanjavur-consecration",
+      "title": "Brihadisvara consecration",
+      "type": "site",
+      "place": "Thanjavur",
+      "startYear": 1009,
+      "endYear": 1010,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "gangaikonda-temple",
+      "title": "Rajendra\u2019s Shiva temple",
+      "type": "site",
+      "place": "Gangaikondacholapuram",
+      "startYear": 1035,
+      "endYear": 1035,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajaraja-ii",
+      "title": "Rajaraja II: temple patron",
+      "type": "ruler",
+      "place": "Darasuram",
+      "startYear": 1143,
+      "endYear": 1173,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajadhiraja-career",
+      "title": "Rajadhiraja I: prince and king",
+      "type": "ruler",
+      "place": "Chola",
+      "startYear": 1018,
+      "endYear": 1054,
+      "status": "outline",
+      "outlines": [
+        "traced-chola"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-chola (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "early-kujula",
+      "title": "Kujula Kadphises",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 40,
+      "endYear": 90,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-wima-takto",
+      "title": "Wima Takto",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 90,
+      "endYear": 113,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-wima-kadphises",
+      "title": "Wima Kadphises",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 113,
+      "endYear": 127,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-huvishka",
+      "title": "Huvishka",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 150,
+      "endYear": 190,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-vasudeva-i",
+      "title": "Vasudeva I",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 190,
+      "endYear": 224,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-kanishka-ii",
+      "title": "Kanishka II",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 230,
+      "endYear": 244,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-vasishka",
+      "title": "Vasishka",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 248,
+      "endYear": 256,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-kanishka-iii",
+      "title": "Kanishka III",
+      "type": "ruler",
+      "place": "Kushan; northwestern South Asia",
+      "startYear": 256,
+      "endYear": 256,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-kanishka-i",
+      "title": "Kanishka I",
+      "type": "ruler",
+      "place": "Kushan",
+      "startYear": 127,
+      "endYear": 150,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-sodasa",
+      "title": "Sodasa",
+      "type": "ruler",
+      "place": "Northern Kshatrapa",
+      "startYear": 15,
+      "endYear": 15,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-chastana",
+      "title": "Chastana",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 78,
+      "endYear": 130,
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-western-satraps."
+    },
+    {
+      "id": "early-rudradaman",
+      "title": "Rudradaman: attestation",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 150,
+      "endYear": 150,
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-western-satraps."
+    },
+    {
+      "id": "early-rudrasimha",
+      "title": "Rudrasimha I: attestation",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 177,
+      "endYear": 178,
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-western-satraps."
+    },
+    {
+      "id": "early-nahapana",
+      "title": "Nahapana",
+      "type": "ruler",
+      "place": "Western Kshatrapa traditions",
+      "startYear": 54,
+      "endYear": 65,
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-western-satraps."
+    },
+    {
+      "id": "early-gautamiputra",
+      "title": "Gautamiputra Sri Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 60,
+      "endYear": 84,
+      "status": "outline",
+      "outlines": [
+        "traced-satavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-satavahana."
+    },
+    {
+      "id": "early-pulumavi",
+      "title": "Vasishthiputra Sri Pulumavi",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 84,
+      "endYear": 119,
+      "status": "outline",
+      "outlines": [
+        "traced-satavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-satavahana."
+    },
+    {
+      "id": "early-satakarni",
+      "title": "Vasishthiputra Sri Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 119,
+      "endYear": 148,
+      "status": "outline",
+      "outlines": [
+        "traced-satavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-satavahana."
+    },
+    {
+      "id": "early-yajna",
+      "title": "Gautamiputra Sri Yajna Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 171,
+      "endYear": 199,
+      "status": "outline",
+      "outlines": [
+        "traced-satavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-satavahana."
+    },
+    {
+      "id": "early-vijaya",
+      "title": "Gautamiputra Sri Vijaya Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 200,
+      "endYear": 205,
+      "status": "outline",
+      "outlines": [
+        "traced-satavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-satavahana."
+    },
+    {
+      "id": "early-canda",
+      "title": "Vasishthiputra Sri Canda Satakarni",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 206,
+      "endYear": 220,
+      "status": "outline",
+      "outlines": [
+        "traced-satavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-satavahana."
+    },
+    {
+      "id": "early-mathariputra",
+      "title": "Mathariputra Sri Pulumavi",
+      "type": "ruler",
+      "place": "Later Satavahana; Deccan",
+      "startYear": 220,
+      "endYear": 230,
+      "status": "outline",
+      "outlines": [
+        "traced-satavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-satavahana."
+    },
+    {
+      "id": "early-camtamula",
+      "title": "Sri Camtamula",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 225,
+      "endYear": 240,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-virapurushadatta",
+      "title": "Virapurushadatta",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 240,
+      "endYear": 265,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-ehuvala",
+      "title": "Ehuvala Camtamula",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 265,
+      "endYear": 290,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-rudrapurushadatta",
+      "title": "Rudrapurushadatta",
+      "type": "ruler",
+      "place": "Ikshvaku; Andhra",
+      "startYear": 290,
+      "endYear": 315,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-kushan",
+      "title": "Kushan political world",
+      "type": "kingdom",
+      "place": "Central Asia and northern South Asia",
+      "startYear": 1,
+      "endYear": 300,
+      "status": "outline",
+      "outlines": [
+        "traced-kushan"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kushan."
+    },
+    {
+      "id": "early-satavahana",
+      "title": "Later Satavahana chronology",
+      "type": "kingdom",
+      "place": "Deccan",
+      "startYear": 50,
+      "endYear": 230,
+      "status": "outline",
+      "outlines": [
+        "traced-satavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-satavahana."
+    },
+    {
+      "id": "early-ikshvaku",
+      "title": "Ikshvaku dynasty of Andhra",
+      "type": "kingdom",
+      "place": "Andhra",
+      "startYear": 225,
+      "endYear": 315,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-western-kshatrapas",
+      "title": "Western Kshatrapa coinage and rule",
+      "type": "kingdom",
+      "place": "Western India",
+      "startYear": 1,
+      "endYear": 400,
+      "status": "outline",
+      "outlines": [
+        "traced-western-satraps"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-western-satraps."
+    },
+    {
+      "id": "early-chera-chiefdom",
+      "title": "Early Chera chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-chola-chiefdom",
+      "title": "Early Chola chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-pandya-chiefdom",
+      "title": "Early Pandya chiefdoms",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 300,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-overstrike",
+      "title": "Reusing Nahapana\u2019s silver coins",
+      "type": "culture",
+      "place": "Western Deccan; Nasik-associated finds",
+      "startYear": 60,
+      "endYear": 90,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-sangam",
+      "title": "Early Tamil literary traditions",
+      "type": "culture",
+      "place": "Tamilakam",
+      "startYear": 1,
+      "endYear": 400,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-nagarjuna",
+      "title": "Nagarjuna and Madhyamika",
+      "type": "culture",
+      "place": "South India (broad association)",
+      "startYear": 101,
+      "endYear": 200,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "early-kushan-icons",
+      "title": "Deities on Kushan coins",
+      "type": "culture",
+      "place": "Kushan numismatic tradition",
+      "startYear": 1,
+      "endYear": 300,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "dawar-bakhsh",
+      "title": "Dawar Bakhsh: succession interlude",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1627,
+      "endYear": 1628,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1605"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1605 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "aurangzeb",
+      "title": "Aurangzeb (Alamgir I)",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1658,
+      "endYear": 1707,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "azam-shah",
+      "title": "Azam Shah: competing claim",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1707,
+      "endYear": 1707,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707."
+    },
+    {
+      "id": "kam-bakhsh",
+      "title": "Kam Bakhsh: Deccan claim",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1707,
+      "endYear": 1709,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "bahadur-shah-i",
+      "title": "Bahadur Shah I (Shah Alam I)",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1707,
+      "endYear": 1712,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "jahandar-shah",
+      "title": "Jahandar Shah",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1712,
+      "endYear": 1713,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "farrukhsiyar",
+      "title": "Farrukhsiyar",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1713,
+      "endYear": 1719,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rafi-darajat",
+      "title": "Rafi al-Darajat",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1719,
+      "endYear": 1719,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "shah-jahan-ii",
+      "title": "Shah Jahan II (Rafi al-Daulah)",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1719,
+      "endYear": 1719,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "nikusiyar",
+      "title": "Nikusiyar: competing claim",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1719,
+      "endYear": 1719,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "ibrahim-claim",
+      "title": "Ibrahim: competing claim",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1720,
+      "endYear": 1720,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "muhammad-shah",
+      "title": "Muhammad Shah",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1719,
+      "endYear": 1748,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "ahmad-shah-bahadur",
+      "title": "Ahmad Shah Bahadur",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1748,
+      "endYear": 1754,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "alamgir-ii",
+      "title": "Alamgir II",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1754,
+      "endYear": 1759,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "shah-jahan-iii",
+      "title": "Shah Jahan III: disputed installation",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1759,
+      "endYear": 1759,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "shah-alam-ii-first",
+      "title": "Shah Alam II: first reign",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1759,
+      "endYear": 1788,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "bidar-bakht",
+      "title": "Bidar Bakht: 1788 interlude",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1788,
+      "endYear": 1788,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "shah-alam-ii-second",
+      "title": "Shah Alam II: restored reign",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1788,
+      "endYear": 1806,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "akbar-ii",
+      "title": "Akbar II",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1806,
+      "endYear": 1837,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "bahadur-shah-ii",
+      "title": "Bahadur Shah II (Zafar)",
+      "type": "ruler",
+      "place": "Mughal imperial succession",
+      "startYear": 1837,
+      "endYear": 1858,
+      "status": "outline",
+      "outlines": [
+        "traced-mughal-1707"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mughal-1707 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rajput-kumbha",
+      "title": "Rana Kumbha",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Sisodia Mewar",
+      "startYear": 1433,
+      "endYear": 1468,
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rajput-sanga",
+      "title": "Rana Sanga (Sangram Singh I)",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Sisodia Mewar",
+      "startYear": 1509,
+      "endYear": 1528,
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rajput-ratan-singh-ii",
+      "title": "Ratan Singh II",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Sisodia Mewar",
+      "startYear": 1528,
+      "endYear": 1531,
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rajput-vikramaditya-mewar",
+      "title": "Vikramaditya of Mewar",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Sisodia Mewar",
+      "startYear": 1531,
+      "endYear": 1536,
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rajput-udai-singh-ii",
+      "title": "Udai Singh II",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Sisodia Mewar",
+      "startYear": 1537,
+      "endYear": 1572,
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rajput-pratap",
+      "title": "Maharana Pratap",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Sisodia Mewar",
+      "startYear": 1572,
+      "endYear": 1597,
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rajput-amar-singh-i",
+      "title": "Amar Singh I",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Sisodia Mewar",
+      "startYear": 1597,
+      "endYear": 1620,
+      "status": "outline",
+      "outlines": [
+        "traced-mewar"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mewar (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rajput-chunda",
+      "title": "Rao Chunda",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Rathore Marwar",
+      "startYear": 1384,
+      "endYear": 1428,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-jodha",
+      "title": "Rao Jodha",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Rathore Marwar",
+      "startYear": 1438,
+      "endYear": 1489,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-maldeo",
+      "title": "Rao Maldeo",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Rathore Marwar",
+      "startYear": 1531,
+      "endYear": 1562,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-ajit-singh",
+      "title": "Ajit Singh: recovered-rule phase",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Rathore Marwar",
+      "startYear": 1707,
+      "endYear": 1724,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-gaj-singh",
+      "title": "Gaj Singh I",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Rathore Marwar",
+      "startYear": 1619,
+      "endYear": 1638,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-man-singh-amber",
+      "title": "Man Singh I: imperial service",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Amber / Mughal service",
+      "startYear": 1562,
+      "endYear": 1614,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-madho-kota",
+      "title": "Madho Singh of Kota",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Kota",
+      "startYear": 1631,
+      "endYear": 1648,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-anup-bikaner",
+      "title": "Anup Singh of Bikaner",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Bikaner",
+      "startYear": 1669,
+      "endYear": 1698,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-jai-singh-ii",
+      "title": "Sawai Jai Singh II",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Amber / Jaipur",
+      "startYear": 1700,
+      "endYear": 1743,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "panipat-1526",
+      "title": "First Battle of Panipat",
+      "type": "battle",
+      "place": "Panipat",
+      "startYear": 1526,
+      "endYear": 1526,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "khanwa-1527",
+      "title": "Battle of Khanwa",
+      "type": "battle",
+      "place": "Khanwa",
+      "startYear": 1527,
+      "endYear": 1527,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "panipat-1556",
+      "title": "Second Battle of Panipat",
+      "type": "battle",
+      "place": "Panipat",
+      "startYear": 1556,
+      "endYear": 1556,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "chittor-1567-1568",
+      "title": "Siege of Chittorgarh",
+      "type": "battle",
+      "place": "Chittorgarh, Mewar",
+      "startYear": 1567,
+      "endYear": 1568,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "ranthambore-1569",
+      "title": "Siege of Ranthambore",
+      "type": "battle",
+      "place": "Ranthambore",
+      "startYear": 1569,
+      "endYear": 1569,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "haldighati-1576",
+      "title": "Battle of Haldighati",
+      "type": "battle",
+      "place": "Haldighati / Khamnor, Mewar",
+      "startYear": 1576,
+      "endYear": 1576,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "dewair-1582",
+      "title": "Battle of Dewair",
+      "type": "battle",
+      "place": "Dewair, Mewar",
+      "startYear": 1582,
+      "endYear": 1582,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "delhi-1857",
+      "title": "Siege and capture of Delhi",
+      "type": "battle",
+      "place": "Delhi",
+      "startYear": 1857,
+      "endYear": 1857,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "jaipur-foundation",
+      "title": "Jai Singh II: Jaipur\u2019s planned city",
+      "type": "site",
+      "place": "Jaipur",
+      "startYear": 1727,
+      "endYear": 1731,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-prithviraj-iii",
+      "title": "Prithviraj III (Prithviraj Chauhan)",
+      "type": "ruler",
+      "place": "Chahamana / Chauhan \u00b7 Ajmer",
+      "startYear": 1178,
+      "endYear": 1192,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "tarain-1191",
+      "title": "Battle of Tarain (1191)",
+      "type": "battle",
+      "place": "Tarain, present-day Haryana",
+      "startYear": 1191,
+      "endYear": 1191,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "tarain-1192",
+      "title": "Battle of Tarain (1192)",
+      "type": "battle",
+      "place": "Tarain, present-day Haryana",
+      "startYear": 1192,
+      "endYear": 1192,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-bika-foundation",
+      "title": "Rao Bika: foundation of Bikaner",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Bikaner",
+      "startYear": 1488,
+      "endYear": 1488,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rajput-jaisal-foundation",
+      "title": "Rawal Jaisal: foundation of Jaisalmer",
+      "type": "ruler",
+      "place": "Rajput \u00b7 Jaisalmer",
+      "startYear": 1156,
+      "endYear": 1156,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "gupta-empire",
+      "title": "Gupta dynasty",
+      "type": "kingdom",
+      "place": "Ganga-Yamuna Doab and Magadha",
+      "startYear": 300,
+      "endYear": 550,
+      "status": "outline",
+      "outlines": [
+        "traced-gupta"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-gupta (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "gupta-chandragupta-ii",
+      "title": "Chandragupta II",
+      "type": "ruler",
+      "place": "Ganga-Yamuna Doab and Magadha",
+      "startYear": 375,
+      "endYear": 415,
+      "status": "outline",
+      "outlines": [
+        "traced-gupta"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-gupta."
+    },
+    {
+      "id": "vakataka-dynasty",
+      "title": "Vakataka dynasty",
+      "type": "kingdom",
+      "place": "Vakataka Deccan",
+      "startYear": 250,
+      "endYear": 500,
+      "status": "outline",
+      "outlines": [
+        "traced-vakataka"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-vakataka."
+    },
+    {
+      "id": "chalukya-badami",
+      "title": "Western Chalukyas of Vatapi",
+      "type": "kingdom",
+      "place": "Vatapi",
+      "startYear": 543,
+      "endYear": 757,
+      "status": "outline",
+      "outlines": [
+        "traced-chalukya-badami"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-chalukya-badami."
+    },
+    {
+      "id": "chalukya-kalyani",
+      "title": "Western Chalukyas of Kalyani",
+      "type": "kingdom",
+      "place": "Kalyani",
+      "startYear": 975,
+      "endYear": 1189,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "chalukya-vengi",
+      "title": "Eastern Chalukyas of Vengi",
+      "type": "kingdom",
+      "place": "Vengi",
+      "startYear": 624,
+      "endYear": 1070,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "pallava-dynasty",
+      "title": "Pallava dynasty",
+      "type": "kingdom",
+      "place": "Kanchipuram",
+      "startYear": 301,
+      "endYear": 880,
+      "status": "outline",
+      "outlines": [
+        "traced-pallava"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-pallava (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "pala-dynasty",
+      "title": "Pala dynasty",
+      "type": "kingdom",
+      "place": "Bengal and Bihar",
+      "startYear": 750,
+      "endYear": 1160,
+      "status": "outline",
+      "outlines": [
+        "traced-pala"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-pala."
+    },
+    {
+      "id": "rashtrakuta-dynasty",
+      "title": "Rashtrakuta dynasty",
+      "type": "kingdom",
+      "place": "Rashtrakuta Deccan",
+      "startYear": 755,
+      "endYear": 975,
+      "status": "outline",
+      "outlines": [
+        "traced-rashtrakuta"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-rashtrakuta."
+    },
+    {
+      "id": "delhi-sultanate",
+      "title": "Delhi sultanate",
+      "type": "kingdom",
+      "place": "Delhi Sultanate",
+      "startYear": 1206,
+      "endYear": 1556,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "vijayanagara-empire",
+      "title": "Vijayanagara empire",
+      "type": "kingdom",
+      "place": "Vijayanagara",
+      "startYear": 1336,
+      "endYear": 1614,
+      "status": "outline",
+      "outlines": [
+        "traced-vijayanagara"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-vijayanagara (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "shivaji",
+      "title": "Shivaji",
+      "type": "ruler",
+      "place": "Raigad",
+      "startYear": 1674,
+      "endYear": 1680,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "maratha-confederacy",
+      "title": "Maratha confederacy",
+      "type": "kingdom",
+      "place": "Pune",
+      "startYear": 1707,
+      "endYear": 1818,
+      "status": "outline",
+      "outlines": [
+        "traced-maratha"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-maratha (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "ranjit-singh",
+      "title": "Ranjit Singh",
+      "type": "ruler",
+      "place": "Lahore",
+      "startYear": 1799,
+      "endYear": 1839,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "sikh-kingdom",
+      "title": "Sikh kingdom of the Punjab",
+      "type": "kingdom",
+      "place": "Punjab",
+      "startYear": 1799,
+      "endYear": 1845,
+      "status": "outline",
+      "outlines": [
+        "traced-sikh"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-sikh (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "east-india-company",
+      "title": "East India Company territorial government",
+      "type": "state",
+      "place": "Company presidencies",
+      "startYear": 1757,
+      "endYear": 1858,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "british-raj",
+      "title": "British raj",
+      "type": "state",
+      "place": "British India",
+      "startYear": 1858,
+      "endYear": 1947,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "princely-states",
+      "title": "Princely states under Crown paramountcy",
+      "type": "state",
+      "place": "Princely states",
+      "startYear": 1858,
+      "endYear": 1947,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "dominion-of-india",
+      "title": "Dominion of India",
+      "type": "state",
+      "place": "Dominion of India",
+      "startYear": 1947,
+      "endYear": 2026,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "ellora-caves",
+      "title": "Ellora caves",
+      "type": "site",
+      "place": "Ellora",
+      "startYear": 600,
+      "endYear": 1000,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "mahabalipuram-monuments",
+      "title": "Monuments at Mahabalipuram",
+      "type": "site",
+      "place": "Mahabalipuram",
+      "startYear": 601,
+      "endYear": 800,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "harsha",
+      "title": "Harsha",
+      "type": "ruler",
+      "place": "Kannauj",
+      "startYear": 606,
+      "endYear": 647,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "ahom-kingdom",
+      "title": "Ahom rule in Assam",
+      "type": "kingdom",
+      "place": "Assam",
+      "startYear": 1201,
+      "endYear": 1838,
+      "status": "outline",
+      "outlines": [
+        "traced-ahom"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-ahom (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "rudra-singh",
+      "title": "Rudra Singh",
+      "type": "ruler",
+      "place": "Assam",
+      "startYear": 1696,
+      "endYear": 1714,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "quit-india",
+      "title": "Quit India movement",
+      "type": "culture",
+      "place": "Bombay (Mumbai)",
+      "startYear": 1942,
+      "endYear": 1943,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "republic-of-india",
+      "title": "Republic of India",
+      "type": "state",
+      "place": "Republic of India",
+      "startYear": 1950,
+      "endYear": 2026,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "maitraka-dynasty",
+      "title": "Maitrakas of Valabhi",
+      "type": "kingdom",
+      "place": "Valabhi (modern Vala), Gujarat",
+      "startYear": 401,
+      "endYear": 780,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "pratihara-dynasty",
+      "title": "Gurjara-Pratiharas of Kannauj",
+      "type": "kingdom",
+      "place": "Kannauj",
+      "startYear": 701,
+      "endYear": 1018,
+      "status": "outline",
+      "outlines": [
+        "traced-pratihara"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-pratihara (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "mihira-bhoja",
+      "title": "Mihira Bhoja",
+      "type": "ruler",
+      "place": "Kannauj",
+      "startYear": 836,
+      "endYear": 890,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "mahendrapala",
+      "title": "Mahendrapala",
+      "type": "ruler",
+      "place": "Kannauj",
+      "startYear": 890,
+      "endYear": 910,
+      "status": "outline",
+      "outlines": [
+        "traced-pratihara"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-pratihara (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "khajuraho-temples",
+      "title": "Temples at Khajuraho",
+      "type": "site",
+      "place": "Khajuraho",
+      "startYear": 950,
+      "endYear": 1050,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "pattadakal-temples",
+      "title": "Temples at Pattadakal",
+      "type": "site",
+      "place": "Pattadakal",
+      "startYear": 601,
+      "endYear": 800,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "qutb-complex",
+      "title": "Qutb Minar and its monuments",
+      "type": "site",
+      "place": "Delhi",
+      "startYear": 1199,
+      "endYear": 1311,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "fatehpur-sikri",
+      "title": "Fatehpur Sikri",
+      "type": "site",
+      "place": "Fatehpur Sikri",
+      "startYear": 1571,
+      "endYear": 1585,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "rani-ki-vav",
+      "title": "Rani-ki-Vav at Patan",
+      "type": "site",
+      "place": "Patan, Gujarat",
+      "startYear": 1001,
+      "endYear": 1100,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "khalji-dynasty",
+      "title": "Khalji dynasty",
+      "type": "kingdom",
+      "place": "Delhi",
+      "startYear": 1290,
+      "endYear": 1320,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "jalaluddin-khalji",
+      "title": "Jalal-ud-Din Firuz Khalji",
+      "type": "ruler",
+      "place": "Delhi",
+      "startYear": 1290,
+      "endYear": 1296,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "alauddin-khalji",
+      "title": "Alauddin Khalji",
+      "type": "ruler",
+      "place": "Delhi",
+      "startYear": 1296,
+      "endYear": 1316,
+      "status": "outline",
+      "outlines": [
+        "traced-delhi"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-delhi."
+    },
+    {
+      "id": "tipu-sultan",
+      "title": "Tipu Sultan",
+      "type": "ruler",
+      "place": "Seringapatam (Srirangapatna)",
+      "startYear": 1782,
+      "endYear": 1799,
+      "status": "outline",
+      "outlines": [
+        "traced-mysore-1784"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-mysore-1784 (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "salt-march",
+      "title": "Salt March",
+      "type": "culture",
+      "place": "Dandi, Gujarat",
+      "startYear": 1930,
+      "endYear": 1931,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "bimbisara",
+      "title": "Bimbisara",
+      "type": "ruler",
+      "place": "Magadha",
+      "startYear": -543,
+      "endYear": -491,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "magadha-early",
+      "title": "Early Magadha",
+      "type": "kingdom",
+      "place": "Magadha",
+      "startYear": -599,
+      "endYear": -325,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "maurya-empire",
+      "title": "Maurya empire",
+      "type": "kingdom",
+      "place": "Pataliputra",
+      "startYear": -321,
+      "endYear": -185,
+      "status": "outline",
+      "outlines": [
+        "traced-maurya-core"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-maurya-core."
+    },
+    {
+      "id": "chandragupta-maurya",
+      "title": "Chandragupta Maurya",
+      "type": "ruler",
+      "place": "Pataliputra",
+      "startYear": -321,
+      "endYear": -297,
+      "status": "outline",
+      "outlines": [
+        "traced-maurya-core"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-maurya-core."
+    },
+    {
+      "id": "ashoka",
+      "title": "Ashoka",
+      "type": "ruler",
+      "place": "Magadha",
+      "startYear": -265,
+      "endYear": -238,
+      "status": "outline",
+      "outlines": [
+        "traced-maurya-core"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-maurya-core."
+    },
+    {
+      "id": "shunga-dynasty",
+      "title": "Shunga dynasty",
+      "type": "kingdom",
+      "place": "Magadha",
+      "startYear": -185,
+      "endYear": -73,
+      "status": "outline",
+      "outlines": [
+        "traced-shunga"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-shunga."
+    },
+    {
+      "id": "pushyamitra",
+      "title": "Pushyamitra",
+      "type": "ruler",
+      "place": "Magadha",
+      "startYear": -185,
+      "endYear": -149,
+      "status": "outline",
+      "outlines": [
+        "traced-shunga"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-shunga."
+    },
+    {
+      "id": "bindusara",
+      "title": "Bindusara",
+      "type": "ruler",
+      "place": "Pataliputra",
+      "startYear": -297,
+      "endYear": -273,
+      "status": "outline",
+      "outlines": [
+        "traced-maurya-core"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-maurya-core."
+    },
+    {
+      "id": "kanva-dynasty",
+      "title": "Kanva dynasty",
+      "type": "kingdom",
+      "place": "Magadha",
+      "startYear": -73,
+      "endYear": -28,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "kharavela",
+      "title": "Kharavela",
+      "type": "ruler",
+      "place": "Kalinga",
+      "startYear": -199,
+      "endYear": -1,
+      "status": "outline",
+      "outlines": [
+        "traced-meghavahana"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-meghavahana."
+    },
+    {
+      "id": "indo-greek-kingdom",
+      "title": "Indo-Greek kingdoms",
+      "type": "kingdom",
+      "place": "Indo-Greek northwest",
+      "startYear": -200,
+      "endYear": -200,
+      "status": "outline",
+      "outlines": [
+        "traced-indo-greek"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-indo-greek."
+    },
+    {
+      "id": "chera-sangam",
+      "title": "Chera dynasty, early evidence",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": -299,
+      "endYear": -201,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "chola-sangam",
+      "title": "Early Cholas",
+      "type": "kingdom",
+      "place": "Tamil region",
+      "startYear": -600,
+      "endYear": -1,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "pandya-sangam",
+      "title": "Pandya dynasty, early evidence",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": -499,
+      "endYear": -201,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "kakatiya-dynasty",
+      "title": "Kakatiya dynasty",
+      "type": "kingdom",
+      "place": "Warangal",
+      "startYear": 1163,
+      "endYear": 1323,
+      "status": "outline",
+      "outlines": [
+        "traced-kakatiya"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-kakatiya."
+    },
+    {
+      "id": "paramara-dynasty",
+      "title": "Paramara dynasty",
+      "type": "kingdom",
+      "place": "Malwa",
+      "startYear": 948,
+      "endYear": 1305,
+      "status": "outline",
+      "outlines": [
+        "traced-paramara"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-paramara."
+    },
+    {
+      "id": "karkota-dynasty",
+      "title": "Karkota dynasty",
+      "type": "kingdom",
+      "place": "Kashmir",
+      "startYear": 625,
+      "endYear": 855,
+      "status": "outline",
+      "outlines": [
+        "traced-karkota"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-karkota."
+    },
+    {
+      "id": "gujarat-sultanate",
+      "title": "Gujarat Sultanate",
+      "type": "kingdom",
+      "place": "Gujarat Sultanate",
+      "startYear": 1394,
+      "endYear": 1573,
+      "status": "outline",
+      "outlines": [
+        "traced-gujarat"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-gujarat (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "ghurid-empire",
+      "title": "Ghurid empire",
+      "type": "kingdom",
+      "place": "Ghurid campaigns",
+      "startYear": 1175,
+      "endYear": 1215,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "peshwa-office",
+      "title": "Peshwa",
+      "type": "state",
+      "place": "Pune",
+      "startYear": 1674,
+      "endYear": 1818,
+      "status": "outline",
+      "outlines": [
+        "traced-maratha"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-maratha (dynasty extent, not reign-specific)."
+    },
+    {
+      "id": "baji-rao-i",
+      "title": "Baji Rao I",
+      "type": "ruler",
+      "place": "Pune",
+      "startYear": 1720,
+      "endYear": 1740,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "partition-of-india",
+      "title": "Partition of India",
+      "type": "state",
+      "place": "British India",
+      "startYear": 1947,
+      "endYear": 1947,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "princely-integration",
+      "title": "Integration of the princely states",
+      "type": "state",
+      "place": "Princely states",
+      "startYear": 1947,
+      "endYear": 1957,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "states-reorganisation-1956",
+      "title": "States Reorganisation Act, 1956",
+      "type": "state",
+      "place": "Republic of India",
+      "startYear": 1956,
+      "endYear": 1956,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "chhattisgarh-state",
+      "title": "Chhattisgarh",
+      "type": "state",
+      "place": "Chhattisgarh",
+      "startYear": 2000,
+      "endYear": 2026,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "telangana-state",
+      "title": "Telangana",
+      "type": "state",
+      "place": "Telangana",
+      "startYear": 2014,
+      "endYear": 2026,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "shashanka",
+      "title": "Shashanka",
+      "type": "ruler",
+      "place": "Bengal and Bihar",
+      "startYear": 600,
+      "endYear": 636,
+      "status": "outline",
+      "outlines": [
+        "traced-shashanka"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-shashanka."
+    },
+    {
+      "id": "chandela-empire",
+      "title": "Chandela empire",
+      "type": "kingdom",
+      "place": "Khajuraho",
+      "startYear": 801,
+      "endYear": 1400,
+      "status": "outline",
+      "outlines": [
+        "traced-chandela"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-chandela."
+    },
+    {
+      "id": "chaulukya-gujarat",
+      "title": "Chaulukya (Solanki) dynasty",
+      "type": "kingdom",
+      "place": "Anahilavada (Patan)",
+      "startYear": 940,
+      "endYear": 1244,
+      "status": "outline",
+      "outlines": [
+        "traced-chaulukya"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-chaulukya."
+    },
+    {
+      "id": "eastern-ganga",
+      "title": "Imperial Eastern Gangas",
+      "type": "kingdom",
+      "place": "Kalinga",
+      "startYear": 1077,
+      "endYear": 1436,
+      "status": "outline",
+      "outlines": [
+        "traced-eastern-ganga"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-eastern-ganga."
+    },
+    {
+      "id": "sena-dynasty",
+      "title": "Sena dynasty",
+      "type": "kingdom",
+      "place": "Bengal and Bihar",
+      "startYear": 1095,
+      "endYear": 1204,
+      "status": "outline",
+      "outlines": [
+        "traced-sena"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-sena."
+    },
+    {
+      "id": "seuna-yadava",
+      "title": "Seuna (Yadava) dynasty",
+      "type": "kingdom",
+      "place": "Devagiri",
+      "startYear": 1187,
+      "endYear": 1317,
+      "status": "outline",
+      "outlines": [
+        "traced-yadava"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-yadava."
+    },
+    {
+      "id": "later-pandya",
+      "title": "Later Pandyas",
+      "type": "kingdom",
+      "place": "Tamilakam",
+      "startYear": 1201,
+      "endYear": 1400,
+      "status": "outline",
+      "outlines": [
+        "traced-later-pandya"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-later-pandya."
+    },
+    {
+      "id": "malwa-sultanate",
+      "title": "Malwa Sultanate",
+      "type": "kingdom",
+      "place": "Malwa",
+      "startYear": 1401,
+      "endYear": 1562,
+      "status": "outline",
+      "outlines": [
+        "traced-malwa"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-malwa."
+    },
+    {
+      "id": "gajapati-empire",
+      "title": "Gajapati empire",
+      "type": "kingdom",
+      "place": "Kalinga",
+      "startYear": 1434,
+      "endYear": 1541,
+      "status": "outline",
+      "outlines": [
+        "traced-gajapati"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-gajapati."
+    },
+    {
+      "id": "bijapur-sultanate",
+      "title": "Bijapur Sultanate",
+      "type": "kingdom",
+      "place": "Southern Deccan",
+      "startYear": 1490,
+      "endYear": 1686,
+      "status": "outline",
+      "outlines": [
+        "traced-bijapur"
+      ],
+      "point": false,
+      "why": "Approximate traced extent: traced-bijapur."
+    },
+    {
+      "id": "jharkhand-state",
+      "title": "Jharkhand",
+      "type": "state",
+      "place": "Jharkhand",
+      "startYear": 2000,
+      "endYear": 2026,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    },
+    {
+      "id": "uttarakhand-state",
+      "title": "Uttarakhand",
+      "type": "state",
+      "place": "Uttarakhand",
+      "startYear": 2000,
+      "endYear": 2026,
+      "status": "point",
+      "outlines": [],
+      "point": true,
+      "why": "Sourced point only. No reusable extent has been traced for this record."
+    }
+  ]
+}

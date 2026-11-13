@@ -1,0 +1,225 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import {
+  PALETTE, boundsOfFeatures, isResidualName, labelPoints, nearestSnapshot, polityColor, recordsForPolity,
+  summarizeYear, validateBasemapCollection, validateBasemapIndex,
+} from '../src/period-map.js';
+import { countPhrase, yearOpenLabel } from '../src/year-panel.js';
+import { applySheetReading, sheetIsSuppressed } from '../src/sheet-policy.js';
+
+const read = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url)));
+const atlas = read('../src/data/atlas.json');
+const index = read('../src/data/basemap-index.json');
+const links = read('../src/data/polity-links.json');
+const sheet = (year) => read(`../public/data/basemaps/year-${year}.geojson`);
+const record = (id) => atlas.records.find(item => item.id === id);
+
+test('nearest snapshot never interpolates and ties keep the earlier sheet', () => {
+  const snapshots = [{ year: 100 }, { year: 200 }, { year: 300 }];
+  assert.equal(nearestSnapshot(300, snapshots).exact, true);
+  assert.equal(nearestSnapshot(300, snapshots).gapYears, 0);
+  const between = nearestSnapshot(160, snapshots);
+  assert.equal(between.snapshot.year, 200);
+  assert.equal(between.gapYears, 40);
+  assert.equal(between.exact, false);
+  assert.equal(nearestSnapshot(150, snapshots).snapshot.year, 100);
+  assert.equal(nearestSnapshot(1, index.snapshots).snapshot.year, -1);
+  assert.equal(nearestSnapshot(2026, index.snapshots).snapshot.year, 2010);
+  const at228 = nearestSnapshot(228, index.snapshots);
+  assert.equal(at228.snapshot.year, 200);
+  assert.equal(at228.gapYears, 28);
+  assert.equal(sheetIsSuppressed(228, at228), false);
+  assert.equal(sheetIsSuppressed(250, nearestSnapshot(250, index.snapshots)), true);
+});
+
+test('residual categories are not treated as single kingdoms', () => {
+  assert.equal(isResidualName('Islamic and Hindu states'), true);
+  assert.equal(isResidualName('Mahratta states'), true);
+  assert.equal(isResidualName('Sinhalese kingdoms'), true);
+  assert.equal(isResidualName('Kushan Principalities'), true);
+  assert.equal(isResidualName('Mughal Empire'), false);
+  assert.equal(isResidualName('Mysore (Indian princely state)'), false);
+  assert.equal(isResidualName('British East India Company'), false);
+});
+
+test('polity colours are stable palette entries', () => {
+  assert.equal(polityColor('Mughal Empire'), polityColor('Mughal Empire'));
+  assert.ok(PALETTE.includes(polityColor('Chola Empire')));
+  assert.notEqual(polityColor('Mughal Empire'), polityColor('Chola Empire'));
+});
+
+test('year lookup returns only linked records inside the selected year', () => {
+  const in1600 = recordsForPolity('Mughal Empire', links.links, atlas.records, 1600).map(item => item.id);
+  assert.ok(in1600.includes('akbar'));
+  assert.equal(in1600.includes('aurangzeb'), false);
+  assert.equal(recordsForPolity('Mughal Empire', links.links, atlas.records, 1500).some(item => item.id === 'akbar'), false);
+  const gupta300 = recordsForPolity('Gupta Empire', links.links, atlas.records, 300).map(item => item.id);
+  assert.deepEqual(gupta300, ['gupta-empire']);
+  assert.equal(recordsForPolity('Not a polity', links.links, atlas.records, 1600).length, 0);
+  const cholas = recordsForPolity('Chola Empire', links.links, atlas.records, 1000).map(item => item.id);
+  assert.ok(cholas.includes('chola-dynasty'));
+  assert.equal(cholas.includes('rajendra-reign'), false);
+});
+
+test('year summary names the gap and refuses interpolated borders', () => {
+  const summary = summarizeYear({
+    year: 1047, snapshotYear: 1000, gapYears: 47,
+    features: [
+      { properties: { name: 'Chola Empire', kind: 'named' } },
+      { properties: { name: 'Chola Empire', kind: 'named' } },
+      { properties: { name: 'Rajput kingdoms', kind: 'residual' } },
+    ],
+    records: atlas.records,
+  });
+  assert.deepEqual(summary.named, ['Chola Empire']);
+  assert.deepEqual(summary.residual, ['Rajput kingdoms']);
+  assert.match(summary.statement, /not interpolated/);
+  assert.match(summary.statement, /not a verified political map/);
+  assert.match(summary.lead, /nearest snapshot 1,000 CE/);
+  assert.deepEqual(summary.cautions, []);
+  assert.equal(summary.statement.includes('1047 CE sheet'), false);
+  assert.ok(summary.kingdoms.includes('Imperial Chola chronology'));
+});
+
+test('one residual category is singular, and a disagreed sheet label is counted', () => {
+  assert.equal(countPhrase(1, 'residual category', 'residual categories'), '1 residual category');
+  assert.equal(countPhrase(4, 'residual category', 'residual categories'), '4 residual categories');
+  const summary = summarizeYear({
+    year: 1600, snapshotYear: 1600, gapYears: 0,
+    features: [
+      { properties: { name: 'Mughal Empire', kind: 'named' } },
+      { properties: { name: 'Vijayanagara', kind: 'caution', caution: 'City destroyed in 1565.' } },
+      { properties: { name: 'Islamic and Hindu states', kind: 'residual' } },
+    ],
+    records: [],
+  });
+  assert.deepEqual(summary.named, ['Mughal Empire']);
+  assert.equal(summary.cautions[0].name, 'Vijayanagara');
+  assert.match(summary.statement, /disagree with the cited research: Vijayanagara/);
+  assert.equal(yearOpenLabel(summary), '1 named area · 1 residual category · 1 disagreement with the research in the archive');
+});
+
+test('a later country sheet is not offered as the political map of a distant year', () => {
+  const far = nearestSnapshot(2026, index.snapshots);
+  assert.equal(far.snapshot.year, 2010);
+  assert.equal(sheetIsSuppressed(2026, far), true);
+  assert.equal(sheetIsSuppressed(2010, nearestSnapshot(2010, index.snapshots)), false);
+  assert.equal(sheetIsSuppressed(1947, nearestSnapshot(1947, index.snapshots)), false);
+  const hidden = summarizeYear({
+    year: 2026, snapshotYear: 2010, gapYears: 16, features: [{ properties: { name: 'India', kind: 'named' } }],
+    records: atlas.records, suppressed: true,
+  });
+  assert.equal(hidden.suppressed, true);
+  assert.deepEqual(hidden.named, []);
+  assert.match(hidden.lead, /not drawn/);
+  assert.match(hidden.statement, /not interpolated/);
+});
+
+test('BCE years use the Mauryan sheet and drop that name after 185 BCE', () => {
+  const at300 = nearestSnapshot(-300, index.snapshots);
+  assert.equal(at300.exact, true);
+  assert.equal(at300.snapshot.year, -300);
+  const names = sheet(-300).features.map(feature => feature.properties.name);
+  assert.ok(names.includes('Mauryan Empire'));
+  const later = applySheetReading([{ properties: { name: 'Mauryan Empire', kind: 'named' } }], -100);
+  assert.equal(later.features.length, 0);
+  assert.match(later.omitted[0].note, /185/);
+  const during = applySheetReading([{ properties: { name: 'Mauryan Empire', kind: 'named' } }], -250);
+  assert.equal(during.features.length, 1);
+});
+
+test('anachronistic sheet names are left off, and supported names stay', () => {
+  const later = applySheetReading([
+    { id: 1, properties: { name: 'Vijayanagara', kind: 'named' } },
+    { id: 2, properties: { name: 'Mughal Empire', kind: 'named' } },
+  ], 1600);
+  assert.deepEqual(later.features.map(feature => feature.properties.name), ['Mughal Empire']);
+  assert.equal(later.omitted[0].name, 'Vijayanagara');
+  assert.match(later.omitted[0].note, /1565/);
+  const beforeSack = applySheetReading([{ properties: { name: 'Vijayanagara', kind: 'named' } }], 1565);
+  assert.equal(beforeSack.features[0].properties.kind, 'named');
+  assert.equal(beforeSack.omitted.length, 0);
+  const partition = applySheetReading([
+    { properties: { name: 'Bangladesh', kind: 'named' } },
+    { properties: { name: 'Pakistan', kind: 'named' } },
+    { properties: { name: 'India', kind: 'named' } },
+  ], 1947);
+  assert.deepEqual(partition.features.map(feature => feature.properties.name), ['Pakistan', 'India']);
+  assert.equal(partition.omitted[0].name, 'Bangladesh');
+  const early = applySheetReading([{ properties: { name: 'Pakistan', kind: 'named' } }], 1940);
+  assert.equal(early.features.length, 0);
+  assert.equal(early.omitted[0].name, 'Pakistan');
+});
+
+test('each sheet name gets one label point, even when the polygon is repeated', () => {
+  const square = [[70, 20], [80, 20], [80, 30], [70, 30], [70, 20]];
+  const bigger = [[60, 20], [90, 20], [90, 35], [60, 35], [60, 20]];
+  const labels = labelPoints([
+    { properties: { name: 'Suren Kingdom', kind: 'named' }, geometry: { type: 'Polygon', coordinates: [square] } },
+    { properties: { name: 'Suren Kingdom', kind: 'named' }, geometry: { type: 'Polygon', coordinates: [bigger] } },
+    { properties: { name: 'Saka Kingdom', kind: 'named' }, geometry: { type: 'Polygon', coordinates: [square] } },
+    { properties: { name: 'Hindu kingdoms', kind: 'residual' }, geometry: { type: 'Polygon', coordinates: [square] } },
+  ]);
+  assert.deepEqual(labels.features.map(feature => feature.properties.name).sort(), ['Saka Kingdom', 'Suren Kingdom']);
+  assert.equal(labels.features.every(feature => feature.geometry.type === 'Point'), true);
+  const suren = labels.features.find(feature => feature.properties.name === 'Suren Kingdom');
+  assert.ok(suren.geometry.coordinates[0] > 70);
+});
+
+test('a sheet more than 30 years away is described as not drawn', () => {
+  const summary = summarizeYear({
+    year: 250, snapshotYear: 200, gapYears: 50, features: [{ properties: { name: 'Saka Kingdom', kind: 'named' } }],
+    records: [], suppressed: true,
+  });
+  assert.match(summary.lead, /not drawn/);
+  assert.equal(summary.lead.includes('later country map'), false);
+  assert.deepEqual(summary.named, []);
+});
+
+test('map fit uses named areas and ignores a residual sheet that covers the frame', () => {
+  const named = { properties: { kind: 'named', name: 'Mughal Empire' }, geometry: { type: 'Polygon', coordinates: [[[70, 20], [80, 20], [80, 30], [70, 30], [70, 20]]] } };
+  const residual = { properties: { kind: 'residual', name: 'Islamic and Hindu states' }, geometry: { type: 'Polygon', coordinates: [[[56, 3], [101, 3], [101, 40], [56, 40], [56, 3]]] } };
+  const box = boundsOfFeatures([residual, named]);
+  assert.equal(box.west, 70);
+  assert.equal(box.east, 80);
+  assert.equal(box.south, 20);
+  assert.equal(box.north, 30);
+  assert.equal(boundsOfFeatures([]), null);
+  const onlyResidual = boundsOfFeatures([residual], { namedOnly: false });
+  assert.equal(onlyResidual.west, 56);
+  assert.equal(onlyResidual.north, 40);
+});
+
+test('vendored snapshots stay inside the clip frame and keep sample polities', () => {
+  assert.deepEqual(validateBasemapIndex(index), []);
+  for (const year of [300, 1000, 1600, 1800]) {
+    const collection = sheet(year);
+    assert.deepEqual(validateBasemapCollection(collection, year), []);
+    const names = collection.features.map(feature => feature.properties.name);
+    if (year === 300) assert.ok(names.includes('Gupta Empire') && names.includes('Satavahanihara'));
+    if (year === 1000) assert.ok(names.includes('Chola Empire') && names.includes('Chalukya Empire') && names.includes('Palas'));
+    if (year === 1600) assert.ok(names.includes('Mughal Empire') && names.includes('Vijayanagara') && names.includes('Rajputana'));
+    if (year === 1800) assert.ok(names.includes('Maratha Confederacy') && names.includes('Sikhs'));
+  }
+});
+
+test('major periods have cited profiles rather than bare chronology lines', () => {
+  for (const id of [
+    'gupta-empire', 'vakataka-dynasty', 'chalukya-badami', 'chalukya-kalyani', 'chalukya-vengi',
+    'pallava-dynasty', 'pala-dynasty', 'rashtrakuta-dynasty', 'delhi-sultanate', 'vijayanagara-empire',
+    'bahmanid-dynasty', 'shivaji', 'maratha-confederacy', 'ranjit-singh', 'sikh-kingdom',
+    'east-india-company', 'british-raj', 'princely-states', 'dominion-of-india',
+  ]) {
+    const item = record(id);
+    assert.ok(item, id);
+    assert.equal(item.reviewStatus, 'cited');
+    assert.ok(item.details.length >= 4, id);
+    assert.ok(item.details.some(section => section.heading === 'Capital'), id);
+    assert.ok(item.geometry == null || item.geometry.type === 'Point', id);
+  }
+  assert.equal(record('dominion-of-india').type, 'state');
+  assert.match(record('bahmanid-dynasty').summary, /1528/);
+  assert.match(record('bahmanid-dynasty').summary, /1518/);
+  assert.match(record('chalukya-badami').dateNote, /755/);
+});

@@ -34,7 +34,7 @@ test('separate battles and sieges do not leak into adjoining years', () => {
     assert.ok(battlesForYear(data.records,end).some(record => record.id === id));
     assert.ok(!battlesForYear(data.records,start-1).some(record => record.id === id));
     assert.ok(!battlesForYear(data.records,end+1).some(record => record.id === id));
-    assert.equal(byId(id).geometry,null);
+    assert.ok(byId(id).geometry == null || byId(id).geometry.type === 'Point');
   }
 });
 
@@ -42,6 +42,7 @@ test('profile text is searchable and a sourced city point is not borrowed for a 
   assert.ok(recordsForYear(data.records, 1576, 'ruler', 'Chakrapani').some(record => record.id === 'rajput-pratap'));
   assert.ok(recordsForYear(data.records, 1576, 'ruler', 'Rajput').some(record => record.id === 'rajput-man-singh-amber'));
   assert.equal(byId('jaipur-foundation').locationSourceId, 'unesco-jaipur');
-  assert.equal(byId('rajput-jai-singh-ii').geometry, null);
+  assert.equal(byId('rajput-jai-singh-ii').locationSourceId, 'wiki-jaipur');
+  assert.equal(byId('rajput-jai-singh-ii').geometry.type, 'Point');
   assert.ok(Math.abs(byId('jaipur-foundation').geometry.coordinates[1]-26.924278)<0.000001);
 });

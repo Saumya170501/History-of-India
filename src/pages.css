@@ -1,0 +1,54 @@
+:root {
+  color: #203d35;
+  background: #f6f4ee;
+  font-family: Inter, "Segoe UI", sans-serif;
+  --green: #244c42;
+  --gold: #e6bd7b;
+  --gold-strong: #c4a15a;
+  --cream: #fbfaf5;
+  --muted: #64736a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.skip {
+  position: absolute; left: 12px; top: -40px; background: var(--green); color: #fffcef; padding: 8px 12px;
+}
+.skip:focus { top: 12px; }
+.mast {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 16px 22px; background: var(--green); color: #fffcef;
+}
+.brand { color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: 20px; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 14px; }
+nav a { color: var(--gold); }
+main { max-width: 820px; margin: 0 auto; padding: 36px 22px 72px; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; color: var(--green); }
+h1 { font-size: 40px; line-height: 1.15; margin: 0 0 16px; }
+h2 { font-size: 26px; margin: 32px 0 8px; }
+p { line-height: 1.55; }
+.eyebrow { letter-spacing: 1.6px; text-transform: uppercase; font-size: 11px; color: var(--muted); }
+a { color: #1f4f3f; }
+.credits { list-style: none; padding: 0; display: grid; gap: 12px; }
+.credits li {
+  background: var(--cream); border: 1px solid #e4dcc8; border-radius: 12px; padding: 12px 14px;
+}
+.credits a { font-weight: 650; }
+.credits span, .note { display: block; color: #3d5148; margin-top: 4px; }
+form { display: grid; gap: 14px; max-width: 560px; }
+label { display: grid; gap: 6px; font-size: 14px; }
+label span { color: var(--muted); font-size: 12px; }
+input, textarea {
+  font: inherit; color: inherit; background: #fff; border: 1px solid #d9ddd0; border-radius: 8px; padding: 10px 12px;
+}
+textarea { min-height: 140px; resize: vertical; }
+button {
+  justify-self: start; background: var(--green); color: #fffcef; border: 0; border-radius: 999px;
+  padding: 10px 18px; font: inherit; cursor: pointer;
+}
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--gold-strong); outline-offset: 2px;
+}
+@media (max-width: 640px) {
+  h1 { font-size: 32px; }
+  .mast { align-items: flex-start; flex-direction: column; }
+}

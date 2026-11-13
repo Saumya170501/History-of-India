@@ -47,3 +47,61 @@ export function pointLayer(source) {
       'circle-stroke-color': '#fffaf0', 'circle-stroke-width': 1.25,
     } };
 }
+// Colour-coded snapshot polygons. Residual categories stay faint and unlabelled.
+// Labels use an external glyph source set by the map, not the hidden OHM symbol layers.
+export function periodLayers(source, labelSource = source) {
+  const labelLayout = {
+    'text-font': ['Open Sans Semibold'],
+    'text-size': ['interpolate', ['linear'], ['zoom'], 3, 10, 6, 13, 8, 16],
+    'text-anchor': 'bottom',
+    'text-offset': [0, -1.6],
+    'text-padding': 8,
+    'text-allow-overlap': false,
+  };
+  return [
+    { id: 'period-fill', type: 'fill', source, filter: polygonFilter, paint: {
+      'fill-color': ['get', 'color'],
+      'fill-opacity': ['case',
+        ['boolean', ['feature-state', 'hover'], false], 0.42,
+        ['==', ['get', 'kind'], 'residual'], 0.08,
+        ['==', ['get', 'kind'], 'caution'], 0.14,
+        0.33],
+      'fill-antialias': true,
+    } },
+    { id: 'period-line', type: 'line', source, filter: polygonFilter, layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: {
+      'line-color': ['case',
+        ['boolean', ['feature-state', 'hover'], false], '#e7c98a',
+        ['==', ['get', 'kind'], 'residual'], '#8d887c',
+        ['==', ['get', 'kind'], 'caution'], '#8a5a32',
+        ['get', 'color']],
+      'line-width': ['case',
+        ['boolean', ['feature-state', 'hover'], false], 2.6,
+        ['interpolate', ['linear'], ['zoom'], 3, 0.6, 6, 1.4]],
+      'line-blur': ['case',
+        ['boolean', ['feature-state', 'hover'], false], 1.4,
+        ['interpolate', ['linear'], ['zoom'], 3, 1.1, 6, 2.2]],
+      'line-opacity': ['case',
+        ['boolean', ['feature-state', 'hover'], false], 0.95,
+        ['==', ['get', 'kind'], 'caution'], 0.9,
+        0.45],
+    } },
+    { id: 'period-label', type: 'symbol', source: labelSource, filter: ['==', ['get', 'kind'], 'named'], layout: {
+      ...labelLayout,
+      'text-field': ['get', 'name'],
+      'text-max-width': 8,
+    }, paint: {
+      'text-color': '#1c2420',
+      'text-halo-color': '#fbfaf5',
+      'text-halo-width': 1.3,
+    } },
+    { id: 'period-caution-label', type: 'symbol', source: labelSource, filter: ['==', ['get', 'kind'], 'caution'], layout: {
+      ...labelLayout,
+      'text-field': ['concat', ['get', 'name'], ' · sheet label'],
+      'text-max-width': 10,
+    }, paint: {
+      'text-color': '#6a3e22',
+      'text-halo-color': '#fbfaf5',
+      'text-halo-width': 1.3,
+    } },
+  ];
+}

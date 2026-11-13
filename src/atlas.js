@@ -1,4 +1,5 @@
-export const MIN_YEAR = 1;
+// Historical years. There is no year 0: 1 BCE is -1 and 1 CE is 1.
+export const MIN_YEAR = -600;
 export const MAX_YEAR = 2026;
 export const TYPES = {
   site: "Sites & monuments",
@@ -6,14 +7,61 @@ export const TYPES = {
   kingdom: "Kingdoms",
   battle: "Battles & aftermath",
   culture: "Culture & learning",
+  state: "States & governments",
 };
 
-export function normalizeYear(value, fallback = MIN_YEAR) {
-  if (value === null || String(value).trim() === "") return fallback;
-  const year = Number(value);
-  return Number.isFinite(year)
-    ? Math.max(MIN_YEAR, Math.min(MAX_YEAR, Math.round(year)))
-    : fallback;
+export function clampYear(year) {
+  if (year === 0) return 1;
+  return Math.max(MIN_YEAR, Math.min(MAX_YEAR, year));
+}
+
+export function formatYear(year) {
+  if (!Number.isInteger(year) || year === 0) return '';
+  if (year < 0) return `${(-year).toLocaleString('en')} BCE`;
+  return `${year.toLocaleString('en')} CE`;
+}
+
+// ISO 8601 uses astronomical years: 0000 is 1 BCE and -0001 is 2 BCE.
+export function historicalIsoDate(year) {
+  const astronomical = year < 0 ? year + 1 : year;
+  const negative = astronomical < 0;
+  return `${negative ? '-' : ''}${String(Math.abs(astronomical)).padStart(4, '0')}-01-01`;
+}
+
+export function formatYearParts(year) {
+  if (!Number.isInteger(year) || year === 0) return { number: '', era: '' };
+  if (year < 0) return { number: (-year).toLocaleString('en'), era: 'BCE' };
+  return { number: year.toLocaleString('en'), era: 'CE' };
+}
+
+// A positive step that would land on year 0 continues into 1 CE.
+export function shiftYear(year, delta) {
+  if (!Number.isInteger(year) || !Number.isInteger(delta) || delta === 0) return clampYear(year);
+  let next = year + delta;
+  if (year < 0 && next >= 0) next += 1;
+  if (year > 0 && next <= 0) next -= 1;
+  if (next === 0) next = delta > 0 ? 1 : -1;
+  return clampYear(next);
+}
+
+export function normalizeYear(value, fallback = 1) {
+  if (value === null || value === undefined || String(value).trim() === '') return fallback;
+  const text = String(value).trim();
+  let year;
+  const labelled = text.match(/^(-?\d+)\s*(BCE|BC|CE|AD)$/i);
+  if (labelled) {
+    const magnitude = Number(labelled[1]);
+    const era = labelled[2].toUpperCase();
+    year = era === 'BCE' || era === 'BC' ? -Math.abs(magnitude) : Math.abs(magnitude);
+  } else {
+    year = Number(text);
+  }
+  if (!Number.isFinite(year)) return fallback;
+  return clampYear(Math.round(year));
+}
+
+export function recordSearchText(record) {
+  return `${record.title} ${record.place} ${record.summary} ${(record.tags || []).join(" ")} ${(record.details || []).map((section) => `${section.heading} ${section.text}`).join(" ")} ${record.searchText || ""}`;
 }
 
 export function recordsForYear(records, year, type = "all", query = "") {
@@ -23,11 +71,16 @@ export function recordsForYear(records, year, type = "all", query = "") {
       year >= record.startYear &&
       year <= record.endYear &&
       (type === "all" || record.type === type) &&
-      (!term ||
-        `${record.title} ${record.place} ${record.summary} ${(record.tags || []).join(' ')} ${(record.details || []).map(section => section.text).join(' ')}`
-          .toLocaleLowerCase("en")
-          .includes(term)),
+      (!term || recordSearchText(record).toLocaleLowerCase("en").includes(term)),
   );
+}
+
+export function searchAtlas(records, query) {
+  const term = query.trim().toLocaleLowerCase("en");
+  if (!term) return [];
+  return records
+    .filter((record) => recordSearchText(record).toLocaleLowerCase("en").includes(term))
+    .sort((a, b) => a.startYear - b.startYear || a.title.localeCompare(b.title, "en"));
 }
 
 export function stateFromSearch(search) {
@@ -114,6 +167,8 @@ export function validateAtlas(data) {
       !Number.isInteger(record.endYear) ||
       record.startYear < MIN_YEAR ||
       record.endYear > MAX_YEAR ||
+      record.startYear === 0 ||
+      record.endYear === 0 ||
       record.endYear < record.startYear
     )
       errors.push(`${record.id}: invalid year window`);

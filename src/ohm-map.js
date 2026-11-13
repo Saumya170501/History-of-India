@@ -6,17 +6,33 @@ import { filterByDate, constrainStyleToDateRange } from '@openhistoricalmap/mapl
 import style from '@openhistoricalmap/map-styles/dist/historical/historical.json';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { createResourceStatus } from './map-resource-status.js';
-import { physicalBasemapStyle, hideBasemapContext, influenceLayers, pointLayer } from './historical-style.js';
+import { physicalBasemapStyle, hideBasemapContext, influenceLayers, pointLayer, periodLayers } from './historical-style.js';
 import { kingdomNames, selectionFilter } from './ohm-selection.js';
+import { formatYear, historicalIsoDate } from './atlas.js';
+
+const PERIOD_GLYPHS = 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf';
+function atlasStyle() {
+  const cleaned = physicalBasemapStyle(style);
+  cleaned.glyphs = PERIOD_GLYPHS;
+  return cleaned;
+}
 
 export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange = () => {} }) {
   let gl, ready = false, selection = null, year = 1, enabled = true, hasBoundary = false;
   let sketch = EMPTY_BOUNDARY, sketchMessage = '', request = null, sketchKey = '';
   let empireData = EMPTY_EMPIRES;
   const resources = createResourceStatus();
+  let noticeTimer = 0;
+  const publishNotice = persistent => onError(resources.notice({ persistent }));
+  const clearNotice = () => { clearTimeout(noticeTimer); onError(''); };
   const layerIds = ['selected-ohm-halo', 'selected-ohm-fill'];
   let features = { type: 'FeatureCollection', features: [] };
   let regions = { type: 'FeatureCollection', features: [] };
+  let period = { type: 'FeatureCollection', features: [] };
+  let labels = { type: 'FeatureCollection', features: [] };
+  let traced = { type: 'FeatureCollection', features: [] };
+  let periodEnabled = true;
+  let hoveredPeriod = null;
   function updateStatus() {
     if (!ready) return;
     const names = kingdomNames(selection);
@@ -35,14 +51,14 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     if (!matches.length && hasBoundary) return onStatus(`A dated boundary was found for ${names[0]}. Pan back to its area to see the highlight.`);
     if (!matches.length && resources.boundaryFailed()) return onStatus(`Boundary matching for ${names[0]} could not be confirmed because OHM resources failed to load. Try the direct OHM link below.`);
     onStatus(matches.length
-      ? `Highlighted OHM name match: ${names[0]} · 1 January ${year} CE. This is provider data, not an independently verified extent of ${selection.title}.`
-      : `No dated OHM boundary matching ${names[0]} is available in this view for ${year} CE. No substitute territory is drawn.`);
+      ? `Highlighted OHM name match: ${names[0]} · 1 January ${formatYear(year)}. This is provider data, not an independently verified extent of ${selection.title}.`
+      : `No dated OHM boundary matching ${names[0]} is available in this view for ${formatYear(year)}. No substitute territory is drawn.`);
   }
   function sync() {
     if (!ready) return;
     gl.getSource('imported-empires').setData(filterEmpires(empireData, year));
     for (const id of ['imported-empires-halo', 'imported-empires-fill']) gl.setLayoutProperty(id, 'visibility', enabled ? 'visible' : 'none');
-    filterByDate(gl, `${String(year).padStart(4, '0')}-01-01`);
+    filterByDate(gl, historicalIsoDate(year));
     for (const id of layerIds) {
       gl.setPaintProperty(id, id.endsWith('fill') ? 'fill-color' : 'line-color', selection ? recordFactionColor(selection) : '#8a8d91');
       gl.setFilter(id, ['all', ['==', ['geometry-type'], 'Polygon'], selectionFilter(selection, year)]);
@@ -82,19 +98,30 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     }
   }
   try {
-    const layer = maplibreGL({ style: physicalBasemapStyle(style), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a>' }, interactive: false }).addTo(map);
+    const layer = maplibreGL({ style: atlasStyle(), attributionControl: { customAttribution: '<a href="https://www.openhistoricalmap.org/copyright">OpenHistoricalMap contributors & licences</a> · <a href="https://github.com/aourednik/historical-basemaps">Historical basemaps (GPL-3.0)</a>' }, interactive: false }).addTo(map);
     gl = layer.getMaplibreMap();
     gl.on('error', event => {
-      resources.fail(event); onError(resources.message()); updateStatus();
+      resources.fail(event);
+      if (!resources.message()) return;
+      clearTimeout(noticeTimer);
+      noticeTimer = setTimeout(() => publishNotice(true), 2500);
+      updateStatus();
     });
     gl.on('sourcedata', event => {
-      resources.recover(event); onError(resources.message());
+      resources.recover(event);
+      if (!resources.message()) clearNotice();
+    });
+    gl.on('idle', () => {
+      resources.prunePartial();
+      if (!resources.message()) clearNotice();
+      else publishNotice(true);
+      updateStatus();
     });
     gl.on('style.load', () => {
       // A replacement style needs new date constraints even when global date state survives.
       if (Object.hasOwn(gl.getGlobalState(), 'maplibre_gl_dates__startISODate')) constrainStyleToDateRange(gl);
       // Constrain the provider's neighbouring features before showing its canvas.
-      filterByDate(gl, `${String(year).padStart(4, '0')}-01-01`);
+      filterByDate(gl, historicalIsoDate(year));
       gl.addSource('ohm-selected-boundaries', {
         type: 'vector', url: 'https://vtiles.openhistoricalmap.org/maps/ohm_admin.json',
       });
@@ -115,6 +142,26 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
         spec.paint[spec.type === 'fill' ? 'fill-color' : 'line-color'] = '#8b5cf6';
         gl.addLayer(spec);
       }
+      gl.addSource('period-polities', { type: 'geojson', data: period });
+      gl.addSource('period-label-points', { type: 'geojson', data: labels });
+      for (const spec of periodLayers('period-polities', 'period-label-points')) gl.addLayer(spec);
+      gl.addSource('traced-shapes', { type: 'geojson', data: traced });
+      gl.addLayer({
+        id: 'traced-fill', type: 'fill', source: 'traced-shapes',
+        paint: {
+          'fill-color': ['match', ['get', 'swatch'], 0, '#2f6b4f', 1, '#3d5c78', 2, '#6b5340', 3, '#4f6b3a', 4, '#5c4d78', '#2f6b4f'],
+          'fill-opacity': 0.3,
+        },
+      });
+      gl.addLayer({
+        id: 'traced-line', type: 'line', source: 'traced-shapes',
+        paint: {
+          'line-color': '#e7c98a',
+          'line-width': 2.2,
+          'line-opacity': 0.85,
+          'line-blur': ['match', ['get', 'confidence'], 'low', 4.2, 'moderate', 1.8, 1.1],
+        },
+      });
       gl.addSource('historical-records', { type: 'geojson', data: features });
       gl.addLayer(pointLayer('historical-records'));
       ready = true;
@@ -125,7 +172,10 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
     gl.on('idle', updateStatus);
     fetchEmpires(`${import.meta.env.BASE_URL}data/historical_empires.geojson`, AbortSignal.timeout(15000))
       .then(data => { empireData = data; sync(); })
-      .catch(error => onError(`Imported empire polygons unavailable: ${error.message}. Existing record layers remain available.`));
+      .catch(error => {
+        resources.fail({ sourceId: 'empires', error });
+        publishNotice(true);
+      });
   } catch {
     onError('OpenHistoricalMap needs WebGL and internet access. Open the OHM link below if this browser cannot display the map.');
   }
@@ -138,12 +188,39 @@ export function attachHistoricalMap(map, { onStatus, onError, onBoundaryChange =
       regions = next;
       if (ready) gl.getSource('historical-regions').setData(regions);
     },
+    setPeriod(next, nextLabels) {
+      period = next?.type === 'FeatureCollection' ? next : { type: 'FeatureCollection', features: [] };
+      labels = nextLabels?.type === 'FeatureCollection' ? nextLabels : { type: 'FeatureCollection', features: [] };
+      hoveredPeriod = null;
+      if (!ready) return;
+      gl.getSource('period-polities').setData(period);
+      gl.getSource('period-label-points').setData(labels);
+      for (const id of ['period-fill', 'period-line', 'period-label', 'period-caution-label'])
+        gl.setLayoutProperty(id, 'visibility', periodEnabled ? 'visible' : 'none');
+    },
+    setTraced(next) {
+      traced = next?.type === 'FeatureCollection' ? next : { type: 'FeatureCollection', features: [] };
+      if (ready) gl.getSource('traced-shapes').setData(traced);
+    },
+    setPeriodVisible(show) {
+      periodEnabled = show;
+      if (!ready) return;
+      for (const id of ['period-fill', 'period-line', 'period-label', 'period-caution-label'])
+        gl.setLayoutProperty(id, 'visibility', show ? 'visible' : 'none');
+    },
+    hoverPeriod(id) {
+      if (!ready) return;
+      if (hoveredPeriod != null) gl.setFeatureState({ source: 'period-polities', id: hoveredPeriod }, { hover: false });
+      hoveredPeriod = Number.isInteger(id) ? id : null;
+      if (hoveredPeriod != null) gl.setFeatureState({ source: 'period-polities', id: hoveredPeriod }, { hover: true });
+    },
     retry() {
       if (!gl) { onError('This browser could not initialize WebGL. Try another browser or open the direct OHM link.'); return; }
       ready = false;
+      clearTimeout(noticeTimer);
       resources.reset(); onError(''); onStatus('Retrying OpenHistoricalMap…');
       gl.getCanvas().style.visibility = 'hidden';
-      gl.setStyle(physicalBasemapStyle(style), { diff: false });
+      gl.setStyle(atlasStyle(), { diff: false });
     },
     select(record, selectedYear, show = true) {
       if (selection?.id !== record?.id || year !== selectedYear) hasBoundary = false;
